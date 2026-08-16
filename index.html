@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>COPA MISTO QUENTE | A Gala do Pão</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Teko:wght@500;600;700&amp;display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -1022,9 +1022,9 @@
       <nav>
         <ul class="nav-menu">
           <li><span class="nav-link active-link" onclick="navigateTo('home')">Início</span></li>
-          <li><span class="nav-link" onclick="navigateTo('times')">Times & Posições</span></li>
-          <li><span class="nav-link" onclick="navigateTo('jogos')">Jogos & Súmulas</span></li>
-          <li><span class="nav-link" onclick="navigateTo('estatisticas')">Stats & Médias</span></li>
+          <li><span class="nav-link" onclick="navigateTo('times')">Times &amp; Posições</span></li>
+          <li><span class="nav-link" onclick="navigateTo('jogos')">Jogos &amp; Súmulas</span></li>
+          <li><span class="nav-link" onclick="navigateTo('estatisticas')">Stats &amp; Médias</span></li>
           <li><span class="nav-link" onclick="navigateTo('comparador')">Comparador X1</span></li>
           <li><span class="nav-link" onclick="navigateTo('mercado')">Mercado</span></li>
           <li><span class="nav-link" onclick="navigateTo('premiacoes')">Gala do Pão</span></li>
@@ -1046,15 +1046,15 @@
         <p class="hero-subtitle">"Grandes jogos. Grandes jogadores. Grandes histórias." Acompanhe cada gol, as súmulas dos confrontos, a artilharia pesada e os prêmios da Gala do Pão.</p>
         
         <div class="hero-actions">
-          <button class="btn-primary" onclick="navigateTo('jogos')">Ver Jogos & Súmulas</button>
-          <button class="btn-outline" onclick="navigateTo('estatisticas')">Artilharia & Stats</button>
+          <button class="btn-primary" onclick="navigateTo('jogos')">Ver Jogos &amp; Súmulas</button>
+          <button class="btn-outline" onclick="navigateTo('estatisticas')">Artilharia &amp; Stats</button>
         </div>
 
         <!-- CARD PRÓXIMO JOGO (7º JOGO) -->
         <div class="next-match-banner">
           <div class="next-match-title"><i class="fa-solid fa-fire"></i> Próximo Confronto Oficial • 7º Jogo</div>
           <div class="next-match-teams" id="nextMatchTeams">Misto United vs Bacon City</div>
-          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;" id="nextMatchDate">Panela Stadium • Sábado às 16:00 (Rumo à Decisão)</p>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;" id="nextMatchDate">Panela Stadium • Sábado às 16:00 (7º Jogo)</p>
           <button class="btn-primary" onclick="abrirEscalacaoModal()"><i class="fa-solid fa-clipboard-user"></i> Ver Escalação Provável</button>
         </div>
       </div>
@@ -1113,14 +1113,371 @@
       <div class="teams-grid">
         <div class="team-card misto">
           <h3 class="team-title" style="color: var(--misto-gold);">Misto United</h3>
-          <p class="team-captain">Capitão: Luqueta pepeta • Preto & Dourado</p>
-          <ul class="roster-list" id="rosterMisto"></ul>
+          <p class="team-captain">Capitão: Luqueta pepeta • Preto &amp; Dourado</p>
+          <ul class="roster-list" id="rosterMisto"><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/luqueta.png" alt="Luqueta pepeta" class="player-thumb-img" onerror="this.src='fotos/luqueta.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Luqueta pepeta</strong> 
+              <span class="position-pill">pivo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">5 Jogos • Média: 8.2 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">27G / 14A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 37,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/edson.png" alt="Edson" class="player-thumb-img" onerror="this.src='fotos/edson.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Edson</strong> 
+              <span class="position-pill">pivo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">5 Jogos • Média: 5.8 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">22G / 7A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 26,5M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/lucasbroxa.png" alt="Lucas broxa" class="player-thumb-img" onerror="this.src='fotos/lucas.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Lucas broxa</strong> 
+              <span class="position-pill">fixo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">6 Jogos • Média: 4.5 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">19G / 8A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 24,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/gontijo.png" alt="Gontijo" class="player-thumb-img" onerror="this.src='fotos/gontijo.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Gontijo</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">6 Jogos • Média: 4.3 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">16G / 10A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 22,5M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/kaua.png" alt="Kauã Broxa" class="player-thumb-img" onerror="this.src='fotos/kauã.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Kauã Broxa</strong> 
+              <span class="position-pill">fixo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">2 Jogos • Média: 3.5 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">5G / 2A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 18,5M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/ian.png" alt="Ian" class="player-thumb-img" onerror="this.src='fotos/ian.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Ian</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">6 Jogos • Média: 2.2 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">10G / 3A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 14,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/daniel.png" alt="Daniel" class="player-thumb-img" onerror="this.src='fotos/daniel.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Daniel</strong> 
+              <span class="position-pill">goleiro</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">4 Jogos • Média: 0.8 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">2G / 1A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 18,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/douglas.png" alt="Douglas" class="player-thumb-img" onerror="this.src='fotos/douglas.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Douglas</strong> 
+              <span class="position-pill">goleiro</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">5 Jogos • Média: 0.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">0G / 0A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 19,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/lz.png" alt="lz branco" class="player-thumb-img" onerror="this.src='fotos/lz.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">lz branco</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">1 Jogos • Média: 2.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">2G / 0A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 5,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/samuel.png" alt="samuel" class="player-thumb-img" onerror="this.src='fotos/samuel.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">samuel</strong> 
+              <span class="position-pill">fixo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">1 Jogos • Média: 1.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">1G / 0A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 5,0M</span>
+          </div>
+        </li></ul>
         </div>
 
         <div class="team-card bacon">
           <h3 class="team-title" style="color: var(--bacon-red);">Bacon City</h3>
-          <p class="team-captain">Capitão: Preto • Vermelho & Preto</p>
-          <ul class="roster-list" id="rosterBacon"></ul>
+          <p class="team-captain">Capitão: Preto • Vermelho &amp; Preto</p>
+          <ul class="roster-list" id="rosterBacon"><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/preto.png" alt="Preto" class="player-thumb-img" onerror="this.src='fotos/preto.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Preto</strong> 
+              <span class="position-pill">fixo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">6 Jogos • Média: 4.2 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">13G / 12A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 20,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/varo.png" alt="Varo" class="player-thumb-img" onerror="this.src='fotos/varo.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Varo</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">6 Jogos • Média: 4.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">11G / 13A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 19,5M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/vitor.png" alt="Vitor" class="player-thumb-img" onerror="this.src='fotos/vitor.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Vitor</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">3 Jogos • Média: 5.7 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">13G / 4A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 18,5M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/vitorhugo.png" alt="Vitor Hugo" class="player-thumb-img" onerror="this.src='fotos/vitor.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Vitor Hugo</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">1 Jogos • Média: 8.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">8G / 0A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 15,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/matheus.png" alt="Matheus" class="player-thumb-img" onerror="this.src='fotos/matheus.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Matheus</strong> 
+              <span class="position-pill">pivo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">4 Jogos • Média: 4.3 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">14G / 3A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 15,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/paulao.png" alt="Paulao" class="player-thumb-img" onerror="this.src='fotos/paulao.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Paulao</strong> 
+              <span class="position-pill">pivo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">1 Jogos • Média: 4.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">3G / 1A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 14,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/guilherme.png" alt="Guilherme" class="player-thumb-img" onerror="this.src='fotos/guilherme.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Guilherme</strong> 
+              <span class="position-pill">goleiro</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">5 Jogos • Média: 0.2 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">0G / 1A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 23,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/alejandro.png" alt="Alejandro" class="player-thumb-img" onerror="this.src='fotos/alejandro.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Alejandro</strong> 
+              <span class="position-pill">fixo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">1 Jogos • Média: 1.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">0G / 1A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 17,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/davi.png" alt="Davi" class="player-thumb-img" onerror="this.src='fotos/davi.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Davi</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">5 Jogos • Média: 0.6 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">1G / 2A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 10,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/litlepepsi.png" alt="Litle pepsi" class="player-thumb-img" onerror="this.src='fotos/litle.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Litle pepsi</strong> 
+              <span class="position-pill">ala</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">1 Jogos • Média: 9.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">3G / 6A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 8,0M</span>
+          </div>
+        </li><li class="roster-item">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/murilao.png" alt="murilao" class="player-thumb-img" onerror="this.src='fotos/murilao.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">murilao</strong> 
+              <span class="position-pill">fixo</span><br>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">1 Jogos • Média: 0.0 pts/J</small>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">0G / 0A</span><br>
+            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">R$ 4,0M</span>
+          </div>
+        </li></ul>
         </div>
       </div>
     </div>
@@ -1131,15 +1488,225 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Histórico Completo</span>
-        <h2 class="section-title">Jogos & Súmulas Detalhadas</h2>
+        <h2 class="section-title">Jogos &amp; Súmulas Detalhadas</h2>
       </div>
 
       <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 16px; color: var(--gold); text-align: center;">
         <i class="fa-solid fa-star"></i> Galeria Player of the Match (1º ao 6º Jogo)
       </h3>
-      <div class="potm-grid" id="potmContainer"></div>
+      <div class="potm-grid" id="potmContainer"><div class="potm-card">
+          <div class="potm-avatar-wrap">
+            <img src="fotos/luiz.png" alt="Luiz" class="player-thumb-img">
+          </div>
+          <span class="potm-tag">1º Jogo</span>
+          <h4 class="potm-name">Luiz</h4>
+          <div class="potm-note">⭐ Nota 9.4</div>
+        </div><div class="potm-card">
+          <div class="potm-avatar-wrap">
+            <img src="fotos/guilherme.png" alt="Guilherme" class="player-thumb-img">
+          </div>
+          <span class="potm-tag">2º Jogo</span>
+          <h4 class="potm-name">Guilherme</h4>
+          <div class="potm-note">⭐ Nota 10.0</div>
+        </div><div class="potm-card">
+          <div class="potm-avatar-wrap">
+            <img src="fotos/vitorhugo.png" alt="Vitor Hugo" class="player-thumb-img">
+          </div>
+          <span class="potm-tag">3º Jogo</span>
+          <h4 class="potm-name">Vitor Hugo</h4>
+          <div class="potm-note">8 Gols</div>
+        </div><div class="potm-card">
+          <div class="potm-avatar-wrap">
+            <img src="fotos/kaua.png" alt="Kauã" class="player-thumb-img">
+          </div>
+          <span class="potm-tag">4º Jogo</span>
+          <h4 class="potm-name">Kauã</h4>
+          <div class="potm-note">5G + 1A</div>
+        </div><div class="potm-card">
+          <div class="potm-avatar-wrap">
+            <img src="fotos/gontijo.png" alt="Gontijo" class="player-thumb-img">
+          </div>
+          <span class="potm-tag">5º Jogo</span>
+          <h4 class="potm-name">Gontijo</h4>
+          <div class="potm-note">4G + 3A</div>
+        </div><div class="potm-card">
+          <div class="potm-avatar-wrap">
+            <img src="fotos/vitor.png" alt="Vitor (Bacon)" class="player-thumb-img">
+          </div>
+          <span class="potm-tag">6º Jogo</span>
+          <h4 class="potm-name">Vitor (Bacon)</h4>
+          <div class="potm-note">4G + 3A (MVP)</div>
+        </div></div>
 
-      <div class="matches-list" id="matchesContainer"></div>
+      <div class="matches-list" id="matchesContainer"><div class="match-row">
+          <div class="match-top">
+            <span><i class="fa-regular fa-calendar"></i> 15/08/2026</span>
+            <span>Panela Stadium</span>
+          </div>
+          <div class="match-scoreboard">
+            <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
+            <div class="score-display">12 x 10</div>
+            <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+          </div>
+          <div class="match-potm">
+            <span><strong>⭐ POTM:</strong> Vitor (Bacon) (4G + 3A (MVP))</span>
+            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_v9_0')">Ver Gols &amp; Súmula</button>
+          </div>
+          <div id="sum_v9_0" class="match-summary-cards">
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--misto-gold);">⚽ Gols Misto United:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Luqueta pepeta (4)</span><span class="goal-badge">Lucas broxa (3)</span><span class="goal-badge">Edson (3)</span><span class="goal-badge">Gontijo (1)</span><span class="goal-badge">Kauã broxa (1)</span>
+              </div>
+            </div>
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--bacon-red);">⚽ Gols Bacon City:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Vitor (4)</span><span class="goal-badge">Paulao (3)</span><span class="goal-badge">Varo (2)</span><span class="goal-badge">Preto (1)</span>
+              </div>
+            </div>
+          </div>
+        </div><div class="match-row">
+          <div class="match-top">
+            <span><i class="fa-regular fa-calendar"></i> 08/08/2026</span>
+            <span>Panela Stadium</span>
+          </div>
+          <div class="match-scoreboard">
+            <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
+            <div class="score-display">18 x 17</div>
+            <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+          </div>
+          <div class="match-potm">
+            <span><strong>⭐ POTM:</strong> Gontijo (4G + 3A)</span>
+            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_v9_1')">Ver Gols &amp; Súmula</button>
+          </div>
+          <div id="sum_v9_1" class="match-summary-cards">
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--misto-gold);">⚽ Gols Misto United:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Edson (6)</span><span class="goal-badge">Gontijo (4)</span><span class="goal-badge">Lucas broxa (2)</span><span class="goal-badge">Ian (2)</span><span class="goal-badge">lz branco (2)</span><span class="goal-badge">samuel (1)</span>
+              </div>
+            </div>
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--bacon-red);">⚽ Gols Bacon City:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Matheus (6)</span><span class="goal-badge">Preto (5)</span><span class="goal-badge">Varo (4)</span><span class="goal-badge">Litle pepsi (3)</span>
+              </div>
+            </div>
+          </div>
+        </div><div class="match-row">
+          <div class="match-top">
+            <span><i class="fa-regular fa-calendar"></i> 01/08/2026</span>
+            <span>Panela Stadium</span>
+          </div>
+          <div class="match-scoreboard">
+            <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
+            <div class="score-display">13 x 3</div>
+            <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+          </div>
+          <div class="match-potm">
+            <span><strong>⭐ POTM:</strong> Kauã (5G + 1A)</span>
+            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_v9_2')">Ver Gols &amp; Súmula</button>
+          </div>
+          <div id="sum_v9_2" class="match-summary-cards">
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--misto-gold);">⚽ Gols Misto United:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Kauã broxa (4)</span><span class="goal-badge">Edson (3)</span><span class="goal-badge">Lucas broxa (3)</span><span class="goal-badge">Ian (2)</span><span class="goal-badge">Gontijo (1)</span>
+              </div>
+            </div>
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--bacon-red);">⚽ Gols Bacon City:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Varo (2)</span><span class="goal-badge">Preto (1)</span>
+              </div>
+            </div>
+          </div>
+        </div><div class="match-row">
+          <div class="match-top">
+            <span><i class="fa-regular fa-calendar"></i> 28/07/2026</span>
+            <span>Panela Stadium</span>
+          </div>
+          <div class="match-scoreboard">
+            <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
+            <div class="score-display">15 x 10</div>
+            <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+          </div>
+          <div class="match-potm">
+            <span><strong>⭐ POTM:</strong> Vitor Hugo (8 Gols)</span>
+            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_v9_3')">Ver Gols &amp; Súmula</button>
+          </div>
+          <div id="sum_v9_3" class="match-summary-cards">
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--misto-gold);">⚽ Gols Misto United:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Luqueta pepeta (4)</span><span class="goal-badge">Gontijo (2)</span><span class="goal-badge">Ian (2)</span><span class="goal-badge">Lucas broxa (2)</span>
+              </div>
+            </div>
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--bacon-red);">⚽ Gols Bacon City:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Vitor Hugo (8)</span><span class="goal-badge">Matheus (3)</span><span class="goal-badge">Preto (2)</span><span class="goal-badge">Varo (2)</span>
+              </div>
+            </div>
+          </div>
+        </div><div class="match-row">
+          <div class="match-top">
+            <span><i class="fa-regular fa-calendar"></i> 24/07/2026</span>
+            <span>Panela Stadium</span>
+          </div>
+          <div class="match-scoreboard">
+            <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
+            <div class="score-display">16 x 8</div>
+            <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+          </div>
+          <div class="match-potm">
+            <span><strong>⭐ POTM:</strong> Guilherme (⭐ Nota 10.0)</span>
+            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_v9_4')">Ver Gols &amp; Súmula</button>
+          </div>
+          <div id="sum_v9_4" class="match-summary-cards">
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--misto-gold);">⚽ Gols Misto United:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Luqueta (6)</span><span class="goal-badge">Lucas broxa (5)</span><span class="goal-badge">Daniel (2)</span><span class="goal-badge">Edson (1)</span><span class="goal-badge">Gontijo (1)</span>
+              </div>
+            </div>
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--bacon-red);">⚽ Gols Bacon City:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Matheus (4)</span><span class="goal-badge">Davi (1)</span><span class="goal-badge">Preto (1)</span><span class="goal-badge">Varo (1)</span><span class="goal-badge">Vitor (1)</span>
+              </div>
+            </div>
+          </div>
+        </div><div class="match-row">
+          <div class="match-top">
+            <span><i class="fa-regular fa-calendar"></i> 11/07/2026</span>
+            <span>Panela Stadium</span>
+          </div>
+          <div class="match-scoreboard">
+            <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
+            <div class="score-display">37 x 11</div>
+            <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+          </div>
+          <div class="match-potm">
+            <span><strong>⭐ POTM:</strong> Luiz (⭐ Nota 9.4)</span>
+            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_v9_5')">Ver Gols &amp; Súmula</button>
+          </div>
+          <div id="sum_v9_5" class="match-summary-cards">
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--misto-gold);">⚽ Gols Misto United:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Luqueta (13)</span><span class="goal-badge">Edson (9)</span><span class="goal-badge">Gontijo (7)</span><span class="goal-badge">Lucas broxa (4)</span><span class="goal-badge">Ian (4)</span>
+              </div>
+            </div>
+            <div class="summary-team-block">
+              <div class="summary-team-title" style="color: var(--bacon-red);">⚽ Gols Bacon City:</div>
+              <div class="goals-badges-list">
+                <span class="goal-badge">Vitor (8)</span><span class="goal-badge">Preto (2)</span><span class="goal-badge">Matheus (1)</span>
+              </div>
+            </div>
+          </div>
+        </div></div>
     </div>
   </section>
 
@@ -1148,7 +1715,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Ranking Geral Acumulado</span>
-        <h2 class="section-title">Estatísticas & Aproveitamento</h2>
+        <h2 class="section-title">Estatísticas &amp; Aproveitamento</h2>
       </div>
 
       <div class="stats-table-wrapper">
@@ -1167,7 +1734,385 @@
               <th>Média Pts/J</th>
             </tr>
           </thead>
-          <tbody id="statsTableBody"></tbody>
+          <tbody id="statsTableBody"><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: var(--gold);">#1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/luqueta.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Luqueta pepeta</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">pivo</span></td>
+          <td><strong>5</strong></td>
+          <td style="font-weight: 700;">27</td>
+          <td style="color:var(--text-muted);">5.40</td>
+          <td style="font-weight: 700;">14</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">41</td>
+          <td style="color: var(--secondary); font-weight: 700;">8.20</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #C0C0C0;">#2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/edson.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Edson</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">pivo</span></td>
+          <td><strong>5</strong></td>
+          <td style="font-weight: 700;">22</td>
+          <td style="color:var(--text-muted);">4.40</td>
+          <td style="font-weight: 700;">7</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">29</td>
+          <td style="color: var(--secondary); font-weight: 700;">5.80</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #CD7F32;">#3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/lucasbroxa.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Lucas broxa</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">fixo</span></td>
+          <td><strong>6</strong></td>
+          <td style="font-weight: 700;">19</td>
+          <td style="color:var(--text-muted);">3.17</td>
+          <td style="font-weight: 700;">8</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">27</td>
+          <td style="color: var(--secondary); font-weight: 700;">4.50</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#4</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/gontijo.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Gontijo</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>6</strong></td>
+          <td style="font-weight: 700;">16</td>
+          <td style="color:var(--text-muted);">2.67</td>
+          <td style="font-weight: 700;">10</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">26</td>
+          <td style="color: var(--secondary); font-weight: 700;">4.33</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#5</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/preto.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Preto</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">fixo</span></td>
+          <td><strong>6</strong></td>
+          <td style="font-weight: 700;">13</td>
+          <td style="color:var(--text-muted);">2.17</td>
+          <td style="font-weight: 700;">12</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">25</td>
+          <td style="color: var(--secondary); font-weight: 700;">4.17</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#6</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/varo.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Varo</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>6</strong></td>
+          <td style="font-weight: 700;">11</td>
+          <td style="color:var(--text-muted);">1.83</td>
+          <td style="font-weight: 700;">13</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">24</td>
+          <td style="color: var(--secondary); font-weight: 700;">4.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#7</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/vitor.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Vitor</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>3</strong></td>
+          <td style="font-weight: 700;">13</td>
+          <td style="color:var(--text-muted);">4.33</td>
+          <td style="font-weight: 700;">4</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">17</td>
+          <td style="color: var(--secondary); font-weight: 700;">5.67</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#8</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/matheus.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Matheus</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">pivo</span></td>
+          <td><strong>4</strong></td>
+          <td style="font-weight: 700;">14</td>
+          <td style="color:var(--text-muted);">3.50</td>
+          <td style="font-weight: 700;">3</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">17</td>
+          <td style="color: var(--secondary); font-weight: 700;">4.25</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#9</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/ian.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Ian</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>6</strong></td>
+          <td style="font-weight: 700;">10</td>
+          <td style="color:var(--text-muted);">1.67</td>
+          <td style="font-weight: 700;">3</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">13</td>
+          <td style="color: var(--secondary); font-weight: 700;">2.17</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#10</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/litlepepsi.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Litle pepsi</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>1</strong></td>
+          <td style="font-weight: 700;">3</td>
+          <td style="color:var(--text-muted);">3.00</td>
+          <td style="font-weight: 700;">6</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">9</td>
+          <td style="color: var(--secondary); font-weight: 700;">9.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#11</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/vitorhugo.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Vitor Hugo</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>1</strong></td>
+          <td style="font-weight: 700;">8</td>
+          <td style="color:var(--text-muted);">8.00</td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">8</td>
+          <td style="color: var(--secondary); font-weight: 700;">8.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#12</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/kaua.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Kauã Broxa</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">fixo</span></td>
+          <td><strong>2</strong></td>
+          <td style="font-weight: 700;">5</td>
+          <td style="color:var(--text-muted);">2.50</td>
+          <td style="font-weight: 700;">2</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">7</td>
+          <td style="color: var(--secondary); font-weight: 700;">3.50</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#13</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/paulao.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Paulao</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">pivo</span></td>
+          <td><strong>1</strong></td>
+          <td style="font-weight: 700;">3</td>
+          <td style="color:var(--text-muted);">3.00</td>
+          <td style="font-weight: 700;">1</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">4</td>
+          <td style="color: var(--secondary); font-weight: 700;">4.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#14</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/daniel.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Daniel</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">goleiro</span></td>
+          <td><strong>4</strong></td>
+          <td style="font-weight: 700;">2</td>
+          <td style="color:var(--text-muted);">0.50</td>
+          <td style="font-weight: 700;">1</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">3</td>
+          <td style="color: var(--secondary); font-weight: 700;">0.75</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#15</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/davi.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Davi</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>5</strong></td>
+          <td style="font-weight: 700;">1</td>
+          <td style="color:var(--text-muted);">0.20</td>
+          <td style="font-weight: 700;">2</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">3</td>
+          <td style="color: var(--secondary); font-weight: 700;">0.60</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#16</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/lzbranco.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">lz branco</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">ala</span></td>
+          <td><strong>1</strong></td>
+          <td style="font-weight: 700;">2</td>
+          <td style="color:var(--text-muted);">2.00</td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">2</td>
+          <td style="color: var(--secondary); font-weight: 700;">2.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#17</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/samuel.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">samuel</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">fixo</span></td>
+          <td><strong>1</strong></td>
+          <td style="font-weight: 700;">1</td>
+          <td style="color:var(--text-muted);">1.00</td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">1</td>
+          <td style="color: var(--secondary); font-weight: 700;">1.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#18</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/guilherme.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Guilherme</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">goleiro</span></td>
+          <td><strong>5</strong></td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color:var(--text-muted);">0.00</td>
+          <td style="font-weight: 700;">1</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">1</td>
+          <td style="color: var(--secondary); font-weight: 700;">0.20</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#19</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/alejandro.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Alejandro</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">fixo</span></td>
+          <td><strong>1</strong></td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color:var(--text-muted);">0.00</td>
+          <td style="font-weight: 700;">1</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">1</td>
+          <td style="color: var(--secondary); font-weight: 700;">1.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#20</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/douglas.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">Douglas</strong>
+            </div>
+          </td>
+          <td style="color: var(--misto-gold); font-weight: 700;">Misto United</td>
+          <td><span class="position-pill">goleiro</span></td>
+          <td><strong>5</strong></td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color:var(--text-muted);">0.00</td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">0</td>
+          <td style="color: var(--secondary); font-weight: 700;">0.00</td>
+        </tr><tr style="cursor: pointer;">
+          <td><span class="rank-pill" style="color: #fff;">#21</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="avatar-wrap" style="width:34px; height:34px;">
+                <img src="fotos/murilao.png" class="player-thumb-img">
+              </div>
+              <strong style="text-transform: capitalize;">murilao</strong>
+            </div>
+          </td>
+          <td style="color: var(--bacon-red); font-weight: 700;">Bacon City</td>
+          <td><span class="position-pill">fixo</span></td>
+          <td><strong>1</strong></td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color:var(--text-muted);">0.00</td>
+          <td style="font-weight: 700;">0</td>
+          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">0</td>
+          <td style="color: var(--secondary); font-weight: 700;">0.00</td>
+        </tr></tbody>
         </table>
       </div>
     </div>
@@ -1185,18 +2130,84 @@
         <div class="compare-head-grid">
           <div class="compare-fighter-box">
             <img id="compImg1" src="fotos/luqueta.png" class="compare-avatar-large" style="border-color: var(--misto-gold);">
-            <select id="compareP1" class="compare-select" onchange="atualizarComparador()"></select>
+            <select id="compareP1" class="compare-select" onchange="atualizarComparador()"><option value="1" selected="">Luqueta pepeta (Misto United)</option><option value="2">Edson (Misto United)</option><option value="3">Lucas broxa (Misto United)</option><option value="4">Gontijo (Misto United)</option><option value="5">Kauã Broxa (Misto United)</option><option value="6">Ian (Misto United)</option><option value="7">Daniel (Misto United)</option><option value="8">Douglas (Misto United)</option><option value="9">lz branco (Misto United)</option><option value="10">samuel (Misto United)</option><option value="11">Preto (Bacon City)</option><option value="12">Varo (Bacon City)</option><option value="13">Vitor (Bacon City)</option><option value="14">Vitor Hugo (Bacon City)</option><option value="15">Matheus (Bacon City)</option><option value="16">Paulao (Bacon City)</option><option value="17">Guilherme (Bacon City)</option><option value="18">Alejandro (Bacon City)</option><option value="19">Davi (Bacon City)</option><option value="20">Litle pepsi (Bacon City)</option><option value="21">murilao (Bacon City)</option></select>
           </div>
 
           <div class="vs-emblem">VS</div>
 
           <div class="compare-fighter-box">
             <img id="compImg2" src="fotos/vitor.png" class="compare-avatar-large" style="border-color: var(--bacon-red);">
-            <select id="compareP2" class="compare-select" onchange="atualizarComparador()"></select>
+            <select id="compareP2" class="compare-select" onchange="atualizarComparador()"><option value="1">Luqueta pepeta (Misto United)</option><option value="2">Edson (Misto United)</option><option value="3">Lucas broxa (Misto United)</option><option value="4">Gontijo (Misto United)</option><option value="5">Kauã Broxa (Misto United)</option><option value="6">Ian (Misto United)</option><option value="7">Daniel (Misto United)</option><option value="8">Douglas (Misto United)</option><option value="9">lz branco (Misto United)</option><option value="10">samuel (Misto United)</option><option value="11">Preto (Bacon City)</option><option value="12">Varo (Bacon City)</option><option value="13" selected="">Vitor (Bacon City)</option><option value="14">Vitor Hugo (Bacon City)</option><option value="15">Matheus (Bacon City)</option><option value="16">Paulao (Bacon City)</option><option value="17">Guilherme (Bacon City)</option><option value="18">Alejandro (Bacon City)</option><option value="19">Davi (Bacon City)</option><option value="20">Litle pepsi (Bacon City)</option><option value="21">murilao (Bacon City)</option></select>
           </div>
         </div>
 
-        <div id="compareResults"></div>
+        <div id="compareResults">
+        
+          <div class="compare-chart-row">
+            <div class="compare-chart-header">
+              <span style="color: var(--misto-gold);">Luqueta pepeta: <strong>27</strong> (68%)</span>
+              <span style="color: #fff;">Gols Marcados ⚽</span>
+              <span style="color: var(--bacon-red);">(32%) <strong>13</strong> :Vitor</span>
+            </div>
+            <div class="compare-bars-dual">
+              <div class="c-bar-left" style="width: 68%;"></div>
+              <div class="c-bar-right" style="width: 32%;"></div>
+            </div>
+          </div>
+        
+        
+          <div class="compare-chart-row">
+            <div class="compare-chart-header">
+              <span style="color: var(--misto-gold);">Luqueta pepeta: <strong>14</strong> (78%)</span>
+              <span style="color: #fff;">Assistências 🅰️</span>
+              <span style="color: var(--bacon-red);">(22%) <strong>4</strong> :Vitor</span>
+            </div>
+            <div class="compare-bars-dual">
+              <div class="c-bar-left" style="width: 78%;"></div>
+              <div class="c-bar-right" style="width: 22%;"></div>
+            </div>
+          </div>
+        
+        
+          <div class="compare-chart-row">
+            <div class="compare-chart-header">
+              <span style="color: var(--misto-gold);">Luqueta pepeta: <strong>41</strong> (71%)</span>
+              <span style="color: #fff;">Participações (G+A) 🔥</span>
+              <span style="color: var(--bacon-red);">(29%) <strong>17</strong> :Vitor</span>
+            </div>
+            <div class="compare-bars-dual">
+              <div class="c-bar-left" style="width: 71%;"></div>
+              <div class="c-bar-right" style="width: 29%;"></div>
+            </div>
+          </div>
+        
+        
+          <div class="compare-chart-row">
+            <div class="compare-chart-header">
+              <span style="color: var(--misto-gold);">Luqueta pepeta: <strong>8.2</strong> (59%)</span>
+              <span style="color: #fff;">Média Pts/Jogo 📊</span>
+              <span style="color: var(--bacon-red);">(41%) <strong>5.7</strong> :Vitor</span>
+            </div>
+            <div class="compare-bars-dual">
+              <div class="c-bar-left" style="width: 59%;"></div>
+              <div class="c-bar-right" style="width: 41%;"></div>
+            </div>
+          </div>
+        
+        
+          <div class="compare-chart-row">
+            <div class="compare-chart-header">
+              <span style="color: var(--misto-gold);">Luqueta pepeta: <strong>5</strong> (63%)</span>
+              <span style="color: #fff;">Total de Jogos 👟</span>
+              <span style="color: var(--bacon-red);">(37%) <strong>3</strong> :Vitor</span>
+            </div>
+            <div class="compare-bars-dual">
+              <div class="c-bar-left" style="width: 63%;"></div>
+              <div class="c-bar-right" style="width: 37%;"></div>
+            </div>
+          </div>
+        
+      </div>
       </div>
     </div>
   </section>
@@ -1209,7 +2220,280 @@
         <h2 class="section-title">Mercado da Bola 💰</h2>
       </div>
 
-      <div class="market-grid" id="marketGrid"></div>
+      <div class="market-grid" id="marketGrid"><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/luqueta.png" alt="Luqueta pepeta" class="player-thumb-img" onerror="this.src='fotos/luqueta.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Luqueta pepeta</strong> <span>👑</span><br>
+              <small style="color: var(--text-muted);">Misto United • PIVO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 37,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/edson.png" alt="Edson" class="player-thumb-img" onerror="this.src='fotos/edson.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Edson</strong> <span>⚡</span><br>
+              <small style="color: var(--text-muted);">Misto United • PIVO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 26,5M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/lucasbroxa.png" alt="Lucas broxa" class="player-thumb-img" onerror="this.src='fotos/lucas.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Lucas broxa</strong> <span>🎯</span><br>
+              <small style="color: var(--text-muted);">Misto United • FIXO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 24,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/gontijo.png" alt="Gontijo" class="player-thumb-img" onerror="this.src='fotos/gontijo.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Gontijo</strong> <span>🧠</span><br>
+              <small style="color: var(--text-muted);">Misto United • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 22,5M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/kaua.png" alt="Kauã Broxa" class="player-thumb-img" onerror="this.src='fotos/kauã.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Kauã Broxa</strong> <span>📈</span><br>
+              <small style="color: var(--text-muted);">Misto United • FIXO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 18,5M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/ian.png" alt="Ian" class="player-thumb-img" onerror="this.src='fotos/ian.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Ian</strong> <br>
+              <small style="color: var(--text-muted);">Misto United • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 14,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/daniel.png" alt="Daniel" class="player-thumb-img" onerror="this.src='fotos/daniel.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Daniel</strong> <span>🔥</span><br>
+              <small style="color: var(--text-muted);">Misto United • GOLEIRO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 18,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/douglas.png" alt="Douglas" class="player-thumb-img" onerror="this.src='fotos/douglas.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Douglas</strong> <br>
+              <small style="color: var(--text-muted);">Misto United • GOLEIRO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 19,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/lz.png" alt="lz branco" class="player-thumb-img" onerror="this.src='fotos/lz.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">lz branco</strong> <br>
+              <small style="color: var(--text-muted);">Misto United • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 5,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/samuel.png" alt="samuel" class="player-thumb-img" onerror="this.src='fotos/samuel.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">samuel</strong> <br>
+              <small style="color: var(--text-muted);">Misto United • FIXO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 5,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/preto.png" alt="Preto" class="player-thumb-img" onerror="this.src='fotos/preto.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Preto</strong> <span>⚽</span><br>
+              <small style="color: var(--text-muted);">Bacon City • FIXO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 20,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/varo.png" alt="Varo" class="player-thumb-img" onerror="this.src='fotos/varo.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Varo</strong> <span>🔄</span><br>
+              <small style="color: var(--text-muted);">Bacon City • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 19,5M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/vitor.png" alt="Vitor" class="player-thumb-img" onerror="this.src='fotos/vitor.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Vitor</strong> <span>🔥</span><br>
+              <small style="color: var(--text-muted);">Bacon City • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 18,5M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/vitorhugo.png" alt="Vitor Hugo" class="player-thumb-img" onerror="this.src='fotos/vitor.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Vitor Hugo</strong> <br>
+              <small style="color: var(--text-muted);">Bacon City • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 15,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/matheus.png" alt="Matheus" class="player-thumb-img" onerror="this.src='fotos/matheus.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Matheus</strong> <span>📈</span><br>
+              <small style="color: var(--text-muted);">Bacon City • PIVO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 15,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/paulao.png" alt="Paulao" class="player-thumb-img" onerror="this.src='fotos/paulao.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Paulao</strong> <span>💥</span><br>
+              <small style="color: var(--text-muted);">Bacon City • PIVO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 14,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/guilherme.png" alt="Guilherme" class="player-thumb-img" onerror="this.src='fotos/guilherme.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Guilherme</strong> <br>
+              <small style="color: var(--text-muted);">Bacon City • GOLEIRO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 23,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/alejandro.png" alt="Alejandro" class="player-thumb-img" onerror="this.src='fotos/alejandro.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Alejandro</strong> <br>
+              <small style="color: var(--text-muted);">Bacon City • FIXO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 17,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/davi.png" alt="Davi" class="player-thumb-img" onerror="this.src='fotos/davi.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Davi</strong> <br>
+              <small style="color: var(--text-muted);">Bacon City • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 10,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/litlepepsi.png" alt="Litle pepsi" class="player-thumb-img" onerror="this.src='fotos/litle.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">Litle pepsi</strong> <br>
+              <small style="color: var(--text-muted);">Bacon City • ALA</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 8,0M</div>
+        </div><div class="market-card">
+          <div class="roster-player-info">
+            
+        <div class="avatar-wrap">
+          <img src="fotos/murilao.png" alt="murilao" class="player-thumb-img" onerror="this.src='fotos/murilao.png';">
+        </div>
+      
+            <div>
+              <strong style="text-transform: capitalize;">murilao</strong> <br>
+              <small style="color: var(--text-muted);">Bacon City • FIXO</small>
+            </div>
+          </div>
+          <div class="market-val">R$ 4,0M</div>
+        </div></div>
     </div>
   </section>
 
@@ -1217,7 +2501,7 @@
   <section id="premiacoes" class="spa-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Regulamento & Cerimônia</span>
+        <span class="section-tag">Regulamento &amp; Cerimônia</span>
         <h2 class="section-title">A Gala do Pão</h2>
       </div>
 
@@ -1238,7 +2522,7 @@
   <!-- MODAL DE PERFIL AUTÊNTICO COM SALA DE TROFÉUS HISTÓRICA -->
   <div id="playerModal" class="modal-overlay" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <button class="modal-close" onclick="closeModal()">×</button>
       <div class="modal-avatar-box">
         <img id="mImg" src="" alt="Avatar" class="modal-avatar-img">
       </div>
@@ -1247,7 +2531,7 @@
 
       <!-- Sala de Conquistas & Troféus -->
       <div class="trophy-hall-box">
-        <div class="trophy-hall-title"><i class="fa-solid fa-trophy"></i> Sala de Conquistas & Recordes Oficiais</div>
+        <div class="trophy-hall-title"><i class="fa-solid fa-trophy"></i> Sala de Conquistas &amp; Recordes Oficiais</div>
         <div class="modal-badges-grid" id="mBadgesContainer"></div>
       </div>
 
@@ -1276,7 +2560,7 @@
   <!-- MODAL DE ESCALAÇÃO -->
   <div id="escalacaoModal" class="modal-overlay" onclick="closeEscalacaoModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeEscalacaoModal()">&times;</button>
+      <button class="modal-close" onclick="closeEscalacaoModal()">×</button>
       <h3 style="font-family:var(--font-display); font-size:2rem; color:var(--gold); margin-bottom:10px;">
         📋 Escalação Provável • 7º Jogo
       </h3>
@@ -1285,12 +2569,12 @@
   </div>
 
   <!-- MODAL ADMIN -->
-  <div id="adminModal" class="modal-overlay" onclick="closeAdminModal(event)">
+  <div id="adminModal" class="modal-overlay active-modal" onclick="closeAdminModal(event)">
     <div class="admin-modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeAdminModal()">&times;</button>
+      <button class="modal-close" onclick="closeAdminModal()">×</button>
       
       <!-- Login -->
-      <div id="adminLoginSection">
+      <div id="adminLoginSection" style="display: none;">
         <h3 style="font-family: var(--font-display); font-size: 2rem; color: var(--gold); text-align: center; margin-bottom: 12px;">
           🔒 Painel Dono da Bola
         </h3>
@@ -1299,14 +2583,14 @@
       </div>
 
       <!-- Dashboard -->
-      <div id="adminDashboardSection" style="display: none;">
+      <div id="adminDashboardSection" style="display: block;">
         <h3 style="font-family: var(--font-display); font-size: 2.2rem; color: var(--primary); margin-bottom: 14px;">
           ⚙️ Gerenciador Completo
         </h3>
 
         <div style="display:flex; gap:8px; margin-bottom:16px;">
-          <button class="filter-btn active" onclick="adminTab('jogadores')">Jogadores & Troféus</button>
-          <button class="filter-btn" onclick="adminTab('jogos')">Jogos & POTM</button>
+          <button class="filter-btn active" onclick="adminTab('jogadores')">Jogadores &amp; Troféus</button>
+          <button class="filter-btn" onclick="adminTab('jogos')">Jogos &amp; POTM</button>
           <button class="filter-btn" onclick="adminTab('proximo')">Próximo Jogo</button>
         </div>
 
@@ -1316,7 +2600,1645 @@
             <span style="font-size:0.8rem; color:var(--text-muted);">Edite dados e marque os troféus diretamente:</span>
             <button class="btn-primary" style="padding:4px 10px; font-size:0.75rem;" onclick="adminAdicionarJogador()">+ Novo Jogador</button>
           </div>
-          <div id="adminPlayersList"></div>
+          <div id="adminPlayersList">
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Luqueta pepeta" onchange="playersData[0].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[0].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[0].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo" selected="">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="5" onchange="playersData[0].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="27" onchange="playersData[0].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="14" onchange="playersData[0].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 37,0M" onchange="playersData[0].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(0, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(0)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Edson" onchange="playersData[1].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[1].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[1].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo" selected="">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="5" onchange="playersData[1].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="22" onchange="playersData[1].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="7" onchange="playersData[1].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 26,5M" onchange="playersData[1].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(1, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(1)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Lucas broxa" onchange="playersData[2].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[2].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[2].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo" selected="">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="6" onchange="playersData[2].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="19" onchange="playersData[2].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="8" onchange="playersData[2].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 24,0M" onchange="playersData[2].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(2, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(2)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Gontijo" onchange="playersData[3].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[3].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[3].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="6" onchange="playersData[3].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="16" onchange="playersData[3].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="10" onchange="playersData[3].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 22,5M" onchange="playersData[3].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(3, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(3)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Kauã Broxa" onchange="playersData[4].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[4].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[4].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo" selected="">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="2" onchange="playersData[4].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="5" onchange="playersData[4].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="2" onchange="playersData[4].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 18,5M" onchange="playersData[4].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(4, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(4)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Ian" onchange="playersData[5].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[5].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[5].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="6" onchange="playersData[5].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="10" onchange="playersData[5].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="3" onchange="playersData[5].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 14,0M" onchange="playersData[5].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(5, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(5)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Daniel" onchange="playersData[6].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[6].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[6].pos = this.value">
+                <option value="goleiro" selected="">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="4" onchange="playersData[6].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="2" onchange="playersData[6].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="1" onchange="playersData[6].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 18,0M" onchange="playersData[6].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(6, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(6)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Douglas" onchange="playersData[7].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[7].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[7].pos = this.value">
+                <option value="goleiro" selected="">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="5" onchange="playersData[7].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="0" onchange="playersData[7].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="0" onchange="playersData[7].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 19,0M" onchange="playersData[7].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(7, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(7)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="lz branco" onchange="playersData[8].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[8].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[8].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="1" onchange="playersData[8].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="2" onchange="playersData[8].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="0" onchange="playersData[8].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 5,0M" onchange="playersData[8].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(8, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(8)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="samuel" onchange="playersData[9].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[9].time = this.value">
+                <option value="Misto United" selected="">Misto United</option>
+                <option value="Bacon City">Bacon City</option>
+              </select>
+              <select onchange="playersData[9].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo" selected="">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="1" onchange="playersData[9].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="1" onchange="playersData[9].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="0" onchange="playersData[9].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 5,0M" onchange="playersData[9].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(9, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(9)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Preto" onchange="playersData[10].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[10].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[10].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo" selected="">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="6" onchange="playersData[10].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="13" onchange="playersData[10].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="12" onchange="playersData[10].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 20,0M" onchange="playersData[10].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(10, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(10)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Varo" onchange="playersData[11].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[11].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[11].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="6" onchange="playersData[11].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="11" onchange="playersData[11].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="13" onchange="playersData[11].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 19,5M" onchange="playersData[11].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(11, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(11)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Vitor" onchange="playersData[12].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[12].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[12].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="3" onchange="playersData[12].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="13" onchange="playersData[12].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="4" onchange="playersData[12].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 18,5M" onchange="playersData[12].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(12, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(12)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Vitor Hugo" onchange="playersData[13].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[13].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[13].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="1" onchange="playersData[13].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="8" onchange="playersData[13].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="0" onchange="playersData[13].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 15,0M" onchange="playersData[13].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(13, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(13)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Matheus" onchange="playersData[14].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[14].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[14].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo" selected="">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="4" onchange="playersData[14].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="14" onchange="playersData[14].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="3" onchange="playersData[14].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 15,0M" onchange="playersData[14].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(14, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(14)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Paulao" onchange="playersData[15].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[15].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[15].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo" selected="">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="1" onchange="playersData[15].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="3" onchange="playersData[15].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="1" onchange="playersData[15].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 14,0M" onchange="playersData[15].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(15, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(15)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Guilherme" onchange="playersData[16].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[16].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[16].pos = this.value">
+                <option value="goleiro" selected="">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="5" onchange="playersData[16].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="0" onchange="playersData[16].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="1" onchange="playersData[16].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 23,0M" onchange="playersData[16].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(16, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(16)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Alejandro" onchange="playersData[17].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[17].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[17].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo" selected="">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="1" onchange="playersData[17].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="0" onchange="playersData[17].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="1" onchange="playersData[17].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 17,0M" onchange="playersData[17].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(17, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(17)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Davi" onchange="playersData[18].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[18].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[18].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="5" onchange="playersData[18].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="1" onchange="playersData[18].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="2" onchange="playersData[18].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 10,0M" onchange="playersData[18].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(18, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(18)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="Litle pepsi" onchange="playersData[19].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[19].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[19].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala" selected="">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="1" onchange="playersData[19].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="3" onchange="playersData[19].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="6" onchange="playersData[19].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 8,0M" onchange="playersData[19].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(19, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(19)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        
+          <div class="admin-player-row">
+            <div class="admin-inputs-grid">
+              <input type="text" value="murilao" onchange="playersData[20].nome = this.value" placeholder="Nome">
+              <select onchange="playersData[20].time = this.value">
+                <option value="Misto United">Misto United</option>
+                <option value="Bacon City" selected="">Bacon City</option>
+              </select>
+              <select onchange="playersData[20].pos = this.value">
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo" selected="">Fixo</option>
+                <option value="ala">Ala</option>
+                <option value="pivo">Pivô</option>
+              </select>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
+                <input type="number" value="1" onchange="playersData[20].jogos = parseInt(this.value)||1">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
+                <input type="number" value="0" onchange="playersData[20].gols = parseInt(this.value)||0">
+              </div>
+              <div>
+                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
+                <input type="number" value="0" onchange="playersData[20].assists = parseInt(this.value)||0">
+              </div>
+              <input type="text" value="R$ 4,0M" onchange="playersData[20].mercado = this.value" placeholder="Valor">
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão (Marque para conceder):</div>
+            <div class="admin-trophies-selector">
+              
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '👑 Bola de Ouro', this.checked)"> 👑 Bola de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '🥖 Pão de Ouro', this.checked)"> 🥖 Pão de Ouro
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '🥓 Chuteira de Bacon', this.checked)"> 🥓 Chuteira de Bacon
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '🥫 Chef do Molho', this.checked)"> 🥫 Chef do Molho
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '🧤 Pão Selado', this.checked)"> 🧤 Pão Selado
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '🛡️ Melhor Fixo', this.checked)"> 🛡️ Melhor Fixo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '⚡ Melhor Ala', this.checked)"> ⚡ Melhor Ala
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '🎯 Melhor Pivô', this.checked)"> 🎯 Melhor Pivô
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '💥 Hat-trick no 6º Jogo', this.checked)"> 💥 Hat-trick no 6º Jogo
+            </label>
+          
+            <label class="trophy-check-label">
+              <input type="checkbox" onchange="toggleTrofeuJogador(20, '🍌 Manteiga no Pé', this.checked)"> 🍌 Manteiga no Pé
+            </label>
+          
+            </div>
+
+            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+              <button onclick="adminRemoverJogador(20)" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
+            </div>
+          </div>
+        </div>
         </div>
 
         <!-- Tab 2: Jogos -->
@@ -1387,100 +4309,571 @@
 
     /* BASE_DE_DADOS_OFICIAL_START */
     let DEFAULT_PLAYERS = [
-      // Misto United
-      { id: 1, nome: "Luqueta pepeta", time: "Misto United", pos: "ala", jogos: 6, gols: 27, assists: 14, mercado: "R$ 37,0M", tag: "👑", foto: "fotos/luqueta.png", trofeus: ["🥖 Pão de Ouro", "🥓 Chuteira de Bacon"] },
-      { id: 2, nome: "Edson", time: "Misto United", pos: "pivo", jogos: 6, gols: 22, assists: 7, mercado: "R$ 26,5M", tag: "⚡", foto: "fotos/edson.png", trofeus: ["🎯 Melhor Pivô"] },
-      { id: 3, nome: "Lucas broxa", time: "Misto United", pos: "pivo", jogos: 6, gols: 19, assists: 8, mercado: "R$ 24,0M", tag: "🎯", foto: "fotos/lucasbroxa.png", trofeus: [] },
-      { id: 4, nome: "Gontijo", time: "Misto United", pos: "ala", jogos: 6, gols: 16, assists: 10, mercado: "R$ 22,5M", tag: "🧠", foto: "fotos/gontijo.png", trofeus: ["⚡ Melhor Ala"] },
-      { id: 5, nome: "Kauã Broxa", time: "Misto United", pos: "ala", jogos: 3, gols: 5, assists: 1, mercado: "R$ 17,5M", tag: "📈", foto: "fotos/kaua.png", trofeus: [] },
-      { id: 6, nome: "Ian", time: "Misto United", pos: "ala", jogos: 6, gols: 10, assists: 3, mercado: "R$ 14,0M", tag: "", foto: "fotos/ian.png", trofeus: [] },
-      { id: 7, nome: "Daniel", time: "Misto United", pos: "goleiro", jogos: 4, gols: 2, assists: 1, mercado: "R$ 18,0M", tag: "🔥", foto: "fotos/daniel.png", trofeus: [] },
-      { id: 8, nome: "Douglas", time: "Misto United", pos: "goleiro", jogos: 4, gols: 0, assists: 0, mercado: "R$ 17,0M", tag: "", foto: "fotos/douglas.png", trofeus: [] },
-      { id: 9, nome: "lz branco", time: "Misto United", pos: "ala", jogos: 1, gols: 2, assists: 0, mercado: "R$ 5,0M", tag: "", foto: "fotos/lzbranco.png", trofeus: [] },
-      { id: 10, nome: "samuel", time: "Misto United", pos: "fixo", jogos: 1, gols: 1, assists: 0, mercado: "R$ 5,0M", tag: "", foto: "fotos/samuel.png", trofeus: [] },
-
-      // Bacon City
-      { id: 11, nome: "Preto", time: "Bacon City", pos: "fixo", jogos: 6, gols: 12, assists: 12, mercado: "R$ 20,0M", tag: "⚽", foto: "fotos/preto.png", trofeus: ["🛡️ Melhor Fixo"] },
-      { id: 12, nome: "Varo", time: "Bacon City", pos: "ala", jogos: 6, gols: 11, assists: 13, mercado: "R$ 19,5M", tag: "🔄", foto: "fotos/varo.png", trofeus: ["🥫 Chef do Molho"] },
-      { id: 13, nome: "Vitor", time: "Bacon City", pos: "ala", jogos: 3, gols: 13, assists: 4, mercado: "R$ 18,5M", tag: "🔥", foto: "fotos/vitor.png", trofeus: ["⭐ MVP 6º Jogo"] },
-      { id: 14, nome: "Vitor Hugo", time: "Bacon City", pos: "ala", jogos: 5, gols: 18, assists: 1, mercado: "R$ 15,0M", tag: "", foto: "fotos/vitorhugo.png", trofeus: [] },
-      { id: 15, nome: "Matheus", time: "Bacon City", pos: "pivo", jogos: 5, gols: 14, assists: 3, mercado: "R$ 15,0M", tag: "📈", foto: "fotos/matheus.png", trofeus: [] },
-      { id: 16, nome: "Paulao", time: "Bacon City", pos: "pivo", jogos: 1, gols: 3, assists: 1, mercado: "R$ 14,0M", tag: "💥", foto: "fotos/paulao.png", trofeus: ["💥 Hat-trick no 6º Jogo"] },
-      { id: 17, nome: "Guilherme", time: "Bacon City", pos: "goleiro", jogos: 6, gols: 0, assists: 1, mercado: "R$ 23,0M", tag: "", foto: "fotos/guilherme.png", trofeus: ["🧤 Pão Selado"] },
-      { id: 18, nome: "Alejandro", time: "Bacon City", pos: "fixo", jogos: 3, gols: 0, assists: 1, mercado: "R$ 17,0M", tag: "", foto: "fotos/alejandro.png", trofeus: [] },
-      { id: 19, nome: "Davi", time: "Bacon City", pos: "fixo", jogos: 4, gols: 1, assists: 2, mercado: "R$ 10,0M", tag: "", foto: "fotos/davi.png", trofeus: [] },
-      { id: 20, nome: "Litle pepsi", time: "Bacon City", pos: "ala", jogos: 3, gols: 3, assists: 6, mercado: "R$ 8,0M", tag: "", foto: "fotos/litlepepsi.png", trofeus: [] },
-      { id: 21, nome: "murilao", time: "Bacon City", pos: "fixo", jogos: 1, gols: 0, assists: 0, mercado: "R$ 4,0M", tag: "", foto: "fotos/murilao.png", trofeus: [] }
-    ];
+  {
+    "id": 1,
+    "nome": "Luqueta pepeta",
+    "time": "Misto United",
+    "pos": "pivo",
+    "jogos": 5,
+    "gols": 27,
+    "assists": 14,
+    "mercado": "R$ 37,0M",
+    "tag": "👑",
+    "foto": "fotos/luqueta.png",
+    "trofeus": []
+  },
+  {
+    "id": 2,
+    "nome": "Edson",
+    "time": "Misto United",
+    "pos": "pivo",
+    "jogos": 5,
+    "gols": 22,
+    "assists": 7,
+    "mercado": "R$ 26,5M",
+    "tag": "⚡",
+    "foto": "fotos/edson.png",
+    "trofeus": []
+  },
+  {
+    "id": 3,
+    "nome": "Lucas broxa",
+    "time": "Misto United",
+    "pos": "fixo",
+    "jogos": 6,
+    "gols": 19,
+    "assists": 8,
+    "mercado": "R$ 24,0M",
+    "tag": "🎯",
+    "foto": "fotos/lucasbroxa.png",
+    "trofeus": []
+  },
+  {
+    "id": 4,
+    "nome": "Gontijo",
+    "time": "Misto United",
+    "pos": "ala",
+    "jogos": 6,
+    "gols": 16,
+    "assists": 10,
+    "mercado": "R$ 22,5M",
+    "tag": "🧠",
+    "foto": "fotos/gontijo.png",
+    "trofeus": []
+  },
+  {
+    "id": 5,
+    "nome": "Kauã Broxa",
+    "time": "Misto United",
+    "pos": "fixo",
+    "jogos": 2,
+    "gols": 5,
+    "assists": 2,
+    "mercado": "R$ 18,5M",
+    "tag": "📈",
+    "foto": "fotos/kaua.png",
+    "trofeus": []
+  },
+  {
+    "id": 6,
+    "nome": "Ian",
+    "time": "Misto United",
+    "pos": "ala",
+    "jogos": 6,
+    "gols": 10,
+    "assists": 3,
+    "mercado": "R$ 14,0M",
+    "tag": "",
+    "foto": "fotos/ian.png",
+    "trofeus": []
+  },
+  {
+    "id": 7,
+    "nome": "Daniel",
+    "time": "Misto United",
+    "pos": "goleiro",
+    "jogos": 4,
+    "gols": 2,
+    "assists": 1,
+    "mercado": "R$ 18,0M",
+    "tag": "🔥",
+    "foto": "fotos/daniel.png",
+    "trofeus": []
+  },
+  {
+    "id": 8,
+    "nome": "Douglas",
+    "time": "Misto United",
+    "pos": "goleiro",
+    "jogos": 5,
+    "gols": 0,
+    "assists": 0,
+    "mercado": "R$ 19,0M",
+    "tag": "",
+    "foto": "fotos/douglas.png",
+    "trofeus": []
+  },
+  {
+    "id": 9,
+    "nome": "lz branco",
+    "time": "Misto United",
+    "pos": "ala",
+    "jogos": 1,
+    "gols": 2,
+    "assists": 0,
+    "mercado": "R$ 5,0M",
+    "tag": "",
+    "foto": "fotos/lzbranco.png",
+    "trofeus": []
+  },
+  {
+    "id": 10,
+    "nome": "samuel",
+    "time": "Misto United",
+    "pos": "fixo",
+    "jogos": 1,
+    "gols": 1,
+    "assists": 0,
+    "mercado": "R$ 5,0M",
+    "tag": "",
+    "foto": "fotos/samuel.png",
+    "trofeus": []
+  },
+  {
+    "id": 11,
+    "nome": "Preto",
+    "time": "Bacon City",
+    "pos": "fixo",
+    "jogos": 6,
+    "gols": 13,
+    "assists": 12,
+    "mercado": "R$ 20,0M",
+    "tag": "⚽",
+    "foto": "fotos/preto.png",
+    "trofeus": []
+  },
+  {
+    "id": 12,
+    "nome": "Varo",
+    "time": "Bacon City",
+    "pos": "ala",
+    "jogos": 6,
+    "gols": 11,
+    "assists": 13,
+    "mercado": "R$ 19,5M",
+    "tag": "🔄",
+    "foto": "fotos/varo.png",
+    "trofeus": []
+  },
+  {
+    "id": 13,
+    "nome": "Vitor",
+    "time": "Bacon City",
+    "pos": "ala",
+    "jogos": 3,
+    "gols": 13,
+    "assists": 4,
+    "mercado": "R$ 18,5M",
+    "tag": "🔥",
+    "foto": "fotos/vitor.png",
+    "trofeus": [
+      "⭐ MVP 6º Jogo"
+    ]
+  },
+  {
+    "id": 14,
+    "nome": "Vitor Hugo",
+    "time": "Bacon City",
+    "pos": "ala",
+    "jogos": 1,
+    "gols": 8,
+    "assists": 0,
+    "mercado": "R$ 15,0M",
+    "tag": "",
+    "foto": "fotos/vitorhugo.png",
+    "trofeus": []
+  },
+  {
+    "id": 15,
+    "nome": "Matheus",
+    "time": "Bacon City",
+    "pos": "pivo",
+    "jogos": 4,
+    "gols": 14,
+    "assists": 3,
+    "mercado": "R$ 15,0M",
+    "tag": "📈",
+    "foto": "fotos/matheus.png",
+    "trofeus": []
+  },
+  {
+    "id": 16,
+    "nome": "Paulao",
+    "time": "Bacon City",
+    "pos": "pivo",
+    "jogos": 1,
+    "gols": 3,
+    "assists": 1,
+    "mercado": "R$ 14,0M",
+    "tag": "💥",
+    "foto": "fotos/paulao.png",
+    "trofeus": []
+  },
+  {
+    "id": 17,
+    "nome": "Guilherme",
+    "time": "Bacon City",
+    "pos": "goleiro",
+    "jogos": 5,
+    "gols": 0,
+    "assists": 1,
+    "mercado": "R$ 23,0M",
+    "tag": "",
+    "foto": "fotos/guilherme.png",
+    "trofeus": []
+  },
+  {
+    "id": 18,
+    "nome": "Alejandro",
+    "time": "Bacon City",
+    "pos": "fixo",
+    "jogos": 1,
+    "gols": 0,
+    "assists": 1,
+    "mercado": "R$ 17,0M",
+    "tag": "",
+    "foto": "fotos/alejandro.png",
+    "trofeus": []
+  },
+  {
+    "id": 19,
+    "nome": "Davi",
+    "time": "Bacon City",
+    "pos": "ala",
+    "jogos": 5,
+    "gols": 1,
+    "assists": 2,
+    "mercado": "R$ 10,0M",
+    "tag": "",
+    "foto": "fotos/davi.png",
+    "trofeus": []
+  },
+  {
+    "id": 20,
+    "nome": "Litle pepsi",
+    "time": "Bacon City",
+    "pos": "ala",
+    "jogos": 1,
+    "gols": 3,
+    "assists": 6,
+    "mercado": "R$ 8,0M",
+    "tag": "",
+    "foto": "fotos/litlepepsi.png",
+    "trofeus": []
+  },
+  {
+    "id": 21,
+    "nome": "murilao",
+    "time": "Bacon City",
+    "pos": "fixo",
+    "jogos": 1,
+    "gols": 0,
+    "assists": 0,
+    "mercado": "R$ 4,0M",
+    "tag": "",
+    "foto": "fotos/murilao.png",
+    "trofeus": []
+  }
+];
 
     let DEFAULT_MATCHES = [
+  {
+    "id": 1,
+    "data": "11/07/2026",
+    "score": "37 x 11",
+    "potm": "Luiz",
+    "potmNota": "⭐ Nota 9.4",
+    "potmFoto": "fotos/luiz.png",
+    "golsMisto": [
       {
-        id: 1,
-        data: "11/07/2026",
-        score: "37 x 11",
-        potm: "Luiz",
-        potmNota: "⭐ Nota 9.4",
-        potmFoto: "fotos/luiz.png",
-        golsMisto: [{ n: "Luqueta", g: 13 }, { n: "Edson", g: 9 }, { n: "Gontijo", g: 7 }, { n: "Lucas broxa", g: 4 }, { n: "Ian", g: 4 }],
-        golsBacon: [{ n: "Vitor", g: 8 }, { n: "Preto", g: 2 }, { n: "Matheus", g: 1 }]
+        "n": "Luqueta",
+        "g": 13
       },
       {
-        id: 2,
-        data: "24/07/2026",
-        score: "16 x 8",
-        potm: "Guilherme",
-        potmNota: "⭐ Nota 10.0",
-        potmFoto: "fotos/guilherme.png",
-        golsMisto: [{ n: "Luqueta", g: 6 }, { n: "Lucas broxa", g: 5 }, { n: "Daniel", g: 2 }, { n: "Edson", g: 1 }, { n: "Gontijo", g: 1 }],
-        golsBacon: [{ n: "Matheus", g: 4 }, { n: "Davi", g: 1 }, { n: "Preto", g: 1 }, { n: "Varo", g: 1 }, { n: "Vitor", g: 1 }]
+        "n": "Edson",
+        "g": 9
       },
       {
-        id: 3,
-        data: "28/07/2026",
-        score: "15 x 10",
-        potm: "Vitor Hugo",
-        potmNota: "8 Gols",
-        potmFoto: "fotos/vitorhugo.png",
-        golsMisto: [{ n: "Luqueta pepeta", g: 4 }, { n: "Gontijo", g: 2 }, { n: "Ian", g: 2 }, { n: "Lucas broxa", g: 2 }],
-        golsBacon: [{ n: "Vitor Hugo", g: 8 }, { n: "Matheus", g: 3 }, { n: "Preto", g: 2 }, { n: "Varo", g: 2 }]
+        "n": "Gontijo",
+        "g": 7
       },
       {
-        id: 4,
-        data: "01/08/2026",
-        score: "13 x 3",
-        potm: "Kauã",
-        potmNota: "5G + 1A",
-        potmFoto: "fotos/kaua.png",
-        golsMisto: [{ n: "Kauã broxa", g: 4 }, { n: "Edson", g: 3 }, { n: "Lucas broxa", g: 3 }, { n: "Ian", g: 2 }, { n: "Gontijo", g: 1 }],
-        golsBacon: [{ n: "Varo", g: 2 }, { n: "Preto", g: 1 }]
+        "n": "Lucas broxa",
+        "g": 4
       },
       {
-        id: 5,
-        data: "08/08/2026",
-        score: "18 x 17",
-        potm: "Gontijo",
-        potmNota: "4G + 3A",
-        potmFoto: "fotos/gontijo.png",
-        golsMisto: [{ n: "Edson", g: 6 }, { n: "Gontijo", g: 4 }, { n: "Lucas broxa", g: 2 }, { n: "Ian", g: 2 }, { n: "lz branco", g: 2 }, { n: "samuel", g: 1 }],
-        golsBacon: [{ n: "Matheus", g: 6 }, { n: "Preto", g: 5 }, { n: "Varo", g: 4 }, { n: "Litle pepsi", g: 3 }]
-      },
-      {
-        id: 6,
-        data: "15/08/2026",
-        score: "12 x 10",
-        potm: "Vitor (Bacon)",
-        potmNota: "4G + 3A (MVP)",
-        potmFoto: "fotos/vitor.png",
-        golsMisto: [{ n: "Luqueta pepeta", g: 4 }, { n: "Lucas broxa", g: 3 }, { n: "Edson", g: 3 }, { n: "Gontijo", g: 1 }, { n: "Kauã broxa", g: 1 }],
-        golsBacon: [{ n: "Vitor", g: 4 }, { n: "Paulao", g: 3 }, { n: "Varo", g: 2 }, { n: "Preto", g: 1 }]
+        "n": "Ian",
+        "g": 4
       }
-    ];
+    ],
+    "golsBacon": [
+      {
+        "n": "Vitor",
+        "g": 8
+      },
+      {
+        "n": "Preto",
+        "g": 2
+      },
+      {
+        "n": "Matheus",
+        "g": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "data": "24/07/2026",
+    "score": "16 x 8",
+    "potm": "Guilherme",
+    "potmNota": "⭐ Nota 10.0",
+    "potmFoto": "fotos/guilherme.png",
+    "golsMisto": [
+      {
+        "n": "Luqueta",
+        "g": 6
+      },
+      {
+        "n": "Lucas broxa",
+        "g": 5
+      },
+      {
+        "n": "Daniel",
+        "g": 2
+      },
+      {
+        "n": "Edson",
+        "g": 1
+      },
+      {
+        "n": "Gontijo",
+        "g": 1
+      }
+    ],
+    "golsBacon": [
+      {
+        "n": "Matheus",
+        "g": 4
+      },
+      {
+        "n": "Davi",
+        "g": 1
+      },
+      {
+        "n": "Preto",
+        "g": 1
+      },
+      {
+        "n": "Varo",
+        "g": 1
+      },
+      {
+        "n": "Vitor",
+        "g": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "data": "28/07/2026",
+    "score": "15 x 10",
+    "potm": "Vitor Hugo",
+    "potmNota": "8 Gols",
+    "potmFoto": "fotos/vitorhugo.png",
+    "golsMisto": [
+      {
+        "n": "Luqueta pepeta",
+        "g": 4
+      },
+      {
+        "n": "Gontijo",
+        "g": 2
+      },
+      {
+        "n": "Ian",
+        "g": 2
+      },
+      {
+        "n": "Lucas broxa",
+        "g": 2
+      }
+    ],
+    "golsBacon": [
+      {
+        "n": "Vitor Hugo",
+        "g": 8
+      },
+      {
+        "n": "Matheus",
+        "g": 3
+      },
+      {
+        "n": "Preto",
+        "g": 2
+      },
+      {
+        "n": "Varo",
+        "g": 2
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "data": "01/08/2026",
+    "score": "13 x 3",
+    "potm": "Kauã",
+    "potmNota": "5G + 1A",
+    "potmFoto": "fotos/kaua.png",
+    "golsMisto": [
+      {
+        "n": "Kauã broxa",
+        "g": 4
+      },
+      {
+        "n": "Edson",
+        "g": 3
+      },
+      {
+        "n": "Lucas broxa",
+        "g": 3
+      },
+      {
+        "n": "Ian",
+        "g": 2
+      },
+      {
+        "n": "Gontijo",
+        "g": 1
+      }
+    ],
+    "golsBacon": [
+      {
+        "n": "Varo",
+        "g": 2
+      },
+      {
+        "n": "Preto",
+        "g": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "data": "08/08/2026",
+    "score": "18 x 17",
+    "potm": "Gontijo",
+    "potmNota": "4G + 3A",
+    "potmFoto": "fotos/gontijo.png",
+    "golsMisto": [
+      {
+        "n": "Edson",
+        "g": 6
+      },
+      {
+        "n": "Gontijo",
+        "g": 4
+      },
+      {
+        "n": "Lucas broxa",
+        "g": 2
+      },
+      {
+        "n": "Ian",
+        "g": 2
+      },
+      {
+        "n": "lz branco",
+        "g": 2
+      },
+      {
+        "n": "samuel",
+        "g": 1
+      }
+    ],
+    "golsBacon": [
+      {
+        "n": "Matheus",
+        "g": 6
+      },
+      {
+        "n": "Preto",
+        "g": 5
+      },
+      {
+        "n": "Varo",
+        "g": 4
+      },
+      {
+        "n": "Litle pepsi",
+        "g": 3
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "data": "15/08/2026",
+    "score": "12 x 10",
+    "potm": "Vitor (Bacon)",
+    "potmNota": "4G + 3A (MVP)",
+    "potmFoto": "fotos/vitor.png",
+    "golsMisto": [
+      {
+        "n": "Luqueta pepeta",
+        "g": 4
+      },
+      {
+        "n": "Lucas broxa",
+        "g": 3
+      },
+      {
+        "n": "Edson",
+        "g": 3
+      },
+      {
+        "n": "Gontijo",
+        "g": 1
+      },
+      {
+        "n": "Kauã broxa",
+        "g": 1
+      }
+    ],
+    "golsBacon": [
+      {
+        "n": "Vitor",
+        "g": 4
+      },
+      {
+        "n": "Paulao",
+        "g": 3
+      },
+      {
+        "n": "Varo",
+        "g": 2
+      },
+      {
+        "n": "Preto",
+        "g": 1
+      }
+    ]
+  }
+];
 
     let DEFAULT_NEXT_MATCH = {
-      teams: "Misto United vs Bacon City",
-      date: "Panela Stadium • Sábado às 16:00 (7º Jogo)",
-      roster: "Misto United: Luqueta, Lucas broxa, Edson, Gontijo, Kauã, Douglas.\nBacon City: Vitor, Paulao, Varo, Preto, Guilherme."
-    };
+  "teams": "Misto United vs Bacon City",
+  "date": "Panela Stadium • Sábado às 16:00 (7º Jogo)",
+  "roster": "Misto United: Luqueta, Lucas broxa, Edson, Gontijo, Kauã, Douglas.\nBacon City: Vitor, Paulao, Varo, Preto, Guilherme."
+};
     /* BASE_DE_DADOS_OFICIAL_END */
 
     let playersData = JSON.parse(localStorage.getItem('cmq_p_v9')) || DEFAULT_PLAYERS;
@@ -2017,5 +5410,7 @@
     // INIT
     renderApp();
   </script>
-</body>
+
+
+</body></html>
 </html>
