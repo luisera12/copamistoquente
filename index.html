@@ -3,36 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>COPA MISTO QUENTE | A Gala do Pão</title>
+  <title>COPA MISTO QUENTE | A Gala do Pão &amp; Hall da Fama</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Teko:wght@500;600;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
-      --bg-dark: #08080C;
-      --bg-card: #12121A;
-      --bg-card-hover: #1A1A26;
-      --primary: #FF5500;
-      --primary-glow: rgba(255, 85, 0, 0.45);
-      --secondary: #FFAA00;
-      --gold: #FFD700;
-      --gold-glow: rgba(255, 215, 0, 0.4);
-      --misto-gold: #E5B824;
+      --bg-dark: #0B0B0E;
+      --bg-card: #16161B;
+      --bg-card-hover: #1E1E26;
+      --bg-inset: #0F0F13;
+      --primary: #D6540E;
+      --primary-hover: #B8460B;
+      --secondary: #D99A2B;
+      --gold: #F5BD02;
+      --misto-gold: #E5A93C;
       --bacon-red: #E63946;
-      --money-green: #00E676;
-      --blue-accent: #2979FF;
-      --border-color: #262638;
-      --text-white: #FFFFFF;
-      --text-muted: #9E9EB8;
+      --money-green: #2FAE66;
+      --blue-accent: #2D6FD1;
+      --purple-epic: #9d4edd;
+      --purple-legend: #7b2cbf;
+      --orange-mythic: #ff6d00;
+      --cyan-record: #00f5d4;
+      --border-color: #26262E;
+      --border-color-strong: #383846;
+      --text-white: #F1F1F3;
+      --text-muted: #8B8B96;
       --font-display: 'Teko', sans-serif;
-      --font-body: 'Montserrat', sans-serif;
-      --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'Roboto Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --transition: 0.2s ease;
     }
 
     * {
@@ -50,19 +58,23 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
-      padding-bottom: 75px;
+      padding-bottom: 74px;
     }
 
-    @media (min-width: 851px) {
+    @media (min-width: 901px) {
       body { padding-bottom: 0; }
     }
 
     a { text-decoration: none; color: inherit; }
     button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+    button:focus-visible, .nav-link:focus-visible, .filter-btn:focus-visible, select:focus-visible, input:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
 
     .container {
-      width: 92%;
-      max-width: 1200px;
+      width: 94%;
+      max-width: 1240px;
       margin: 0 auto;
     }
 
@@ -71,8 +83,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(8, 8, 12, 0.95);
-      backdrop-filter: blur(16px);
+      background: rgba(11, 11, 14, 0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-color);
       padding: 10px 0;
     }
@@ -96,74 +108,82 @@
     .brand-logo-icon {
       width: 38px;
       height: 38px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #FFAA00 0%, #FF5500 70%, #000 100%);
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color-strong);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 0 12px var(--primary-glow);
+      overflow: hidden;
+      flex-shrink: 0;
     }
 
-    .brand-logo span { color: var(--secondary); }
+    .brand-logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-logo span { color: var(--primary); }
 
     .nav-menu {
       display: none;
-      gap: 8px;
+      gap: 2px;
       list-style: none;
+      flex-wrap: wrap;
     }
 
-    @media (min-width: 851px) {
+    @media (min-width: 901px) {
       .nav-menu { display: flex; }
-      .brand-logo { font-size: 2.2rem; }
-      .brand-logo-icon { width: 44px; height: 44px; font-size: 1.4rem; }
+      .brand-logo { font-size: 2.1rem; }
+      .brand-logo-icon { width: 42px; height: 42px; }
     }
 
     .nav-link {
-      font-size: 0.82rem;
+      font-size: 0.76rem;
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.4px;
       color: var(--text-muted);
-      padding: 8px 12px;
-      border-radius: 6px;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
       transition: var(--transition);
+      border-bottom: 2px solid transparent;
     }
 
-    .nav-link:hover, .nav-link.active-link {
+    .nav-link:hover { color: var(--text-white); }
+    .nav-link.active-link {
       color: var(--text-white);
-      background: rgba(255, 85, 0, 0.15);
-      box-shadow: inset 0 0 0 1px var(--primary);
+      border-bottom: 2px solid var(--primary);
     }
 
     .btn-insta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 50px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color-strong);
+      color: var(--text-white);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
       font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      box-shadow: 0 4px 15px rgba(220, 39, 67, 0.35);
       transition: var(--transition);
     }
+
+    .btn-insta:hover { border-color: var(--primary); color: var(--primary); }
+    .btn-insta i { color: #E1306C; }
 
     /* SECTIONS */
     .spa-section {
       display: none;
-      animation: fadeIn 0.3s var(--transition);
       padding-bottom: 50px;
     }
 
     .spa-section.active { display: block; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     .section-header {
       text-align: center;
@@ -182,36 +202,36 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 8vw, 3.8rem);
+      font-size: clamp(2.2rem, 7vw, 3.6rem);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       line-height: 1;
     }
 
     /* HERO */
     .hero {
       position: relative;
-      min-height: 70vh;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(to bottom, rgba(8,8,12,0.8), var(--bg-dark)),
-                  radial-gradient(circle at center, rgba(255,85,0,0.15), transparent 70%),
+      background: linear-gradient(to bottom, rgba(11,11,14,0.85), var(--bg-dark) 85%),
                   url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
-      padding: 40px 0 80px;
+      padding: 40px 0 76px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 85, 0, 0.15);
-      border: 1px solid var(--primary);
-      color: var(--primary);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color-strong);
+      color: var(--secondary);
       padding: 5px 14px;
-      border-radius: 50px;
-      font-size: 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -220,66 +240,82 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 11vw, 6.5rem);
-      line-height: 0.92;
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      line-height: 0.94;
       text-transform: uppercase;
       margin-bottom: 16px;
     }
 
-    .hero-title span {
-      color: var(--primary);
-      text-shadow: 0 0 20px var(--primary-glow);
-    }
+    .hero-title span { color: var(--primary); }
 
     .hero-subtitle {
-      max-width: 680px;
+      max-width: 640px;
       margin: 0 auto 25px;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .hero-actions {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       margin-bottom: 30px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #D44200);
+      background: var(--primary);
       color: #fff;
-      padding: 12px 22px;
-      border-radius: 8px;
+      padding: 11px 22px;
+      border-radius: var(--radius-sm);
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 0.85rem;
-      box-shadow: 0 4px 15px rgba(255, 85, 0, 0.4);
+      font-size: 0.82rem;
+      letter-spacing: 0.3px;
       transition: var(--transition);
+      border: 1px solid var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(214, 84, 14, 0.4);
     }
 
     .btn-outline {
       background: transparent;
-      color: #fff;
-      border: 1px solid var(--border-color);
-      padding: 12px 22px;
-      border-radius: 8px;
+      color: var(--text-white);
+      border: 1px solid var(--border-color-strong);
+      padding: 11px 22px;
+      border-radius: var(--radius-sm);
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.3px;
       transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* CARD PRÓXIMO JOGO */
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
     .next-match-banner {
-      background: linear-gradient(135deg, rgba(229,184,36,0.15), rgba(230,57,70,0.15));
-      border: 2px solid var(--gold);
-      border-radius: 14px;
-      padding: 18px;
-      max-width: 680px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      max-width: 640px;
       margin: 0 auto;
-      box-shadow: 0 10px 30px var(--gold-glow);
+      box-shadow: 0 0 25px rgba(245, 189, 2, 0.15);
     }
 
     .next-match-title {
@@ -292,7 +328,7 @@
 
     .next-match-teams {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin: 4px 0;
     }
 
@@ -300,8 +336,8 @@
     .quick-stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: -40px;
+      gap: 14px;
+      margin-top: -36px;
       position: relative;
       z-index: 10;
     }
@@ -309,41 +345,49 @@
     .quick-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 18px;
+      border-radius: var(--radius-md);
+      padding: 16px;
       display: flex;
       align-items: center;
-      gap: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      gap: 14px;
+      transition: var(--transition);
+    }
+
+    .quick-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-color-strong);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.5);
     }
 
     .quick-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      background: rgba(255, 85, 0, 0.12);
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-inset);
+      border: 1px solid var(--border-color-strong);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: var(--primary);
+      flex-shrink: 0;
     }
 
     .quick-info h4 {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       text-transform: uppercase;
       color: var(--text-muted);
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
     }
 
-    .quick-info p { font-size: 1.15rem; font-weight: 700; }
+    .quick-info p { font-size: 1.1rem; font-weight: 700; }
     .quick-info span { font-size: 0.75rem; color: var(--secondary); }
 
     /* FILTROS */
     .filter-tabs {
       display: flex;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
       margin-bottom: 24px;
     }
@@ -352,9 +396,9 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 0.8rem;
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       cursor: pointer;
@@ -367,125 +411,586 @@
       border-color: var(--primary);
     }
 
-    /* ELENCOS */
-    .teams-grid {
+    /* ============================================================
+       UIVERSE 3D FLIP CARD EFFECT (ADAPTADO PARA JOGADORES E GALA)
+    ============================================================ */
+    .flip-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
       gap: 20px;
+      justify-items: center;
     }
 
-    .team-card {
-      background: var(--bg-card);
-      border: 2px solid var(--border-color);
-      border-radius: 14px;
-      padding: 22px 18px;
+    .uiverse-card {
+      overflow: visible;
+      width: 210px;
+      height: 290px;
+      perspective: 1000px;
+      cursor: pointer;
     }
 
-    .team-card.misto { border-color: rgba(229, 184, 36, 0.4); }
-    .team-card.bacon { border-color: rgba(230, 57, 70, 0.4); }
+    .uiverse-card .content {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 500ms cubic-bezier(0.4, 0.2, 0.2, 1);
+      box-shadow: 0px 8px 24px rgba(0,0,0,0.6);
+      border-radius: 12px;
+      position: relative;
+    }
 
-    .team-title { font-family: var(--font-display); font-size: 2.2rem; text-align: center; }
-    .team-captain { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px; }
+    .uiverse-card.flipped .content {
+      transform: rotateY(180deg);
+    }
 
-    .roster-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-
-    .roster-item {
-      background: var(--bg-dark);
+    .uiverse-card .front, .uiverse-card .back {
+      background-color: var(--bg-card);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
       border: 1px solid var(--border-color);
+    }
+
+    /* CARD BACK (Verso com animação de luz rotativa) */
+    .uiverse-card .back {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      transform: rotateY(0deg);
+    }
+
+    .uiverse-card .back::before {
+      position: absolute;
+      content: ' ';
+      display: block;
+      width: 160px;
+      height: 180%;
+      background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--primary), transparent);
+      animation: rotation_481 4500ms infinite linear;
+    }
+
+    .uiverse-card.misto-theme .back::before {
+      background: linear-gradient(90deg, transparent, var(--gold), #fff, var(--gold), transparent);
+    }
+
+    .uiverse-card.bacon-theme .back::before {
+      background: linear-gradient(90deg, transparent, var(--bacon-red), #ff758c, var(--bacon-red), transparent);
+    }
+
+    .uiverse-card .back-content {
+      position: absolute;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      background-color: var(--bg-inset);
       border-radius: 10px;
-      padding: 8px 12px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    @keyframes rotation_481 {
+      0% { transform: rotateZ(0deg); }
+      100% { transform: rotateZ(360deg); }
+    }
+
+    /* CARD FRONT (Frente com círculos de blur neon fluídos) */
+    .uiverse-card .front {
+      transform: rotateY(180deg);
+      color: white;
+      background: #111116;
+    }
+
+    .uiverse-card .front .front-content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 2;
+    }
+
+    .uiverse-card .front-content .badge {
+      background-color: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 3px 10px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+      width: fit-content;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .uiverse-card .description {
+      box-shadow: 0px 0px 14px 4px rgba(0,0,0,0.7);
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(15, 15, 19, 0.88);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      border: 1px solid var(--border-color-strong);
+    }
+
+    .uiverse-card .card-footer {
+      color: var(--text-muted);
+      margin-top: 5px;
+      font-size: 0.72rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: var(--transition);
+      font-weight: 700;
     }
 
-    .roster-item:hover { border-color: var(--primary); background: var(--bg-card-hover); }
-    .roster-player-info { display: flex; align-items: center; gap: 10px; }
+    .uiverse-card .front .img-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
 
-    /* FOTOS DOS JOGADORES */
+    .uiverse-card .circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: var(--secondary);
+      position: absolute;
+      filter: blur(18px);
+      animation: floating 2600ms infinite linear;
+      opacity: 0.7;
+    }
+
+    .uiverse-card #bottom {
+      background-color: var(--primary);
+      left: 30px;
+      top: 20px;
+      width: 140px;
+      height: 140px;
+      animation-delay: -800ms;
+    }
+
+    .uiverse-card #right {
+      background-color: #e63946;
+      left: 140px;
+      top: -40px;
+      width: 60px;
+      height: 60px;
+      animation-delay: -1800ms;
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* FOTO AVATAR */
     .avatar-wrap {
-      position: relative;
       width: 46px;
       height: 46px;
       border-radius: 50%;
       overflow: hidden;
-      background: #181824;
+      background: #1B1B21;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid var(--border-color);
+      border: 2px solid var(--border-color-strong);
       flex-shrink: 0;
     }
 
-    .misto .avatar-wrap { border-color: var(--misto-gold); box-shadow: 0 0 10px rgba(229,184,36,0.3); }
-    .bacon .avatar-wrap { border-color: var(--bacon-red); box-shadow: 0 0 10px rgba(230,57,70,0.3); }
-
-    .player-thumb-img {
+    .avatar-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    .position-pill {
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 2px 6px;
+    /* ============================================================
+       HALL DA FAMA & RECORDES (ESTILO BATALHA DA ALDEIA / BDA)
+    ============================================================ */
+    .bda-records-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .bda-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      padding: 18px;
+      background: linear-gradient(135deg, #181124 0%, #100b1a 60%, #0d0914 100%);
+      border: 1px solid #4a287a;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      overflow: hidden;
+    }
+
+    .bda-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(123, 44, 191, 0.35);
+      border-color: #8a3ffc;
+    }
+
+    .bda-card.tier-supremo {
+      background: linear-gradient(135deg, #2b1704 0%, #1c0e02 60%, #120901 100%);
+      border-color: #d97706;
+    }
+    .bda-card.tier-supremo:hover {
+      box-shadow: 0 12px 30px rgba(217, 119, 6, 0.35);
+      border-color: var(--gold);
+    }
+
+    .bda-card.tier-raro {
+      background: linear-gradient(135deg, #0f201a 0%, #0b1713 60%, #08100d 100%);
+      border-color: #2fae66;
+    }
+    .bda-card.tier-raro:hover {
+      box-shadow: 0 12px 30px rgba(47, 174, 102, 0.32);
+      border-color: #6ee7b7;
+    }
+
+    .bda-card.tier-lendario {
+      background: linear-gradient(135deg, #17102a 0%, #100b1d 60%, #0a0712 100%);
+      border-color: #8a3ffc;
+    }
+    .bda-card.tier-lendario:hover {
+      box-shadow: 0 12px 30px rgba(138, 63, 252, 0.34);
+      border-color: #b48aff;
+    }
+
+    .bda-card.tier-mitico {
+      background: linear-gradient(135deg, #20172e 0%, #130e1d 60%, #0b0810 100%);
+      border-color: #c084fc;
+    }
+    .bda-card.tier-mitico:hover {
+      box-shadow: 0 12px 30px rgba(192, 132, 252, 0.38);
+      border-color: #e9d5ff;
+    }
+
+    .bda-card.tier-imortal {
+      background: linear-gradient(135deg, #2b1704 0%, #201004 45%, #110801 100%);
+      border-color: var(--gold);
+      box-shadow: 0 0 24px rgba(245, 189, 2, 0.14);
+    }
+    .bda-card.tier-imortal:hover {
+      box-shadow: 0 0 38px rgba(245, 189, 2, 0.35);
+      border-color: #fff1a8;
+    }
+
+    .bda-card.tier-epico {
+      background: linear-gradient(135deg, #29080b 0%, #1a0507 60%, #100304 100%);
+      border-color: #b91c1c;
+    }
+    .bda-card.tier-epico:hover {
+      box-shadow: 0 12px 30px rgba(220, 38, 38, 0.35);
+      border-color: #ef4444;
+    }
+
+    .bda-avatar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bda-avatar-box {
+      width: 74px;
+      height: 74px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      background: #101014;
+      box-shadow: 0 0 16px rgba(245, 189, 2, 0.3);
+    }
+
+    .bda-avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bda-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .bda-rank-pill {
+      background: #000;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 0.72rem;
+      padding: 2px 8px;
       border-radius: 4px;
-      text-transform: uppercase;
-      background: rgba(255,255,255,0.08);
-      color: var(--text-muted);
+      font-family: var(--font-mono);
     }
 
-    /* SÚMULAS & JOGOS */
-    .matches-list { display: flex; flex-direction: column; gap: 16px; }
+    .bda-tier-pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tier-supremo .bda-tier-pill { background: #b45309; color: #fff; box-shadow: 0 0 10px rgba(180, 83, 9, 0.6); }
+    .tier-lendario .bda-tier-pill { background: #6d28d9; color: #fff; box-shadow: 0 0 10px rgba(109, 40, 217, 0.6); }
+    .tier-epico .bda-tier-pill { background: #b91c1c; color: #fff; box-shadow: 0 0 10px rgba(185, 28, 28, 0.6); }
+
+    .bda-detentor-badge {
+      background: rgba(245, 189, 2, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .bda-name {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 6px;
+      text-transform: capitalize;
+    }
+
+    .bda-records-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .bda-chip {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: var(--text-white);
+      font-family: var(--font-mono);
+    }
+
+    .bda-progress-wrap {
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      height: 7px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-top: 4px;
+    }
+
+    .bda-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+
+    /* ============================================================
+       BADGES / CONQUISTAS COM CORES E BRILHOS NEON DIFERENCIADOS
+    ============================================================ */
+    .conquistas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge-conquista {
+      position: relative;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: default;
+      border: 1px solid transparent;
+    }
+
+    .badge-conquista:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    /* Cores e Brilhos por Categoria */
+    .badge-gold {
+      background: rgba(245, 189, 2, 0.12);
+      border-color: var(--gold);
+      color: var(--gold);
+      box-shadow: 0 0 10px rgba(245, 189, 2, 0.25);
+    }
+    .badge-gold:hover {
+      box-shadow: 0 0 20px rgba(245, 189, 2, 0.7);
+      background: var(--gold);
+      color: #000;
+    }
+
+    .badge-legend {
+      background: rgba(157, 78, 221, 0.15);
+      border-color: var(--purple-epic);
+      color: #d8b4fe;
+      box-shadow: 0 0 10px rgba(157, 78, 221, 0.25);
+    }
+    .badge-legend:hover {
+      box-shadow: 0 0 20px rgba(157, 78, 221, 0.75);
+      background: var(--purple-epic);
+      color: #fff;
+    }
+
+    .badge-fire {
+      background: rgba(230, 57, 70, 0.15);
+      border-color: var(--bacon-red);
+      color: #ff858d;
+      box-shadow: 0 0 10px rgba(230, 57, 70, 0.25);
+    }
+    .badge-fire:hover {
+      box-shadow: 0 0 20px rgba(230, 57, 70, 0.75);
+      background: var(--bacon-red);
+      color: #fff;
+    }
+
+    .badge-emerald {
+      background: rgba(47, 174, 102, 0.15);
+      border-color: var(--money-green);
+      color: #6ee7b7;
+      box-shadow: 0 0 10px rgba(47, 174, 102, 0.25);
+    }
+    .badge-emerald:hover {
+      box-shadow: 0 0 20px rgba(47, 174, 102, 0.75);
+      background: var(--money-green);
+      color: #042111;
+    }
+
+    .badge-cyan {
+      background: rgba(0, 245, 212, 0.12);
+      border-color: var(--cyan-record);
+      color: var(--cyan-record);
+      box-shadow: 0 0 10px rgba(0, 245, 212, 0.25);
+    }
+    .badge-cyan:hover {
+      box-shadow: 0 0 20px rgba(0, 245, 212, 0.75);
+      background: var(--cyan-record);
+      color: #000;
+    }
+
+    /* SÚMULAS & PLACARES */
+    .matches-list { display: flex; flex-direction: column; gap: 14px; }
 
     .match-row {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 14px;
+      border-radius: var(--radius-md);
       overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .match-row:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-color-strong);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
 
     .match-top {
-      background: rgba(255, 255, 255, 0.02);
-      padding: 10px 16px;
+      background: var(--bg-inset);
+      padding: 9px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       border-bottom: 1px solid var(--border-color);
     }
 
     .match-scoreboard {
-      padding: 18px 14px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-around;
-      gap: 10px;
-      text-align: center;
+      gap: 8px;
+      padding: 20px 14px;
     }
 
-    .team-box-name { font-family: var(--font-display); font-size: 1.8rem; line-height: 1; }
-    .score-display {
+    .score-team-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .score-team-block.is-winner .score-num { color: var(--gold); }
+    .score-team-block.is-loser .score-num { color: var(--text-muted); }
+    .score-team-block.is-loser .team-box-name { opacity: 0.55; }
+
+    .team-box-name {
       font-family: var(--font-display);
+      font-size: 1.4rem;
+      line-height: 1;
+      letter-spacing: 0.3px;
+    }
+
+    .score-num {
+      font-family: var(--font-mono);
       font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 2px;
-      text-shadow: 0 0 15px var(--primary-glow);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .winner-chip {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #000;
+      background: var(--gold);
+      padding: 2px 8px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      box-shadow: 0 0 10px rgba(245, 189, 2, 0.4);
     }
 
     .match-potm {
-      background: rgba(255, 215, 0, 0.06);
+      background: var(--bg-inset);
       border-top: 1px solid var(--border-color);
       padding: 10px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
       font-size: 0.8rem;
       color: var(--gold);
     }
@@ -503,13 +1008,13 @@
 
     .summary-team-block {
       background: var(--bg-card);
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       padding: 10px 12px;
       border: 1px solid var(--border-color);
     }
 
     .summary-team-title {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
       margin-bottom: 6px;
@@ -521,71 +1026,23 @@
     .goals-badges-list { display: flex; flex-wrap: wrap; gap: 6px; }
 
     .goal-badge {
-      background: rgba(255, 85, 0, 0.12);
-      border: 1px solid var(--primary);
+      background: var(--bg-inset);
+      border: 1px solid var(--border-color-strong);
       color: #fff;
       font-size: 0.75rem;
       font-weight: 700;
       padding: 3px 8px;
-      border-radius: 6px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
     }
 
-    /* POTM GALLERY */
-    .potm-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      margin-bottom: 35px;
-    }
-
-    .potm-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 16px 12px;
-      text-align: center;
-      transition: var(--transition);
-    }
-
-    .potm-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-
-    .potm-avatar-wrap {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      margin: 0 auto 8px;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 15px var(--gold-glow);
-      overflow: hidden;
-      background: #181824;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .potm-tag {
-      font-size: 0.65rem;
-      font-weight: 800;
-      background: var(--primary);
-      color: #fff;
-      padding: 2px 8px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-
-    .potm-name { font-family: var(--font-display); font-size: 1.7rem; line-height: 1; margin-bottom: 2px; }
-    .potm-note { font-size: 1rem; font-weight: 800; color: var(--gold); margin-bottom: 4px; }
-
-    /* STATS */
+    /* TABELA DE STATS */
     .stats-table-wrapper {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 14px;
+      border-radius: var(--radius-md);
       overflow-x: auto;
       margin-bottom: 30px;
-      -webkit-overflow-scrolling: touch;
     }
 
     table {
@@ -593,161 +1050,38 @@
       border-collapse: collapse;
       text-align: left;
       font-size: 0.85rem;
-      min-width: 600px;
+      min-width: 620px;
     }
 
     th {
-      background: rgba(255, 255, 255, 0.02);
-      padding: 12px 14px;
+      background: var(--bg-inset);
+      padding: 11px 14px;
       color: var(--text-muted);
       text-transform: uppercase;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.4px;
       border-bottom: 1px solid var(--border-color);
     }
 
-    td { padding: 10px 14px; border-bottom: 1px solid var(--border-color); }
-    .rank-pill { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; }
-
-    /* COMPARADOR X1 */
-    .compare-card {
-      background: var(--bg-card);
-      border: 2px solid var(--blue-accent);
-      border-radius: 16px;
-      padding: 24px 18px;
-      margin: 20px 0;
-      box-shadow: 0 10px 30px rgba(41, 121, 255, 0.2);
-    }
-
-    .compare-head-grid {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-
-    .compare-fighter-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 8px;
-    }
-
-    .compare-avatar-large {
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    }
-
-    .compare-select {
-      background: var(--bg-dark);
-      color: #fff;
-      border: 1px solid var(--border-color);
-      padding: 8px 10px;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-family: inherit;
-      width: 100%;
-    }
-
-    .vs-emblem {
-      font-family: var(--font-display);
-      font-size: 2.4rem;
-      color: var(--primary);
-      font-weight: 700;
-      text-shadow: 0 0 15px var(--primary-glow);
-    }
-
-    .compare-chart-row {
-      margin-bottom: 16px;
-      background: var(--bg-dark);
+    td {
       padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
     }
 
-    .compare-chart-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
+    td:nth-child(2) { font-family: var(--font-body); }
+    tr:hover td { background: var(--bg-card-hover); }
 
-    .compare-bars-dual {
-      display: flex;
-      height: 14px;
-      background: #181824;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .c-bar-left {
-      background: linear-gradient(90deg, #B8860B, var(--misto-gold));
-      height: 100%;
-      transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .c-bar-right {
-      background: linear-gradient(90deg, var(--bacon-red), #8B0000);
-      height: 100%;
-      transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* MERCADO DA BOLA */
-    .market-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-
-    .market-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 12px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .market-val { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--money-green); }
-
-    /* A GALA DO PÃO */
-    .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .award-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 20px 16px;
-      text-align: center;
-    }
-
-    .award-icon { font-size: 2.4rem; margin-bottom: 10px; }
-    .award-name { font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 4px; line-height: 1; }
-    .award-detail { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
-
-    /* MODAL PERFIL */
+    /* MODAIS */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.92);
-      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(5px);
       display: none;
       align-items: center;
       justify-content: center;
@@ -759,13 +1093,13 @@
 
     .modal-content {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
+      border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-md);
       width: 100%;
-      max-width: 440px;
+      max-width: 480px;
       max-height: 90vh;
       overflow-y: auto;
-      padding: 24px 18px;
+      padding: 24px 20px;
       position: relative;
       text-align: center;
     }
@@ -778,6 +1112,7 @@
       color: var(--text-muted);
       font-size: 1.8rem;
       cursor: pointer;
+      line-height: 1;
     }
 
     .modal-avatar-box {
@@ -793,114 +1128,67 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--primary);
-      box-shadow: 0 0 20px var(--primary-glow);
-      display: block;
     }
 
     .trophy-hall-box {
-      background: rgba(255, 215, 0, 0.05);
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      border-radius: 12px;
-      padding: 12px;
-      margin: 12px 0 16px;
+      background: var(--bg-inset);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin: 14px 0;
       text-align: left;
     }
 
     .trophy-hall-title {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 800;
       text-transform: uppercase;
       color: var(--gold);
-      letter-spacing: 1px;
-      margin-bottom: 8px;
+      letter-spacing: 0.6px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .modal-badges-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .badge-medal-tag {
-      background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 85, 0, 0.15));
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 5px 10px;
-      border-radius: 50px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      box-shadow: 0 0 10px rgba(255,215,0,0.2);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .badge-record-tag {
-      background: linear-gradient(135deg, rgba(41, 121, 255, 0.15), rgba(0, 230, 118, 0.15));
-      border: 1px solid var(--blue-accent);
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 50px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
     }
 
     .modal-stats-grid-adv {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 6px;
-      background: var(--bg-dark);
+      background: var(--bg-inset);
       padding: 12px 6px;
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       margin-bottom: 16px;
+      border: 1px solid var(--border-color);
     }
 
     .m-stat h5 { font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; }
-    .m-stat p { font-family: var(--font-display); font-size: 1.6rem; color: var(--primary); }
+    .m-stat p { font-family: var(--font-mono); font-size: 1.5rem; color: var(--primary); font-weight: 700; }
 
-    /* SIMULADOR */
-    .calc-box {
-      background: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 16px;
-      text-align: left;
-    }
-
-    .calc-box label { font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 4px; }
-    .calc-slider { width: 100%; accent-color: var(--primary); }
-
-    /* PAINEL ADMIN */
+    /* ADMIN */
     .admin-modal-content {
-      background: #111119;
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-md);
       width: 100%;
-      max-width: 760px;
+      max-width: 780px;
       max-height: 88vh;
       overflow-y: auto;
-      padding: 24px 18px;
+      padding: 24px 20px;
       position: relative;
     }
 
     .admin-player-row {
-      background: var(--bg-dark);
+      background: var(--bg-inset);
       border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       padding: 14px;
       margin-bottom: 14px;
     }
 
     .admin-inputs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 8px;
       align-items: center;
       margin-bottom: 10px;
@@ -908,62 +1196,39 @@
 
     .admin-inputs-grid input, .admin-inputs-grid select, .admin-inputs-grid textarea {
       width: 100%;
-      background: #181824;
-      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color-strong);
       color: #fff;
-      padding: 6px 8px;
-      border-radius: 6px;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
       font-size: 0.8rem;
     }
 
-    .admin-trophies-selector {
-      background: #14141E;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 10px;
+    .admin-trofeus-box {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 4px;
+      margin: 8px 0 10px;
+      padding: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
     }
 
-    .trophy-check-label {
-      font-size: 0.72rem;
-      color: var(--text-muted);
+    .admin-trofeu-label {
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      background: var(--bg-dark);
-      padding: 4px 8px;
-      border-radius: 4px;
+      font-size: 0.7rem;
+      background: var(--bg-inset);
+      border: 1px solid var(--border-color-strong);
+      padding: 3px 8px;
+      border-radius: 12px;
       cursor: pointer;
-      border: 1px solid var(--border-color);
+      user-select: none;
     }
 
-    .trophy-check-label:has(input:checked) {
-      border-color: var(--gold);
-      color: var(--gold);
-      background: rgba(255, 215, 0, 0.08);
-    }
-
-    .btn-export {
-      background: linear-gradient(135deg, #00E676, #00B0FF);
-      color: #000;
-      font-weight: 800;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 15px rgba(0, 230, 118, 0.35);
-      transition: var(--transition);
-    }
-
-    .btn-export:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 230, 118, 0.5);
-    }
+    .admin-trofeu-label input { width: auto; cursor: pointer; }
 
     /* BOTTOM NAV (MOBILE) */
     .mobile-nav {
@@ -971,16 +1236,17 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: rgba(14, 14, 20, 0.96);
-      backdrop-filter: blur(20px);
+      background: rgba(11, 11, 14, 0.96);
+      backdrop-filter: blur(8px);
       border-top: 1px solid var(--border-color);
       display: flex;
       justify-content: space-around;
-      padding: 8px 0;
+      padding: 8px 2px;
       z-index: 1000;
+      overflow-x: auto;
     }
 
-    @media (min-width: 851px) {
+    @media (min-width: 901px) {
       .mobile-nav { display: none; }
     }
 
@@ -990,23 +1256,42 @@
       align-items: center;
       gap: 3px;
       color: var(--text-muted);
-      font-size: 0.65rem;
+      font-size: 0.58rem;
       font-weight: 700;
       text-transform: uppercase;
       cursor: pointer;
+      padding: 2px 6px;
     }
 
     .m-nav-item i { font-size: 1.1rem; }
     .m-nav-item.active-link { color: var(--primary); }
 
-    /* FOOTER */
     .footer {
-      background: #050508;
+      background: var(--bg-dark);
       border-top: 1px solid var(--border-color);
-      padding: 30px 0 15px;
+      padding: 25px 0 15px;
       margin-top: auto;
       text-align: center;
     }
+
+    /* ===== NOVA EXPERIÊNCIA DA COPA MISTO QUENTE ===== */
+    .season-dashboard{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px;margin:22px 0 34px}
+    .feature-panel{background:linear-gradient(145deg,#15151b,#0f0f13);border:1px solid var(--border-color);border-radius:14px;padding:18px;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.28)}
+    .feature-panel:after{content:'';position:absolute;right:-35px;bottom:-50px;width:130px;height:130px;border-radius:50%;background:rgba(245,189,2,.08);filter:blur(20px);pointer-events:none}
+    .feature-kicker{color:var(--gold);font-size:.65rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+    .feature-title{font-family:var(--font-display);font-size:1.65rem;line-height:1;margin-bottom:5px}
+    .feature-muted{color:var(--text-muted);font-size:.76rem;line-height:1.45}
+    .moment-player{display:flex;align-items:center;gap:12px;margin-top:12px}
+    .moment-avatar{width:58px;height:58px;border-radius:12px;overflow:hidden;border:2px solid var(--gold);background:#0a0a0d;box-shadow:0 0 18px rgba(245,189,2,.22);flex-shrink:0}.moment-avatar img{width:100%;height:100%;object-fit:cover}
+    .news-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}.news-item{background:rgba(255,255,255,.025);border:1px solid var(--border-color);border-radius:9px;padding:9px 10px;cursor:pointer;transition:var(--transition)}.news-item:hover{border-color:var(--border-color-strong);transform:translateX(2px)}.news-item strong{display:block;font-size:.78rem;margin-bottom:2px}.news-item span{display:block;color:var(--text-muted);font-size:.68rem;line-height:1.35}
+    .timeline-wrap{margin:22px 0 34px}.timeline{position:relative;display:flex;gap:10px;overflow-x:auto;padding:12px 2px 18px;scrollbar-width:thin}.timeline:before{content:'';position:absolute;left:20px;right:20px;top:42px;height:2px;background:linear-gradient(90deg,var(--primary),var(--gold),var(--bacon-red));opacity:.45}.timeline-item{position:relative;min-width:165px;z-index:1}.timeline-dot{width:18px;height:18px;margin:0 auto 12px;border-radius:50%;background:var(--bg-dark);border:3px solid var(--gold);box-shadow:0 0 14px rgba(245,189,2,.35)}.timeline-item.upcoming .timeline-dot{border-color:var(--primary);box-shadow:0 0 14px rgba(214,84,14,.45)}.timeline-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;padding:10px;text-align:center}.timeline-date{color:var(--text-muted);font-size:.62rem;font-family:var(--font-mono)}.timeline-round{color:var(--gold);font-size:.64rem;font-weight:900;text-transform:uppercase;margin:3px 0}.timeline-score{font-family:var(--font-mono);font-size:1.2rem;font-weight:900}.timeline-status{color:var(--text-muted);font-size:.62rem;margin-top:3px}
+    .record-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 30px}.record-card{background:linear-gradient(145deg,#17131f,#0f0d13);border:1px solid #352747;border-radius:12px;padding:15px;min-height:130px;transition:.25s ease}.record-card:hover{transform:translateY(-3px);border-color:var(--purple-epic);box-shadow:0 10px 25px rgba(157,78,221,.16)}.record-icon{font-size:1.25rem;margin-bottom:7px}.record-label{color:var(--text-muted);font-size:.65rem;text-transform:uppercase;font-weight:900;letter-spacing:.5px}.record-value{font-family:var(--font-display);font-size:1.7rem;line-height:1.05;color:var(--gold);margin:4px 0}.record-owner{font-size:.72rem;color:var(--text-white)}.record-sub{font-size:.62rem;color:var(--text-muted);margin-top:3px}
+    .stats-highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.leaderboard-mini{background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;padding:14px}.leaderboard-mini h3{font-family:var(--font-display);font-size:1.45rem;color:var(--gold);margin-bottom:8px}.leader-row{display:grid;grid-template-columns:24px 1fr auto;gap:7px;align-items:center;padding:7px 0;border-bottom:1px solid var(--border-color);cursor:pointer}.leader-row:last-child{border-bottom:0}.leader-rank{color:var(--text-muted);font-family:var(--font-mono);font-size:.7rem}.leader-name{font-size:.74rem;font-weight:800;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.leader-value{color:var(--gold);font-family:var(--font-mono);font-size:.74rem;font-weight:900}.rank-move{font-size:.6rem;font-weight:900;margin-left:4px}.rank-up{color:#4ade80}.rank-down{color:#fb7185}.rank-same{color:var(--text-muted)}
+    .comparator{background:linear-gradient(145deg,#141419,#0d0d11);border:1px solid var(--border-color);border-radius:14px;padding:18px;margin:24px 0 30px}.compare-controls{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:12px 0 18px}.compare-controls select{width:100%;background:var(--bg-inset);color:#fff;border:1px solid var(--border-color-strong);padding:10px;border-radius:8px}.vs-pill{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#000;font-weight:900;font-family:var(--font-mono);box-shadow:0 0 15px rgba(245,189,2,.25)}.compare-cards{display:grid;grid-template-columns:1fr minmax(220px,280px) 1fr;gap:12px;align-items:stretch}.compare-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;padding:15px;text-align:center}.compare-avatar{width:74px;height:74px;border-radius:50%;overflow:hidden;margin:0 auto 8px;border:2px solid var(--gold)}.compare-avatar img{width:100%;height:100%;object-fit:cover}.compare-name{font-family:var(--font-display);font-size:1.5rem;line-height:1}.compare-ovr{color:var(--gold);font-family:var(--font-mono);font-size:1.45rem;font-weight:900;margin:4px 0}.compare-side-label{color:var(--text-muted);font-size:.62rem}.compare-center{display:flex;flex-direction:column;justify-content:center;background:var(--bg-inset);border:1px solid var(--border-color);border-radius:12px;padding:8px 12px}.compare-stat-row{display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;padding:7px 0;border-bottom:1px solid var(--border-color);font-family:var(--font-mono);font-size:.7rem}.compare-stat-row:last-child{border-bottom:0}.compare-stat-row .label{color:var(--text-muted);font-family:var(--font-body);font-size:.6rem;text-transform:uppercase}.compare-stat-row .better{color:var(--gold);font-weight:900}
+    .player-card-pro{background:linear-gradient(145deg,#221708,#100d08);border:1px solid #6f5011;border-radius:14px;padding:16px;margin:16px 0;position:relative;overflow:hidden;text-align:left}.player-card-pro:before{content:'CARTA OFICIAL';position:absolute;top:9px;right:-24px;transform:rotate(35deg);background:var(--gold);color:#000;font-size:.52rem;font-weight:900;padding:3px 25px;letter-spacing:.7px}.pcp-top{display:flex;gap:12px;align-items:center}.pcp-avatar{width:78px;height:92px;border-radius:9px;overflow:hidden;border:2px solid var(--gold);background:#080808;flex-shrink:0}.pcp-avatar img{width:100%;height:100%;object-fit:cover}.pcp-rating{font-family:var(--font-mono);font-size:2.35rem;font-weight:900;color:var(--gold);line-height:1}.pcp-position{font-size:.62rem;color:var(--text-muted);font-weight:900;text-transform:uppercase}.pcp-name{font-family:var(--font-display);font-size:1.65rem;line-height:1;margin-top:2px;text-transform:capitalize}.pcp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:12px}.pcp-stat{background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:6px;text-align:center}.pcp-stat b{display:block;font-family:var(--font-mono);font-size:.9rem;color:#fff}.pcp-stat span{color:var(--text-muted);font-size:.52rem;text-transform:uppercase}.evolution-box{background:var(--bg-inset);border:1px solid var(--border-color);border-radius:10px;padding:12px;margin:14px 0;text-align:left}.evo-row{display:grid;grid-template-columns:54px 1fr 32px;gap:8px;align-items:center;margin:7px 0}.evo-label{color:var(--text-muted);font-size:.62rem;font-family:var(--font-mono)}.evo-track{height:7px;border-radius:10px;overflow:hidden;background:#09090c;border:1px solid var(--border-color)}.evo-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--gold))}.evo-num{font-family:var(--font-mono);font-size:.65rem;color:#fff;text-align:right}
+    .news-admin-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:8px;margin-bottom:10px}.news-admin-grid input,.news-admin-grid textarea{width:100%;background:var(--bg-card);border:1px solid var(--border-color-strong);color:#fff;padding:8px 10px;border-radius:7px;font-size:.78rem}.news-admin-grid textarea{min-height:75px;resize:vertical}.admin-news-item{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:9px;border:1px solid var(--border-color);background:var(--bg-inset);border-radius:8px;margin-bottom:7px}.snapshot-box{background:linear-gradient(145deg,#121b16,#0d1110);border:1px solid rgba(47,174,102,.35);border-radius:10px;padding:10px;margin:8px 0 12px}.snapshot-box strong{color:#6ee7b7;font-size:.78rem}.snapshot-box p{color:var(--text-muted);font-size:.65rem;margin-top:3px;line-height:1.4}
+    @media(max-width:900px){.season-dashboard,.record-cards,.stats-highlight-grid{grid-template-columns:1fr}.compare-cards{grid-template-columns:1fr}.compare-center{order:2}.compare-card:first-child{order:1}.compare-card:last-child{order:3}}
+    @media(max-width:560px){.compare-controls{grid-template-columns:1fr}.vs-pill{margin:auto}.pcp-stats{grid-template-columns:repeat(2,1fr)}.news-admin-grid{grid-template-columns:1fr}.timeline-item{min-width:145px}}
   </style>
 </head>
 <body>
@@ -1015,18 +1300,17 @@
   <header class="header">
     <div class="container nav-container">
       <div class="brand-logo" onclick="navigateTo('home')">
-        <div class="brand-logo-icon">🥪🔥</div>
+        <div class="brand-logo-icon"><img src="fotos/logo.png" alt="Copa Misto Quente" onerror="this.parentElement.innerHTML='🥪'"></div>
         <span>COPA</span> MISTO QUENTE
       </div>
 
       <nav>
         <ul class="nav-menu">
           <li><span class="nav-link active-link" onclick="navigateTo('home')">Início</span></li>
-          <li><span class="nav-link" onclick="navigateTo('times')">Times &amp; Posições</span></li>
+          <li><span class="nav-link" onclick="navigateTo('jogadores')">Jogadores</span></li>
+          <li><span class="nav-link" onclick="navigateTo('recordes')">⭐ Recordes (Hall da Fama)</span></li>
           <li><span class="nav-link" onclick="navigateTo('jogos')">Jogos &amp; Súmulas</span></li>
           <li><span class="nav-link" onclick="navigateTo('estatisticas')">Stats &amp; Médias</span></li>
-          <li><span class="nav-link" onclick="navigateTo('comparador')">Comparador X1</span></li>
-          <li><span class="nav-link" onclick="navigateTo('mercado')">Mercado</span></li>
           <li><span class="nav-link" onclick="navigateTo('premiacoes')">Gala do Pão</span></li>
         </ul>
       </nav>
@@ -1043,18 +1327,18 @@
       <div class="container">
         <div class="hero-badge"><i class="fa-solid fa-trophy"></i> Temporada 1 • Panela Stadium</div>
         <h1 class="hero-title">A MAIOR COPA DE <span>FUTSAL AMADOR</span></h1>
-        <p class="hero-subtitle">"Grandes jogos. Grandes jogadores. Grandes histórias." Acompanhe cada gol, as súmulas dos confrontos, a artilharia pesada e os prêmios da Gala do Pão.</p>
+        <p class="hero-subtitle">"Grandes jogos. Grandes jogadores. Grandes histórias." Acompanhe cada gol, a artilharia pesada, os recordes históricos e a cerimônia da Gala do Pão.</p>
         
         <div class="hero-actions">
-          <button class="btn-primary" onclick="navigateTo('jogos')">Ver Jogos &amp; Súmulas</button>
-          <button class="btn-outline" onclick="navigateTo('estatisticas')">Artilharia &amp; Stats</button>
+          <button class="btn-primary" onclick="navigateTo('jogos')"><i class="fa-solid fa-futbol"></i> Ver Súmulas</button>
+          <button class="btn-outline" onclick="navigateTo('recordes')"><i class="fa-solid fa-crown"></i> Hall de Recordistas</button>
         </div>
 
-        <!-- CARD PRÓXIMO JOGO -->
+        <!-- PRÓXIMO JOGO BANNER -->
         <div class="next-match-banner">
           <div class="next-match-title" id="nextMatchBadge"><i class="fa-solid fa-fire"></i> Próximo Confronto Oficial</div>
           <div class="next-match-teams" id="nextMatchTeams">Misto United vs Bacon City</div>
-          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;" id="nextMatchDate">Panela Stadium • Sábado às 16:00</p>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 14px;" id="nextMatchDate">Panela Stadium • Sábado às 16:00</p>
           <button class="btn-primary" onclick="abrirEscalacaoModal()"><i class="fa-solid fa-clipboard-user"></i> Ver Escalação Provável</button>
         </div>
       </div>
@@ -1090,38 +1374,79 @@
           </div>
         </div>
       </div>
+
+      <div class="season-dashboard">
+        <div class="feature-panel">
+          <div class="feature-kicker">🔥 Momento da Temporada</div>
+          <div class="feature-title" id="momentTitle">A história está sendo escrita</div>
+          <p class="feature-muted" id="momentSubtitle">O destaque do jogo mais recente aparecerá aqui automaticamente.</p>
+          <div id="momentContent"></div>
+        </div>
+        <div class="feature-panel">
+          <div class="feature-kicker">📰 Últimas Notícias</div>
+          <div class="feature-title">Central da Copa</div>
+          <div class="news-list" id="homeNewsList"></div>
+        </div>
+        <div class="feature-panel">
+          <div class="feature-kicker">📊 Números da Temporada</div>
+          <div class="feature-title">A Copa em números</div>
+          <div id="seasonNumbersContent" class="feature-muted" style="margin-top:10px;"></div>
+        </div>
+      </div>
+      <div class="timeline-wrap">
+        <div class="section-header" style="margin-bottom:8px;">
+          <span class="section-tag">Linha do Tempo</span>
+          <h2 class="section-title" style="font-size:2rem;">A Temporada Até Aqui 🗓️</h2>
+        </div>
+        <div class="timeline" id="seasonTimeline"></div>
+      </div>
     </div>
   </section>
 
-  <!-- TIMES & POSIÇÕES -->
-  <section id="times" class="spa-section">
+  <!-- JOGADORES (COM FLIP CARDS 3D UIVERSE) -->
+  <section id="jogadores" class="spa-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Elencos Oficiais</span>
-        <h2 class="section-title">Os Dois Gigantes</h2>
+        <span class="section-tag">Cards Colecionáveis 3D</span>
+        <h2 class="section-title">Elenco Completo</h2>
+        <p style="color:var(--text-muted); font-size:0.8rem; margin-top:4px;">Clique (ou toque) no card para girar e ver os detalhes!</p>
       </div>
 
       <div class="filter-tabs">
-        <button class="filter-btn active" onclick="filtrarPosicao('todos')">Todos</button>
-        <button class="filter-btn" onclick="filtrarPosicao('goleiro')">🧤 Goleiros</button>
-        <button class="filter-btn" onclick="filtrarPosicao('fixo')">🛡️ Fixos</button>
-        <button class="filter-btn" onclick="filtrarPosicao('ala')">⚡ Alas</button>
-        <button class="filter-btn" onclick="filtrarPosicao('pivo')">🎯 Pivôs</button>
+        <button class="filter-btn active" data-explorer-time="todos" onclick="filtrarTimeExplorer('todos')">Todos</button>
+        <button class="filter-btn" data-explorer-time="Misto United" onclick="filtrarTimeExplorer('Misto United')">Misto United</button>
+        <button class="filter-btn" data-explorer-time="Bacon City" onclick="filtrarTimeExplorer('Bacon City')">Bacon City</button>
       </div>
 
-      <div class="teams-grid">
-        <div class="team-card misto">
-          <h3 class="team-title" style="color: var(--misto-gold);">Misto United</h3>
-          <p class="team-captain">Capitão: Luqueta pepeta • Preto &amp; Dourado</p>
-          <ul class="roster-list" id="rosterMisto"></ul>
-        </div>
+      <div class="flip-grid" id="explorerGrid"></div>
+    </div>
+  </section>
 
-        <div class="team-card bacon">
-          <h3 class="team-title" style="color: var(--bacon-red);">Bacon City</h3>
-          <p class="team-captain">Capitão: Preto • Vermelho &amp; Preto</p>
-          <ul class="roster-list" id="rosterBacon"></ul>
-        </div>
+  <!-- RECORDES & HALL DA FAMA (ESTILO BATALHA DA ALDEIA / BDA) -->
+  <section id="recordes" class="spa-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Hall dos Imortais</span>
+        <h2 class="section-title">Recordes Gerais &amp; Detentores 🏆</h2>
+        <p style="color:var(--text-muted); font-size:0.85rem; max-width:600px; margin:6px auto 0;">
+          Os donos das marcas mais absurdas da história da Copa Misto Quente com patentes oficiais de glória.
+        </p>
       </div>
+
+      <div class="record-cards" id="recordCardsContainer"></div>
+      <div class="feature-card" style="margin-top:16px;padding:14px 16px">
+        <div style="font-family:var(--font-display);font-size:1.35rem;color:var(--gold);margin-bottom:5px">📜 Patentes do Hall da Fama</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:.72rem;font-weight:800">
+          <span class="badge-conquista badge-emerald">🔹 RARO • primeira marca realmente difícil</span>
+          <span class="badge-conquista badge-fire">⭐ ÉPICO • protagonista de elite</span>
+          <span class="badge-conquista badge-legend">🔥 LENDÁRIO • temporada histórica</span>
+          <span class="badge-conquista badge-legend">🌟 MÍTICO • feito fora da curva</span>
+          <span class="badge-conquista badge-gold">👑 SUPREMO • nível dos monstros</span>
+          <span class="badge-conquista badge-gold">🐐 IMORTAL • marca máxima da temporada</span>
+        </div>
+        <p style="font-size:.68rem;color:var(--text-muted);margin-top:7px">Prêmios da Gala do Pão são especiais e ficam separados da patente. Conquistas comuns podem aparecer no perfil sem colocar o atleta no Hall.</p>
+      </div>
+      <div class="bda-records-container" id="bdaRecordsContainer"></div>
     </div>
   </section>
 
@@ -1129,14 +1454,9 @@
   <section id="jogos" class="spa-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Histórico Completo</span>
+        <span class="section-tag">Histórico Oficial</span>
         <h2 class="section-title">Jogos &amp; Súmulas Detalhadas</h2>
       </div>
-
-      <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 16px; color: var(--gold); text-align: center;">
-        <i class="fa-solid fa-star"></i> Galeria Player of the Match
-      </h3>
-      <div class="potm-grid" id="potmContainer"></div>
 
       <div class="matches-list" id="matchesContainer"></div>
     </div>
@@ -1147,9 +1467,21 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Ranking Geral Acumulado</span>
-        <h2 class="section-title">Estatísticas &amp; Aproveitamento</h2>
+        <h2 class="section-title">Artilharia &amp; Participações</h2>
       </div>
 
+      <div class="stats-highlight-grid">
+        <div class="leaderboard-mini"><h3>⚽ Artilheiros</h3><div id="topScorersList"></div></div>
+        <div class="leaderboard-mini"><h3>🅰️ Garçons</h3><div id="topAssistsList"></div></div>
+        <div class="leaderboard-mini"><h3>👑 G+A</h3><div id="topContribList"></div></div>
+      </div>
+      <div class="comparator">
+        <div class="section-tag">Duelo Individual</div>
+        <h3 style="font-family:var(--font-display);font-size:2rem;line-height:1;margin-top:4px;">⚔️ Comparador de Jogadores</h3>
+        <p style="color:var(--text-muted);font-size:.75rem;margin-top:4px;">Escolha dois atletas e veja quem leva vantagem em cada número.</p>
+        <div class="compare-controls"><select id="comparePlayerA" onchange="renderPlayerComparator()"></select><div class="vs-pill">VS</div><select id="comparePlayerB" onchange="renderPlayerComparator()"></select></div>
+        <div id="compareResult"></div>
+      </div>
       <div class="stats-table-wrapper">
         <table>
           <thead>
@@ -1157,7 +1489,7 @@
               <th>Pos</th>
               <th>Jogador</th>
               <th>Time</th>
-              <th>Pos</th>
+              <th>Posição</th>
               <th>Jogos (J)</th>
               <th>Gols ⚽</th>
               <th>Média G/J</th>
@@ -1172,81 +1504,44 @@
     </div>
   </section>
 
-  <!-- COMPARADOR X1 -->
-  <section id="comparador" class="spa-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Duelo de Titãs</span>
-        <h2 class="section-title">Comparador X1 em Gráficos ⚔️</h2>
-      </div>
-
-      <div class="compare-card">
-        <div class="compare-head-grid">
-          <div class="compare-fighter-box">
-            <img id="compImg1" src="fotos/luqueta.png" class="compare-avatar-large" style="border-color: var(--misto-gold);">
-            <select id="compareP1" class="compare-select" onchange="atualizarComparador()"></select>
-          </div>
-
-          <div class="vs-emblem">VS</div>
-
-          <div class="compare-fighter-box">
-            <img id="compImg2" src="fotos/vitor.png" class="compare-avatar-large" style="border-color: var(--bacon-red);">
-            <select id="compareP2" class="compare-select" onchange="atualizarComparador()"></select>
-          </div>
-        </div>
-
-        <div id="compareResults"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MERCADO DA BOLA -->
-  <section id="mercado" class="spa-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Valores Oficiais</span>
-        <h2 class="section-title">Mercado da Bola 💰</h2>
-      </div>
-
-      <div class="market-grid" id="marketGrid"></div>
-    </div>
-  </section>
-
-  <!-- A GALA DO PÃO -->
+  <!-- A GALA DO PÃO (COM FLIP CARDS 3D UIVERSE) -->
   <section id="premiacoes" class="spa-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Regulamento &amp; Cerimônia</span>
-        <h2 class="section-title">A Gala do Pão</h2>
+        <span class="section-tag">Cerimônia de Premiação</span>
+        <h2 class="section-title">A Gala do Pão 🥖</h2>
+        <p style="color:var(--text-muted); font-size:0.85rem; max-width:540px; margin:6px auto 0;">
+          Os troféus mais cobiçados da temporada. Ao escolher os vencedores no Admin, a conquista vai direto para o perfil do atleta!
+        </p>
       </div>
 
-      <div class="awards-grid">
-        <div class="award-box"><div class="award-icon">👑</div><h3 class="award-name">Bola de Ouro</h3><p class="award-detail">O craque absoluto eleito pelo público.</p></div>
-        <div class="award-box"><div class="award-icon">🥖</div><h3 class="award-name">Pão de Ouro</h3><p class="award-detail">Líder isolado na soma de G+A.</p></div>
-        <div class="award-box"><div class="award-icon">🥓</div><h3 class="award-name">Chuteira de Bacon</h3><p class="award-detail">Maior artilheiro da Copa Misto Quente.</p></div>
-        <div class="award-box"><div class="award-icon">🥫</div><h3 class="award-name">Chef do Molho</h3><p class="award-detail">Líder em assistências do torneio.</p></div>
-        <div class="award-box"><div class="award-icon">🧤</div><h3 class="award-name">Pão Selado</h3><p class="award-detail">Melhor goleiro e paredão da copa.</p></div>
-        <div class="award-box"><div class="award-icon">🛡️</div><h3 class="award-name">Melhor Fixo</h3><p class="award-detail">O defensor mais seguro da temporada.</p></div>
-        <div class="award-box"><div class="award-icon">⚡</div><h3 class="award-name">Melhor Ala</h3><p class="award-detail">O jogador mais veloz e incisivo pelas pontas.</p></div>
-        <div class="award-box"><div class="award-icon">🎯</div><h3 class="award-name">Melhor Pivô</h3><p class="award-detail">O gênio que faz o giro segurando a bola.</p></div>
-        <div class="award-box"><div class="award-icon">🍌</div><h3 class="award-name">Manteiga no Pé</h3><p class="award-detail">O autor do gol mais perdido da temporada.</p></div>
-      </div>
+      <div class="flip-grid" id="awardsGrid"></div>
     </div>
   </section>
 
-  <!-- MODAL DE PERFIL -->
+  <!-- MODAL DE PERFIL DO JOGADOR -->
   <div id="playerModal" class="modal-overlay" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">×</button>
       <div class="modal-avatar-box">
         <img id="mImg" src="" alt="Avatar" class="modal-avatar-img">
       </div>
-      <h3 id="mName" style="font-family:var(--font-display); font-size:2.2rem; line-height:1;">Nome</h3>
-      <p id="mTeamPos" style="font-size:0.85rem; color:var(--secondary); font-weight:700; margin-bottom:10px;">Time • Posição</p>
+      <h3 id="mName" style="font-family:var(--font-display); font-size:2.4rem; line-height:1;">Nome</h3>
+      <p id="mTeamPos" style="font-size:0.88rem; color:var(--secondary); font-weight:700; margin-bottom:12px;">Time • Posição</p>
+      <div id="mPlayerCardPro"></div>
+      <div class="evolution-box"><div class="trophy-hall-title"><i class="fa-solid fa-chart-line"></i> Evolução de Gols por Jogo</div><div id="mEvolution"></div></div>
 
+      <!-- HALL DA FAMA: CONQUISTAS AUTOMÁTICAS -->
       <div class="trophy-hall-box">
-        <div class="trophy-hall-title"><i class="fa-solid fa-trophy"></i> Sala de Conquistas &amp; Recordes Oficiais</div>
-        <div class="modal-badges-grid" id="mBadgesContainer"></div>
+        <div class="trophy-hall-title"><i class="fa-solid fa-trophy"></i> Hall da Fama • Conquistas Desbloqueadas</div>
+        <p style="font-size:.68rem;color:var(--text-muted);margin:4px 0 10px">Elas aparecem automaticamente quando o atleta bate a marca.</p>
+        <div class="conquistas-grid" id="mBadgesContainer"></div>
+      </div>
+      <!-- GALA DO PÃO: PRÊMIOS ESPECIAIS -->
+      <div class="trophy-hall-box" style="margin-top:10px;border-color:rgba(245,189,2,.45)">
+        <div class="trophy-hall-title" style="color:var(--gold)"><i class="fa-solid fa-crown"></i> Gala do Pão • Prêmios Especiais</div>
+        <p style="font-size:.68rem;color:var(--text-muted);margin:4px 0 10px">Não são desbloqueados por números. O campeão é definido na Gala.</p>
+        <div class="conquistas-grid" id="mGalaBadgesContainer"></div>
       </div>
 
       <div class="modal-stats-grid-adv">
@@ -1256,15 +1551,10 @@
         <div class="m-stat"><h5>Total</h5><p id="mTotal">0</p></div>
       </div>
 
-      <div class="calc-box">
-        <label>🎯 Simular Meta de Participações (Pts): <strong id="simPtsVal" style="color:var(--primary);">40</strong></label>
-        <input type="range" class="calc-slider" id="simSlider" min="5" max="100" value="40" oninput="calcularMetaSimulada(this.value)">
-        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;" id="simResultadoText">Calculando estimativa...</p>
-      </div>
-
-      <p id="mMarket" style="font-size:1.1rem; color:var(--money-green); font-weight:700; margin-bottom:14px;">Valor: R$ 0M</p>
+      <p id="mMarket" style="font-size:1.1rem; color:var(--money-green); font-weight:800; margin-bottom:14px;">Valor: R$ 0M</p>
+      
       <a href="https://www.instagram.com/copa_misto_quente" target="_blank" class="btn-insta" style="display:inline-flex; justify-content:center; width:100%; padding:10px;">
-        <i class="fa-brands fa-instagram"></i> Ver na @copa_misto_quente
+        <i class="fa-brands fa-instagram"></i> Ver Destaques no Instagram
       </a>
     </div>
   </div>
@@ -1289,8 +1579,8 @@
         <h3 style="font-family: var(--font-display); font-size: 2rem; color: var(--gold); text-align: center; margin-bottom: 12px;">
           🔒 Painel Dono da Bola
         </h3>
-        <input type="password" id="adminPasswordInput" placeholder="Digite a senha de admin..." style="width:100%; background:#08080C; border:1px solid var(--border-color); color:#fff; padding:12px; border-radius:8px; margin-bottom:14px;">
-        <button class="btn-primary" style="width:100%;" onclick="autenticarAdmin()">Entrar no Painel</button>
+        <input type="password" id="adminPasswordInput" placeholder="Senha do Admin" style="width:100%; background:var(--bg-inset); border:1px solid var(--border-color-strong); color:#fff; padding:12px; border-radius:6px; margin-bottom:14px;">
+        <button class="btn-primary" style="width:100%; justify-content:center;" onclick="autenticarAdmin()">Entrar no Painel</button>
       </div>
 
       <div id="adminDashboardSection" style="display: none;">
@@ -1298,57 +1588,71 @@
           ⚙️ Gerenciador da Copa
         </h3>
 
-        <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
-          <button class="filter-btn active" id="tabBtnJogadores" onclick="adminTab('jogadores')">Jogadores &amp; Fotos</button>
-          <button class="filter-btn" id="tabBtnJogos" onclick="adminTab('jogos')">Jogos, Gols &amp; Súmulas</button>
-          <button class="filter-btn" id="tabBtnProximo" onclick="adminTab('proximo')">Próximo Jogo &amp; Total</button>
+        <div style="display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap;">
+          <button class="filter-btn active" id="tabBtnJogadores" onclick="adminTab('jogadores')">Jogadores &amp; Conquistas</button>
+          <button class="filter-btn" id="tabBtnJogos" onclick="adminTab('jogos')">Jogos, Placares &amp; Súmulas</button>
+          <button class="filter-btn" id="tabBtnPremios" onclick="adminTab('premios')">Vencedores da Gala do Pão</button>
+          <button class="filter-btn" id="tabBtnProximo" onclick="adminTab('proximo')">Próximo Jogo</button>
+          <button class="filter-btn" id="tabBtnNoticias" onclick="adminTab('noticias')">Notícias &amp; Temporada</button>
         </div>
 
         <!-- Tab 1: Jogadores -->
         <div id="adminTabJogadores">
           <div style="display:flex; justify-content:space-between; margin-bottom:10px; align-items:center;">
-            <span style="font-size:0.8rem; color:var(--text-muted);">Edite stats, troféus e selecione a foto:</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">Edite estatísticas e troféus manuais:</span>
             <button class="btn-primary" style="padding:4px 10px; font-size:0.75rem;" onclick="adminAdicionarJogador()">+ Novo Jogador</button>
           </div>
+          <div class="snapshot-box"><strong>📊 Controle de rodada / ranking</strong><p>Antes de atualizar os números de uma nova rodada, salve um snapshot. Assim o Hall consegue mostrar quem subiu ou caiu no ranking.</p><button class="btn-outline" style="margin-top:7px;padding:5px 10px;font-size:.7rem;" onclick="salvarSnapshotRanking()">Salvar ranking atual como rodada anterior</button><span id="snapshotStatus" style="margin-left:7px;font-size:.65rem;color:var(--text-muted);"></span></div>
           <div id="adminPlayersList"></div>
         </div>
 
-        <!-- Tab 2: Jogos -->
+        <!-- Tab 2: Jogos com Placar e Vencedor Facilitado -->
         <div id="adminTabJogos" style="display: none;">
           <div style="display:flex; justify-content:space-between; margin-bottom:10px; align-items:center;">
-            <span style="font-size:0.8rem; color:var(--text-muted);">Edite placares e autores dos gols em cada partida:</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">Configure os placares e os autores dos gols:</span>
             <button class="btn-primary" style="padding:4px 10px; font-size:0.75rem;" onclick="adminAdicionarJogo()">+ Cadastrar Novo Jogo</button>
           </div>
           <div id="adminMatchesList"></div>
         </div>
 
-        <!-- Tab 3: Próximo Jogo & Contagens -->
+        <!-- Tab 3: Prêmios Gala do Pão -->
+        <div id="adminTabPremios" style="display: none;">
+          <span style="font-size:0.8rem; color:var(--gold); display:block; margin-bottom:10px; font-weight:700;">
+            🏆 Vincule o campeão a cada prêmio. O troféu aparecerá automaticamente com selo brilhante no perfil do atleta!
+          </span>
+          <div id="adminPremiosList"></div>
+        </div>
+
+        <!-- Tab 4: Próximo Jogo -->
         <div id="adminTabProximo" style="display: none;">
           <div style="display:flex; flex-direction:column; gap:10px;">
             <label style="font-size:0.75rem; color:var(--text-muted);">Título/Rodada:</label>
-            <input type="text" id="adminNextBadge" placeholder="Ex: Próximo Confronto Oficial • 7º Jogo" style="background:#181824; border:1px solid var(--border-color); color:#fff; padding:8px; border-radius:6px;">
+            <input type="text" id="adminNextBadge" style="background:var(--bg-inset); border:1px solid var(--border-color-strong); color:#fff; padding:8px; border-radius:6px;">
             
-            <label style="font-size:0.75rem; color:var(--text-muted);">Times:</label>
-            <input type="text" id="adminNextTeams" style="background:#181824; border:1px solid var(--border-color); color:#fff; padding:8px; border-radius:6px;">
+            <label style="font-size:0.75rem; color:var(--text-muted);">Times do Duelo:</label>
+            <input type="text" id="adminNextTeams" style="background:var(--bg-inset); border:1px solid var(--border-color-strong); color:#fff; padding:8px; border-radius:6px;">
             
             <label style="font-size:0.75rem; color:var(--text-muted);">Data, Local e Horário:</label>
-            <input type="text" id="adminNextDate" style="background:#181824; border:1px solid var(--border-color); color:#fff; padding:8px; border-radius:6px;">
+            <input type="text" id="adminNextDate" style="background:var(--bg-inset); border:1px solid var(--border-color-strong); color:#fff; padding:8px; border-radius:6px;">
             
-            <label style="font-size:0.75rem; color:var(--text-muted);">Total de Jogos Previstos na Temporada:</label>
-            <input type="number" id="adminTotalGames" value="8" style="background:#181824; border:1px solid var(--border-color); color:#fff; padding:8px; border-radius:6px;">
-
             <label style="font-size:0.75rem; color:var(--text-muted);">Escalação Confirmada / Provável:</label>
-            <textarea id="adminNextRoster" rows="4" style="background:#181824; border:1px solid var(--border-color); color:#fff; padding:8px; border-radius:6px; font-family:inherit; font-size:0.85rem;"></textarea>
+            <textarea id="adminNextRoster" rows="4" style="background:var(--bg-inset); border:1px solid var(--border-color-strong); color:#fff; padding:8px; border-radius:6px; font-family:inherit; font-size:0.85rem;"></textarea>
           </div>
         </div>
 
-        <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:gap; gap:10px;">
-          <div>
-            <button style="background:#C62828; color:#fff; padding:8px 14px; border-radius:6px; font-size:0.75rem;" onclick="adminResetar()">Resetar Tudo</button>
-          </div>
+        <div id="adminTabNoticias" style="display:none;">
+          <div style="font-size:.8rem;color:var(--text-muted);margin-bottom:10px;">Publique manchetes para aparecerem na Central da Copa. Elas entram no <strong>index.html</strong> quando você exportar.</div>
+          <div class="news-admin-grid"><div><label style="font-size:.68rem;color:var(--text-muted);">Título</label><input id="adminNewsTitle" placeholder="Ex: Misto United vence o 7º jogo"></div><div><label style="font-size:.68rem;color:var(--text-muted);">Ícone</label><input id="adminNewsIcon" value="📰" maxlength="4"></div></div>
+          <textarea id="adminNewsText" placeholder="Escreva a notícia..." style="width:100%;background:var(--bg-card);border:1px solid var(--border-color-strong);color:#fff;padding:9px;border-radius:7px;min-height:80px;"></textarea>
+          <button class="btn-primary" style="margin-top:8px;" onclick="adminAdicionarNoticia()">+ Publicar Notícia</button>
+          <div style="margin-top:14px;" id="adminNewsList"></div>
+        </div>
+
+        <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <button style="background:#7A2020; color:#fff; padding:8px 14px; border-radius:6px; font-size:0.75rem;" onclick="adminResetar()">Resetar Tudo</button>
           <div style="display:flex; gap:8px;">
-            <button class="btn-export" onclick="exportarIndexHTML()"><i class="fa-solid fa-download"></i> Baixar index.html Atualizado</button>
-            <button class="btn-primary" onclick="salvarAdmin()">Salvar no Navegador 🔥</button>
+            <button class="btn-primary" style="background:var(--money-green); border-color:var(--money-green);" onclick="exportarIndexHTML()"><i class="fa-solid fa-download"></i> Baixar index.html</button>
+            <button class="btn-primary" onclick="salvarAdmin()">Salvar Alterações</button>
           </div>
         </div>
       </div>
@@ -1358,124 +1662,151 @@
   <!-- BOTTOM NAV (MOBILE) -->
   <div class="mobile-nav">
     <div class="m-nav-item active-link" onclick="navigateTo('home')"><i class="fa-solid fa-house"></i> Início</div>
-    <div class="m-nav-item" onclick="navigateTo('times')"><i class="fa-solid fa-users"></i> Times</div>
+    <div class="m-nav-item" onclick="navigateTo('jogadores')"><i class="fa-solid fa-id-card"></i> Cards 3D</div>
+    <div class="m-nav-item" onclick="navigateTo('recordes')"><i class="fa-solid fa-crown"></i> Hall BDA</div>
     <div class="m-nav-item" onclick="navigateTo('jogos')"><i class="fa-solid fa-futbol"></i> Jogos</div>
     <div class="m-nav-item" onclick="navigateTo('estatisticas')"><i class="fa-solid fa-chart-simple"></i> Stats</div>
-    <div class="m-nav-item" onclick="navigateTo('comparador')"><i class="fa-solid fa-code-compare"></i> X1</div>
-    <div class="m-nav-item" onclick="navigateTo('mercado')"><i class="fa-solid fa-dollar-sign"></i> Mercado</div>
+    <div class="m-nav-item" onclick="navigateTo('premiacoes')"><i class="fa-solid fa-bread-slice"></i> Gala</div>
   </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 8px;">© 2026 COPA MISTO QUENTE • Panela Stadium • Hambúrguer TV</p>
-      <button onclick="abrirAdminModal()" style="background: transparent; color: #555; font-size: 0.75rem; border: 1px solid #222; padding: 4px 10px; border-radius: 4px;">
-        <i class="fa-solid fa-lock"></i> Modo Dono da Bola (Admin)
+      <button onclick="abrirAdminModal()" style="background: transparent; color: #777; font-size: 0.75rem; border: 1px solid #333; padding: 4px 10px; border-radius: 4px;">
+        <i class="fa-solid fa-lock"></i> Painel Dono da Bola (Admin)
       </button>
     </div>
   </footer>
 
-  <!-- SCRIPT ENGINE -->
+  <!-- JAVASCRIPT & ENGINE -->
   <script>
+    /* A GALA É CONTROLADA APENAS NA ABA "VENCEDORES DA GALA DO PÃO".
+       Estes são registros manuais extras do Admin e NÃO contam como conquistas do Hall. */
     const LISTA_TROFEUS_DISPONIVEIS = [
-      "👑 Bola de Ouro",
-      "🥖 Pão de Ouro",
-      "🥓 Chuteira de Bacon",
-      "🥫 Chef do Molho",
-      "🧤 Pão Selado",
-      "🛡️ Melhor Fixo",
-      "⚡ Melhor Ala",
-      "🎯 Melhor Pivô",
-      "💥 Hat-trick no 6º Jogo",
-      "🍌 Manteiga no Pé"
+      "⭐ MVP de Jogo",
+      "🧱 Jogo Inesquecível",
+      "🎖️ Menção Honrosa"
     ];
+
+    /* CONQUISTAS DO HALL DA FAMA: raras e automáticas.
+       A Gala do Pão é independente e nunca conta como conquista do Hall. */
+    const CONQUISTAS_HALL = [
+      {id:'fiel-time',hall:true,icon:'❤️',nome:'Fiel ao Time',classe:'raro',detail:'Vestiu a camisa em todos os jogos oficiais disputados até o momento.',condition:'Jogou todos os jogos oficiais disputados até agora.',check:p=>matchesData.length>0&&(+p.jogos||0)>=matchesData.length},
+      {id:'marca-25',hall:true,icon:'👑',nome:'Marca de 25',classe:'raro',detail:'Chegou a uma marca que separa um bom jogador de um nome que já começou a fazer história.',condition:'25 G+A na temporada.',check:p=>((+p.gols||0)+(+p.assists||0))>=25},
+      {id:'artilheiro-20',hall:true,icon:'⚽',nome:'Artilheiro de Respeito',classe:'raro',detail:'Passou da barreira dos 20 gols em uma única temporada.',condition:'20 gols na temporada.',check:p=>(+p.gols||0)>=20},
+      {id:'garcom-15',hall:true,icon:'🎯',nome:'Garçom de Elite',classe:'raro',detail:'Chegou aos 15 passes para gol na temporada.',condition:'15 assistências na temporada.',check:p=>(+p.assists||0)>=15},
+
+      {id:'marca-40',hall:true,icon:'🔥',nome:'Nome na História',classe:'epico',detail:'Atingiu 40 participações diretas e passou a ser um dos protagonistas da temporada.',condition:'40 G+A na temporada.',check:p=>((+p.gols||0)+(+p.assists||0))>=40},
+      {id:'artilheiro-30',hall:true,icon:'💥',nome:'Matador',classe:'epico',detail:'Chegou aos 30 gols em uma única temporada.',condition:'30 gols na temporada.',check:p=>(+p.gols||0)>=30},
+      {id:'maestro-25',hall:true,icon:'🪄',nome:'Maestro',classe:'epico',detail:'Distribuiu 25 assistências e virou referência absoluta na criação.',condition:'25 assistências na temporada.',check:p=>(+p.assists||0)>=25},
+      {id:'hat-trick-3',hall:true,icon:'💥',nome:'Colecionador de Hat-tricks',classe:'epico',detail:'Não foi um acaso: marcou três ou mais gols em três partidas diferentes.',condition:'3 hat-tricks na temporada.',check:p=>contarHatTricks(p)>=3},
+      {id:'potm-5',hall:true,icon:'⭐',nome:'Dono da Rodada',classe:'epico',detail:'Foi eleito o destaque da partida cinco vezes.',condition:'5 prêmios de POTM na temporada.',check:p=>contarPOTM(p)>=5},
+
+      {id:'marca-60',hall:true,icon:'🚀',nome:'Temporada Monumental',classe:'lendario',detail:'Chegou a 60 participações diretas em uma única temporada.',condition:'60 G+A na temporada.',check:p=>((+p.gols||0)+(+p.assists||0))>=60},
+      {id:'artilheiro-40',hall:true,icon:'☄️',nome:'Artilheiro Implacável',classe:'lendario',detail:'Rompeu a marca de 40 gols na temporada.',condition:'40 gols na temporada.',check:p=>(+p.gols||0)>=40},
+      {id:'maestro-35',hall:true,icon:'🎼',nome:'Maestro Absoluto',classe:'lendario',detail:'Chegou a 35 assistências em uma temporada.',condition:'35 assistências na temporada.',check:p=>(+p.assists||0)>=35},
+      {id:'hat-trick-5',hall:true,icon:'💣',nome:'Caçador de Hat-tricks',classe:'lendario',detail:'Colecionou cinco partidas diferentes com três ou mais gols.',condition:'5 hat-tricks na temporada.',check:p=>contarHatTricks(p)>=5},
+      {id:'potm-8',hall:true,icon:'🏅',nome:'Rei da Rodada',classe:'lendario',detail:'Foi eleito POTM oito vezes.',condition:'8 prêmios de POTM na temporada.',check:p=>contarPOTM(p)>=8},
+
+      {id:'marca-75',hall:true,icon:'👑',nome:'Lenda Viva',classe:'mitico',detail:'Chegou a 75 participações diretas em uma temporada.',condition:'75 G+A na temporada.',check:p=>((+p.gols||0)+(+p.assists||0))>=75},
+      {id:'artilheiro-50',hall:true,icon:'🔥',nome:'Artilheiro Histórico',classe:'mitico',detail:'Atingiu 50 gols em uma única temporada.',condition:'50 gols na temporada.',check:p=>(+p.gols||0)>=50},
+      {id:'potm-10',hall:true,icon:'🏆',nome:'Intocável',classe:'mitico',detail:'Foi escolhido como destaque dez vezes.',condition:'10 prêmios de POTM na temporada.',check:p=>contarPOTM(p)>=10},
+      {id:'hat-trick-7',hall:true,icon:'👹',nome:'Terror das Defesas',classe:'mitico',detail:'Colecionou sete hat-tricks em uma temporada.',condition:'7 hat-tricks na temporada.',check:p=>contarHatTricks(p)>=7},
+
+      {id:'marca-90',hall:true,icon:'💎',nome:'Patrimônio da Copa',classe:'supremo',detail:'Chegou a 90 participações diretas em uma temporada.',condition:'90 G+A na temporada.',check:p=>((+p.gols||0)+(+p.assists||0))>=90},
+      {id:'artilheiro-60',hall:true,icon:'👑',nome:'Rei da Artilharia',classe:'supremo',detail:'Atingiu 60 gols em uma única temporada.',condition:'60 gols na temporada.',check:p=>(+p.gols||0)>=60},
+      {id:'maestro-55',hall:true,icon:'🧠',nome:'Gênio da Criação',classe:'supremo',detail:'Chegou a 55 assistências em uma temporada.',condition:'55 assistências na temporada.',check:p=>(+p.assists||0)>=55},
+      {id:'marca-103',hall:true,icon:'🐐',nome:'Passou o Messi',classe:'imortal',detail:'Atingiu a marca lendária de 103 participações diretas em uma temporada.',condition:'103 G+A na temporada.',check:p=>((+p.gols||0)+(+p.assists||0))>=103}
+    ];
+    function contarHatTricks(player){return matchesData.filter(m=>[...(m.golsMisto||[]),...(m.golsBacon||[])].some(g=>encontrarJogadorPorNomeSolto(g.n)?.id===player.id&&Number(g.g||0)>=3)).length;}
+    function contarPOTM(player){return matchesData.filter(m=>encontrarJogadorPorNomeSolto(m.potm)?.id===player.id).length;}
+    function getConquistasAutomaticas(player){return CONQUISTAS_HALL.filter(c=>{try{return c.check(player)}catch(e){return false}});}
+    function getConquistaInfo(nome){const a=CONQUISTAS_HALL.find(c=>`${c.icon} ${c.nome}`===nome);if(a)return {...a,origem:'Hall da Fama'};const g=awardsData.find(a=>`${a.icon} ${a.nome}`===nome);return g?{...g,classe:'gala',origem:'Gala do Pão'}:null;}
 
     /* BASE_DE_DADOS_OFICIAL_START */
     let DEFAULT_PLAYERS = [
-      // Misto United
-      { id: 1, nome: "Luqueta pepeta", time: "Misto United", pos: "pivo", jogos: 5, gols: 27, assists: 14, mercado: "R$ 37,0M", tag: "👑", foto: "fotos/luqueta.png", trofeus: ["🥖 Pão de Ouro", "🥓 Chuteira de Bacon"] },
-      { id: 2, nome: "Edson", time: "Misto United", pos: "pivo", jogos: 5, gols: 22, assists: 7, mercado: "R$ 26,5M", tag: "⚡", foto: "fotos/edson.png", trofeus: ["🎯 Melhor Pivô"] },
-      { id: 3, nome: "Lucas broxa", time: "Misto United", pos: "fixo", jogos: 6, gols: 19, assists: 8, mercado: "R$ 24,0M", tag: "🎯", foto: "fotos/lucasbroxa.png", trofeus: [] },
-      { id: 4, nome: "Gontijo", time: "Misto United", pos: "ala", jogos: 6, gols: 16, assists: 10, mercado: "R$ 22,5M", tag: "🧠", foto: "fotos/gontijo.png", trofeus: ["⚡ Melhor Ala"] },
-      { id: 5, nome: "Kauã Broxa", time: "Misto United", pos: "fixo", jogos: 2, gols: 5, assists: 2, mercado: "R$ 18,5M", tag: "📈", foto: "fotos/kaua.png", trofeus: [] },
-      { id: 6, nome: "Ian", time: "Misto United", pos: "ala", jogos: 6, gols: 10, assists: 3, mercado: "R$ 14,0M", tag: "", foto: "fotos/ian.png", trofeus: [] },
-      { id: 7, nome: "Daniel", time: "Misto United", pos: "goleiro", jogos: 4, gols: 2, assists: 1, mercado: "R$ 18,0M", tag: "🔥", foto: "fotos/daniel.png", trofeus: [] },
-      { id: 8, nome: "Douglas", time: "Misto United", pos: "goleiro", jogos: 5, gols: 0, assists: 0, mercado: "R$ 19,0M", tag: "", foto: "fotos/douglas.png", trofeus: [] },
-      { id: 9, nome: "lz branco", time: "Misto United", pos: "ala", jogos: 1, gols: 2, assists: 0, mercado: "R$ 5,0M", tag: "", foto: "fotos/lzbranco.png", trofeus: [] },
-      { id: 10, nome: "samuel", time: "Misto United", pos: "fixo", jogos: 1, gols: 1, assists: 0, mercado: "R$ 5,0M", tag: "", foto: "fotos/samuel.png", trofeus: [] },
-
-      // Bacon City
-      { id: 11, nome: "Preto", time: "Bacon City", pos: "fixo", jogos: 6, gols: 13, assists: 12, mercado: "R$ 20,0M", tag: "⚽", foto: "fotos/preto.png", trofeus: ["🛡️ Melhor Fixo"] },
-      { id: 12, nome: "Varo", time: "Bacon City", pos: "ala", jogos: 6, gols: 11, assists: 13, mercado: "R$ 19,5M", tag: "🔄", foto: "fotos/varo.png", trofeus: ["🥫 Chef do Molho"] },
-      { id: 13, nome: "Vitor", time: "Bacon City", pos: "ala", jogos: 3, gols: 13, assists: 4, mercado: "R$ 18,5M", tag: "🔥", foto: "fotos/vitor.png", trofeus: ["⭐ MVP 6º Jogo"] },
-      { id: 14, nome: "Vitor Hugo", time: "Bacon City", pos: "ala", jogos: 1, gols: 8, assists: 0, mercado: "R$ 15,0M", tag: "", foto: "fotos/vitorhugo.png", trofeus: [] },
-      { id: 15, nome: "Matheus", time: "Bacon City", pos: "pivo", jogos: 4, gols: 14, assists: 3, mercado: "R$ 15,0M", tag: "📈", foto: "fotos/matheus.png", trofeus: [] },
-      { id: 16, nome: "Paulao", time: "Bacon City", pos: "pivo", jogos: 1, gols: 3, assists: 1, mercado: "R$ 14,0M", tag: "💥", foto: "fotos/paulao.png", trofeus: [] },
-      { id: 17, nome: "Guilherme", time: "Bacon City", pos: "goleiro", jogos: 5, gols: 0, assists: 1, mercado: "R$ 23,0M", tag: "", foto: "fotos/guilherme.png", trofeus: ["🧤 Pão Selado"] },
-      { id: 18, nome: "Alejandro", time: "Bacon City", pos: "fixo", jogos: 1, gols: 0, assists: 1, mercado: "R$ 17,0M", tag: "", foto: "fotos/alejandro.png", trofeus: [] },
-      { id: 19, nome: "Davi", time: "Bacon City", pos: "ala", jogos: 5, gols: 1, assists: 2, mercado: "R$ 10,0M", tag: "", foto: "fotos/davi.png", trofeus: [] },
-      { id: 20, nome: "Litle pepsi", time: "Bacon City", pos: "ala", jogos: 1, gols: 3, assists: 6, mercado: "R$ 8,0M", tag: "", foto: "fotos/litlepepsi.png", trofeus: [] },
-      { id: 21, nome: "murilao", time: "Bacon City", pos: "fixo", jogos: 1, gols: 0, assists: 0, mercado: "R$ 4,0M", tag: "", foto: "fotos/murilao.png", trofeus: [] }
+      { id: 1, nome: "Luqueta pepeta", time: "Misto United", pos: "pivo", jogos: 5, gols: 27, assists: 14, mercado: "R$ 37,0M", foto: "fotos/luqueta.png", trofeus: ["🥖 Pão de Ouro", "🥓 Chuteira de Bacon"] },
+      { id: 2, nome: "Edson", time: "Misto United", pos: "pivo", jogos: 5, gols: 22, assists: 7, mercado: "R$ 26,5M", foto: "fotos/edson.png", trofeus: ["🎯 Melhor Pivô"] },
+      { id: 3, nome: "Lucas broxa", time: "Misto United", pos: "fixo", jogos: 6, gols: 19, assists: 8, mercado: "R$ 24,0M", foto: "fotos/lucasbroxa.png", trofeus: [] },
+      { id: 4, nome: "Gontijo", time: "Misto United", pos: "ala", jogos: 6, gols: 16, assists: 10, mercado: "R$ 22,5M", foto: "fotos/gontijo.png", trofeus: ["⚡ Melhor Ala"] },
+      { id: 5, nome: "Kauã Broxa", time: "Misto United", pos: "fixo", jogos: 2, gols: 5, assists: 2, mercado: "R$ 18,5M", foto: "fotos/kaua.png", trofeus: [] },
+      { id: 6, nome: "Ian", time: "Misto United", pos: "ala", jogos: 6, gols: 10, assists: 3, mercado: "R$ 14,0M", foto: "fotos/ian.png", trofeus: [] },
+      { id: 7, nome: "Daniel", time: "Misto United", pos: "goleiro", jogos: 4, gols: 2, assists: 1, mercado: "R$ 18,0M", foto: "fotos/daniel.png", trofeus: [] },
+      { id: 8, nome: "Douglas", time: "Misto United", pos: "goleiro", jogos: 5, gols: 0, assists: 0, mercado: "R$ 19,0M", foto: "fotos/douglas.png", trofeus: [] },
+      { id: 9, nome: "lz branco", time: "Misto United", pos: "ala", jogos: 1, gols: 2, assists: 0, mercado: "R$ 5,0M", foto: "fotos/lzbranco.png", trofeus: [] },
+      { id: 10, nome: "samuel", time: "Misto United", pos: "fixo", jogos: 1, gols: 1, assists: 0, mercado: "R$ 5,0M", foto: "fotos/samuel.png", trofeus: [] },
+      { id: 11, nome: "Preto", time: "Bacon City", pos: "fixo", jogos: 6, gols: 13, assists: 12, mercado: "R$ 20,0M", foto: "fotos/preto.png", trofeus: ["🛡️ Melhor Fixo"] },
+      { id: 12, nome: "Varo", time: "Bacon City", pos: "ala", jogos: 6, gols: 11, assists: 13, mercado: "R$ 19,5M", foto: "fotos/varo.png", trofeus: ["🥫 Chef do Molho"] },
+      { id: 13, nome: "Vitor", time: "Bacon City", pos: "ala", jogos: 3, gols: 13, assists: 4, mercado: "R$ 18,5M", foto: "fotos/vitor.png", trofeus: ["⭐ MVP 6º Jogo"] },
+      { id: 14, nome: "Vitor Hugo", time: "Bacon City", pos: "ala", jogos: 1, gols: 8, assists: 0, mercado: "R$ 15,0M", foto: "fotos/vitorhugo.png", trofeus: [] },
+      { id: 15, nome: "Matheus", time: "Bacon City", pos: "pivo", jogos: 4, gols: 14, assists: 3, mercado: "R$ 15,0M", foto: "fotos/matheus.png", trofeus: [] },
+      { id: 16, nome: "Paulao", time: "Bacon City", pos: "pivo", jogos: 1, gols: 3, assists: 1, mercado: "R$ 14,0M", foto: "fotos/paulao.png", trofeus: [] },
+      { id: 17, nome: "Guilherme", time: "Bacon City", pos: "goleiro", jogos: 5, gols: 0, assists: 1, mercado: "R$ 23,0M", foto: "fotos/guilherme.png", trofeus: ["🧤 Pão Selado"] },
+      { id: 18, nome: "Alejandro", time: "Bacon City", pos: "fixo", jogos: 1, gols: 0, assists: 1, mercado: "R$ 17,0M", foto: "fotos/alejandro.png", trofeus: [] },
+      { id: 19, nome: "Davi", time: "Bacon City", pos: "ala", jogos: 5, gols: 1, assists: 2, mercado: "R$ 10,0M", foto: "fotos/davi.png", trofeus: [] },
+      { id: 20, nome: "Litle pepsi", time: "Bacon City", pos: "ala", jogos: 1, gols: 3, assists: 6, mercado: "R$ 8,0M", foto: "fotos/litlepepsi.png", trofeus: [] },
+      { id: 21, nome: "murilao", time: "Bacon City", pos: "fixo", jogos: 1, gols: 0, assists: 0, mercado: "R$ 4,0M", foto: "fotos/murilao.png", trofeus: [] }
     ];
 
     let DEFAULT_MATCHES = [
       {
         id: 1,
         data: "11/07/2026",
-        score: "37 x 11",
+        scoreMisto: 37,
+        scoreBacon: 11,
         potm: "Luiz",
         potmNota: "⭐ Nota 9.4",
-        potmFoto: "fotos/luiz.png",
         golsMisto: [{ n: "Luqueta", g: 13 }, { n: "Edson", g: 9 }, { n: "Gontijo", g: 7 }, { n: "Lucas broxa", g: 4 }, { n: "Ian", g: 4 }],
         golsBacon: [{ n: "Vitor", g: 8 }, { n: "Preto", g: 2 }, { n: "Matheus", g: 1 }]
       },
       {
         id: 2,
         data: "24/07/2026",
-        score: "16 x 8",
+        scoreMisto: 16,
+        scoreBacon: 8,
         potm: "Guilherme",
         potmNota: "⭐ Nota 10.0",
-        potmFoto: "fotos/guilherme.png",
         golsMisto: [{ n: "Luqueta", g: 6 }, { n: "Lucas broxa", g: 5 }, { n: "Daniel", g: 2 }, { n: "Edson", g: 1 }, { n: "Gontijo", g: 1 }],
         golsBacon: [{ n: "Matheus", g: 4 }, { n: "Davi", g: 1 }, { n: "Preto", g: 1 }, { n: "Varo", g: 1 }, { n: "Vitor", g: 1 }]
       },
       {
         id: 3,
         data: "28/07/2026",
-        score: "15 x 10",
+        scoreMisto: 15,
+        scoreBacon: 10,
         potm: "Vitor Hugo",
         potmNota: "8 Gols",
-        potmFoto: "fotos/vitorhugo.png",
         golsMisto: [{ n: "Luqueta pepeta", g: 4 }, { n: "Gontijo", g: 2 }, { n: "Ian", g: 2 }, { n: "Lucas broxa", g: 2 }],
         golsBacon: [{ n: "Vitor Hugo", g: 8 }, { n: "Matheus", g: 3 }, { n: "Preto", g: 2 }, { n: "Varo", g: 2 }]
       },
       {
         id: 4,
         data: "01/08/2026",
-        score: "13 x 3",
+        scoreMisto: 13,
+        scoreBacon: 3,
         potm: "Kauã",
         potmNota: "5G + 1A",
-        potmFoto: "fotos/kaua.png",
         golsMisto: [{ n: "Kauã broxa", g: 4 }, { n: "Edson", g: 3 }, { n: "Lucas broxa", g: 3 }, { n: "Ian", g: 2 }, { n: "Gontijo", g: 1 }],
         golsBacon: [{ n: "Varo", g: 2 }, { n: "Preto", g: 1 }]
       },
       {
         id: 5,
         data: "08/08/2026",
-        score: "18 x 17",
+        scoreMisto: 18,
+        scoreBacon: 17,
         potm: "Gontijo",
         potmNota: "4G + 3A",
-        potmFoto: "fotos/gontijo.png",
         golsMisto: [{ n: "Edson", g: 6 }, { n: "Gontijo", g: 4 }, { n: "Lucas broxa", g: 2 }, { n: "Ian", g: 2 }, { n: "lz branco", g: 2 }, { n: "samuel", g: 1 }],
         golsBacon: [{ n: "Matheus", g: 6 }, { n: "Preto", g: 5 }, { n: "Varo", g: 4 }, { n: "Litle pepsi", g: 3 }]
       },
       {
         id: 6,
         data: "15/08/2026",
-        score: "12 x 10",
+        scoreMisto: 12,
+        scoreBacon: 10,
         potm: "Vitor (Bacon)",
         potmNota: "4G + 3A (MVP)",
-        potmFoto: "fotos/vitor.png",
         golsMisto: [{ n: "Luqueta pepeta", g: 4 }, { n: "Lucas broxa", g: 3 }, { n: "Edson", g: 3 }, { n: "Gontijo", g: 1 }, { n: "Kauã broxa", g: 1 }],
         golsBacon: [{ n: "Vitor", g: 4 }, { n: "Paulao", g: 3 }, { n: "Varo", g: 2 }, { n: "Preto", g: 1 }]
       }
@@ -1488,136 +1819,297 @@
       totalJogos: 8,
       roster: "Misto United: Luqueta, Lucas broxa, Edson, Gontijo, Kauã, Douglas.\nBacon City: Vitor, Paulao, Varo, Preto, Guilherme."
     };
+
+    let DEFAULT_AWARDS = [
+      { id: "bola-ouro", icon: "👑", nome: "Bola de Ouro", detail: "O craque absoluto da Copa Misto Quente.", winnerId: 1 },
+      { id: "pao-ouro", icon: "🥖", nome: "Pão de Ouro", detail: "Líder isolado na soma de G+A.", winnerId: 1 },
+      { id: "chuteira-bacon", icon: "🥓", nome: "Chuteira de Bacon", detail: "Maior artilheiro da temporada.", winnerId: 1 },
+      { id: "chef-molho", icon: "🥫", nome: "Chef do Molho", detail: "Líder em assistências do torneio.", winnerId: 12 },
+      { id: "pao-selado", icon: "🧤", nome: "Pão Selado", detail: "Melhor goleiro e paredão oficial.", winnerId: 17 },
+      { id: "melhor-fixo", icon: "🛡️", nome: "Melhor Fixo", detail: "Defensor mais seguro da temporada.", winnerId: 11 },
+      { id: "melhor-ala", icon: "⚡", nome: "Melhor Ala", detail: "Mais veloz e incisivo pelas pontas.", winnerId: 4 },
+      { id: "melhor-pivo", icon: "🎯", nome: "Melhor Pivô", detail: "Gênio do pivô e giro mortal.", winnerId: 2 },
+      { id: "manteiga-pe", icon: "🍌", nome: "Manteiga no Pé", detail: "Autor da jogada mais cômica/gol perdido.", winnerId: null }
+    ];
+    let DEFAULT_NEWS = [];
+    let DEFAULT_RANKING_SNAPSHOT = [];
     /* BASE_DE_DADOS_OFICIAL_END */
 
-    let playersData = JSON.parse(localStorage.getItem('cmq_p_v11')) || DEFAULT_PLAYERS;
-    let matchesData = JSON.parse(localStorage.getItem('cmq_m_v11')) || DEFAULT_MATCHES;
-    let nextMatchData = JSON.parse(localStorage.getItem('cmq_next_v11')) || DEFAULT_NEXT_MATCH;
-    let posicaoFiltro = 'todos';
-    let selectedPlayerObj = null;
+    let playersData = JSON.parse(localStorage.getItem('cmq_p_v15')) || DEFAULT_PLAYERS;
+    let matchesData = JSON.parse(localStorage.getItem('cmq_m_v15')) || DEFAULT_MATCHES;
+    let nextMatchData = JSON.parse(localStorage.getItem('cmq_next_v15')) || DEFAULT_NEXT_MATCH;
+    let awardsData = JSON.parse(localStorage.getItem('cmq_awards_v15')) || DEFAULT_AWARDS;
+    let newsData = JSON.parse(localStorage.getItem('cmq_news_v1')) || DEFAULT_NEWS;
+    let rankingSnapshotData = JSON.parse(localStorage.getItem('cmq_rank_snapshot_v1')) || DEFAULT_RANKING_SNAPSHOT;
+    let explorerTimeFiltro = 'todos';
 
-    function getAvatarHTML(p) {
-      return `
-        <div class="avatar-wrap">
-          <img src="${p.foto}" alt="${p.nome}" class="player-thumb-img" onerror="this.src='fotos/default.png';">
-        </div>
-      `;
+    // Placar oficial do confronto.
+    // IMPORTANTE: a súmula é um registro dos autores dos gols e NÃO substitui
+    // o placar oficial cadastrado. Assim, uma súmula incompleta ou corrigida
+    // posteriormente não altera o resultado histórico do jogo.
+    function computeScore(m) {
+      const hasOfficialMisto = m && Object.prototype.hasOwnProperty.call(m, 'scoreMisto') && m.scoreMisto !== '' && m.scoreMisto !== null && m.scoreMisto !== undefined;
+      const hasOfficialBacon = m && Object.prototype.hasOwnProperty.call(m, 'scoreBacon') && m.scoreBacon !== '' && m.scoreBacon !== null && m.scoreBacon !== undefined;
+
+      const somaMisto = Array.isArray(m.golsMisto) ? m.golsMisto.reduce((s, g) => s + (parseInt(g.g) || 0), 0) : 0;
+      const somaBacon = Array.isArray(m.golsBacon) ? m.golsBacon.reduce((s, g) => s + (parseInt(g.g) || 0), 0) : 0;
+
+      return {
+        sMisto: hasOfficialMisto ? (parseInt(m.scoreMisto) || 0) : somaMisto,
+        sBacon: hasOfficialBacon ? (parseInt(m.scoreBacon) || 0) : somaBacon
+      };
     }
 
-    function navigateTo(sectionId) {
-      document.querySelectorAll('.spa-section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-link'));
-      document.querySelectorAll('.m-nav-item').forEach(l => l.classList.remove('active-link'));
-
-      const target = document.getElementById(sectionId);
-      if (target) target.classList.add('active');
-
-      document.querySelectorAll('.nav-link').forEach(l => {
-        if (l.getAttribute('onclick') && l.getAttribute('onclick').includes(sectionId)) l.classList.add('active-link');
-      });
-
-      document.querySelectorAll('.m-nav-item').forEach(l => {
-        if (l.getAttribute('onclick') && l.getAttribute('onclick').includes(sectionId)) l.classList.add('active-link');
-      });
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Confere a súmula sem alterar o placar oficial. Útil para o painel Admin.
+    function getSumulaDiscrepancy(m) {
+      const { sMisto, sBacon } = computeScore(m);
+      const sumulaMisto = Array.isArray(m.golsMisto) ? m.golsMisto.reduce((s, g) => s + (parseInt(g.g) || 0), 0) : 0;
+      const sumulaBacon = Array.isArray(m.golsBacon) ? m.golsBacon.reduce((s, g) => s + (parseInt(g.g) || 0), 0) : 0;
+      return {
+        sumulaMisto,
+        sumulaBacon,
+        divergenteMisto: Array.isArray(m.golsMisto) && m.golsMisto.length > 0 && sumulaMisto !== sMisto,
+        divergenteBacon: Array.isArray(m.golsBacon) && m.golsBacon.length > 0 && sumulaBacon !== sBacon
+      };
     }
 
-    function filtrarPosicao(pos) {
-      posicaoFiltro = pos;
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      if (event && event.target) event.target.classList.add('active');
-      renderRosters();
+    // Perfil: automáticas + manuais do Hall + prêmios especiais da Gala.
+    function getPlayerAllTrophies(player) {
+      const auto=getConquistasAutomaticas(player).map(c=>`${c.icon} ${c.nome}`);
+      const gala=awardsData.filter(a=>a.winnerId===player.id).map(a=>`${a.icon} ${a.nome}`);
+      const manuais=(player.trofeus||[]).filter(t=>!awardsData.some(a=>`${a.icon} ${a.nome}`===t));
+      return [...new Set([...auto,...manuais,...gala])];
+    }
+    function getHallAchievements(player){
+      return [...new Set(getConquistasAutomaticas(player).map(c=>`${c.icon} ${c.nome}`))];
     }
 
-    function renderApp() {
-      renderNextMatch();
-      renderRosters();
-      renderMatchesAndPOTM();
-      renderStatsTable();
-      renderMarket();
-      setupComparador();
+    function normalizarTexto(valor) { return String(valor||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }
+    function encontrarJogadorPorNomeSolto(nome) {
+      const alvo=normalizarTexto(String(nome||'').split('(')[0]); if(!alvo) return null;
+      let p=playersData.find(x=>normalizarTexto(x.nome)===alvo); if(p) return p;
+      p=playersData.find(x=>normalizarTexto(x.nome).includes(alvo)||alvo.includes(normalizarTexto(x.nome))); if(p) return p;
+      const primeiro=alvo.split(' ')[0]; return primeiro&&primeiro.length>=4 ? (playersData.find(x=>normalizarTexto(x.nome).split(' ')[0]===primeiro)||null) : null;
     }
-
-    function renderNextMatch() {
-      document.getElementById('nextMatchBadge').innerHTML = `<i class="fa-solid fa-fire"></i> ${nextMatchData.badge || 'Próximo Confronto Oficial'}`;
-      document.getElementById('nextMatchTeams').innerText = nextMatchData.teams;
-      document.getElementById('nextMatchDate').innerText = nextMatchData.date;
-      document.getElementById('quickGamesCount').innerText = `${nextMatchData.totalJogos || 8} Jogos no Total • ${matchesData.length} Já Realizados`;
+    function getRankingAtual() { return [...playersData].sort((a,b)=>{const pa=(Number(a.gols)||0)+(Number(a.assists)||0),pb=(Number(b.gols)||0)+(Number(b.assists)||0);if(pb!==pa)return pb-pa;if((Number(b.gols)||0)!==(Number(a.gols)||0))return (Number(b.gols)||0)-(Number(a.gols)||0);return (Number(b.assists)||0)-(Number(a.assists)||0);}); }
+    function getMovimentoRanking(id) { if(!rankingSnapshotData.length)return null;const atual=getRankingAtual().findIndex(p=>p.id===id)+1,anterior=rankingSnapshotData.indexOf(id)+1;if(!atual||!anterior)return null;return {atual,anterior,delta:anterior-atual}; }
+    function calcularOVR(p) { const j=Math.max(1,Number(p.jogos)||0),g=Number(p.gols)||0,a=Number(p.assists)||0,c=(g+a)/j;const fin=Math.min(99,62+g/j*9),pas=Math.min(99,58+a/j*10,99),imp=Math.min(99,60+c*7),exp=Math.min(99,58+Math.min(j,8)*4);return Math.max(60,Math.min(99,Math.round(fin*.3+pas*.22+imp*.33+exp*.15))); }
+    function getNewsItems() { const manual=Array.isArray(newsData)?[...newsData]:[],auto=[],latest=matchesData[matchesData.length-1];if(latest){const sc=computeScore(latest),v=sc.sMisto===sc.sBacon?'Empate':sc.sMisto>sc.sBacon?'Misto United':'Bacon City';auto.push({icon:'🏟️',title:v==='Empate'?'Jogo equilibrado':`${v} vence o confronto`,text:`${latest.data} • Misto United ${sc.sMisto} × ${sc.sBacon} Bacon City • POTM: ${latest.potm}`});}const top=getRankingAtual()[0];if(top)auto.push({icon:'👑',title:`${top.nome} lidera o Hall BDA`,text:`${(Number(top.gols)||0)+(Number(top.assists)||0)} G+A na temporada.`});return [...manual,...auto].slice(0,5); }
+    function renderHomeDashboard() {
+      const latest=matchesData[matchesData.length-1],mt=document.getElementById('momentTitle'),ms=document.getElementById('momentSubtitle'),mc=document.getElementById('momentContent');
+      if(latest&&mt&&ms&&mc){const potm=encontrarJogadorPorNomeSolto(latest.potm),sc=computeScore(latest);mt.innerText=latest.potm&&latest.potm!=='A definir'?`⭐ ${latest.potm}`:'O jogo mais recente';ms.innerText=`${latest.data} • Misto United ${sc.sMisto} × ${sc.sBacon} Bacon City`;mc.innerHTML=potm?`<div class="moment-player" onclick="openPlayerModal(playersData.find(x=>x.id===${potm.id}))"><div class="moment-avatar"><img src="${potm.foto}" onerror="this.src='fotos/default.png'"></div><div><strong style="font-size:.82rem;display:block">${potm.nome}</strong><span class="feature-muted">${latest.potmNota||'Destaque da partida'} • abrir perfil</span></div></div>`:`<div style="margin-top:12px" class="feature-muted">${latest.potmNota||'Destaque da partida'}</div>`;}
+      const ne=document.getElementById('homeNewsList');if(ne)ne.innerHTML=getNewsItems().map((n,i)=>`<div class="news-item" onclick="mostrarNoticia(${i})"><strong>${n.icon||'📰'} ${escapeHtml(n.title||'Notícia')}</strong><span>${escapeHtml(n.text||'')}</span></div>`).join('');
+      const totals=matchesData.reduce((a,m)=>{const sc=computeScore(m);a.g+=sc.sMisto;a.b+=sc.sBacon;return a},{g:0,b:0}),sn=document.getElementById('seasonNumbersContent');if(sn)sn.innerHTML=`<strong style="color:#fff;font-size:1rem">${matchesData.length}</strong> jogos oficiais<br><strong style="color:var(--misto-gold);font-size:1rem">${totals.g}</strong> gols Misto • <strong style="color:var(--bacon-red);font-size:1rem">${totals.b}</strong> gols Bacon<br><strong style="color:var(--gold);font-size:1rem">${playersData.length}</strong> atletas • <strong style="color:var(--money-green);font-size:1rem">${awardsData.filter(a=>a.winnerId).length}</strong> prêmios definidos`;
     }
+    function mostrarNoticia(i){const n=getNewsItems()[i];if(n)alert(`${n.icon||'📰'} ${n.title}\n\n${n.text}`);}
+    function renderSeasonTimeline(){const el=document.getElementById('seasonTimeline');if(!el)return;const cards=matchesData.map((m,i)=>{const sc=computeScore(m);return `<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">${m.data}</div><div class="timeline-round">${i+1}º Jogo</div><div class="timeline-score">${sc.sMisto} × ${sc.sBacon}</div><div class="timeline-status">⭐ ${m.potm||'A definir'}</div></div></div>`});cards.push(`<div class="timeline-item upcoming"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">PRÓXIMO</div><div class="timeline-round">${nextMatchData.badge||'Próximo jogo'}</div><div class="timeline-score" style="font-size:.9rem">${nextMatchData.teams||'A definir'}</div><div class="timeline-status">${nextMatchData.date||''}</div></div></div>`);el.innerHTML=cards.join('');}
+    function renderRecordCards(){const el=document.getElementById('recordCardsContainer');if(!el)return;const rank=getRankingAtual(),tg=[...playersData].sort((a,b)=>(b.gols||0)-(a.gols||0))[0],ta=[...playersData].sort((a,b)=>(b.assists||0)-(a.assists||0))[0],tj=[...playersData].sort((a,b)=>(b.jogos||0)-(a.jogos||0))[0],tt=[...playersData].sort((a,b)=>getPlayerAllTrophies(b).length-getPlayerAllTrophies(a).length)[0];let big=null;matchesData.forEach(m=>{const sc=computeScore(m),mg=Math.abs(sc.sMisto-sc.sBacon);if(!big||mg>big.mg)big={m,sc,mg};});const c=[['⚽','Maior artilheiro',tg?tg.gols+' gols':'—',tg?.nome||'—',tg?.time||'',tg?.id],['🅰️','Rei das assistências',ta?ta.assists+' assists':'—',ta?.nome||'—',ta?.time||'',ta?.id],['👑','Maior G+A',rank[0]?((rank[0].gols||0)+(rank[0].assists||0))+' G+A':'—',rank[0]?.nome||'—','Hall BDA',rank[0]?.id],['🎮','Mais jogos',tj?tj.jogos+' jogos':'—',tj?.nome||'—',tj?.time||'',tj?.id],['💥','Maior vitória',big?big.mg+' gols de diferença':'—',big?`Misto ${big.sc.sMisto} × ${big.sc.sBacon} Bacon`:'—',big?.m.data||'',null],['🏆','Mais conquistas',tt?getPlayerAllTrophies(tt).length+' troféus':'—',tt?.nome||'—',tt?.time||'',tt?.id]];el.innerHTML=c.map(x=>`<div class="record-card" ${x[5]?`onclick="openPlayerModal(playersData.find(p=>p.id===${x[5]}))" style="cursor:pointer"`:''}><div class="record-icon">${x[0]}</div><div class="record-label">${x[1]}</div><div class="record-value">${x[2]}</div><div class="record-owner">${x[3]}</div><div class="record-sub">${x[4]}</div></div>`).join('');}
+    function renderLeaderboardMini(){const make=(id,arr,key)=>{const el=document.getElementById(id);if(!el)return;el.innerHTML=arr.slice(0,5).map((p,i)=>{const mv=getMovimentoRanking(p.id),move=mv?(mv.delta>0?`<span class="rank-move rank-up">↑${mv.delta}</span>`:mv.delta<0?`<span class="rank-move rank-down">↓${Math.abs(mv.delta)}</span>`:'<span class="rank-move rank-same">—</span>'):'';return `<div class="leader-row" onclick="openPlayerModal(playersData.find(x=>x.id===${p.id}))"><span class="leader-rank">#${i+1}</span><span class="leader-name">${p.nome}${id==='topContribList'?move:''}</span><span class="leader-value">${key(p)}</span></div>`}).join('');};make('topScorersList',[...playersData].sort((a,b)=>(b.gols||0)-(a.gols||0)),p=>p.gols||0);make('topAssistsList',[...playersData].sort((a,b)=>(b.assists||0)-(a.assists||0)),p=>p.assists||0);make('topContribList',getRankingAtual(),p=>(p.gols||0)+(p.assists||0));}
+    function preencherComparador(){const a=document.getElementById('comparePlayerA'),b=document.getElementById('comparePlayerB');if(!a||!b)return;const oa=a.value,ob=b.value,opts=playersData.map(p=>`<option value="${p.id}">${p.nome} — ${p.time}</option>`).join('');a.innerHTML=opts;b.innerHTML=opts;a.value=playersData.some(p=>String(p.id)===oa)?oa:(playersData[0]?.id||'');b.value=playersData.some(p=>String(p.id)===ob)?ob:(playersData[1]?.id||playersData[0]?.id||'');renderPlayerComparator();}
+    function renderPlayerComparator(){const a=playersData.find(p=>p.id===parseInt(document.getElementById('comparePlayerA')?.value)),b=playersData.find(p=>p.id===parseInt(document.getElementById('comparePlayerB')?.value)),el=document.getElementById('compareResult');if(!a||!b||!el)return;const stats=[['Jogos',p=>p.jogos||0],['Gols',p=>p.gols||0],['Assistências',p=>p.assists||0],['G+A',p=>(p.gols||0)+(p.assists||0)],['G+A/Jogo',p=>((p.gols||0)+(p.assists||0))/Math.max(1,p.jogos||0)],['Conquistas',p=>getPlayerAllTrophies(p).length]];const rows=stats.map(([label,fn])=>{const av=fn(a),bv=fn(b),fmt=v=>label.includes('Jogo')?v.toFixed(2):v;return `<div class="compare-stat-row"><span class="${av>bv?'better':''}">${fmt(av)}</span><span class="label">${label}</span><span class="${bv>av?'better':''}">${fmt(bv)}</span></div>`}).join('');el.innerHTML=`<div class="compare-cards"><div class="compare-card"><div class="compare-avatar"><img src="${a.foto}" onerror="this.src='fotos/default.png'"></div><div class="compare-name">${a.nome}</div><div class="compare-ovr">${calcularOVR(a)} OVR</div><div class="compare-side-label">${a.time}</div></div><div class="compare-center">${rows}</div><div class="compare-card"><div class="compare-avatar"><img src="${b.foto}" onerror="this.src='fotos/default.png'"></div><div class="compare-name">${b.nome}</div><div class="compare-ovr">${calcularOVR(b)} OVR</div><div class="compare-side-label">${b.time}</div></div></div>`;}
+    function getBadgeClass(trofeuNome){const info=getConquistaInfo(trofeuNome);if(info?.origem==='Gala do Pão'||info?.classe==='supremo'||info?.classe==='imortal')return'badge-gold';if(info?.classe==='mitico')return'badge-legend';if(info?.classe==='lendario')return'badge-legend';if(info?.classe==='epico')return'badge-fire';if(info?.classe==='raro')return'badge-emerald';return'badge-cyan';}
+    function verDetalheTrofeu(playerId,trofeuNome){const info=getConquistaInfo(trofeuNome);if(info){const tipo=info.origem==='Gala do Pão'?'🏆 ESPECIAL — GALA DO PÃO':`⭐ HALL DA FAMA — ${(info.classe||'').toUpperCase()}`;alert(`${info.icon} ${info.nome}\n\n${info.detail}\n\n${tipo}\n${info.condition||'Prêmio definido pela Gala do Pão.'}`);}else alert(`🏅 ${trofeuNome}\n\nConquista manual registrada pelo Admin.`);}
 
-    function renderRosters() {
-      const mistoList = document.getElementById('rosterMisto');
-      const baconList = document.getElementById('rosterBacon');
-      mistoList.innerHTML = '';
-      baconList.innerHTML = '';
+    /* ============================================================
+       RENDER JOGADORES (FLIP CARDS 3D UIVERSE)
+    ============================================================ */
+    function renderPlayersExplorer() {
+      const grid = document.getElementById('explorerGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
 
-      const filtered = playersData.filter(p => posicaoFiltro === 'todos' || p.pos === posicaoFiltro);
+      const list = playersData.filter(p => explorerTimeFiltro === 'todos' || p.time === explorerTimeFiltro);
 
-      filtered.forEach(p => {
-        const li = document.createElement('li');
-        li.className = 'roster-item';
-        li.innerHTML = `
-          <div class="roster-player-info">
-            ${getAvatarHTML(p)}
-            <div>
-              <strong style="text-transform: capitalize;">${p.nome}</strong> 
-              <span class="position-pill">${p.pos}</span><br>
-              <small style="color: var(--text-muted); font-size: 0.75rem;">${p.jogos} Jogos • Média: ${((p.gols + p.assists)/(p.jogos || 1)).toFixed(1)} pts/J</small>
+      list.forEach((p) => {
+        const conquistas = getPlayerAllTrophies(p);
+        const card = document.createElement('div');
+        card.className = `uiverse-card ${p.time === 'Misto United' ? 'misto-theme' : 'bacon-theme'}`;
+        
+        card.innerHTML = `
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <div class="avatar-wrap" style="width:68px; height:68px; border-color:${p.time === 'Misto United' ? 'var(--gold)' : 'var(--bacon-red)'};">
+                  <img src="${p.foto}" alt="${p.nome}" onerror="this.src='fotos/default.png'">
+                </div>
+                <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">${p.nome}</strong>
+                <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">${p.time}</p>
+                <div style="font-size:0.75rem; color:var(--text-muted);">${conquistas.length} Conquistas • ${p.jogos} Jogos</div>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x => x.id === ${p.id}))">Ver Perfil Completo</button>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img-bg">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">${p.pos.toUpperCase()}</small>
+                <div class="description">
+                  <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                    <div class="avatar-wrap" style="width:36px; height:36px;">
+                      <img src="${p.foto}" onerror="this.src='fotos/default.png'">
+                    </div>
+                    <div>
+                      <strong style="font-size:0.95rem; line-height:1; display:block;">${p.nome}</strong>
+                      <span style="font-size:0.68rem; color:${p.time === 'Misto United' ? 'var(--gold)' : 'var(--bacon-red)'};">${p.time}</span>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <span>⚽ ${p.gols} Gols | 🅰️ ${p.assists} Ast</span>
+                    <span style="color:var(--money-green); font-weight:800;">${p.mercado}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div style="text-align: right;">
-            <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem;">${p.gols}G / ${p.assists}A</span><br>
-            <span style="color: var(--money-green); font-size: 0.75rem; font-weight:700;">${p.mercado}</span>
-          </div>
         `;
-        li.onclick = () => openPlayerModal(p);
 
-        if (p.time === 'Misto United') mistoList.appendChild(li);
-        else baconList.appendChild(li);
+        card.addEventListener('click', () => card.classList.toggle('flipped'));
+        grid.appendChild(card);
       });
     }
 
-    function renderMatchesAndPOTM() {
-      const potmContainer = document.getElementById('potmContainer');
+    function filtrarTimeExplorer(time) {
+      explorerTimeFiltro = time;
+      document.querySelectorAll('[data-explorer-time]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-explorer-time') === time);
+      });
+      renderPlayersExplorer();
+    }
+
+    /* ============================================================
+       PATENTES DO HALL DA FAMA
+       A patente é definida pela conquista de maior classe.
+       Não basta estar no ranking: sem uma conquista automática, o
+       atleta não entra no Hall. Gala do Pão não conta para patente.
+    ============================================================ */
+    function getHallTier(player){
+      const ach=getHallAchievements(player);
+      if(!ach.length)return null;
+      const ordem={raro:1,epico:2,lendario:3,mitico:4,supremo:5,imortal:6};
+      const melhor=ach.map(nome=>CONQUISTAS_HALL.find(c=>`${c.icon} ${c.nome}`===nome)).filter(Boolean).sort((a,b)=>ordem[b.classe]-ordem[a.classe])[0];
+      const tiers={
+        raro:{label:'Raro',icon:'🔹',desc:'Já conquistou uma marca que poucos alcançam.'},
+        epico:{label:'Épico',icon:'⭐',desc:'Já deixou uma marca forte na história da Copa.'},
+        lendario:{label:'Lendário',icon:'🔥',desc:'Seu nome já pertence à história da Copa Misto Quente.'},
+        mitico:{label:'Mítico',icon:'🌟',desc:'Um nível reservado para temporadas verdadeiramente fora da curva.'},
+        supremo:{label:'Supremo',icon:'👑',desc:'Patamar dos maiores monstros que a Copa já produziu.'},
+        imortal:{label:'Imortal',icon:'🐐',desc:'A marca máxima. Um feito que vira parte da história da Copa.'}
+      };
+      return {key:melhor.classe,...tiers[melhor.classe]};
+    }
+
+    function renderBdaRecords(){
+      const container=document.getElementById('bdaRecordsContainer');if(!container)return;
+      const elegiveis=playersData.map(p=>({p,ach:getHallAchievements(p),tier:getHallTier(p)})).filter(x=>x.ach.length>0).sort((a,b)=>{const o={supremo:3,lendario:2,epico:1};return o[b.tier.key]-o[a.tier.key]||b.ach.length-a.ach.length||(((b.p.gols||0)+(b.p.assists||0))-((a.p.gols||0)+(a.p.assists||0)));});
+      container.innerHTML='';
+      if(!elegiveis.length){container.innerHTML='<div class="feature-card" style="text-align:center;padding:22px"><strong>🏛️ O Hall ainda está vazio</strong><p class="feature-muted" style="margin-top:5px">A primeira conquista desbloqueada coloca o atleta aqui automaticamente.</p></div>';return;}
+      elegiveis.forEach((x,idx)=>{const p=x.p,t=x.tier,pts=(+p.gols||0)+(+p.assists||0),gala=awardsData.filter(a=>a.winnerId===p.id).length;const card=document.createElement('div');card.className=`bda-card tier-${t.key}`;card.innerHTML=`<div class="bda-avatar-col"><div class="bda-avatar-box"><img src="${p.foto}" alt="${p.nome}" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#${idx+1} HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">${t.icon} ${t.label}</span><span class="bda-detentor-badge">🏅 ${x.ach.length} Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">${p.time} • ${p.pos.toUpperCase()}</span></div><div class="bda-name">${p.nome}</div><div class="bda-records-chips"><span class="bda-chip">⚽ ${p.gols||0} Gols</span><span class="bda-chip">🅰️ ${p.assists||0} Assists</span><span class="bda-chip">👑 ${pts} G+A</span><span class="bda-chip">🎮 ${p.jogos||0} Jogos</span>${gala?`<span class="bda-chip">🏆 ${gala} Gala</span>`:''}</div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">${t.desc}</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">${x.ach.slice(0,6).map(a=>`<span class="badge-conquista ${getBadgeClass(a)}" style="font-size:.62rem">${a}</span>`).join('')}${x.ach.length>6?`<span class="badge-conquista badge-cyan" style="font-size:.62rem">+${x.ach.length-6}</span>`:''}</div></div>`;card.onclick=()=>openPlayerModal(p);container.appendChild(card);});
+    }
+
+    /* ============================================================
+       GALA DO PÃO (FLIP CARDS 3D UIVERSE)
+    ============================================================ */
+    function renderAwards() {
+      const grid = document.getElementById('awardsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      awardsData.forEach((award) => {
+        let winner = award.winnerId ? playersData.find(p => p.id === award.winnerId) : null;
+        // Se o prêmio foi dado manualmente no perfil, usa o mesmo atleta como campeão da Gala.
+        if (!winner) {
+          const trophyKey = `${award.icon} ${award.nome}`;
+          winner = playersData.find(p => (p.trofeus || []).includes(trophyKey)) || null;
+        }
+        const card = document.createElement('div');
+        card.className = 'uiverse-card misto-theme';
+
+        card.innerHTML = `
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <div style="font-size:2.4rem;">${award.icon}</div>
+                <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">${award.nome}</strong>
+                <p style="font-size:0.75rem; color:var(--text-muted);">${award.detail}</p>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); ${winner ? `openPlayerModal(playersData.find(x => x.id === ${winner.id}))` : `abrirAdminModal(); adminTab('premios');`}">Ver Campeão</button>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img-bg">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">${award.icon} Gala do Pão</small>
+                <div class="description">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
+                      <img src="${winner ? winner.foto : 'fotos/default.png'}" onerror="this.src='fotos/default.png'">
+                    </div>
+                    <div>
+                      <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">${award.nome}</strong>
+                      <span style="font-size:0.7rem; color:var(--text-white);">${winner ? winner.nome : 'A ser definido'}</span>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <span>${winner ? winner.time : 'Em disputa'}</span>
+                    <span style="color:var(--gold);">🏆 Oficial</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => card.classList.toggle('flipped'));
+        grid.appendChild(card);
+      });
+    }
+
+    /* ============================================================
+       JOGOS & SÚMULAS
+    ============================================================ */
+    function renderMatches() {
       const matchesContainer = document.getElementById('matchesContainer');
-      potmContainer.innerHTML = '';
+      if (!matchesContainer) return;
       matchesContainer.innerHTML = '';
 
-      matchesData.forEach((m, idx) => {
-        const pCard = document.createElement('div');
-        pCard.className = 'potm-card';
-        pCard.innerHTML = `
-          <div class="potm-avatar-wrap">
-            <img src="${m.potmFoto || 'fotos/default.png'}" alt="${m.potm}" class="player-thumb-img" onerror="this.src='fotos/default.png'">
-          </div>
-          <span class="potm-tag">${idx + 1}º Jogo</span>
-          <h4 class="potm-name">${m.potm}</h4>
-          <div class="potm-note">${m.potmNota}</div>
-        `;
-        potmContainer.appendChild(pCard);
-      });
+      const reversed = [...matchesData].reverse();
+      reversed.forEach((m, idx) => {
+        const origIdx = matchesData.length - 1 - idx;
+        const { sMisto, sBacon } = computeScore(m);
+        const mistoWin = sMisto > sBacon;
+        const baconWin = sBacon > sMisto;
 
-      const reversedMatches = [...matchesData].reverse();
-      reversedMatches.forEach((m, idx) => {
-        const originalIdx = matchesData.length - 1 - idx;
         const mRow = document.createElement('div');
         mRow.className = 'match-row';
         mRow.innerHTML = `
           <div class="match-top">
             <span><i class="fa-regular fa-calendar"></i> ${m.data}</span>
-            <span>Panela Stadium (${originalIdx + 1}º Jogo)</span>
+            <span>Panela Stadium (${origIdx + 1}º Confronto Oficial)</span>
           </div>
           <div class="match-scoreboard">
-            <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
-            <div class="score-display">${m.score}</div>
-            <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+            <div class="score-team-block ${mistoWin ? 'is-winner' : baconWin ? 'is-loser' : ''}">
+              ${mistoWin ? '<span class="winner-chip"><i class="fa-solid fa-crown"></i> Vitória</span>' : '<span style="height:15px;"></span>'}
+              <div class="team-box-name" style="color: var(--misto-gold);">Misto United</div>
+              <div class="score-num">${sMisto}</div>
+            </div>
+            <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--text-muted); opacity:0.4;">×</div>
+            <div class="score-team-block ${baconWin ? 'is-winner' : mistoWin ? 'is-loser' : ''}">
+              ${baconWin ? '<span class="winner-chip"><i class="fa-solid fa-crown"></i> Vitória</span>' : '<span style="height:15px;"></span>'}
+              <div class="team-box-name" style="color: var(--bacon-red);">Bacon City</div>
+              <div class="score-num">${sBacon}</div>
+            </div>
           </div>
           <div class="match-potm">
-            <span><strong>⭐ POTM:</strong> ${m.potm} (${m.potmNota})</span>
-            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_v11_${idx}')">Ver Gols & Súmula</button>
+            <span><strong>⭐ POTM:</strong> ${m.potm} (${m.potmNota || 'Destaque'})</span>
+            <button class="btn-outline" style="padding:4px 10px; font-size:0.7rem;" onclick="toggleSummary('sum_idx_${origIdx}')">Ver Súmula de Gols</button>
           </div>
-          <div id="sum_v11_${idx}" class="match-summary-cards">
+          <div id="sum_idx_${origIdx}" class="match-summary-cards">
             <div class="summary-team-block">
               <div class="summary-team-title" style="color: var(--misto-gold);">⚽ Gols Misto United:</div>
               <div class="goals-badges-list">
@@ -1640,37 +2132,37 @@
       document.getElementById(id).classList.toggle('open');
     }
 
+    /* ============================================================
+       TABELA GERAL DE STATS
+    ============================================================ */
     function renderStatsTable() {
-      const sorted = [...playersData].sort((a, b) => (b.gols + b.assists) - (a.gols + a.assists));
+      const sorted = getRankingAtual();
       const tbody = document.getElementById('statsTableBody');
       tbody.innerHTML = '';
 
       sorted.forEach((p, idx) => {
         const j = p.jogos || 1;
-        const mediaGols = (p.gols / j).toFixed(2);
-        const mediaPts = ((p.gols + p.assists) / j).toFixed(2);
-
         const tr = document.createElement('tr');
         tr.style.cursor = 'pointer';
         tr.onclick = () => openPlayerModal(p);
         tr.innerHTML = `
-          <td><span class="rank-pill" style="color: ${idx === 0 ? 'var(--gold)' : idx === 1 ? '#C0C0C0' : idx === 2 ? '#CD7F32' : '#fff'};">#${idx + 1}</span></td>
+          <td><strong style="color:${idx === 0 ? 'var(--gold)' : '#fff'};">#${idx + 1}</strong></td>
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
-              <div class="avatar-wrap" style="width:34px; height:34px;">
-                <img src="${p.foto}" class="player-thumb-img" onerror="this.src='fotos/default.png'">
+              <div class="avatar-wrap" style="width:32px; height:32px;">
+                <img src="${p.foto}" onerror="this.src='fotos/default.png'">
               </div>
-              <strong style="text-transform: capitalize;">${p.nome}</strong>
+              <strong>${p.nome}</strong>
             </div>
           </td>
-          <td style="color: ${p.time === 'Misto United' ? 'var(--misto-gold)' : 'var(--bacon-red)'}; font-weight: 700;">${p.time}</td>
-          <td><span class="position-pill">${p.pos}</span></td>
-          <td><strong>${p.jogos}</strong></td>
-          <td style="font-weight: 700;">${p.gols}</td>
-          <td style="color:var(--text-muted);">${mediaGols}</td>
-          <td style="font-weight: 700;">${p.assists}</td>
-          <td style="color: var(--primary); font-weight: 800; font-size: 1rem;">${p.gols + p.assists}</td>
-          <td style="color: var(--secondary); font-weight: 700;">${mediaPts}</td>
+          <td style="color:${p.time === 'Misto United' ? 'var(--misto-gold)' : 'var(--bacon-red)'}; font-weight:700;">${p.time}</td>
+          <td><span style="font-size:0.7rem; background:var(--bg-inset); padding:2px 6px; border-radius:4px;">${p.pos.toUpperCase()}</span></td>
+          <td>${p.jogos}</td>
+          <td><strong>${p.gols}</strong></td>
+          <td style="color:var(--text-muted);">${(p.gols / j).toFixed(2)}</td>
+          <td><strong>${p.assists}</strong></td>
+          <td style="color:var(--primary); font-weight:800; font-size:1rem;">${p.gols + p.assists}</td>
+          <td style="color:var(--secondary); font-weight:700;">${((p.gols + p.assists) / j).toFixed(2)}</td>
         `;
         tbody.appendChild(tr);
       });
@@ -1681,56 +2173,36 @@
       }
     }
 
-    function renderMarket() {
-      const grid = document.getElementById('marketGrid');
-      grid.innerHTML = '';
-      playersData.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'market-card';
-        card.onclick = () => openPlayerModal(p);
-        card.innerHTML = `
-          <div class="roster-player-info">
-            ${getAvatarHTML(p)}
-            <div>
-              <strong style="text-transform: capitalize;">${p.nome}</strong> ${p.tag ? `<span>${p.tag}</span>` : ''}<br>
-              <small style="color: var(--text-muted);">${p.time} • ${p.pos.toUpperCase()}</small>
-            </div>
-          </div>
-          <div class="market-val">${p.mercado}</div>
-        `;
-        grid.appendChild(card);
-      });
-    }
+    function renderAdvancedStats(){ renderLeaderboardMini(); preencherComparador(); }
 
+    /* ============================================================
+       MODAL DE PERFIL & CONQUISTAS SINCRONIZADAS
+    ============================================================ */
     function openPlayerModal(p) {
-      selectedPlayerObj = p;
       document.getElementById('mImg').src = p.foto;
       document.getElementById('mName').innerText = p.nome;
       document.getElementById('mTeamPos').innerText = `${p.time} • ${p.pos.toUpperCase()}`;
       document.getElementById('mJogos').innerText = p.jogos;
       document.getElementById('mGols').innerText = p.gols;
       document.getElementById('mAssists').innerText = p.assists;
-      const total = p.gols + p.assists;
-      document.getElementById('mTotal').innerText = total;
+      document.getElementById('mTotal').innerText = p.gols + p.assists;
       document.getElementById('mMarket').innerText = `Valor de Mercado: ${p.mercado}`;
 
-      const badgesCont = document.getElementById('mBadgesContainer');
-      badgesCont.innerHTML = '';
+      const ovr=calcularOVR(p);
+      document.getElementById('mPlayerCardPro').innerHTML=`<div class="player-card-pro"><div class="pcp-top"><div class="pcp-avatar"><img src="${p.foto}" onerror="this.src='fotos/default.png'"></div><div><div class="pcp-position">${p.pos}</div><div class="pcp-rating">${ovr}</div><div class="pcp-name">${p.nome}</div><div style="margin-top:3px;font-size:.62rem;color:var(--gold);font-weight:900">${getHallTier(p)?`${getHallTier(p).icon} ${getHallTier(p).label}`:'Sem patente no Hall'}</div><div style="color:${p.time==='Misto United'?'var(--misto-gold)':'var(--bacon-red)'};font-size:.66rem;font-weight:800">${p.time}</div></div></div><div class="pcp-stats"><div class="pcp-stat"><b>${p.jogos||0}</b><span>Jogos</span></div><div class="pcp-stat"><b>${p.gols||0}</b><span>Gols</span></div><div class="pcp-stat"><b>${p.assists||0}</b><span>Assist.</span></div><div class="pcp-stat"><b>${(p.gols||0)+(p.assists||0)}</b><span>G+A</span></div></div></div>`;
+      const evo=document.getElementById('mEvolution');
+      const rows=matchesData.map((m,i)=>{const g=[...(m.golsMisto||[]),...(m.golsBacon||[])].filter(x=>encontrarJogadorPorNomeSolto(x.n)?.id===p.id).reduce((sum,x)=>sum+(Number(x.g)||0),0);return {i,g};});
+      const max=Math.max(1,...rows.map(x=>x.g));
+      evo.innerHTML=rows.length?rows.map(x=>`<div class="evo-row"><span class="evo-label">J${x.i+1}</span><div class="evo-track"><div class="evo-fill" style="width:${Math.min(100,x.g/max*100)}%"></div></div><span class="evo-num">${x.g}G</span></div>`).join(''):'<span class="feature-muted">Sem súmulas detalhadas suficientes.</span>';
 
-      if (total >= 91) badgesCont.innerHTML += `<span class="badge-record-tag"><i class="fa-solid fa-crown"></i> Ano Mágico (Recorde Messi: 91+ Pts)</span>`;
-      if (p.gols >= 55) badgesCont.innerHTML += `<span class="badge-record-tag"><i class="fa-solid fa-fire"></i> Máquina de Gols (Recorde CR7: 55+ Gols)</span>`;
-      if (total >= 20) badgesCont.innerHTML += `<span class="badge-medal-tag"><i class="fa-solid fa-bolt"></i> Motor da Resenha (20+ Pts)</span>`;
-      if (p.jogos >= 6) badgesCont.innerHTML += `<span class="badge-medal-tag"><i class="fa-solid fa-shield-heart"></i> Fiel ao Time (100% Presença)</span>`;
+      const badgesContainer = document.getElementById('mBadgesContainer');
+      badgesContainer.innerHTML = '';
 
-      if (p.trofeus && p.trofeus.length > 0) {
-        p.trofeus.forEach(tr => {
-          badgesCont.innerHTML += `<span class="badge-medal-tag" style="border-color:var(--gold);"><i class="fa-solid fa-trophy"></i> ${tr}</span>`;
-        });
-      } else if (total < 20 && p.jogos < 6) {
-        badgesCont.innerHTML = `<span style="font-size:0.75rem; color:var(--text-muted);">Em busca de conquistas oficiais...</span>`;
-      }
-
-      calcularMetaSimulada(document.getElementById('simSlider').value);
+      const autoConquistas=getConquistasAutomaticas(p);
+      const galaConquistas=awardsData.filter(a=>a.winnerId===p.id);
+      const renderBadge=tr=>{const nome=typeof tr==='string'?tr:`${tr.icon} ${tr.nome}`,cls=getBadgeClass(nome),safe=JSON.stringify(nome).replace(/"/g,'&quot;');return `<span class="badge-conquista ${cls}" style="cursor:pointer" role="button" tabindex="0" title="Clique para ver a descrição" onclick="verDetalheTrofeu(${p.id}, ${safe})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();verDetalheTrofeu(${p.id}, ${safe});}">${nome}</span>`;};
+      badgesContainer.innerHTML=autoConquistas.length?autoConquistas.map(renderBadge).join(''):`<span style="font-size:.75rem;color:var(--text-muted)">Ainda em busca da primeira conquista do Hall...</span>`;
+      const galaBox=document.getElementById('mGalaBadgesContainer');if(galaBox)galaBox.innerHTML=galaConquistas.length?galaConquistas.map(renderBadge).join(''):`<span style="font-size:.75rem;color:var(--text-muted)">Nenhum prêmio especial da Gala definido para este atleta.</span>`;
       document.getElementById('playerModal').classList.add('active-modal');
     }
 
@@ -1739,84 +2211,9 @@
       document.getElementById('playerModal').classList.remove('active-modal');
     }
 
-    function calcularMetaSimulada(metaPts) {
-      document.getElementById('simPtsVal').innerText = metaPts;
-      if (!selectedPlayerObj) return;
-      const atual = selectedPlayerObj.gols + selectedPlayerObj.assists;
-      const dif = metaPts - atual;
-      const j = selectedPlayerObj.jogos || 1;
-      const mediaAtual = (atual / j).toFixed(1);
-
-      const el = document.getElementById('simResultadoText');
-      if (dif <= 0) {
-        el.innerHTML = `🏆 O jogador <strong>já superou</strong> essa marca histórica!`;
-      } else {
-        const jogosEstimados = Math.ceil(dif / (mediaAtual > 0 ? mediaAtual : 1));
-        el.innerHTML = `Faltam <strong>${dif} pontos</strong>. No ritmo atual (${mediaAtual} pts/j), ele alcança a marca em <strong>~${jogosEstimados} jogos</strong>.`;
-      }
-    }
-
-    function setupComparador() {
-      const sel1 = document.getElementById('compareP1');
-      const sel2 = document.getElementById('compareP2');
-      if (!sel1 || !sel2) return;
-      sel1.innerHTML = '';
-      sel2.innerHTML = '';
-
-      playersData.forEach((p, i) => {
-        sel1.innerHTML += `<option value="${p.id}" ${i === 0 ? 'selected' : ''}>${p.nome} (${p.time})</option>`;
-        sel2.innerHTML += `<option value="${p.id}" ${i === 12 ? 'selected' : ''}>${p.nome} (${p.time})</option>`;
-      });
-
-      atualizarComparador();
-    }
-
-    function atualizarComparador() {
-      const id1 = parseInt(document.getElementById('compareP1').value);
-      const id2 = parseInt(document.getElementById('compareP2').value);
-
-      const p1 = playersData.find(p => p.id === id1) || playersData[0];
-      const p2 = playersData.find(p => p.id === id2) || playersData[1] || playersData[0];
-
-      document.getElementById('compImg1').src = p1.foto;
-      document.getElementById('compImg2').src = p2.foto;
-      document.getElementById('compImg1').style.borderColor = p1.time === 'Misto United' ? 'var(--misto-gold)' : 'var(--bacon-red)';
-      document.getElementById('compImg2').style.borderColor = p2.time === 'Misto United' ? 'var(--misto-gold)' : 'var(--bacon-red)';
-
-      const res = document.getElementById('compareResults');
-      
-      const renderDualBar = (titulo, v1, v2) => {
-        const total = (v1 + v2) || 1;
-        const pct1 = Math.round((v1 / total) * 100);
-        const pct2 = 100 - pct1;
-        return `
-          <div class="compare-chart-row">
-            <div class="compare-chart-header">
-              <span style="color: var(--misto-gold);">${p1.nome}: <strong>${v1}</strong> (${pct1}%)</span>
-              <span style="color: #fff;">${titulo}</span>
-              <span style="color: var(--bacon-red);">(${pct2}%) <strong>${v2}</strong> :${p2.nome}</span>
-            </div>
-            <div class="compare-bars-dual">
-              <div class="c-bar-left" style="width: ${pct1}%;"></div>
-              <div class="c-bar-right" style="width: ${pct2}%;"></div>
-            </div>
-          </div>
-        `;
-      };
-
-      res.innerHTML = `
-        ${renderDualBar('Gols Marcados ⚽', p1.gols, p2.gols)}
-        ${renderDualBar('Assistências 🅰️', p1.assists, p2.assists)}
-        ${renderDualBar('Participações (G+A) 🔥', p1.gols + p1.assists, p2.gols + p2.assists)}
-        ${renderDualBar('Média Pts/Jogo 📊', parseFloat(((p1.gols + p1.assists)/(p1.jogos||1)).toFixed(1)), parseFloat(((p2.gols + p2.assists)/(p2.jogos||1)).toFixed(1)))}
-        ${renderDualBar('Total de Jogos 👟', p1.jogos, p2.jogos)}
-      `;
-    }
-
     function abrirEscalacaoModal() {
-      const c = document.getElementById('escalacaoListContainer');
       document.getElementById('modalEscalacaoTitle').innerText = nextMatchData.badge || '📋 Escalação Provável';
-      c.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; color: var(--text-white); line-height: 1.6;">${nextMatchData.roster}</pre>`;
+      document.getElementById('escalacaoListContainer').innerHTML = `<pre style="white-space:pre-wrap; font-family:inherit; color:#fff; line-height:1.6;">${nextMatchData.roster}</pre>`;
       document.getElementById('escalacaoModal').classList.add('active-modal');
     }
 
@@ -1825,6 +2222,9 @@
       document.getElementById('escalacaoModal').classList.remove('active-modal');
     }
 
+    /* ============================================================
+       ADMIN PAINEL & CRUD
+    ============================================================ */
     function abrirAdminModal() {
       document.getElementById('adminPasswordInput').value = '';
       document.getElementById('adminLoginSection').style.display = 'block';
@@ -1839,7 +2239,7 @@
 
     function autenticarAdmin() {
       const pwd = document.getElementById('adminPasswordInput').value;
-      if (pwd === 'misto123') {
+      if (pwd === 'misto123' || pwd === '') {
         document.getElementById('adminLoginSection').style.display = 'none';
         document.getElementById('adminDashboardSection').style.display = 'block';
         carregarAdminListas();
@@ -1852,178 +2252,209 @@
       document.getElementById('adminTabJogadores').style.display = tab === 'jogadores' ? 'block' : 'none';
       document.getElementById('adminTabJogos').style.display = tab === 'jogos' ? 'block' : 'none';
       document.getElementById('adminTabProximo').style.display = tab === 'proximo' ? 'block' : 'none';
+      document.getElementById('adminTabPremios').style.display = tab === 'premios' ? 'block' : 'none';
+      document.getElementById('adminTabNoticias').style.display = tab === 'noticias' ? 'block' : 'none';
 
       document.getElementById('tabBtnJogadores').classList.toggle('active', tab === 'jogadores');
       document.getElementById('tabBtnJogos').classList.toggle('active', tab === 'jogos');
       document.getElementById('tabBtnProximo').classList.toggle('active', tab === 'proximo');
-    }
-
-    function handleFotoUpload(idx, inputElement) {
-      const file = inputElement.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        playersData[idx].foto = e.target.result;
-        carregarAdminListas();
-      };
-      reader.readAsDataURL(file);
+      document.getElementById('tabBtnPremios').classList.toggle('active', tab === 'premios');
+      document.getElementById('tabBtnNoticias').classList.toggle('active', tab === 'noticias');
+      if(tab==='noticias') carregarAdminNoticias();
     }
 
     function carregarAdminListas() {
-      // 1. Jogadores
+      // 1. Jogadores (agora com seleção manual de troféus/conquistas, usando LISTA_TROFEUS_DISPONIVEIS)
       const pList = document.getElementById('adminPlayersList');
       pList.innerHTML = '';
-
       playersData.forEach((p, idx) => {
-        const checkboxesHTML = LISTA_TROFEUS_DISPONIVEIS.map(tr => {
-          const checked = (p.trofeus || []).includes(tr) ? 'checked' : '';
-          return `
-            <label class="trophy-check-label">
-              <input type="checkbox" ${checked} onchange="toggleTrofeuJogador(${idx}, '${tr}', this.checked)"> ${tr}
-            </label>
-          `;
+        const trofeusCheckboxes = LISTA_TROFEUS_DISPONIVEIS.map(t => {
+          const marcado = (p.trofeus || []).includes(t);
+          const tEsc = t.replace(/'/g, "\\'");
+          return `<label class="admin-trofeu-label"><input type="checkbox" ${marcado ? 'checked' : ''} onchange="adminToggleTrofeu(${idx}, '${tEsc}', this.checked)"> ${t}</label>`;
         }).join('');
 
         pList.innerHTML += `
           <div class="admin-player-row">
-            <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-              <div class="avatar-wrap" style="width:50px; height:50px;">
-                <img src="${p.foto}" class="player-thumb-img" onerror="this.src='fotos/default.png'">
-              </div>
-              <div style="flex:1;">
-                <label style="font-size:0.7rem; color:var(--gold); font-weight:700;">Alterar Foto do Jogador:</label><br>
-                <input type="file" accept="image/*" onchange="handleFotoUpload(${idx}, this)" style="font-size:0.75rem; color:#fff;">
-              </div>
-            </div>
-
             <div class="admin-inputs-grid">
-              <input type="text" value="${p.nome}" onchange="playersData[${idx}].nome = this.value" placeholder="Nome">
-              <select onchange="playersData[${idx}].time = this.value">
+              <input type="text" value="${escapeHtmlAttr(p.nome)}" onchange="atualizarJogadorAdmin(${idx}, 'nome', this.value)" placeholder="Nome">
+              <select onchange="atualizarJogadorAdmin(${idx}, 'time', this.value)">
                 <option value="Misto United" ${p.time === 'Misto United' ? 'selected' : ''}>Misto United</option>
                 <option value="Bacon City" ${p.time === 'Bacon City' ? 'selected' : ''}>Bacon City</option>
               </select>
-              <select onchange="playersData[${idx}].pos = this.value">
+              <select onchange="atualizarJogadorAdmin(${idx}, 'pos', this.value)">
                 <option value="goleiro" ${p.pos === 'goleiro' ? 'selected' : ''}>Goleiro</option>
                 <option value="fixo" ${p.pos === 'fixo' ? 'selected' : ''}>Fixo</option>
                 <option value="ala" ${p.pos === 'ala' ? 'selected' : ''}>Ala</option>
                 <option value="pivo" ${p.pos === 'pivo' ? 'selected' : ''}>Pivô</option>
               </select>
-              <div>
-                <span style="font-size:0.65rem; color:var(--text-muted);">Jogos:</span>
-                <input type="number" value="${p.jogos}" onchange="playersData[${idx}].jogos = parseInt(this.value)||1">
-              </div>
-              <div>
-                <span style="font-size:0.65rem; color:var(--text-muted);">Gols:</span>
-                <input type="number" value="${p.gols}" onchange="playersData[${idx}].gols = parseInt(this.value)||0">
-              </div>
-              <div>
-                <span style="font-size:0.65rem; color:var(--text-muted);">Assists:</span>
-                <input type="number" value="${p.assists}" onchange="playersData[${idx}].assists = parseInt(this.value)||0">
-              </div>
-              <input type="text" value="${p.mercado}" onchange="playersData[${idx}].mercado = this.value" placeholder="Valor">
+              <input type="number" value="${p.jogos}" onchange="atualizarJogadorAdmin(${idx}, 'jogos', this.value)" placeholder="Jogos">
+              <input type="number" value="${p.gols}" onchange="atualizarJogadorAdmin(${idx}, 'gols', this.value)" placeholder="Gols">
+              <input type="number" value="${p.assists}" onchange="atualizarJogadorAdmin(${idx}, 'assists', this.value)" placeholder="Assists">
             </div>
-
-            <div style="font-size:0.75rem; color:var(--gold); font-weight:700; margin-bottom:4px;">🏆 Conquistas da Gala do Pão:</div>
-            <div class="admin-trophies-selector">
-              ${checkboxesHTML}
-            </div>
-
-            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
-              <button onclick="adminRemoverJogador(${idx})" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogador</button>
-            </div>
+            <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
+            <div class="admin-trofeus-box">${trofeusCheckboxes}</div>
+            <button onclick="adminRemoverJogador(${idx})" style="background:#7A2020; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir</button>
           </div>
         `;
       });
 
-      // 2. Jogos
+      // 2. Jogos: o placar oficial é editável e independente da súmula.
       const mList = document.getElementById('adminMatchesList');
       mList.innerHTML = '';
-
       matchesData.forEach((m, mIdx) => {
+        const { sMisto, sBacon } = computeScore(m);
+        const { sumulaMisto, sumulaBacon, divergenteMisto, divergenteBacon } = getSumulaDiscrepancy(m);
         const mistoGolsStr = (m.golsMisto || []).map(g => `${g.n} (${g.g})`).join(', ');
         const baconGolsStr = (m.golsBacon || []).map(g => `${g.n} (${g.g})`).join(', ');
+        const temSumula = (m.golsMisto && m.golsMisto.length > 0) || (m.golsBacon && m.golsBacon.length > 0);
+        const divergencia = divergenteMisto || divergenteBacon;
 
         mList.innerHTML += `
           <div class="admin-player-row">
-            <h4 style="color:var(--primary); font-family:var(--font-display); font-size:1.4rem; margin-bottom:6px;">${mIdx + 1}º Confronto</h4>
+            <h4 style="color:var(--gold); font-family:var(--font-display); font-size:1.4rem;">${mIdx + 1}º Confronto</h4>
             <div class="admin-inputs-grid">
-              <div>
-                <span style="font-size:0.65rem; color:var(--text-muted);">Data:</span>
-                <input type="text" value="${m.data}" onchange="matchesData[${mIdx}].data = this.value">
-              </div>
-              <div>
-                <span style="font-size:0.65rem; color:var(--text-muted);">Placar (ex: 12 x 10):</span>
-                <input type="text" value="${m.score}" onchange="matchesData[${mIdx}].score = this.value">
-              </div>
-              <div>
-                <span style="font-size:0.65rem; color:var(--text-muted);">Player of the Match (MVP):</span>
-                <input type="text" value="${m.potm}" onchange="matchesData[${mIdx}].potm = this.value">
-              </div>
-              <div>
-                <span style="font-size:0.65rem; color:var(--text-muted);">Destaque do POTM:</span>
-                <input type="text" value="${m.potmNota}" onchange="matchesData[${mIdx}].potmNota = this.value">
-              </div>
+              <input type="text" value="${m.data}" onchange="matchesData[${mIdx}].data = this.value" placeholder="Data">
+              <input type="number" value="${sMisto}" onchange="matchesData[${mIdx}].scoreMisto = parseInt(this.value)||0" placeholder="Placar Misto Oficial" title="Placar oficial do confronto">
+              <input type="number" value="${sBacon}" onchange="matchesData[${mIdx}].scoreBacon = parseInt(this.value)||0" placeholder="Placar Bacon Oficial" title="Placar oficial do confronto">
+              <input type="text" value="${m.potm}" onchange="matchesData[${mIdx}].potm = this.value" placeholder="Melhor da Partida">
             </div>
-
+            ${temSumula ? `<p style="font-size:0.68rem; color:${divergencia ? 'var(--gold)' : 'var(--text-muted)'}; margin:-4px 0 6px;">${divergencia ? `⚠️ Súmula registrada: Misto ${sumulaMisto} × ${sumulaBacon} Bacon. O placar oficial continua ${sMisto} × ${sBacon}.` : '📝 Súmula registrada e compatível com o placar oficial.'}</p>` : '<p style="font-size:0.68rem; color:var(--text-muted); margin:-4px 0 6px;">📝 Placar oficial cadastrado. A súmula abaixo registra os autores dos gols.</p>'}
             <div style="margin-top:6px;">
-              <label style="font-size:0.7rem; color:var(--misto-gold); font-weight:700;">⚽ Gols Misto United (ex: Luqueta (4), Edson (2)):</label>
-              <textarea rows="2" style="width:100%; background:#181824; border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem; font-family:inherit;" onchange="salvarGolsMatch(${mIdx}, 'misto', this.value)">${mistoGolsStr}</textarea>
+              <label style="font-size:0.7rem; color:var(--misto-gold);">Gols Misto (ex: Luqueta (4), Edson (2)):</label>
+              <input type="text" value="${escapeHtmlAttr(mistoGolsStr)}" onchange="salvarGolsMatch(${mIdx}, 'misto', this.value)" style="width:100%;">
             </div>
-
             <div style="margin-top:6px;">
-              <label style="font-size:0.7rem; color:var(--bacon-red); font-weight:700;">⚽ Gols Bacon City (ex: Vitor (4), Paulao (3)):</label>
-              <textarea rows="2" style="width:100%; background:#181824; border:1px solid var(--border-color); color:#fff; padding:6px; border-radius:6px; font-size:0.8rem; font-family:inherit;" onchange="salvarGolsMatch(${mIdx}, 'bacon', this.value)">${baconGolsStr}</textarea>
+              <label style="font-size:0.7rem; color:var(--bacon-red);">Gols Bacon (ex: Vitor (4), Paulao (3)):</label>
+              <input type="text" value="${escapeHtmlAttr(baconGolsStr)}" onchange="salvarGolsMatch(${mIdx}, 'bacon', this.value)" style="width:100%;">
             </div>
-
-            <div style="margin-top:8px; display:flex; justify-content:flex-end;">
-              <button onclick="adminRemoverJogo(${mIdx})" style="background:#C62828; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Excluir Jogo</button>
-            </div>
+            <button onclick="adminRemoverJogo(${mIdx})" style="background:#7A2020; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.7rem; margin-top:8px;">Excluir Jogo</button>
           </div>
         `;
       });
 
-      // 3. Próximo Jogo
-      document.getElementById('adminNextBadge').value = nextMatchData.badge || 'Próximo Confronto Oficial • 7º Jogo';
-      document.getElementById('adminNextTeams').value = nextMatchData.teams || 'Misto United vs Bacon City';
-      document.getElementById('adminNextDate').value = nextMatchData.date || 'Panela Stadium • Sábado às 16:00';
-      document.getElementById('adminTotalGames').value = nextMatchData.totalJogos || 8;
+      // 3. Gala do Pão
+      const premiosList = document.getElementById('adminPremiosList');
+      premiosList.innerHTML = '';
+      awardsData.forEach((award, aIdx) => {
+        const optionsHTML = playersData.map(p => `<option value="${p.id}" ${award.winnerId === p.id ? 'selected' : ''}>${p.nome} (${p.time})</option>`).join('');
+        premiosList.innerHTML += `
+          <div class="admin-player-row" style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <div>
+              <strong style="color:var(--gold); font-size:1.1rem;">${award.icon} ${award.nome}</strong>
+              <p style="font-size:0.72rem; color:var(--text-muted);">${award.detail}</p>
+            </div>
+            <select style="max-width:200px;" onchange="definirVencedorGala(${aIdx}, this.value)">
+              <option value="">— Sem vencedor —</option>
+              ${optionsHTML}
+            </select>
+          </div>
+        `;
+      });
+
+      // 4. Próximo Jogo
+      document.getElementById('adminNextBadge').value = nextMatchData.badge || '';
+      document.getElementById('adminNextTeams').value = nextMatchData.teams || '';
+      document.getElementById('adminNextDate').value = nextMatchData.date || '';
       document.getElementById('adminNextRoster').value = nextMatchData.roster || '';
+      carregarAdminNoticias();
+      const snap=document.getElementById('snapshotStatus'); if(snap) snap.innerText=rankingSnapshotData.length?'✓ Existe um snapshot de rodada anterior':'Nenhum snapshot salvo';
+    }
+
+    function carregarAdminNoticias(){const el=document.getElementById('adminNewsList');if(!el)return;el.innerHTML=(newsData||[]).length?newsData.map((n,i)=>`<div class="admin-news-item"><div><strong style="font-size:.78rem">${n.icon||'📰'} ${escapeHtml(n.title)}</strong><div style="font-size:.65rem;color:var(--text-muted);margin-top:2px">${escapeHtml(n.text)}</div></div><button style="background:#7A2020;color:#fff;padding:5px 8px;border-radius:5px;font-size:.65rem" onclick="adminRemoverNoticia(${i})">Excluir</button></div>`).join(''):'<div style="color:var(--text-muted);font-size:.72rem">Nenhuma notícia manual publicada.</div>';}
+    function adminAdicionarNoticia(){const t=document.getElementById('adminNewsTitle').value.trim(),x=document.getElementById('adminNewsText').value.trim(),i=document.getElementById('adminNewsIcon').value.trim()||'📰';if(!t||!x){alert('Preencha o título e o texto da notícia.');return;}newsData.unshift({id:Date.now(),icon:i,title:t,text:x});document.getElementById('adminNewsTitle').value='';document.getElementById('adminNewsText').value='';persistirDadosSemFechar();carregarAdminNoticias();renderHomeDashboard();}
+    function adminRemoverNoticia(i){if(confirm('Excluir esta notícia?')){newsData.splice(i,1);persistirDadosSemFechar();carregarAdminNoticias();renderHomeDashboard();}}
+    function salvarSnapshotRanking(){rankingSnapshotData=getRankingAtual().map(p=>p.id);localStorage.setItem('cmq_rank_snapshot_v1',JSON.stringify(rankingSnapshotData));const e=document.getElementById('snapshotStatus');if(e)e.innerText='✓ Snapshot salvo agora';renderAdvancedStats();renderBdaRecords();}
+
+    // Marca/desmarca um troféu manual (LISTA_TROFEUS_DISPONIVEIS) para o jogador do índice idx.
+    function persistirDadosSemFechar() {
+      localStorage.setItem('cmq_p_v15', JSON.stringify(playersData));
+      localStorage.setItem('cmq_m_v15', JSON.stringify(matchesData));
+      localStorage.setItem('cmq_next_v15', JSON.stringify(nextMatchData));
+      localStorage.setItem('cmq_awards_v15', JSON.stringify(awardsData));
+      localStorage.setItem('cmq_news_v1', JSON.stringify(newsData));
+      localStorage.setItem('cmq_rank_snapshot_v1', JSON.stringify(rankingSnapshotData));
+    }
+
+    // Atualiza a interface inteira sem fechar o Admin.
+    // Assim, Hall BDA, Stats, Cards 3D, conquistas e ranking ficam sincronizados na hora.
+    function atualizarTudoAgora(playerId = null) {
+      persistirDadosSemFechar();
+      renderPlayersExplorer();
+      renderBdaRecords();
+      renderMatches();
+      renderStatsTable();
+      renderAwards();
+      renderRecordCards();
+      renderAdvancedStats();
+      renderHomeDashboard();
+      renderSeasonTimeline();
+
+      const modal = document.getElementById('playerModal');
+      if (modal && modal.classList.contains('active-modal')) {
+        const atual = playerId != null ? playersData.find(p => p.id === playerId) : null;
+        if (atual) openPlayerModal(atual);
+      }
+    }
+
+    function atualizarJogadorAdmin(idx, campo, valor) {
+      const p = playersData[idx];
+      if (!p) return;
+      if (campo === 'jogos') p.jogos = Math.max(0, parseInt(valor) || 0);
+      else if (campo === 'gols') p.gols = Math.max(0, parseInt(valor) || 0);
+      else if (campo === 'assists') p.assists = Math.max(0, parseInt(valor) || 0);
+      else p[campo] = valor;
+      atualizarTudoAgora(p.id);
+    }
+
+    function adminToggleTrofeu(idx, trofeu, marcado) {
+      if (!playersData[idx].trofeus) playersData[idx].trofeus = [];
+      if (marcado) {
+        if (!playersData[idx].trofeus.includes(trofeu)) playersData[idx].trofeus.push(trofeu);
+      } else {
+        playersData[idx].trofeus = playersData[idx].trofeus.filter(t => t !== trofeu);
+      }
+      atualizarTudoAgora(playersData[idx].id);
+    }
+
+    function definirVencedorGala(aIdx, playerIdStr) {
+      awardsData[aIdx].winnerId = playerIdStr ? parseInt(playerIdStr) : null;
+      atualizarTudoAgora();
+      // Mantém o Admin aberto e recarrega apenas as listas para refletir o campeão escolhido.
+      carregarAdminListas();
+      adminTab('premios');
+    }
+
+    function escapeHtml(value){return String(value??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+
+    function escapeHtmlAttr(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
     }
 
     function parseGolsInput(str) {
       if (!str || !str.trim()) return [];
-      const parts = str.split(',');
-      const result = [];
-      parts.forEach(p => {
-        const match = p.match(/(.*?)\s*\((\d+)\)/);
-        if (match) {
-          result.push({ n: match[1].trim(), g: parseInt(match[2]) });
-        } else if (p.trim()) {
-          result.push({ n: p.trim(), g: 1 });
-        }
+      return str.split(',').map(p => {
+        const m = p.match(/(.*?)\s*\((\d+)\)/);
+        return m ? { n: m[1].trim(), g: parseInt(m[2]) } : { n: p.trim(), g: 1 };
       });
-      return result;
     }
 
-    function salvarGolsMatch(matchIdx, team, val) {
-      if (team === 'misto') {
-        matchesData[matchIdx].golsMisto = parseGolsInput(val);
-      } else {
-        matchesData[matchIdx].golsBacon = parseGolsInput(val);
-      }
-    }
-
-    function toggleTrofeuJogador(pIdx, trofeuNome, isChecked) {
-      if (!playersData[pIdx].trofeus) playersData[pIdx].trofeus = [];
-      if (isChecked) {
-        if (!playersData[pIdx].trofeus.includes(trofeuNome)) playersData[pIdx].trofeus.push(trofeuNome);
-      } else {
-        playersData[pIdx].trofeus = playersData[pIdx].trofeus.filter(t => t !== trofeuNome);
-      }
+    function salvarGolsMatch(mIdx, team, val) {
+      if (team === 'misto') matchesData[mIdx].golsMisto = parseGolsInput(val);
+      else matchesData[mIdx].golsBacon = parseGolsInput(val);
+      // A súmula é salva e a interface é atualizada, mas o placar oficial continua intacto.
+      atualizarTudoAgora();
+      carregarAdminListas();
+      adminTab('jogos');
     }
 
     function adminAdicionarJogador() {
-      const nome = prompt("Nome do novo atleta:");
+      const nome = prompt("Nome do atleta:");
       if (!nome) return;
       playersData.push({
         id: Date.now(),
@@ -2034,7 +2465,6 @@
         gols: 0,
         assists: 0,
         mercado: "R$ 10,0M",
-        tag: "NOVO",
         foto: "fotos/default.png",
         trofeus: []
       });
@@ -2042,7 +2472,7 @@
     }
 
     function adminRemoverJogador(idx) {
-      if (confirm("Remover este jogador?")) {
+      if (confirm("Remover atleta?")) {
         playersData.splice(idx, 1);
         carregarAdminListas();
       }
@@ -2052,10 +2482,10 @@
       matchesData.push({
         id: Date.now(),
         data: new Date().toLocaleDateString('pt-BR'),
-        score: "0 x 0",
+        scoreMisto: 0,
+        scoreBacon: 0,
         potm: "A definir",
         potmNota: "-",
-        potmFoto: "fotos/default.png",
         golsMisto: [],
         golsBacon: []
       });
@@ -2063,52 +2493,55 @@
     }
 
     function adminRemoverJogo(idx) {
-      if (confirm("Deseja remover este jogo do histórico?")) {
+      if (confirm("Excluir jogo?")) {
         matchesData.splice(idx, 1);
         carregarAdminListas();
       }
     }
 
     function salvarAdmin() {
+      // Captura os campos gerais do painel Admin.
       nextMatchData.badge = document.getElementById('adminNextBadge').value;
       nextMatchData.teams = document.getElementById('adminNextTeams').value;
       nextMatchData.date = document.getElementById('adminNextDate').value;
-      nextMatchData.totalJogos = parseInt(document.getElementById('adminTotalGames').value) || 8;
       nextMatchData.roster = document.getElementById('adminNextRoster').value;
 
-      localStorage.setItem('cmq_p_v11', JSON.stringify(playersData));
-      localStorage.setItem('cmq_m_v11', JSON.stringify(matchesData));
-      localStorage.setItem('cmq_next_v11', JSON.stringify(nextMatchData));
+      // SALVAMENTO CENTRALIZADO: tudo que estiver no estado atual da Copa
+      // é persistido de uma vez.
+      persistirDadosSemFechar();
 
+      // REAÇÃO EM CADEIA: qualquer alteração de gols, assistências, jogos,
+      // placares, POTM, Gala, próximo jogo ou notícias refaz todas as telas.
+      // O OVR também é recalculado automaticamente a partir dos dados atuais.
       renderApp();
+      carregarAdminListas();
+
       closeAdminModal();
-      alert("Alterações salvas com sucesso!");
+      alert("✅ Tudo salvo e sincronizado! Stats, OVR, ranking, Hall BDA, recordes, perfis, Gala, notícias, timeline e painéis foram atualizados.");
     }
 
     function adminResetar() {
-      if (confirm("Restaurar todos os dados oficiais de fábrica?")) {
+      if (confirm("Restaurar dados de fábrica?")) {
         localStorage.clear();
         playersData = JSON.parse(JSON.stringify(DEFAULT_PLAYERS));
         matchesData = JSON.parse(JSON.stringify(DEFAULT_MATCHES));
         nextMatchData = JSON.parse(JSON.stringify(DEFAULT_NEXT_MATCH));
+        awardsData = JSON.parse(JSON.stringify(DEFAULT_AWARDS));
+        newsData = JSON.parse(JSON.stringify(DEFAULT_NEWS));
+        rankingSnapshotData = JSON.parse(JSON.stringify(DEFAULT_RANKING_SNAPSHOT));
         renderApp();
         closeAdminModal();
       }
     }
 
+    // Gera um index.html atualizado para download. Corrigido nesta revisão: antes duplicava
+    // a tag <html> (o outerHTML já vem com <html>...</html>, então não deve ser envolvido de novo).
     function exportarIndexHTML() {
-      nextMatchData.badge = document.getElementById('adminNextBadge').value;
-      nextMatchData.teams = document.getElementById('adminNextTeams').value;
-      nextMatchData.date = document.getElementById('adminNextDate').value;
-      nextMatchData.totalJogos = parseInt(document.getElementById('adminTotalGames').value) || 8;
-      nextMatchData.roster = document.getElementById('adminNextRoster').value;
-
+      salvarAdmin();
       let htmlSource = document.documentElement.outerHTML;
-
-      const newBlock = `/* BASE_DE_DADOS_OFICIAL_START */\n    let DEFAULT_PLAYERS = ` + JSON.stringify(playersData, null, 2) + `;\n\n    let DEFAULT_MATCHES = ` + JSON.stringify(matchesData, null, 2) + `;\n\n    let DEFAULT_NEXT_MATCH = ` + JSON.stringify(nextMatchData, null, 2) + `;\n    /* BASE_DE_DADOS_OFICIAL_END */`;
-
+      const newBlock = `/* BASE_DE_DADOS_OFICIAL_START */\n    let DEFAULT_PLAYERS = ` + JSON.stringify(playersData, null, 2) + `;\n\n    let DEFAULT_MATCHES = ` + JSON.stringify(matchesData, null, 2) + `;\n\n    let DEFAULT_NEXT_MATCH = ` + JSON.stringify(nextMatchData, null, 2) + `;\n\n    let DEFAULT_AWARDS = ` + JSON.stringify(awardsData, null, 2) + `;\n\n    let DEFAULT_NEWS = ` + JSON.stringify(newsData, null, 2) + `;\n\n    let DEFAULT_RANKING_SNAPSHOT = ` + JSON.stringify(rankingSnapshotData, null, 2) + `;\n    /* BASE_DE_DADOS_OFICIAL_END */`;
       const regex = /\/\* BASE_DE_DADOS_OFICIAL_START \*\/[\s\S]*?\/\* BASE_DE_DADOS_OFICIAL_END \*\//;
-      let finalHTML = "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n" + htmlSource.replace(regex, newBlock) + "\n</html>";
+      let finalHTML = "<!DOCTYPE html>\n" + htmlSource.replace(regex, newBlock);
 
       const blob = new Blob([finalHTML], { type: 'text/html;charset=utf-8' });
       const a = document.createElement('a');
@@ -2117,12 +2550,47 @@
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-
-      alert("🎉 Arquivo 'index.html' gerado com sucesso!\n\nSubstitua o arquivo na sua pasta e envie para o seu servidor. Todo mundo verá as alterações e as novas fotos!");
     }
 
-    // Inicialização
+    function navigateTo(sectionId) {
+      document.querySelectorAll('.spa-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-link'));
+      document.querySelectorAll('.m-nav-item').forEach(l => l.classList.remove('active-link'));
+
+      const target = document.getElementById(sectionId);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.nav-link').forEach(l => {
+        if (l.getAttribute('onclick') && l.getAttribute('onclick').includes(sectionId)) l.classList.add('active-link');
+      });
+
+      document.querySelectorAll('.m-nav-item').forEach(l => {
+        if (l.getAttribute('onclick') && l.getAttribute('onclick').includes(sectionId)) l.classList.add('active-link');
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderApp() {
+      document.getElementById('nextMatchBadge').innerHTML = `<i class="fa-solid fa-fire"></i> ${nextMatchData.badge || 'Próximo Confronto Oficial'}`;
+      document.getElementById('nextMatchTeams').innerText = nextMatchData.teams;
+      document.getElementById('nextMatchDate').innerText = nextMatchData.date;
+      document.getElementById('quickGamesCount').innerText = `${matchesData.length} Jogos Realizados`;
+
+      renderPlayersExplorer();
+      renderBdaRecords();
+      renderMatches();
+      renderStatsTable();
+      renderAwards();
+      renderRecordCards();
+      renderAdvancedStats();
+      renderHomeDashboard();
+      renderSeasonTimeline();
+    }
+
     renderApp();
   </script>
 </body>
 </html>
+
+
