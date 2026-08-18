@@ -1330,6 +1330,7 @@
 @media(max-width:560px){.profile-super-grid{grid-template-columns:1fr!important}.rivalry-row{grid-template-columns:22px 38px 1fr auto;gap:8px}.rivalry-avatar{width:38px;height:38px}.rivalry-gap{font-size:.6rem}.rivalry-title{font-size:1rem}}
 
     .player-login-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(12px);z-index:99999;display:none;align-items:center;justify-content:center;padding:18px}.player-login-card{width:min(460px,100%);background:linear-gradient(145deg,#171717,#0d0d0d);border:1px solid rgba(245,189,2,.28);border-radius:24px;padding:24px;box-shadow:0 30px 100px rgba(0,0,0,.55)}.player-login-kicker{color:var(--gold);font-size:.62rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.player-login-title{font-family:var(--font-display);font-size:1.8rem;font-weight:900;margin-top:4px}.player-login-sub{color:var(--text-muted);font-size:.72rem;line-height:1.55;margin:7px 0 16px}.player-login-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:45vh;overflow:auto;padding-right:3px}.player-login-option{display:flex;align-items:center;gap:9px;padding:9px;border-radius:13px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);color:#fff;text-align:left;cursor:pointer;transition:.2s}.player-login-option:hover{border-color:rgba(245,189,2,.35);transform:translateY(-1px)}.player-login-option img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:#111}.player-login-option strong{font-size:.72rem;display:block}.player-login-option span{font-size:.55rem;color:var(--text-muted)}.player-login-actions{display:flex;gap:8px;margin-top:14px}.player-login-actions button{flex:1}.visitor-user-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:rgba(245,189,2,.08);border:1px solid rgba(245,189,2,.2);color:var(--gold);font-size:.58rem;font-weight:900}.gk-clean-panel{margin:12px 0;border:1px solid rgba(90,180,255,.25);border-radius:18px;padding:15px;background:linear-gradient(145deg,rgba(30,90,140,.12),rgba(255,255,255,.025));box-shadow:0 14px 35px rgba(0,0,0,.18)}.gk-clean-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:11px}.gk-clean-stat{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.06);border-radius:11px;padding:10px;text-align:center}.gk-clean-stat b{display:block;font-family:var(--font-mono);font-size:1.05rem;color:#fff}.gk-clean-stat span{font-size:.52rem;color:var(--text-muted);text-transform:uppercase;font-weight:800}.gk-rank-bar{height:9px;border-radius:99px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:6px}.gk-rank-bar i{display:block;height:100%;background:linear-gradient(90deg,#55b8ff,#d9f1ff);border-radius:99px}@media(max-width:560px){.player-login-grid{grid-template-columns:1fr}.gk-clean-grid{grid-template-columns:1fr 1fr}}
+#identityGate .identity-brand{user-select:none;cursor:default}
 </style>
 
 <style id="identity-gate-style">
@@ -1351,8 +1352,37 @@
 </style>
 
 <style id="secret-admin-style">#cmqAdminOverlay{position:fixed;inset:0;z-index:1000000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,8,14,.96);backdrop-filter:blur(18px)}#cmqAdminOverlay.open{display:flex}.cmq-admin-card{width:min(390px,100%);padding:28px;border-radius:24px;background:linear-gradient(180deg,#171d2a,#0d1119);border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 100px rgba(0,0,0,.55);color:#fff}.cmq-admin-card h2{margin:0 0 7px;font:900 25px/1.1 system-ui}.cmq-admin-card p{margin:0 0 18px;opacity:.65;font:500 13px/1.5 system-ui}.cmq-admin-input{width:100%;box-sizing:border-box;padding:13px 14px;border-radius:13px;border:1px solid rgba(255,255,255,.12);background:#080c13;color:#fff;outline:none}.cmq-admin-actions{display:flex;gap:10px;margin-top:12px}.cmq-admin-actions button{flex:1;border:0;border-radius:13px;padding:12px;font-weight:900;cursor:pointer}.cmq-admin-enter{background:linear-gradient(135deg,#f6d365,#fda085);color:#111}.cmq-admin-cancel{background:#222938;color:#fff}.cmq-admin-error{display:none;color:#ff8f8f;font:700 12px system-ui;margin-top:9px}</style>
+
+<style id="cmq-identity-account-style">
+#cmqIdentityAccount{position:fixed;top:14px;right:14px;z-index:9998;display:none}
+#cmqIdentityAccount.show{display:block}
+.cmq-id-pill{border:1px solid rgba(255,255,255,.14);background:rgba(12,16,24,.9);color:#fff;border-radius:999px;padding:9px 13px;font:800 12px system-ui;cursor:pointer;box-shadow:0 8px 25px rgba(0,0,0,.22)}
+.cmq-id-menu{display:none;position:absolute;right:0;top:44px;width:210px;padding:8px;border-radius:16px;background:#121824;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.cmq-id-menu.open{display:block}
+.cmq-id-meta{padding:9px 10px 12px;font:700 12px system-ui;color:rgba(255,255,255,.62);border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:5px}
+.cmq-id-action{display:block;width:100%;text-align:left;border:0;background:transparent;color:#fff;padding:11px 10px;border-radius:10px;font:800 12px system-ui;cursor:pointer}
+.cmq-id-action:hover{background:rgba(255,255,255,.08)}
+</style>
+
+
+<style id="cmq-secret-entry-style">
+#cmqSecretEntry{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:1000001;color:rgba(255,255,255,.58);font:900 11px system-ui;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:8px 12px;border-radius:999px;user-select:none}
+#cmqSecretEntry:active{background:rgba(255,255,255,.08)}
+</style>
+
 </head>
 <body>
+<div id="cmqSecretEntry" title="">COPA MISTO QUENTE</div>
+
+<div id="cmqIdentityAccount">
+  <button id="cmqIdentityPill" class="cmq-id-pill" type="button">👤 Identidade</button>
+  <div id="cmqIdentityMenu" class="cmq-id-menu">
+    <div id="cmqIdentityMeta" class="cmq-id-meta"></div>
+    <button id="cmqSwitchIdentity" class="cmq-id-action" type="button">🔄 Trocar identificação</button>
+    <button id="cmqLogoutIdentity" class="cmq-id-action" type="button">🚪 Sair</button>
+  </div>
+</div>
+
 <div id="cmqAdminOverlay" aria-modal="true" role="dialog"><div class="cmq-admin-card"><h2>🔐 Área restrita</h2><p>Acesso administrativo.</p><input id="cmqAdminPassword" class="cmq-admin-input" type="password" placeholder="Senha" autocomplete="current-password"><div class="cmq-admin-error" id="cmqAdminError">Senha incorreta.</div><div class="cmq-admin-actions"><button class="cmq-admin-cancel" type="button" id="cmqAdminCancel">Cancelar</button><button class="cmq-admin-enter" type="button" id="cmqAdminEnter">Entrar</button></div></div></div>
 
 <div id="identityGate" aria-modal="true" role="dialog">
@@ -6046,5 +6076,103 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
 })();
 </script>
 
-<script id="secret-admin-script">(function(){const HOLD_MS=2000;let timer=null;function findLogo(){const sels=['.logo','.brand','.navbar-brand','.site-logo','header img','nav img','header .brand','nav .brand'];for(const s of sels){const e=document.querySelector(s);if(e)return e}return null}function open(){document.getElementById('cmqAdminOverlay')?.classList.add('open');setTimeout(()=>document.getElementById('cmqAdminPassword')?.focus(),50)}function close(){document.getElementById('cmqAdminOverlay')?.classList.remove('open');const i=document.getElementById('cmqAdminPassword');if(i)i.value='';const e=document.getElementById('cmqAdminError');if(e)e.style.display='none'}function bind(el){if(!el||el.dataset.cmqSecretBound)return;el.dataset.cmqSecretBound='1';el.style.touchAction='manipulation';const start=()=>{clearTimeout(timer);timer=setTimeout(open,HOLD_MS)},cancel=()=>{clearTimeout(timer);timer=null};el.addEventListener('pointerdown',start);el.addEventListener('pointerup',cancel);el.addEventListener('pointercancel',cancel);el.addEventListener('pointerleave',cancel)}function go(){const sels=['#adminBtn','#adminButton','[data-page="admin"]','[data-view="admin"]','[data-section="admin"]','.admin-btn'];for(const s of sels){const e=document.querySelector(s);if(e){e.click();close();return}}window.CMQ_ADMIN_AUTHENTICATED=true;window.dispatchEvent(new CustomEvent('cmq:admin-authenticated'));close()}function check(){const v=document.getElementById('cmqAdminPassword')?.value||'';let ok=false;try{if(typeof window.checkAdminPassword==='function')ok=!!window.checkAdminPassword(v);else if(typeof window.ADMIN_PASSWORD!=='undefined')ok=String(v)===String(window.ADMIN_PASSWORD);else ok=String(v)==='mistoquenteadmin'}catch(e){}if(ok)go();else{const e=document.getElementById('cmqAdminError');if(e)e.style.display='block'}}document.addEventListener('DOMContentLoaded',()=>{bind(findLogo());let n=0;const t=setInterval(()=>{bind(findLogo());if(++n>12)clearInterval(t)},500);document.getElementById('cmqAdminCancel')?.addEventListener('click',close);document.getElementById('cmqAdminEnter')?.addEventListener('click',check);document.getElementById('cmqAdminPassword')?.addEventListener('keydown',e=>{if(e.key==='Enter')check();if(e.key==='Escape')close()});document.getElementById('cmqAdminOverlay')?.addEventListener('click',e=>{if(e.target.id==='cmqAdminOverlay')close()})})})();</script>
+<script id="secret-admin-script">(function(){const HOLD_MS=2000;let timer=null;function findLogo(){const sels=['.brand-logo','.logo','.brand','.navbar-brand','.site-logo','header img','nav img','header .brand','nav .brand'];for(const s of sels){const e=document.querySelector(s);if(e)return e}return null}function open(){document.getElementById('cmqAdminOverlay')?.classList.add('open');setTimeout(()=>document.getElementById('cmqAdminPassword')?.focus(),50)}function close(){document.getElementById('cmqAdminOverlay')?.classList.remove('open');const i=document.getElementById('cmqAdminPassword');if(i)i.value='';const e=document.getElementById('cmqAdminError');if(e)e.style.display='none'}function bind(el){if(!el||el.dataset.cmqSecretBound)return;el.dataset.cmqSecretBound='1';el.style.touchAction='manipulation';const start=()=>{clearTimeout(timer);timer=setTimeout(open,HOLD_MS)},cancel=()=>{clearTimeout(timer);timer=null};el.addEventListener('pointerdown',start);el.addEventListener('pointerup',cancel);el.addEventListener('pointercancel',cancel);el.addEventListener('pointerleave',cancel)}function go(){const sels=['#adminBtn','#adminButton','[data-page="admin"]','[data-view="admin"]','[data-section="admin"]','.admin-btn'];for(const s of sels){const e=document.querySelector(s);if(e){e.click();close();return}}window.CMQ_ADMIN_AUTHENTICATED=true;window.dispatchEvent(new CustomEvent('cmq:admin-authenticated'));close()}function check(){const v=document.getElementById('cmqAdminPassword')?.value||'';let ok=false;try{if(typeof window.checkAdminPassword==='function')ok=!!window.checkAdminPassword(v);else if(typeof window.ADMIN_PASSWORD!=='undefined')ok=String(v)===String(window.ADMIN_PASSWORD);else ok=String(v)==='mistoquenteadmin'}catch(e){}if(ok)go();else{const e=document.getElementById('cmqAdminError');if(e)e.style.display='block'}}document.addEventListener('DOMContentLoaded',()=>{bind(findLogo());let n=0;const t=setInterval(()=>{bind(findLogo());if(++n>12)clearInterval(t)},500);document.getElementById('cmqAdminCancel')?.addEventListener('click',close);document.getElementById('cmqAdminEnter')?.addEventListener('click',check);document.getElementById('cmqAdminPassword')?.addEventListener('keydown',e=>{if(e.key==='Enter')check();if(e.key==='Escape')close()});document.getElementById('cmqAdminOverlay')?.addEventListener('click',e=>{if(e.target.id==='cmqAdminOverlay')close()})})})();</script>
+
+<script id="cmq-identity-account-script">
+(function(){
+  const KEY='cmq_identity_v2';
+
+  function getIdentity(){
+    try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}
+  }
+
+  function renderIdentity(){
+    const id=getIdentity();
+    const wrap=document.getElementById('cmqIdentityAccount');
+    const pill=document.getElementById('cmqIdentityPill');
+    const meta=document.getElementById('cmqIdentityMeta');
+    if(!wrap || !pill || !meta) return;
+    if(id && id.name){
+      wrap.classList.add('show');
+      pill.textContent=(id.type==='player'?'⚽ ':'👀 ')+id.name;
+      meta.textContent=(id.type==='player'?'Jogador identificado':'Torcedor / visitante');
+    }else{
+      wrap.classList.remove('show');
+    }
+  }
+
+  function openGate(){
+    const gate=document.getElementById('identityGate');
+    if(gate){
+      gate.classList.remove('hidden');
+      document.body.style.overflow='hidden';
+      if(window.CMQIdentityAPI?.refreshPlayers) window.CMQIdentityAPI.refreshPlayers();
+    }
+    document.getElementById('cmqIdentityMenu')?.classList.remove('open');
+  }
+
+  function logout(){
+    localStorage.removeItem(KEY);
+    window.CMQIdentity=null;
+    const menu=document.getElementById('cmqIdentityMenu');
+    if(menu) menu.classList.remove('open');
+    openGate();
+    renderIdentity();
+  }
+
+  function switchIdentity(){
+    openGate();
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    renderIdentity();
+
+    document.getElementById('cmqIdentityPill')?.addEventListener('click',function(){
+      document.getElementById('cmqIdentityMenu')?.classList.toggle('open');
+    });
+    document.getElementById('cmqSwitchIdentity')?.addEventListener('click',switchIdentity);
+    document.getElementById('cmqLogoutIdentity')?.addEventListener('click',logout);
+
+    document.addEventListener('click',function(e){
+      const wrap=document.getElementById('cmqIdentityAccount');
+      const menu=document.getElementById('cmqIdentityMenu');
+      if(wrap && menu && !wrap.contains(e.target)) menu.classList.remove('open');
+    });
+  });
+
+  window.addEventListener('cmq:identity',renderIdentity);
+})();
+</script>
+
+
+<script id="cmq-secret-entry-script">
+(function(){
+  const HOLD=2000;
+  let timer=null;
+
+  function openAdmin(){
+    const overlay=document.getElementById('cmqAdminOverlay');
+    if(overlay) overlay.classList.add('open');
+    setTimeout(()=>document.getElementById('cmqAdminPassword')?.focus(),50);
+  }
+
+  function bind(el){
+    if(!el || el.dataset.bound) return;
+    el.dataset.bound='1';
+    const start=()=>{clearTimeout(timer);timer=setTimeout(openAdmin,HOLD)};
+    const stop=()=>{clearTimeout(timer);timer=null};
+    el.addEventListener('pointerdown',start);
+    el.addEventListener('pointerup',stop);
+    el.addEventListener('pointercancel',stop);
+    el.addEventListener('pointerleave',stop);
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    bind(document.getElementById('cmqSecretEntry'));
+    const observer=new MutationObserver(()=>bind(document.getElementById('cmqSecretEntry')));
+    observer.observe(document.body,{childList:true,subtree:true});
+  });
+})();
+</script>
+
 </body></html>
