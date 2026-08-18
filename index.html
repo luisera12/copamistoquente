@@ -1308,6 +1308,24 @@
 
 /* ===== CAMADA PREMIUM — PERFIL DOS CRAQUES ===== */
 .profile-super-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.profile-super-card{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,193,7,.035));border:1px solid rgba(245,189,2,.18);border-radius:16px;padding:12px;position:relative;overflow:hidden}.profile-super-card:before{content:"";position:absolute;inset:-60% -20%;background:radial-gradient(circle,rgba(245,189,2,.09),transparent 55%);pointer-events:none}.profile-super-card>*{position:relative}.super-kicker{font-size:.55rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:900}.super-value{font-family:var(--font-display);font-size:1.35rem;font-weight:900;color:#fff;margin-top:3px}.super-label{font-size:.62rem;color:var(--text-muted)}.form-pips{display:flex;gap:4px;margin-top:8px}.form-pip{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;background:rgba(255,255,255,.06);font-size:.6rem;font-weight:900}.form-pip.hot{background:rgba(245,189,2,.18);color:var(--gold);border:1px solid rgba(245,189,2,.35)}.profile-progress{margin-top:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.06);overflow:hidden}.profile-progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#fff09a);border-radius:99px}.profile-rival{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}.profile-rival .vs{font-family:var(--font-display);font-weight:900;color:var(--gold)}.profile-trophy-room{margin:10px 0;border:1px solid rgba(245,189,2,.24);border-radius:18px;padding:13px;background:linear-gradient(145deg,rgba(245,189,2,.06),rgba(255,255,255,.025))}.trophy-room-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:9px}.trophy-room-item{min-height:64px;border-radius:12px;background:rgba(255,255,255,.045);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:.56rem;color:#ddd}.trophy-room-item strong{font-size:1.25rem}.career-hero{border-radius:18px;padding:14px;background:linear-gradient(135deg,rgba(245,189,2,.13),rgba(255,255,255,.025));border:1px solid rgba(245,189,2,.24);margin-bottom:10px}.career-hero-title{font-family:var(--font-display);font-size:1.25rem;font-weight:900}.career-hero-sub{font-size:.65rem;color:var(--text-muted);margin-top:2px}@media(max-width:700px){.profile-super-grid{grid-template-columns:1fr 1fr}.trophy-room-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ===== PERFIL FINAL — acabamento premium ===== */
+.profile-rivalry-panel{margin:0 0 10px;padding:16px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 12px 30px rgba(0,0,0,.16)}
+.rivalry-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.rivalry-title{font-family:var(--font-display);font-size:1.2rem;font-weight:900;letter-spacing:-.02em}
+.rivalry-chip{padding:6px 10px;border-radius:999px;background:rgba(255,193,7,.1);border:1px solid rgba(255,193,7,.25);color:var(--gold);font-size:.7rem;font-weight:900;white-space:nowrap}
+.rivalry-list{display:grid;gap:8px}
+.rivalry-row{display:grid;grid-template-columns:26px 42px 1fr auto;align-items:center;gap:10px;padding:9px;border-radius:13px;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.045);cursor:pointer;transition:.2s}
+.rivalry-row:hover{transform:translateY(-1px);border-color:rgba(255,193,7,.25);background:rgba(255,193,7,.055)}
+.rivalry-rank{font-family:var(--font-display);font-weight:900;color:var(--gold);text-align:center}
+.rivalry-avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.12);background:#111}
+.rivalry-avatar img{width:100%;height:100%;object-fit:cover}
+.rivalry-player{min-width:0;display:flex;flex-direction:column;gap:2px}
+.rivalry-player strong{font-family:var(--font-display);font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rivalry-player span{font-size:.62rem;color:var(--text-muted)}
+.rivalry-gap{font-family:var(--font-display);font-size:.68rem;font-weight:900;color:var(--gold);text-align:right}
+.rivalry-foot{margin-top:10px;font-size:.58rem;color:var(--text-muted);line-height:1.45}
+@media(max-width:560px){.profile-super-grid{grid-template-columns:1fr!important}.rivalry-row{grid-template-columns:22px 38px 1fr auto;gap:8px}.rivalry-avatar{width:38px;height:38px}.rivalry-gap{font-size:.6rem}.rivalry-title{font-size:1rem}}
 </style>
 </head>
 <body>
@@ -4810,7 +4828,13 @@
     let DEFAULT_RANKING_SNAPSHOT = [];
     /* BASE_DE_DADOS_OFICIAL_END */
 
-    let playersData = JSON.parse(localStorage.getItem('cmq_p_v15')) || DEFAULT_PLAYERS;
+    let playersData = JSON.parse(localStorage.getItem('cmq_p_v16')) || JSON.parse(localStorage.getItem('cmq_p_v15')) || JSON.parse(JSON.stringify(DEFAULT_PLAYERS));
+// Correção histórica: Varo encerra a base atual com 14 assistências.
+if(!localStorage.getItem('cmq_varo_assists_fixed_v1')){
+  const varoInicial=playersData.find(p=>String(p.nome).toLowerCase()==='varo');
+  if(varoInicial) varoInicial.assists=14;
+  localStorage.setItem('cmq_varo_assists_fixed_v1','1');
+}
     let matchesData = JSON.parse(localStorage.getItem('cmq_m_v15')) || DEFAULT_MATCHES;
     let nextMatchData = JSON.parse(localStorage.getItem('cmq_next_v15')) || DEFAULT_NEXT_MATCH;
     let awardsData = JSON.parse(localStorage.getItem('cmq_awards_v17')) || JSON.parse(JSON.stringify(DEFAULT_AWARDS));
@@ -5218,8 +5242,15 @@
       const hist=getPlayerMatchHistory(player);
       const form=hist.slice(-5).map(x=>x.goals);
       const formScore=Math.min(100,Math.round((form.reduce((a,b)=>a+b,0)/Math.max(1,form.length))*20 + potm*4));
-      const others=playersData.filter(x=>x.id!==player.id);
-      const rival=others.sort((a,b)=>Math.abs(((b.gols||0)+(b.assists||0))-ga)-Math.abs(((a.gols||0)+(a.assists||0))-ga))[0];
+      // Rivalidades: mostra os 3 adversários mais próximos, em vez de fixar um único nome.
+      const others=playersData.filter(x=>x.id!==player.id && ((+x.jogos||0)>0 || (+x.gols||0)>0 || (+x.assists||0)>0));
+      const rivals=others.map(x=>{
+        const xga=(+x.gols||0)+(+x.assists||0);
+        const gap=Math.abs(xga-ga);
+        const gameGap=Math.abs((+x.jogos||0)-(+player.jogos||0));
+        const sameTeam=x.time===player.time?0:1;
+        return {...x,_gap:gap,_score:gap*10+gameGap*1.5+sameTeam};
+      }).sort((a,b)=>a._score-b._score).slice(0,3);
       const next=[25,40,60,75,90,103].find(n=>ga<n); const pct=Math.min(100,Math.round(ga/103*100));
       const trophies=[...auto.map(c=>({icon:c.icon,nome:c.nome,tipo:'Hall'})),...gala.map(a=>({icon:a.icon,nome:a.nome,tipo:'Gala'}))];
       el.innerHTML=`<div class="profile-super-grid">
@@ -5228,7 +5259,21 @@
         <div class="profile-super-card"><div class="super-kicker">🎯 Próxima Marca</div><div class="super-value">${next?next+' G+A':'103 ✓'}</div><div class="super-label">${next?`Faltam ${next-ga} participações`:'Marca máxima alcançada'}</div><div class="profile-progress"><i style="width:${pct}%"></i></div></div>
       </div>
       <div class="profile-trophy-room"><div class="super-kicker">🏆 Sala de Troféus</div><div style="font-family:var(--font-display);font-weight:900;font-size:1.05rem;margin-top:2px">A coleção de ${escapeHtml(player.nome)}</div><div class="trophy-room-grid">${trophies.length?trophies.map(t=>`<div class="trophy-room-item" title="${t.tipo}"><strong>${t.icon}</strong><span>${escapeHtml(t.nome)}</span></div>`).join(''):'<div class="feature-muted" style="grid-column:1/-1;padding:10px">A sala ainda está esperando o primeiro grande troféu.</div>'}</div></div>
-      <div class="profile-super-card" style="margin-bottom:10px"><div class="super-kicker">⚔️ Rivalidade Mais Próxima</div><div class="profile-rival"><div><b>${escapeHtml(player.nome)}</b><div class="super-label">${ga} G+A</div></div><div class="vs">VS</div><div style="text-align:right"><b>${rival?escapeHtml(rival.nome):'—'}</b><div class="super-label">${rival?((rival.gols||0)+(rival.assists||0))+' G+A':'sem rival próximo'}</div></div></div></div>
+      <div class="profile-rivalry-panel">
+        <div class="rivalry-head"><div><div class="super-kicker">⚔️ BATALHA PELO TOPO</div><div class="rivalry-title">Rivalidades mais próximas</div></div><span class="rivalry-chip">${ga} G+A</span></div>
+        <div class="rivalry-list">
+          ${rivals.length?rivals.map((r,i)=>{
+            const rga=(+r.gols||0)+(+r.assists||0), diff=Math.abs(rga-ga);
+            return `<div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=>x.id===${r.id}))">
+              <div class="rivalry-rank">#${i+1}</div>
+              <div class="rivalry-avatar"><img src="${escapeHtml(r.foto)}" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-player"><strong>${escapeHtml(r.nome)}</strong><span>${escapeHtml(r.time)} • ${rga} G+A</span></div>
+              <div class="rivalry-gap">${diff===0?'EMPATE':diff===1?'−1 G+A':`−${diff} G+A`}</div>
+            </div>`;
+          }).join(''):'<div class="feature-muted">Ainda não há dados suficientes para formar uma rivalidade.</div>'}
+        </div>
+        <div class="rivalry-foot">Comparação por G+A, jogos e contexto de equipe • toque em um jogador para abrir o perfil</div>
+      </div>
       <div class="career-hero"><div class="career-hero-title">📚 Carreira na Copa</div><div class="career-hero-sub">Temporada 1 • ${player.jogos||0} jogos • ${player.gols||0}G • ${player.assists||0}A • ${ga} G+A</div><div class="profile-progress"><i style="width:${pct}%"></i></div><div class="career-hero-sub" style="margin-top:5px">${ga>=103?'🐐 IMORTAL DA COPA':'Progresso histórico: '+pct+'% até 103 G+A'}</div></div>`;
     }
     
@@ -5441,7 +5486,7 @@
 
     // Marca/desmarca um troféu manual (LISTA_TROFEUS_DISPONIVEIS) para o jogador do índice idx.
     function persistirDadosSemFechar() {
-      localStorage.setItem('cmq_p_v15', JSON.stringify(playersData));
+      localStorage.setItem('cmq_p_v16', JSON.stringify(playersData));
       localStorage.setItem('cmq_m_v15', JSON.stringify(matchesData));
       localStorage.setItem('cmq_next_v15', JSON.stringify(nextMatchData));
       localStorage.setItem('cmq_awards_v17', JSON.stringify(awardsData));
