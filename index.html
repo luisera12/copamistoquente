@@ -1365,20 +1365,20 @@
 
 
 </head>
-<body>
+<body style="">
 
-<div id="cmqIdentityAccount">
-  <button id="cmqIdentityPill" class="cmq-id-pill" type="button">👤 Identidade</button>
+<div id="cmqIdentityAccount" class="show">
+  <button id="cmqIdentityPill" class="cmq-id-pill" type="button">👑 Admin</button>
   <div id="cmqIdentityMenu" class="cmq-id-menu">
-    <div id="cmqIdentityMeta" class="cmq-id-meta"></div>
+    <div id="cmqIdentityMeta" class="cmq-id-meta">Administrador autenticado</div>
     <button id="cmqSwitchIdentity" class="cmq-id-action" type="button">🔄 Trocar identificação</button>
     <button id="cmqLogoutIdentity" class="cmq-id-action" type="button">🚪 Sair</button>
   </div>
 </div>
 
-<div id="identityGate" aria-modal="true" role="dialog">
+<div id="identityGate" aria-modal="true" role="dialog" class="hidden">
   <div class="identity-card">
-    <div class="identity-brand" id="identitySecretLogo" role="button" tabindex="0" aria-label="Copa Misto Quente — segure por 2 segundos para abrir o Admin">🥖 COPA MISTO QUENTE</div>
+    <div class="identity-brand" id="identitySecretLogo" role="button" tabindex="0" aria-label="Copa Misto Quente — segure por 2 segundos para abrir o Admin" data-cmq-admin-hold-bound="1">🥖 COPA MISTO QUENTE</div>
     <h1 class="identity-title">🥖 Quem é você?</h1>
     <p class="identity-sub">Para entrar no site, identifique-se. Jogadores entram pelo próprio perfil; torcedores e visitantes entram com um nome ou apelido.</p>
 
@@ -1389,9 +1389,7 @@
 
     <div class="identity-panel active" data-identity-panel="player">
       <label class="identity-label" for="identityPlayerSelect">Escolha seu jogador</label>
-      <select class="identity-select" id="identityPlayerSelect">
-        <option value="">Selecione...</option>
-      </select>
+      <select class="identity-select" id="identityPlayerSelect"><option value="">Selecione...</option><option value="1">Luqueta pepeta</option><option value="2">Edson</option><option value="3">Lucas broxa</option><option value="4">Gontijo</option><option value="5">Kauã Broxa</option><option value="6">Ian</option><option value="7">Daniel</option><option value="8">Douglas</option><option value="9">lz branco</option><option value="10">samuel</option><option value="11">Preto</option><option value="12">Varo</option><option value="13">Vitor</option><option value="14">Vitor Hugo</option><option value="15">Matheus</option><option value="16">Paulao</option><option value="17">Guilherme</option><option value="18">Alejandro</option><option value="19">Davi</option><option value="20">Litle pepsi</option><option value="21">murilao</option></select>
     </div>
 
     <div class="identity-panel" data-identity-panel="visitor">
@@ -1418,9 +1416,9 @@
           <li><span class="nav-link" onclick="navigateTo('home')">Início</span></li>
           <li><span class="nav-link" onclick="navigateTo('jogadores')">Jogadores</span></li>
           <li><span class="nav-link" onclick="navigateTo('recordes')">⭐ Recordes (Hall da Fama)</span></li>
-          <li><span class="nav-link active-link" onclick="navigateTo('jogos')">Jogos &amp; Súmulas</span></li>
+          <li><span class="nav-link" onclick="navigateTo('jogos')">Jogos &amp; Súmulas</span></li>
           <li><span class="nav-link" onclick="navigateTo('estatisticas')">Stats &amp; Médias</span></li>
-          <li><span class="nav-link" onclick="navigateTo('premiacoes')">Gala do Pão</span></li>
+          <li><span class="nav-link active-link" onclick="navigateTo('premiacoes')">Gala do Pão</span></li>
         </ul>
       </nav>
 
@@ -1450,7 +1448,7 @@
           <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 14px;" id="nextMatchDate">Panela Stadium • Sábado às 16:00 (7º Jogo)</p>
           <button class="btn-primary" onclick="abrirEscalacaoModal()"><i class="fa-solid fa-clipboard-user"></i> Ver Escalação Provável</button>
         </div>
-      </div>
+      <div id="legendFeed"><div class="legend-feed"><div class="feature-kicker">⚡ Mural de Momentos</div><div class="feature-title">Quem está fazendo história?</div><div class="legend-feed-grid"><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===15))"><img class="legend-avatar" src="fotos/matheus.png" onerror="this.src='fotos/default.png'"><b>💥 Matheus desbloqueou Colecionador de Hat-tricks</b><span>EPICO • 3 hat-tricks na temporada.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===12))"><img class="legend-avatar" src="fotos/varo.png" onerror="this.src='fotos/default.png'"><b>👑 Varo desbloqueou Marca de 25</b><span>RARO • 25 G+A na temporada.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===12))"><img class="legend-avatar" src="fotos/varo.png" onerror="this.src='fotos/default.png'"><b>❤️ Varo desbloqueou Fiel ao Time</b><span>RARO • Jogou todos os jogos oficiais disputados até agora.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===11))"><img class="legend-avatar" src="fotos/preto.png" onerror="this.src='fotos/default.png'"><b>👑 Preto desbloqueou Marca de 25</b><span>RARO • 25 G+A na temporada.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===11))"><img class="legend-avatar" src="fotos/preto.png" onerror="this.src='fotos/default.png'"><b>❤️ Preto desbloqueou Fiel ao Time</b><span>RARO • Jogou todos os jogos oficiais disputados até agora.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===6))"><img class="legend-avatar" src="fotos/ian.png" onerror="this.src='fotos/default.png'"><b>❤️ Ian desbloqueou Fiel ao Time</b><span>RARO • Jogou todos os jogos oficiais disputados até agora.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===4))"><img class="legend-avatar" src="fotos/gontijo.png" onerror="this.src='fotos/default.png'"><b>👑 Gontijo desbloqueou Marca de 25</b><span>RARO • 25 G+A na temporada.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===4))"><img class="legend-avatar" src="fotos/gontijo.png" onerror="this.src='fotos/default.png'"><b>❤️ Gontijo desbloqueou Fiel ao Time</b><span>RARO • Jogou todos os jogos oficiais disputados até agora.</span><div style="clear:both"></div></div><div class="legend-item" onclick="openPlayerModal(playersData.find(p=&gt;p.id===3))"><img class="legend-avatar" src="fotos/lucasbroxa.png" onerror="this.src='fotos/default.png'"><b>💥 Lucas broxa desbloqueou Colecionador de Hat-tricks</b><span>EPICO • 3 hat-tricks na temporada.</span><div style="clear:both"></div></div></div></div></div><div id="premiumHomeHub"><div class="mega-history" style="margin-top:12px"><div class="mega-panel"><div class="mega-kicker">👑 Central dos Craques</div><div class="mega-title">Quem está dominando a temporada?</div><div class="mega-muted">Os principais números mudam junto com o Admin.</div><div class="career-grid"><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===1))" style="cursor:pointer"><b>#1 Luqueta pepeta</b><span>41 G+A • OVR 93 • Épico</span></div><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===2))" style="cursor:pointer"><b>#2 Edson</b><span>29 G+A • OVR 90 • Épico</span></div><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===3))" style="cursor:pointer"><b>#3 Lucas broxa</b><span>27 G+A • OVR 85 • Épico</span></div><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===4))" style="cursor:pointer"><b>#4 Gontijo</b><span>26 G+A • OVR 84 • Raro</span></div><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===11))" style="cursor:pointer"><b>#5 Preto</b><span>25 G+A • OVR 83 • Raro</span></div></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:9px"><span class="badge">⚽ Artilheiro: Luqueta pepeta</span><span class="badge">🅰️ Garçom: Luqueta pepeta</span><span class="badge">🐐 Meta: 103 G+A</span></div></div></div></div></div>
     </div>
 
     <!-- CARDS RÁPIDOS -->
@@ -1499,7 +1497,7 @@
         <div class="feature-panel">
           <div class="feature-kicker">📊 Números da Temporada</div>
           <div class="feature-title">A Copa em números</div>
-          <div id="seasonNumbersContent" class="feature-muted" style="margin-top:10px;"><strong style="color:#fff;font-size:1rem">6</strong> jogos oficiais<br><strong style="color:var(--misto-gold);font-size:1rem">105</strong> gols Misto • <strong style="color:var(--bacon-red);font-size:1rem">65</strong> gols Bacon<br><strong style="color:var(--gold);font-size:1rem">21</strong> atletas • <strong style="color:var(--money-green);font-size:1rem">0</strong> prêmios definidos</div>
+          <div id="seasonNumbersContent" class="feature-muted" style="margin-top:10px;"><strong style="color:#fff;font-size:1rem">6</strong> jogos oficiais<br><strong style="color:var(--misto-gold);font-size:1rem">105</strong> gols Misto • <strong style="color:var(--bacon-red);font-size:1rem">65</strong> gols Bacon<br><strong style="color:var(--gold);font-size:1rem">21</strong> atletas • <strong style="color:var(--money-green);font-size:1rem">1</strong> prêmios definidos</div>
         </div>
       </div>
       <div class="timeline-wrap">
@@ -1510,10 +1508,10 @@
         <div class="timeline" id="seasonTimeline"><div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">11/07/2026</div><div class="timeline-round">1º Jogo</div><div class="timeline-score">37 × 11</div><div class="timeline-status">⭐ Luiz</div></div></div><div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">24/07/2026</div><div class="timeline-round">2º Jogo</div><div class="timeline-score">16 × 8</div><div class="timeline-status">⭐ Guilherme</div></div></div><div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">28/07/2026</div><div class="timeline-round">3º Jogo</div><div class="timeline-score">10 × 15</div><div class="timeline-status">⭐ Vitor Hugo</div></div></div><div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">01/08/2026</div><div class="timeline-round">4º Jogo</div><div class="timeline-score">13 × 3</div><div class="timeline-status">⭐ Kauã</div></div></div><div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">08/08/2026</div><div class="timeline-round">5º Jogo</div><div class="timeline-score">17 × 18</div><div class="timeline-status">⭐ Gontijo</div></div></div><div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">15/08/2026</div><div class="timeline-round">6º Jogo</div><div class="timeline-score">12 × 10</div><div class="timeline-status">⭐ Vitor (Bacon)</div></div></div><div class="timeline-item upcoming"><div class="timeline-dot"></div><div class="timeline-card"><div class="timeline-date">PRÓXIMO</div><div class="timeline-round">Próximo Confronto Oficial • 7º Jogo</div><div class="timeline-score" style="font-size:.9rem">Misto United vs Bacon City</div><div class="timeline-status">Panela Stadium • Sábado às 16:00 (7º Jogo)</div></div></div></div>
       </div>
       <div class="mega-history">
-        <div class="mega-panel" id="immortalWall"><div class="mega-kicker">🐐 Mural dos Imortais</div><div class="mega-title">Quem já virou história?</div><div class="mega-muted">Só aparece quem alcançou a patente máxima do Hall.</div><div class="immortal-grid" id="immortalWallGrid"></div></div>
-        <div class="mega-panel" id="recordBook"><div class="mega-kicker">📜 Livro dos Recordes</div><div class="mega-title">Marcas da Copa</div><div class="mega-muted">Os maiores números da temporada.</div><div class="recordbook-grid" id="recordBookGrid"></div></div>
+        <div class="mega-panel" id="immortalWall"><div class="mega-kicker">🐐 Mural dos Imortais</div><div class="mega-title">Quem já virou história?</div><div class="mega-muted">Só aparece quem alcançou a patente máxima do Hall.</div><div class="immortal-grid" id="immortalWallGrid"><div class="feature-muted" style="grid-column:1/-1;padding:10px">Ainda não existem Imortais. A primeira lenda de 103 G+A será eternizada aqui. 🐐</div></div></div>
+        <div class="mega-panel" id="recordBook"><div class="mega-kicker">📜 Livro dos Recordes</div><div class="mega-title">Marcas da Copa</div><div class="mega-muted">Os maiores números da temporada.</div><div class="recordbook-grid" id="recordBookGrid"><div class="recordbook-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><b>👑 Maior G+A</b><span>Luqueta pepeta • 41 G+A</span></div><div class="recordbook-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><b>⚽ Mais gols</b><span>Luqueta pepeta • 27</span></div><div class="recordbook-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><b>🅰️ Mais assistências</b><span>Luqueta pepeta • 14</span></div><div class="recordbook-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===4))" style="cursor:pointer"><b>⭐ Mais POTM</b><span>Gontijo • 1</span></div><div class="recordbook-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><b>💥 Mais hat-tricks</b><span>Luqueta pepeta • 4</span></div><div class="recordbook-card"><b>🐐 Marca máxima</b><span>103 G+A • Passou o Messi</span></div></div></div>
       </div>
-      <div class="mega-panel" id="careerArchive" style="margin-top:12px"><div class="mega-kicker">📚 Arquivo de Carreiras</div><div class="mega-title">Carreira na Copa</div><div class="mega-muted">A Temporada 1 é o começo. As próximas temporadas poderão entrar aqui sem apagar a história.</div><div class="career-grid" id="careerArchiveGrid"></div></div>
+      <div class="mega-panel" id="careerArchive" style="margin-top:12px"><div class="mega-kicker">📚 Arquivo de Carreiras</div><div class="mega-title">Carreira na Copa</div><div class="mega-muted">A Temporada 1 é o começo. As próximas temporadas poderão entrar aqui sem apagar a história.</div><div class="career-grid" id="careerArchiveGrid"><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===1))" style="cursor:pointer"><b>🥖 Temporada 1 • Luqueta pepeta</b><span>5 jogos • 27G • 14A • 41 G+A</span><div class="season-progress"><i style="width:39.80582524271845%"></i></div><span>Progresso até 103 G+A: 40%</span></div><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===2))" style="cursor:pointer"><b>🥖 Temporada 1 • Edson</b><span>5 jogos • 22G • 7A • 29 G+A</span><div class="season-progress"><i style="width:28.155339805825243%"></i></div><span>Progresso até 103 G+A: 28%</span></div><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===3))" style="cursor:pointer"><b>🥖 Temporada 1 • Lucas broxa</b><span>6 jogos • 19G • 8A • 27 G+A</span><div class="season-progress"><i style="width:26.21359223300971%"></i></div><span>Progresso até 103 G+A: 26%</span></div><div class="career-card" onclick="openPlayerModal(playersData.find(x=&gt;x.id===4))" style="cursor:pointer"><b>🥖 Temporada 1 • Gontijo</b><span>6 jogos • 16G • 10A • 26 G+A</span><div class="season-progress"><i style="width:25.24271844660194%"></i></div><span>Progresso até 103 G+A: 25%</span></div></div></div>
     </div>
   </section>
 
@@ -1736,7 +1734,7 @@
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Ian</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
-                <div style="font-size:0.75rem; color:var(--text-muted);">1 Conquistas • 6 Jogos</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">2 Conquistas • 6 Jogos</div>
                 <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 6))">Ver Perfil Completo</button>
               </div>
             </div>
@@ -2366,7 +2364,7 @@
         </p>
       </div>
 
-      <div class="record-cards" id="recordCardsContainer"><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">⚽</div><div class="record-label">Maior artilheiro</div><div class="record-value">27 gols</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Misto United</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">🅰️</div><div class="record-label">Rei das assistências</div><div class="record-value">14 assists</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Misto United</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">👑</div><div class="record-label">Maior G+A</div><div class="record-value">41 G+A</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Hall BDA</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===3))" style="cursor:pointer"><div class="record-icon">🎮</div><div class="record-label">Mais jogos</div><div class="record-value">6 jogos</div><div class="record-owner">Lucas broxa</div><div class="record-sub">Misto United</div></div><div class="record-card"><div class="record-icon">💥</div><div class="record-label">Maior vitória</div><div class="record-value">26 gols de diferença</div><div class="record-owner">Misto 37 × 11 Bacon</div><div class="record-sub">11/07/2026</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">🏆</div><div class="record-label">Mais conquistas</div><div class="record-value">4 troféus</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Misto United</div></div></div>
+      <div class="record-cards" id="recordCardsContainer"><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">⚽</div><div class="record-label">Maior artilheiro</div><div class="record-value">27 gols</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Misto United</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">🅰️</div><div class="record-label">Rei das assistências</div><div class="record-value">14 assists</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Misto United</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">👑</div><div class="record-label">Maior G+A</div><div class="record-value">41 G+A</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Hall BDA</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===3))" style="cursor:pointer"><div class="record-icon">🎮</div><div class="record-label">Mais jogos</div><div class="record-value">6 jogos</div><div class="record-owner">Lucas broxa</div><div class="record-sub">Misto United</div></div><div class="record-card"><div class="record-icon">💥</div><div class="record-label">Maior vitória</div><div class="record-value">26 gols de diferença</div><div class="record-owner">Misto 37 × 11 Bacon</div><div class="record-sub">11/07/2026</div></div><div class="record-card" onclick="openPlayerModal(playersData.find(p=&gt;p.id===1))" style="cursor:pointer"><div class="record-icon">🏛️</div><div class="record-label">Mais conquistas do Hall</div><div class="record-value">4 conquistas</div><div class="record-owner">Luqueta pepeta</div><div class="record-sub">Misto United</div></div></div>
       <div class="feature-card" style="margin-top:16px;padding:14px 16px">
         <div style="font-family:var(--font-display);font-size:1.35rem;color:var(--gold);margin-bottom:5px">📜 Patentes do Hall da Fama</div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:.72rem;font-weight:800">
@@ -2379,12 +2377,12 @@
         </div>
         <p style="font-size:.68rem;color:var(--text-muted);margin-top:7px">Prêmios da Gala do Pão são especiais e ficam separados da patente. Conquistas comuns podem aparecer no perfil sem colocar o atleta no Hall.</p>
       </div>
-      <div class="bda-records-container" id="bdaRecordsContainer"><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/luqueta.png" alt="Luqueta pepeta" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#1 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 4 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Luqueta pepeta</div><div class="bda-records-chips"><span class="bda-chip">⚽ 27 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 41 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">🔥 Nome na História</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/edson.png" alt="Edson" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#2 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Edson</div><div class="bda-records-chips"><span class="bda-chip">⚽ 22 Gols</span><span class="bda-chip">🅰️ 7 Assists</span><span class="bda-chip">👑 29 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/lucasbroxa.png" alt="Lucas broxa" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#3 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • FIXO</span></div><div class="bda-name">Lucas broxa</div><div class="bda-records-chips"><span class="bda-chip">⚽ 19 Gols</span><span class="bda-chip">🅰️ 8 Assists</span><span class="bda-chip">👑 27 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/gontijo.png" alt="Gontijo" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#4 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Gontijo</div><div class="bda-records-chips"><span class="bda-chip">⚽ 16 Gols</span><span class="bda-chip">🅰️ 10 Assists</span><span class="bda-chip">👑 26 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/preto.png" alt="Preto" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#5 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • FIXO</span></div><div class="bda-name">Preto</div><div class="bda-records-chips"><span class="bda-chip">⚽ 13 Gols</span><span class="bda-chip">🅰️ 12 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/varo.png" alt="Varo" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#6 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • ALA</span></div><div class="bda-name">Varo</div><div class="bda-records-chips"><span class="bda-chip">⚽ 11 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/matheus.png" alt="Matheus" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#7 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • PIVO</span></div><div class="bda-name">Matheus</div><div class="bda-records-chips"><span class="bda-chip">⚽ 14 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 17 G+A</span><span class="bda-chip">🎮 4 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/ian.png" alt="Ian" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#8 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Ian</div><div class="bda-records-chips"><span class="bda-chip">⚽ 10 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 13 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span></div></div></div></div>
-    </div>
+      <div class="bda-records-container" id="bdaRecordsContainer"><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/luqueta.png" alt="Luqueta pepeta" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#1 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 4 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Luqueta pepeta</div><div class="bda-records-chips"><span class="bda-chip">⚽ 27 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 41 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">🔥 Nome na História</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/edson.png" alt="Edson" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#2 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Edson</div><div class="bda-records-chips"><span class="bda-chip">⚽ 22 Gols</span><span class="bda-chip">🅰️ 7 Assists</span><span class="bda-chip">👑 29 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/lucasbroxa.png" alt="Lucas broxa" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#3 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • FIXO</span></div><div class="bda-name">Lucas broxa</div><div class="bda-records-chips"><span class="bda-chip">⚽ 19 Gols</span><span class="bda-chip">🅰️ 8 Assists</span><span class="bda-chip">👑 27 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/matheus.png" alt="Matheus" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#4 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • PIVO</span></div><div class="bda-name">Matheus</div><div class="bda-records-chips"><span class="bda-chip">⚽ 14 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 17 G+A</span><span class="bda-chip">🎮 4 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/gontijo.png" alt="Gontijo" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#5 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Gontijo</div><div class="bda-records-chips"><span class="bda-chip">⚽ 16 Gols</span><span class="bda-chip">🅰️ 10 Assists</span><span class="bda-chip">👑 26 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/preto.png" alt="Preto" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#6 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • FIXO</span></div><div class="bda-name">Preto</div><div class="bda-records-chips"><span class="bda-chip">⚽ 13 Gols</span><span class="bda-chip">🅰️ 12 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/varo.png" alt="Varo" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#7 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • ALA</span></div><div class="bda-name">Varo</div><div class="bda-records-chips"><span class="bda-chip">⚽ 11 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/ian.png" alt="Ian" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#8 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Ian</div><div class="bda-records-chips"><span class="bda-chip">⚽ 10 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 13 G+A</span><span class="bda-chip">🎮 6 Jogos</span><span class="bda-chip">🏆 1 Gala</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span></div></div></div></div>
+    <div id="seasonMuseum"><div class="season-museum"><div class="feature-kicker">🏛️ Arquivo Vivo</div><div class="feature-title">Museu da 1ª Temporada</div><div class="season-archive-banner"><div class="archive-title">TEMPORADA 1 • EM CONSTRUÇÃO</div><div style="font-size:.65rem;color:var(--text-muted);margin-top:4px">Cada jogo, recorde e prêmio entra para a história.</div></div><div class="museum-grid"><div class="museum-card"><b>👑 Rei do G+A</b><span>Luqueta pepeta • 41 G+A</span></div><div class="museum-card"><b>⚽ Artilheiro</b><span>Luqueta pepeta • 27 gols</span></div><div class="museum-card"><b>🅰️ Garçom</b><span>Luqueta pepeta • 14 assist.</span></div><div class="museum-card"><b>💥 Maior goleada</b><span>37 × 11 • 11/07/2026</span></div><div class="museum-card"><b>🏛️ Hall</b><span>raro: 4 • epico: 4</span></div><div class="museum-card"><b>🥖 Gala definida</b><span>🍌 Manteiga no Pé: Ian</span></div></div></div></div></div>
   </section>
 
   <!-- JOGOS & SÚMULAS -->
-  <section id="jogos" class="spa-section active">
+  <section id="jogos" class="spa-section">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Histórico Oficial</span>
@@ -3032,7 +3030,7 @@
   </section>
 
   <!-- A GALA DO PÃO (COM FLIP CARDS 3D UIVERSE) -->
-  <section id="premiacoes" class="spa-section">
+  <section id="premiacoes" class="spa-section active">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Cerimônia de Premiação</span>
@@ -3085,7 +3083,7 @@
                 <div style="font-size:2.4rem;">🥖</div>
                 <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Pão de Ouro</strong>
                 <p style="font-size:0.75rem; color:var(--text-muted);">Líder isolado na soma de G+A.</p>
-                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 1))">Ver Campeão</button>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
             <div class="front">
@@ -3099,15 +3097,15 @@
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Pão de Ouro</strong>
-                      <span style="font-size:0.7rem; color:var(--text-white);">Luqueta pepeta</span>
+                      <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
                     </div>
                   </div>
                   <div class="card-footer">
-                    <span>Misto United</span>
+                    <span>Em disputa</span>
                     <span style="color:var(--gold);">🏆 Oficial</span>
                   </div>
                 </div>
@@ -3121,7 +3119,7 @@
                 <div style="font-size:2.4rem;">🥓</div>
                 <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Chuteira de Bacon</strong>
                 <p style="font-size:0.75rem; color:var(--text-muted);">Maior artilheiro da temporada.</p>
-                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 1))">Ver Campeão</button>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
             <div class="front">
@@ -3131,19 +3129,19 @@
                 <div class="circle bottom"></div>
               </div>
               <div class="front-content">
-                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🥓 Gala do Pão</small>
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🥓 Gala do Pão • 1ª Temporada</small>
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Chuteira de Bacon</strong>
-                      <span style="font-size:0.7rem; color:var(--text-white);">Luqueta pepeta</span>
+                      <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
                     </div>
                   </div>
                   <div class="card-footer">
-                    <span>Misto United</span>
+                    <span>Em disputa</span>
                     <span style="color:var(--gold);">🏆 Oficial</span>
                   </div>
                 </div>
@@ -3157,7 +3155,7 @@
                 <div style="font-size:2.4rem;">🥫</div>
                 <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Chef do Molho</strong>
                 <p style="font-size:0.75rem; color:var(--text-muted);">Líder em assistências do torneio.</p>
-                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 12))">Ver Campeão</button>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
             <div class="front">
@@ -3167,19 +3165,19 @@
                 <div class="circle bottom"></div>
               </div>
               <div class="front-content">
-                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🥫 Gala do Pão</small>
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🥫 Gala do Pão • 1ª Temporada</small>
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/varo.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Chef do Molho</strong>
-                      <span style="font-size:0.7rem; color:var(--text-white);">Varo</span>
+                      <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
                     </div>
                   </div>
                   <div class="card-footer">
-                    <span>Bacon City</span>
+                    <span>Em disputa</span>
                     <span style="color:var(--gold);">🏆 Oficial</span>
                   </div>
                 </div>
@@ -3193,7 +3191,7 @@
                 <div style="font-size:2.4rem;">🧤</div>
                 <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Pão Selado</strong>
                 <p style="font-size:0.75rem; color:var(--text-muted);">Melhor goleiro e paredão oficial.</p>
-                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 17))">Ver Campeão</button>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
             <div class="front">
@@ -3203,19 +3201,19 @@
                 <div class="circle bottom"></div>
               </div>
               <div class="front-content">
-                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🧤 Gala do Pão</small>
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🧤 Gala do Pão • 1ª Temporada</small>
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/guilherme.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Pão Selado</strong>
-                      <span style="font-size:0.7rem; color:var(--text-white);">Guilherme</span>
+                      <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
                     </div>
                   </div>
                   <div class="card-footer">
-                    <span>Bacon City</span>
+                    <span>Em disputa</span>
                     <span style="color:var(--gold);">🏆 Oficial</span>
                   </div>
                 </div>
@@ -3229,7 +3227,7 @@
                 <div style="font-size:2.4rem;">🛡️</div>
                 <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Melhor Fixo</strong>
                 <p style="font-size:0.75rem; color:var(--text-muted);">Defensor mais seguro da temporada.</p>
-                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 11))">Ver Campeão</button>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
             <div class="front">
@@ -3239,19 +3237,19 @@
                 <div class="circle bottom"></div>
               </div>
               <div class="front-content">
-                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🛡️ Gala do Pão</small>
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🛡️ Gala do Pão • 1ª Temporada</small>
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/preto.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Melhor Fixo</strong>
-                      <span style="font-size:0.7rem; color:var(--text-white);">Preto</span>
+                      <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
                     </div>
                   </div>
                   <div class="card-footer">
-                    <span>Bacon City</span>
+                    <span>Em disputa</span>
                     <span style="color:var(--gold);">🏆 Oficial</span>
                   </div>
                 </div>
@@ -3265,7 +3263,7 @@
                 <div style="font-size:2.4rem;">⚡</div>
                 <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Melhor Ala</strong>
                 <p style="font-size:0.75rem; color:var(--text-muted);">Mais veloz e incisivo pelas pontas.</p>
-                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 4))">Ver Campeão</button>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
             <div class="front">
@@ -3275,19 +3273,19 @@
                 <div class="circle bottom"></div>
               </div>
               <div class="front-content">
-                <small class="badge" style="color:var(--gold); border-color:var(--gold);">⚡ Gala do Pão</small>
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">⚡ Gala do Pão • 1ª Temporada</small>
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/gontijo.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Melhor Ala</strong>
-                      <span style="font-size:0.7rem; color:var(--text-white);">Gontijo</span>
+                      <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
                     </div>
                   </div>
                   <div class="card-footer">
-                    <span>Misto United</span>
+                    <span>Em disputa</span>
                     <span style="color:var(--gold);">🏆 Oficial</span>
                   </div>
                 </div>
@@ -3301,7 +3299,7 @@
                 <div style="font-size:2.4rem;">🎯</div>
                 <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Melhor Pivô</strong>
                 <p style="font-size:0.75rem; color:var(--text-muted);">Gênio do pivô e giro mortal.</p>
-                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 2))">Ver Campeão</button>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
             <div class="front">
@@ -3311,15 +3309,51 @@
                 <div class="circle bottom"></div>
               </div>
               <div class="front-content">
-                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🎯 Gala do Pão</small>
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🎯 Gala do Pão • 1ª Temporada</small>
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/edson.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Melhor Pivô</strong>
-                      <span style="font-size:0.7rem; color:var(--text-white);">Edson</span>
+                      <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <span>Em disputa</span>
+                    <span style="color:var(--gold);">🏆 Oficial</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><div class="uiverse-card misto-theme">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <div style="font-size:2.4rem;">🍌</div>
+                <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Manteiga no Pé</strong>
+                <p style="font-size:0.75rem; color:var(--text-muted);">Autor da jogada mais cômica/gol perdido.</p>
+                <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); openPlayerModal(playersData.find(x =&gt; x.id === 6))">Ver Campeão</button>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img-bg">
+                <div class="circle"></div>
+                <div class="circle right"></div>
+                <div class="circle bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🍌 Gala do Pão • 1ª Temporada</small>
+                <div class="description">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
+                      <img src="fotos/ian.png" onerror="this.src='fotos/default.png'">
+                    </div>
+                    <div>
+                      <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Manteiga no Pé</strong>
+                      <span style="font-size:0.7rem; color:var(--text-white);">Ian</span>
                     </div>
                   </div>
                   <div class="card-footer">
@@ -3334,9 +3368,9 @@
           <div class="content">
             <div class="back">
               <div class="back-content">
-                <div style="font-size:2.4rem;">🍌</div>
-                <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Manteiga no Pé</strong>
-                <p style="font-size:0.75rem; color:var(--text-muted);">Autor da jogada mais cômica/gol perdido.</p>
+                <div style="font-size:2.4rem;">🥚</div>
+                <strong style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Ovo de Ouro</strong>
+                <p style="font-size:0.75rem; color:var(--text-muted);">Melhor jogador jovem da temporada. Um prêmio especial para a nova geração que mais se destacou.</p>
                 <button class="btn-primary" style="padding:6px 14px; font-size:0.7rem;" onclick="event.stopPropagation(); abrirAdminModal(); adminTab('premios');">Ver Campeão</button>
               </div>
             </div>
@@ -3347,14 +3381,14 @@
                 <div class="circle bottom"></div>
               </div>
               <div class="front-content">
-                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🍌 Gala do Pão</small>
+                <small class="badge" style="color:var(--gold); border-color:var(--gold);">🥚 Gala do Pão • 1ª Temporada</small>
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
                       <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
                     </div>
                     <div>
-                      <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Manteiga no Pé</strong>
+                      <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Ovo de Ouro</strong>
                       <span style="font-size:0.7rem; color:var(--text-white);">A ser definido</span>
                     </div>
                   </div>
@@ -3375,39 +3409,67 @@
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">×</button>
       <div class="modal-avatar-box">
-        <img id="mImg" src="fotos/varo.png" alt="Avatar" class="modal-avatar-img">
+        <img id="mImg" src="fotos/ian.png" alt="Avatar" class="modal-avatar-img">
       </div>
-      <h3 id="mName" style="font-family:var(--font-display); font-size:2.4rem; line-height:1;">Varo</h3>
-      <p id="mTeamPos" style="font-size:0.88rem; color:var(--secondary); font-weight:700; margin-bottom:12px;">Bacon City • ALA</p>
-      <div id="mPlayerCardPro"><div class="player-card-pro"><div class="pcp-top"><div class="pcp-avatar"><img src="fotos/varo.png" onerror="this.src='fotos/default.png'"></div><div><div class="pcp-position">ala</div><div class="pcp-rating">83</div><div class="pcp-name">Varo</div><div style="margin-top:3px;font-size:.62rem;color:var(--gold);font-weight:900">🔹 Raro</div><div style="color:var(--bacon-red);font-size:.66rem;font-weight:800">Bacon City</div></div></div><div class="pcp-stats"><div class="pcp-stat"><b>6</b><span>Jogos</span></div><div class="pcp-stat"><b>11</b><span>Gols</span></div><div class="pcp-stat"><b>14</b><span>Assist.</span></div><div class="pcp-stat"><b>25</b><span>G+A</span></div></div></div></div>
-      <div id="mSeasonHistory"></div>
-      <div id="mMilestones"></div>
+      <h3 id="mName" style="font-family:var(--font-display); font-size:2.4rem; line-height:1;">Ian</h3>
+      <p id="mTeamPos" style="font-size:0.88rem; color:var(--secondary); font-weight:700; margin-bottom:12px;">Misto United • ALA</p>
+      <div id="mPlayerCardPro"><div class="player-card-pro"><div class="pcp-top"><div class="pcp-avatar"><img src="fotos/ian.png" onerror="this.src='fotos/default.png'"></div><div><div class="pcp-position">ala</div><div class="pcp-rating">74</div><div class="pcp-name">Ian</div><div style="margin-top:3px;font-size:.62rem;color:var(--gold);font-weight:900">🔹 Raro</div><div style="color:var(--misto-gold);font-size:.66rem;font-weight:800">Misto United</div></div></div><div class="pcp-stats"><div class="pcp-stat"><b>6</b><span>Jogos</span></div><div class="pcp-stat"><b>10</b><span>Gols</span></div><div class="pcp-stat"><b>3</b><span>Assist.</span></div><div class="pcp-stat"><b>13</b><span>G+A</span></div></div></div></div>
+      <div id="mSeasonHistory"><div class="player-history-box"><div class="trophy-hall-title"><i class="fa-solid fa-clock-rotate-left"></i> Minha Temporada • Histórico do Craque</div><p style="font-size:.64rem;color:var(--text-muted);margin:4px 0 9px">Cada partida conta a evolução do jogador, seus gols e momentos especiais.</p><div class="career-records-grid"><div class="career-record"><div style="font-size:1.05rem">🔥</div><b>Melhor atuação</b><span>4 gols no jogo 1<br>11/07/2026</span></div><div class="career-record"><div style="font-size:1.05rem">⭐</div><b>POTM</b><span>0 vezes<br>Destaques oficiais</span></div><div class="career-record"><div style="font-size:1.05rem">💥</div><b>Hat-tricks</b><span>1<br>Partidas com 3+ gols</span></div><div class="career-record"><div style="font-size:1.05rem">👑</div><b>G+A por jogo</b><span>2.17<br>Média atual</span></div><div class="career-record"><div style="font-size:1.05rem">❤️</div><b>Presença</b><span>6/6<br>Jogos disputados</span></div><div class="career-record"><div style="font-size:1.05rem">🏛️</div><b>Hall</b><span>1<br>Raro</span></div></div><div class="history-list"><div class="history-row"><div class="history-round">J1</div><div class="history-main"><b>11/07/2026 • Misto United 37 × 11 Bacon City</b><span>⚽ 4 gols</span></div><div class="history-stat">4G</div></div><div class="history-row"><div class="history-round">J2</div><div class="history-main"><b>24/07/2026 • Misto United 16 × 8 Bacon City</b><span>Sem gols registrados</span></div><div class="history-stat">0G</div></div><div class="history-row"><div class="history-round">J3</div><div class="history-main"><b>28/07/2026 • Misto United 10 × 15 Bacon City</b><span>⚽ 2 gols</span></div><div class="history-stat">2G</div></div><div class="history-row"><div class="history-round">J4</div><div class="history-main"><b>01/08/2026 • Misto United 13 × 3 Bacon City</b><span>⚽ 2 gols</span></div><div class="history-stat">2G</div></div><div class="history-row"><div class="history-round">J5</div><div class="history-main"><b>08/08/2026 • Misto United 17 × 18 Bacon City</b><span>⚽ 2 gols</span></div><div class="history-stat">2G</div></div><div class="history-row"><div class="history-round">J6</div><div class="history-main"><b>15/08/2026 • Misto United 12 × 10 Bacon City</b><span>Sem gols registrados</span></div><div class="history-stat">0G</div></div></div></div></div>
+      <div id="mMilestones"><div class="profile-milestone"><div class="trophy-hall-title">🎯 Caminho do Craque</div><div class="mega-muted">Próxima grande marca: <b style="color:var(--gold)">25 G+A</b> • faltam 12</div><div class="profile-milestone-grid"><div class="profile-milestone-item"><b>13</b><span>G+A atual</span></div><div class="profile-milestone-item"><b>Raro</b><span>Patente do Hall</span></div><div class="profile-milestone-item"><b>1</b><span>Prêmios da Gala</span></div></div></div></div>
 
-      <div class="evolution-box"><div class="trophy-hall-title"><i class="fa-solid fa-chart-line"></i> Evolução da Temporada</div><div class="evo-summary"><div><b id="evoTotalGoals">0</b><span>Gols</span></div><div><b id="evoPeakGoals">0</b><span>Melhor jogo</span></div><div><b id="evoPlayedGames">0</b><span>Jogos</span></div></div><div class="evo-journey" id="mEvolution"><span class="feature-muted">Sem súmulas detalhadas suficientes.</span></div><div class="evo-note">Cada ponto mostra a produção de gols em uma partida. A linha dourada acompanha a evolução acumulada.</div></div>
+      <div class="evolution-box"><div class="trophy-hall-title"><i class="fa-solid fa-chart-line"></i> Evolução da Temporada</div><div class="evo-summary"><div><b id="evoTotalGoals">10</b><span>Gols</span></div><div><b id="evoPeakGoals">4</b><span>Melhor jogo</span></div><div><b id="evoPlayedGames">6</b><span>Jogos</span></div></div><div class="evo-journey" id="mEvolution"><div class="evo-node" title="Jogo 1: 4 gol(s) • 4 gols acumulados"><div class="evo-bar-wrap"><div class="evo-bar" style="height:100%"><b>4G</b></div></div><div class="evo-dot"></div><span class="evo-label">J1</span><span class="evo-cum">4 total</span></div><div class="evo-node" title="Jogo 2: 0 gol(s) • 4 gols acumulados"><div class="evo-bar-wrap"><div class="evo-bar" style="height:5%"><b>0G</b></div></div><div class="evo-dot"></div><span class="evo-label">J2</span><span class="evo-cum">4 total</span></div><div class="evo-node" title="Jogo 3: 2 gol(s) • 6 gols acumulados"><div class="evo-bar-wrap"><div class="evo-bar" style="height:50%"><b>2G</b></div></div><div class="evo-dot"></div><span class="evo-label">J3</span><span class="evo-cum">6 total</span></div><div class="evo-node" title="Jogo 4: 2 gol(s) • 8 gols acumulados"><div class="evo-bar-wrap"><div class="evo-bar" style="height:50%"><b>2G</b></div></div><div class="evo-dot"></div><span class="evo-label">J4</span><span class="evo-cum">8 total</span></div><div class="evo-node" title="Jogo 5: 2 gol(s) • 10 gols acumulados"><div class="evo-bar-wrap"><div class="evo-bar" style="height:50%"><b>2G</b></div></div><div class="evo-dot"></div><span class="evo-label">J5</span><span class="evo-cum">10 total</span></div><div class="evo-node" title="Jogo 6: 0 gol(s) • 10 gols acumulados"><div class="evo-bar-wrap"><div class="evo-bar" style="height:5%"><b>0G</b></div></div><div class="evo-dot"></div><span class="evo-label">J6</span><span class="evo-cum">10 total</span></div></div><div class="evo-note">Cada ponto mostra a produção de gols em uma partida. A linha dourada acompanha a evolução acumulada.</div></div>
 
       <!-- HALL DA FAMA: CONQUISTAS AUTOMÁTICAS -->
       <div class="trophy-hall-box">
         <div class="trophy-hall-title"><i class="fa-solid fa-trophy"></i> Hall da Fama • Conquistas Desbloqueadas</div>
         <p style="font-size:.68rem;color:var(--text-muted);margin:4px 0 10px">Elas aparecem automaticamente quando o atleta bate a marca.</p>
-        <div class="conquistas-grid" id="mBadgesContainer"><span class="badge-conquista badge-emerald" style="cursor:pointer" role="button" tabindex="0" title="Clique para ver a descrição" onclick="verDetalheTrofeu(12, &quot;❤️ Fiel ao Time&quot;)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();verDetalheTrofeu(12, &quot;❤️ Fiel ao Time&quot;);}">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="cursor:pointer" role="button" tabindex="0" title="Clique para ver a descrição" onclick="verDetalheTrofeu(12, &quot;👑 Marca de 25&quot;)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();verDetalheTrofeu(12, &quot;👑 Marca de 25&quot;);}">👑 Marca de 25</span></div>
+        <div class="conquistas-grid" id="mBadgesContainer"><span class="badge-conquista badge-emerald" style="cursor:pointer" role="button" tabindex="0" title="Clique para ver a descrição" onclick="verDetalheTrofeu(6, &quot;❤️ Fiel ao Time&quot;)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();verDetalheTrofeu(6, &quot;❤️ Fiel ao Time&quot;);}">❤️ Fiel ao Time</span></div>
       </div>
       <!-- GALA DO PÃO: PRÊMIOS ESPECIAIS -->
       <div class="trophy-hall-box" style="margin-top:10px;border-color:rgba(245,189,2,.45)">
         <div class="trophy-hall-title" style="color:var(--gold)"><i class="fa-solid fa-crown"></i> Gala do Pão • Prêmios Especiais</div>
         <p style="font-size:.68rem;color:var(--text-muted);margin:4px 0 10px">Não são desbloqueados por números. O campeão é definido na Gala.</p>
-        <div class="conquistas-grid" id="mGalaBadgesContainer"><span style="font-size:.75rem;color:var(--text-muted)">Nenhum prêmio especial da Gala definido para este atleta.</span></div>
+        <div class="conquistas-grid" id="mGalaBadgesContainer"><span class="badge-conquista badge-gold gala-special-badge" style="cursor:pointer" role="button" tabindex="0" title="Prêmio especial da Gala do Pão" onclick="verDetalheGala(6, 'manteiga-pe')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();verDetalheGala(6, 'manteiga-pe');}">🍌 Manteiga no Pé • 1ª Temporada</span></div>
       </div>
 
-      <div id="mProfileExtras"></div>
+      <div id="mProfileExtras"><div class="profile-super-grid">
+        <div class="profile-super-card"><div class="super-kicker">🔥 Forma Atual</div><div class="super-value">24</div><div class="super-label">Índice dos últimos jogos</div><div class="form-pips"><span class="form-pip " title="J2: 0G">0G</span><span class="form-pip hot" title="J3: 2G">2G</span><span class="form-pip hot" title="J4: 2G">2G</span><span class="form-pip hot" title="J5: 2G">2G</span><span class="form-pip " title="J6: 0G">0G</span></div></div>
+        <div class="profile-super-card"><div class="super-kicker">⚡ Estilo</div><div class="super-value">MATADOR</div><div class="super-label">Baseado na produção da temporada</div></div>
+        <div class="profile-super-card"><div class="super-kicker">🎯 Próxima Marca</div><div class="super-value">25 G+A</div><div class="super-label">Faltam 12 participações</div><div class="profile-progress"><i style="width:13%"></i></div></div>
+      </div>
+      <div class="profile-trophy-room"><div class="super-kicker">🏆 Sala de Troféus</div><div style="font-family:var(--font-display);font-weight:900;font-size:1.05rem;margin-top:2px">A coleção de Ian</div><div class="trophy-room-grid"><div class="trophy-room-item" title="Hall"><strong>❤️</strong><span>Fiel ao Time</span></div><div class="trophy-room-item" title="Gala"><strong>🍌</strong><span>Manteiga no Pé</span></div></div></div>
+      <div class="profile-rivalry-panel">
+        <div class="rivalry-head"><div><div class="super-kicker">⚔️ BATALHA PELO TOPO</div><div class="rivalry-title">Rivalidades mais próximas</div></div><span class="rivalry-chip">13 G+A</span></div>
+        <div class="rivalry-list">
+          <div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=&gt;x.id===15))">
+              <div class="rivalry-rank">#1</div>
+              <div class="rivalry-avatar"><img src="fotos/matheus.png" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-player"><strong>Matheus</strong><span>Bacon City • 17 G+A</span></div>
+              <div class="rivalry-gap">−4 G+A</div>
+            </div><div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=&gt;x.id===13))">
+              <div class="rivalry-rank">#2</div>
+              <div class="rivalry-avatar"><img src="fotos/default.png" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-player"><strong>Vitor</strong><span>Bacon City • 17 G+A</span></div>
+              <div class="rivalry-gap">−4 G+A</div>
+            </div><div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=&gt;x.id===20))">
+              <div class="rivalry-rank">#3</div>
+              <div class="rivalry-avatar"><img src="fotos/litlepepsi.png" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-player"><strong>Litle pepsi</strong><span>Bacon City • 9 G+A</span></div>
+              <div class="rivalry-gap">−4 G+A</div>
+            </div>
+        </div>
+        <div class="rivalry-foot">Comparação por G+A, jogos e contexto de equipe • toque em um jogador para abrir o perfil</div>
+      </div>
+      <div class="career-hero"><div class="career-hero-title">📚 Carreira na Copa</div><div class="career-hero-sub">Temporada 1 • 6 jogos • 10G • 3A • 13 G+A</div><div class="profile-progress"><i style="width:13%"></i></div><div class="career-hero-sub" style="margin-top:5px">Progresso histórico: 13% até 103 G+A</div></div></div>
 
       <div class="modal-stats-grid-adv">
         <div class="m-stat"><h5>Jogos</h5><p id="mJogos">6</p></div>
-        <div class="m-stat"><h5>Gols</h5><p id="mGols">11</p></div>
-        <div class="m-stat"><h5>Assists</h5><p id="mAssists">14</p></div>
-        <div class="m-stat"><h5>Total</h5><p id="mTotal">25</p></div>
+        <div class="m-stat"><h5>Gols</h5><p id="mGols">10</p></div>
+        <div class="m-stat"><h5>Assists</h5><p id="mAssists">3</p></div>
+        <div class="m-stat"><h5>Total</h5><p id="mTotal">13</p></div>
       </div>
 
-      <p id="mMarket" style="font-size:1.1rem; color:var(--money-green); font-weight:800; margin-bottom:14px;">Valor de Mercado: R$ 19,5M</p>
+      <p id="mMarket" style="font-size:1.1rem; color:var(--money-green); font-weight:800; margin-bottom:14px;">Valor de Mercado: R$ 14,0M</p>
       
       <a href="https://www.instagram.com/copa_misto_quente" target="_blank" class="btn-insta" style="display:inline-flex; justify-content:center; width:100%; padding:10px;">
         <i class="fa-brands fa-instagram"></i> Ver Destaques no Instagram
@@ -3446,8 +3508,8 @@
 
         <div style="display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap;">
           <button class="filter-btn" id="tabBtnJogadores" onclick="adminTab('jogadores')">Jogadores &amp; Conquistas</button>
-          <button class="filter-btn active" id="tabBtnJogos" onclick="adminTab('jogos')">Jogos, Placares &amp; Súmulas</button>
-          <button class="filter-btn" id="tabBtnPremios" onclick="adminTab('premios')">Vencedores da Gala do Pão</button>
+          <button class="filter-btn" id="tabBtnJogos" onclick="adminTab('jogos')">Jogos, Placares &amp; Súmulas</button>
+          <button class="filter-btn active" id="tabBtnPremios" onclick="adminTab('premios')">Vencedores da Gala do Pão</button>
           <button class="filter-btn" id="tabBtnProximo" onclick="adminTab('proximo')">Próximo Jogo</button>
           <button class="filter-btn" id="tabBtnNoticias" onclick="adminTab('noticias')">Notícias &amp; Temporada</button>
           <button class="filter-btn" id="tabBtnVisitantes" onclick="adminTab('visitantes')">👀 Visitantes</button>
@@ -3456,7 +3518,19 @@
         <!-- Tab 1: Jogadores -->
         <div id="adminTabVisitantes" style="display:none;">
           <div class="section-header" style="margin-bottom:8px"><span class="section-tag">👀 Painel de Acessos</span><h4 style="font-family:var(--font-display);font-size:1.4rem;margin:3px 0">Quem entrou no site</h4></div>
-          <div id="adminVisitorsContent"></div>
+          <div id="adminVisitorsContent"><div class="visitor-box">
+        <div class="visitor-summary">
+          <div><b>0</b><span>Identidades registradas</span></div>
+          <div><b>0</b><span>Jogadores identificados</span></div>
+          <div><b>—</b><span>Última entrada</span></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <strong style="font-size:.78rem">🕒 Últimas entradas</strong>
+          <button class="btn-outline" style="padding:5px 9px;font-size:.62rem" onclick="limparVisitantes()">Limpar histórico</button>
+        </div>
+        <div class="feature-muted">Nenhuma entrada registrada ainda.</div>
+        <div class="visitor-note">ℹ️ No GitHub Pages puro, este histórico continua sendo local a este navegador. A identificação pública usa uma única fonte de dados para jogadores e torcedores.</div>
+      </div></div>
         </div>
 
         <div id="adminTabJogadores" style="display: none;">
@@ -3482,6 +3556,7 @@
               <input type="number" value="5" onchange="atualizarJogadorAdmin(0, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="27" onchange="atualizarJogadorAdmin(0, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="14" onchange="atualizarJogadorAdmin(0, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(0, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(0, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(0, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3504,6 +3579,7 @@
               <input type="number" value="5" onchange="atualizarJogadorAdmin(1, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="22" onchange="atualizarJogadorAdmin(1, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="7" onchange="atualizarJogadorAdmin(1, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(1, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(1, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(1, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3526,6 +3602,7 @@
               <input type="number" value="6" onchange="atualizarJogadorAdmin(2, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="19" onchange="atualizarJogadorAdmin(2, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="8" onchange="atualizarJogadorAdmin(2, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(2, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(2, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(2, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3548,6 +3625,7 @@
               <input type="number" value="6" onchange="atualizarJogadorAdmin(3, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="16" onchange="atualizarJogadorAdmin(3, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="10" onchange="atualizarJogadorAdmin(3, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(3, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(3, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(3, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3570,6 +3648,7 @@
               <input type="number" value="2" onchange="atualizarJogadorAdmin(4, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="5" onchange="atualizarJogadorAdmin(4, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="2" onchange="atualizarJogadorAdmin(4, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(4, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(4, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(4, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3592,6 +3671,7 @@
               <input type="number" value="6" onchange="atualizarJogadorAdmin(5, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="10" onchange="atualizarJogadorAdmin(5, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="3" onchange="atualizarJogadorAdmin(5, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(5, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(5, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(5, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3614,6 +3694,7 @@
               <input type="number" value="4" onchange="atualizarJogadorAdmin(6, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="2" onchange="atualizarJogadorAdmin(6, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="1" onchange="atualizarJogadorAdmin(6, 'assists', this.value)" placeholder="Assists">
+              <div class="visitor-note" style="grid-column:1/-1">🧤 O painel do goleiro é calculado automaticamente pelos jogos, resultados, POTM, conquistas e Gala. Não precisa lançar defesas manualmente.</div>
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(6, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(6, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(6, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3636,6 +3717,7 @@
               <input type="number" value="5" onchange="atualizarJogadorAdmin(7, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(7, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(7, 'assists', this.value)" placeholder="Assists">
+              <div class="visitor-note" style="grid-column:1/-1">🧤 O painel do goleiro é calculado automaticamente pelos jogos, resultados, POTM, conquistas e Gala. Não precisa lançar defesas manualmente.</div>
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(7, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(7, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(7, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3658,6 +3740,7 @@
               <input type="number" value="1" onchange="atualizarJogadorAdmin(8, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="2" onchange="atualizarJogadorAdmin(8, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(8, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(8, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(8, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(8, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3680,6 +3763,7 @@
               <input type="number" value="1" onchange="atualizarJogadorAdmin(9, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="1" onchange="atualizarJogadorAdmin(9, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(9, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(9, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(9, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(9, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3702,6 +3786,7 @@
               <input type="number" value="6" onchange="atualizarJogadorAdmin(10, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="13" onchange="atualizarJogadorAdmin(10, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="12" onchange="atualizarJogadorAdmin(10, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(10, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(10, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(10, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3724,6 +3809,7 @@
               <input type="number" value="6" onchange="atualizarJogadorAdmin(11, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="11" onchange="atualizarJogadorAdmin(11, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="14" onchange="atualizarJogadorAdmin(11, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(11, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(11, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(11, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3746,6 +3832,7 @@
               <input type="number" value="3" onchange="atualizarJogadorAdmin(12, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="13" onchange="atualizarJogadorAdmin(12, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="4" onchange="atualizarJogadorAdmin(12, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(12, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(12, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(12, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3768,6 +3855,7 @@
               <input type="number" value="1" onchange="atualizarJogadorAdmin(13, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="8" onchange="atualizarJogadorAdmin(13, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(13, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(13, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(13, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(13, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3790,6 +3878,7 @@
               <input type="number" value="4" onchange="atualizarJogadorAdmin(14, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="14" onchange="atualizarJogadorAdmin(14, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="3" onchange="atualizarJogadorAdmin(14, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(14, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(14, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(14, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3812,6 +3901,7 @@
               <input type="number" value="1" onchange="atualizarJogadorAdmin(15, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="3" onchange="atualizarJogadorAdmin(15, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="1" onchange="atualizarJogadorAdmin(15, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(15, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(15, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(15, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3834,6 +3924,7 @@
               <input type="number" value="5" onchange="atualizarJogadorAdmin(16, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(16, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="1" onchange="atualizarJogadorAdmin(16, 'assists', this.value)" placeholder="Assists">
+              <div class="visitor-note" style="grid-column:1/-1">🧤 O painel do goleiro é calculado automaticamente pelos jogos, resultados, POTM, conquistas e Gala. Não precisa lançar defesas manualmente.</div>
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(16, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(16, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(16, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3856,6 +3947,7 @@
               <input type="number" value="1" onchange="atualizarJogadorAdmin(17, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(17, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="1" onchange="atualizarJogadorAdmin(17, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(17, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(17, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(17, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3878,6 +3970,7 @@
               <input type="number" value="5" onchange="atualizarJogadorAdmin(18, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="1" onchange="atualizarJogadorAdmin(18, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="2" onchange="atualizarJogadorAdmin(18, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(18, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(18, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(18, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3900,6 +3993,7 @@
               <input type="number" value="1" onchange="atualizarJogadorAdmin(19, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="3" onchange="atualizarJogadorAdmin(19, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="6" onchange="atualizarJogadorAdmin(19, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(19, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(19, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(19, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3922,6 +4016,7 @@
               <input type="number" value="1" onchange="atualizarJogadorAdmin(20, 'jogos', this.value)" placeholder="Jogos">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(20, 'gols', this.value)" placeholder="Gols">
               <input type="number" value="0" onchange="atualizarJogadorAdmin(20, 'assists', this.value)" placeholder="Assists">
+              
             </div>
             <label style="font-size:0.7rem; color:var(--gold); font-weight:700; display:block; margin-bottom:4px;">🏅 Conquistas Manuais (marque os troféus deste atleta):</label>
             <div class="admin-trofeus-box"><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(20, '⭐ MVP de Jogo', this.checked)"> ⭐ MVP de Jogo</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(20, '🧱 Jogo Inesquecível', this.checked)"> 🧱 Jogo Inesquecível</label><label class="admin-trofeu-label"><input type="checkbox" onchange="adminToggleTrofeu(20, '🎖️ Menção Honrosa', this.checked)"> 🎖️ Menção Honrosa</label></div>
@@ -3931,7 +4026,7 @@
         </div>
 
         <!-- Tab 2: Jogos com Placar e Vencedor Facilitado -->
-        <div id="adminTabJogos" style="display: block;">
+        <div id="adminTabJogos" style="display: none;">
           <div style="display:flex; justify-content:space-between; margin-bottom:10px; align-items:center;">
             <span style="font-size:0.8rem; color:var(--text-muted);">Configure os placares e os autores dos gols:</span>
             <button class="btn-primary" style="padding:4px 10px; font-size:0.75rem;" onclick="adminAdicionarJogo()">+ Cadastrar Novo Jogo</button>
@@ -4060,7 +4155,7 @@
         </div>
 
         <!-- Tab 3: Prêmios Gala do Pão -->
-        <div id="adminTabPremios" style="display: none;">
+        <div id="adminTabPremios" style="display: block;">
           <span style="font-size:0.8rem; color:var(--gold); display:block; margin-bottom:10px; font-weight:700;">
             🏆 Vincule o campeão a cada prêmio. O troféu aparecerá automaticamente com selo brilhante no perfil do atleta!
           </span>
@@ -4160,6 +4255,17 @@
             </div>
             <select style="max-width:200px;" onchange="definirVencedorGala(8, this.value)">
               <option value="">— Sem vencedor —</option>
+              <option value="1">Luqueta pepeta (Misto United)</option><option value="2">Edson (Misto United)</option><option value="3">Lucas broxa (Misto United)</option><option value="4">Gontijo (Misto United)</option><option value="5">Kauã Broxa (Misto United)</option><option value="6" selected="">Ian (Misto United)</option><option value="7">Daniel (Misto United)</option><option value="8">Douglas (Misto United)</option><option value="9">lz branco (Misto United)</option><option value="10">samuel (Misto United)</option><option value="11">Preto (Bacon City)</option><option value="12">Varo (Bacon City)</option><option value="13">Vitor (Bacon City)</option><option value="14">Vitor Hugo (Bacon City)</option><option value="15">Matheus (Bacon City)</option><option value="16">Paulao (Bacon City)</option><option value="17">Guilherme (Bacon City)</option><option value="18">Alejandro (Bacon City)</option><option value="19">Davi (Bacon City)</option><option value="20">Litle pepsi (Bacon City)</option><option value="21">murilao (Bacon City)</option>
+            </select>
+          </div>
+        
+          <div class="admin-player-row" style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <div>
+              <strong style="color:var(--gold); font-size:1.1rem;">🥚 Ovo de Ouro</strong>
+              <p style="font-size:0.72rem; color:var(--text-muted);">Melhor jogador jovem da temporada. Um prêmio especial para a nova geração que mais se destacou.</p>
+            </div>
+            <select style="max-width:200px;" onchange="definirVencedorGala(9, this.value)">
+              <option value="">— Sem vencedor —</option>
               <option value="1">Luqueta pepeta (Misto United)</option><option value="2">Edson (Misto United)</option><option value="3">Lucas broxa (Misto United)</option><option value="4">Gontijo (Misto United)</option><option value="5">Kauã Broxa (Misto United)</option><option value="6">Ian (Misto United)</option><option value="7">Daniel (Misto United)</option><option value="8">Douglas (Misto United)</option><option value="9">lz branco (Misto United)</option><option value="10">samuel (Misto United)</option><option value="11">Preto (Bacon City)</option><option value="12">Varo (Bacon City)</option><option value="13">Vitor (Bacon City)</option><option value="14">Vitor Hugo (Bacon City)</option><option value="15">Matheus (Bacon City)</option><option value="16">Paulao (Bacon City)</option><option value="17">Guilherme (Bacon City)</option><option value="18">Alejandro (Bacon City)</option><option value="19">Davi (Bacon City)</option><option value="20">Litle pepsi (Bacon City)</option><option value="21">murilao (Bacon City)</option>
             </select>
           </div>
@@ -4209,9 +4315,9 @@
     <div class="m-nav-item" onclick="navigateTo('home')"><i class="fa-solid fa-house"></i> Início</div>
     <div class="m-nav-item" onclick="navigateTo('jogadores')"><i class="fa-solid fa-id-card"></i> Cards 3D</div>
     <div class="m-nav-item" onclick="navigateTo('recordes')"><i class="fa-solid fa-crown"></i> Hall BDA</div>
-    <div class="m-nav-item active-link" onclick="navigateTo('jogos')"><i class="fa-solid fa-futbol"></i> Jogos</div>
+    <div class="m-nav-item" onclick="navigateTo('jogos')"><i class="fa-solid fa-futbol"></i> Jogos</div>
     <div class="m-nav-item" onclick="navigateTo('estatisticas')"><i class="fa-solid fa-chart-simple"></i> Stats</div>
-    <div class="m-nav-item" onclick="navigateTo('premiacoes')"><i class="fa-solid fa-bread-slice"></i> Gala</div>
+    <div class="m-nav-item active-link" onclick="navigateTo('premiacoes')"><i class="fa-solid fa-bread-slice"></i> Gala</div>
   </div>
 
   <!-- FOOTER -->
@@ -4358,11 +4464,7 @@
     "assists": 1,
     "mercado": "R$ 18,0M",
     "foto": "fotos/daniel.png",
-    "trofeus": [],
-    "defesas": 0,
-    "cleanSheets": 0,
-    "penaltisDefendidos": 0,
-    "golsSofridos": 0
+    "trofeus": []
   },
   {
     "id": 8,
@@ -4374,11 +4476,7 @@
     "assists": 0,
     "mercado": "R$ 19,0M",
     "foto": "fotos/douglas.png",
-    "trofeus": [],
-    "defesas": 0,
-    "cleanSheets": 0,
-    "penaltisDefendidos": 0,
-    "golsSofridos": 0
+    "trofeus": []
   },
   {
     "id": 9,
@@ -4494,11 +4592,7 @@
     "foto": "fotos/guilherme.png",
     "trofeus": [
       "🧤 Pão Selado"
-    ],
-    "defesas": 0,
-    "cleanSheets": 0,
-    "penaltisDefendidos": 0,
-    "golsSofridos": 0
+    ]
   },
   {
     "id": 18,
@@ -4903,7 +4997,7 @@
     "icon": "🍌",
     "nome": "Manteiga no Pé",
     "detail": "Autor da jogada mais cômica/gol perdido.",
-    "winnerId": null
+    "winnerId": 6
   },
   {
     "id": "ovo-ouro",
@@ -6196,5 +6290,6 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
   else bind();
 })();
 </script>
+
 
 </body></html>
