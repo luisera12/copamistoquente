@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <html lang="pt-BR"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -4387,6 +4388,18 @@ window.CMQ_SUPABASE_ANON_KEY = window.CMQ_SUPABASE_ANON_KEY || "";
 
   <!-- JAVASCRIPT & ENGINE -->
   <script>
+    // ============================================================
+// CONEXÃO SUPABASE
+// ============================================================
+
+const SUPABASE_URL = 'https://rdxbsiuvxcvpdpzkavuy.supabase.co';
+
+const SUPABASE_KEY = 'sb_publishable_CZC2dk43gF34l5ke1FHh9A_PwRGpROw';
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
     /* A GALA É CONTROLADA APENAS NA ABA "VENCEDORES DA GALA DO PÃO".
        Estes são registros manuais extras do Admin e NÃO contam como conquistas do Hall. */
     const LISTA_TROFEUS_DISPONIVEIS = [
@@ -6105,6 +6118,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
     }
 
     renderApp();
+    console.log('🔥 Supabase conectado:', supabaseClient);
   </script>
 
 
