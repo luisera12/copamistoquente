@@ -1395,6 +1395,22 @@ window.CMQ_SUPABASE_ANON_KEY = window.CMQ_SUPABASE_ANON_KEY || "";
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+
+<style id="cmq-admin-live-votes-style">
+#cmqAdminLiveVotes{margin-top:18px;padding:18px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.1)}
+#cmqAdminLiveVotes .cmq-av-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+#cmqAdminLiveVotes h3{margin:0;font:900 17px system-ui;color:#fff}
+#cmqAdminLiveVotes .cmq-av-total{font:900 12px system-ui;opacity:.75}
+#cmqAdminLiveVotes .cmq-av-list{display:grid;gap:7px}
+#cmqAdminLiveVotes .cmq-av-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;background:rgba(0,0,0,.16);font:800 12px system-ui;color:#fff}
+#cmqAdminLiveVotes .cmq-av-row strong{font-size:13px}
+#cmqAdminLiveVotes .cmq-av-actions{display:flex;gap:8px;margin-top:12px}
+#cmqAdminLiveVotes button{border:0;border-radius:10px;padding:9px 12px;font:900 11px system-ui;cursor:pointer}
+#cmqAdminRefreshVotes{background:#f1c75b;color:#111}
+#cmqAdminResetVotes{background:#3a2025;color:#fff}
+#cmqAdminVoteMsg{margin-top:8px;font:700 11px system-ui;opacity:.72}
+</style>
+
 </head>
 <body style="">
 
@@ -6533,4 +6549,119 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
 })();
 </script>
 
+
+<script id="cmq-admin-live-votes-script">
+(function(){
+  function escapeHtml(v){
+    return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+  }
+
+  function getCandidates(){
+    const candidates = window.playersData || window.players || window.jogadores || window.playerData || [];
+    if(Array.isArray(candidates)) return candidates;
+    if(candidates && typeof candidates==='object') return Object.values(candidates);
+    return [];
+  }
+
+  function candidateName(id){
+    const p=getCandidates().find(x=>String(x.id??x.playerId??x.slug??x.name)===String(id));
+    return p?.name || p?.nome || String(id);
+  }
+
+  async function loadVotes(){
+    const msg=document.getElementById('cmqAdminVoteMsg');
+    const list=document.getElementById('cmqAdminVoteList');
+    const totalEl=document.getElementById('cmqAdminVoteTotal');
+    if(!window.CMQSharedVote?.configured()){
+      list.innerHTML='<div class="cmq-av-row"><span>Supabase ainda não configurado.</span><strong>—</strong></div>';
+      totalEl.textContent='0 votos';
+      if(msg) msg.textContent='Configure CMQ_SUPABASE_URL e CMQ_SUPABASE_ANON_KEY no HTML.';
+      return;
+    }
+
+    try{
+      const totals=await window.CMQSharedVote.totals();
+      const rows=Object.entries(totals||{}).sort((a,b)=>b[1]-a[1]);
+      const total=rows.reduce((s,[,n])=>s+Number(n),0);
+      totalEl.textContent=total+' voto'+(total===1?'':'s');
+
+      if(!rows.length){
+        list.innerHTML='<div class="cmq-av-row"><span>Nenhum voto ainda.</span><strong>0</strong></div>';
+      }else{
+        list.innerHTML=rows.map(([id,n],i)=>{
+          const pct=total?Math.round(Number(n)/total*100):0;
+          return '<div class="cmq-av-row"><span>'+(i===0?'🥇 ':i===1?'🥈 ':i===2?'🥉 ':'')+
+            escapeHtml(candidateName(id))+' <small style="opacity:.55">('+pct+'%)</small></span><strong>'+
+            Number(n)+' voto'+(Number(n)===1?'':'s')+'</strong></div>';
+        }).join('');
+      }
+      if(msg) msg.textContent='Última atualização: '+new Date().toLocaleTimeString('pt-BR');
+    }catch(e){
+      list.innerHTML='<div class="cmq-av-row"><span>Erro ao carregar os votos.</span><strong>!</strong></div>';
+      if(msg) msg.textContent='Verifique as políticas da tabela no Supabase.';
+    }
+  }
+
+  async function resetVotes(){
+    if(!window.CMQSharedVote?.configured()){
+      alert('Configure o Supabase primeiro.');
+      return;
+    }
+    if(!confirm('Tem certeza que deseja zerar TODOS os votos da Bola de Ouro?')) return;
+    try{
+      await window.CMQSharedVote.resetAll();
+      await loadVotes();
+      alert('Votação zerada.');
+    }catch(e){
+      alert('Não foi possível zerar os votos. Verifique as permissões do Supabase.');
+    }
+  }
+
+  function findAdminRoot(){
+    return document.querySelector('#adminDashboardSection, #adminPanel, .admin-dashboard, [data-admin-dashboard]');
+  }
+
+  function mount(){
+    if(document.getElementById('cmqAdminLiveVotes')) return;
+    const root=findAdminRoot();
+    if(!root) return;
+    const temp=document.createElement('div');
+    temp.innerHTML=\n<div id="cmqAdminLiveVotes" style="display:none">\n  <div class="cmq-av-head">\n    <h3>🗳️ Votação da Bola de Ouro</h3>\n    <div class="cmq-av-total" id="cmqAdminVoteTotal">0 votos</div>\n  </div>\n  <div class="cmq-av-list" id="cmqAdminVoteList">\n    <div class="cmq-av-row"><span>Carregando...</span><strong>—</strong></div>\n  </div>\n  <div class="cmq-av-actions">\n    <button id="cmqAdminRefreshVotes" type="button">🔄 Atualizar votos</button>\n    <button id="cmqAdminResetVotes" type="button">🗑️ Zerar votação</button>\n  </div>\n  <div id="cmqAdminVoteMsg"></div>\n</div>\n;
+    const widget=temp.firstElementChild;
+    root.appendChild(widget);
+  }
+
+  function show(){
+    const w=document.getElementById('cmqAdminLiveVotes');
+    if(w){
+      w.style.display='block';
+      loadVotes();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded',()=>{
+    // Mount once the existing Admin dashboard has rendered.
+    let tries=0;
+    const timer=setInterval(()=>{
+      mount();
+      if(++tries>20) clearInterval(timer);
+    },500);
+
+    document.getElementById('cmqAdminRefreshVotes')?.addEventListener('click',loadVotes);
+    document.getElementById('cmqAdminResetVotes')?.addEventListener('click',resetVotes);
+
+    // Observe Admin becoming visible.
+    const obs=new MutationObserver(()=>{
+      mount();
+      const root=findAdminRoot();
+      if(root && getComputedStyle(root).display!=='none') show();
+    });
+    obs.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['style','class']});
+  });
+
+  window.CMQShowAdminLiveVotes=show;
+})();
+</script>
+
+<div id="cmqAdminLiveVotesAnchor" data-admin-dashboard style="display:none"></div>
 </body></html>
