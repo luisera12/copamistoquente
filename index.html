@@ -6425,14 +6425,24 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
   function readPlayers(){
     try{return window.playersData||[]}catch(e){return []}
   }
-  function renderVote(){
+ async function renderVote(){
     const box=document.getElementById('cmqBallonVoteList');
     const status=document.getElementById('cmqBallonVoteStatus');
     if(!box)return;
     const players=readPlayers().filter(p=>p && p.nome);
-    const votes=readVotes();
-    const total=Object.values(votes).reduce((a,b)=>a+(Number(b)||0),0);
-    const my=localStorage.getItem(USER_KEY);
+   let votes=readVotes();
+let my=localStorage.getItem(USER_KEY);
+
+if(window.CMQSharedVote?.configured()){
+  try{
+    votes=await window.CMQSharedVote.totals() || {};
+    my=await window.CMQSharedVote.myVote() || my;
+  }catch(e){
+    console.error('Erro ao carregar votos do Supabase:',e);
+  }
+}
+
+const total=Object.values(votes).reduce((a,b)=>a+(Number(b)||0),0);
     box.innerHTML=players.map(p=>{
       const n=Number(votes[p.id]||0);
       const pct=total?Math.round(n/total*100):0;
@@ -6450,14 +6460,28 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
       : '🗳️ Você pode votar uma vez neste navegador.';
   }
 
-  window.cmqVotarBola=function(id){
-    if(localStorage.getItem(USER_KEY))return;
+  window.cmqVotarBola=async function(id){
+  if(localStorage.getItem(USER_KEY)) return;
+
+  try{
+    if(window.CMQSharedVote?.configured()){
+      await window.CMQSharedVote.vote(id);
+      localStorage.setItem(USER_KEY,String(id));
+      renderVote();
+      return;
+    }
+
     const votes=readVotes();
     votes[id]=(Number(votes[id])||0)+1;
     saveVotes(votes);
     localStorage.setItem(USER_KEY,String(id));
     renderVote();
-  };
+
+  }catch(e){
+    console.error('Erro ao registrar voto:',e);
+    alert('Não foi possível registrar seu voto. Tente novamente.');
+  }
+};
 
   window.cmqResetarVotacaoBola=function(){
     if(!confirm('Zerar todos os votos da Bola de Ouro neste navegador?'))return;
