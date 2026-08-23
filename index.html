@@ -1668,6 +1668,10 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
 @media(max-width:560px){.cmq-position-grid,.cmq-t2-status-grid{grid-template-columns:1fr 1fr}.cmq-rivalry{grid-template-columns:1fr}.cmq-rival-vs{margin:auto}.cmq-detail-grid{grid-template-columns:1fr 1fr}.cmq-story-track{grid-template-columns:1fr 1fr}.cmq-command{padding-top:5vh}.cmq-command-foot{display:none}.hero-title{font-size:clamp(2.9rem,15vw,5rem)!important}.cmq-super-head h2{font-size:2rem}}
 @media(prefers-reduced-motion:reduce){.hero:before{animation:none!important}.cmq-pro-card:hover,.cmq-position-card:hover{transform:none!important}}
 @media print{.header,.mobile-nav,.cmq-live-ribbon,.cmq-mood-switch,.cmq-season-pill,.site-search-btn,.btn-insta{display:none!important}.spa-section{display:block!important;page-break-before:always}.hero{min-height:auto!important;background:#fff!important;color:#000!important}.cmq-pro-card{break-inside:avoid}}
+
+/* V26 — Central Pós-Jogo */
+.cmq-recap{margin:20px 0 30px;padding:clamp(18px,3vw,30px);border-radius:24px;background:radial-gradient(circle at 90% 0,rgba(245,189,2,.12),transparent 25rem),linear-gradient(145deg,#0a1118,#05080c 68%);border:1px solid rgba(245,189,2,.2);box-shadow:0 24px 70px rgba(0,0,0,.24);position:relative;overflow:hidden}.cmq-recap:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(120deg,#000,transparent 74%);pointer-events:none}.cmq-recap>*{position:relative}.cmq-recap-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:15px}.cmq-recap-head h2{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);line-height:.9}.cmq-recap-live{font:900 .52rem var(--font-mono);letter-spacing:1.4px;color:#ffd65c}.cmq-recap-live:before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#ffcf32;box-shadow:0 0 16px #ffbf00;margin-right:7px}.cmq-recap-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:10px}.cmq-recap-card{background:rgba(6,11,16,.82);border:1px solid rgba(255,255,255,.075);border-radius:16px;padding:15px}.cmq-recap-score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:9px}.cmq-recap-team b{display:block;font:800 clamp(1.1rem,3vw,1.8rem) var(--font-display)}.cmq-recap-team strong{display:block;font:900 clamp(2.7rem,8vw,5rem) var(--font-mono);line-height:1}.cmq-recap-team.misto strong{color:var(--misto-gold)}.cmq-recap-team.bacon strong{color:var(--bacon-red)}.cmq-recap-vs{color:#596570;font:800 1.4rem var(--font-display)}.cmq-recap-kicker{font:900 .5rem var(--font-mono);letter-spacing:1.3px;color:#7ddcff;margin-bottom:7px}.cmq-recap-copy{color:#b8c2ca;font-size:.7rem;line-height:1.65}.cmq-recap-list{display:grid;gap:6px;margin-top:9px}.cmq-recap-row{display:flex;justify-content:space-between;gap:10px;padding:7px 9px;border-radius:9px;background:rgba(255,255,255,.028);font-size:.63rem}.cmq-recap-row span{color:#84919b}.cmq-recap-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.cmq-recap-actions button{padding:8px 11px;border-radius:9px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);color:#dbe5eb;font-size:.56rem;font-weight:900}.cmq-recap-actions button:hover{border-color:rgba(245,189,2,.38);color:#ffd75b}.cmq-momentum{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;margin-top:8px;font:800 .55rem var(--font-mono)}.cmq-momentum-track{height:7px;border-radius:99px;overflow:hidden;background:#7d2028;display:flex}.cmq-momentum-track i{height:100%;background:linear-gradient(90deg,#d9a72e,#ffda62)}
+@media(max-width:760px){.cmq-recap-head{display:block}.cmq-recap-live{display:block;margin-top:8px}.cmq-recap-grid{grid-template-columns:1fr}.cmq-recap-card{padding:12px}}
 </style>
 
 </head>
@@ -1681,6 +1685,37 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
     <div class="cmq-boot-line"><i></i></div>
   </div>
 </div>
+<script>
+/* Disjuntor independente: a capa nunca pode bloquear o site indefinidamente. */
+(function(){
+  /* Imagens locais ausentes nunca podem entrar em loop de onerror. */
+  var safeImage='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 500%22%3E%3Crect width=%22400%22 height=%22500%22 fill=%22%23081118%22/%3E%3Ccircle cx=%22200%22 cy=%22185%22 r=%2272%22 fill=%22%231c3444%22/%3E%3Crect x=%2280%22 y=%22275%22 width=%22240%22 height=%22170%22 rx=%2285%22 fill=%22%231c3444%22/%3E%3Ctext x=%22200%22 y=%22475%22 text-anchor=%22middle%22 fill=%22%2359d8ff%22 font-size=%2220%22 font-family=%22Arial%22%3ECOPA MISTO QUENTE%3C/text%3E%3C/svg%3E';
+  window.CMQSafeImage=safeImage;
+  document.addEventListener('error',function(event){
+    var img=event.target;
+    if(!img||img.tagName!=='IMG'||img.dataset.cmqImageRecovered)return;
+    var raw=(img.getAttribute('src')||'').toLowerCase();
+    if(/novidades-em-breve|luqueta-bola-de-ouro|luqueta-melhor-pivo|goleiros-top3|gontijo-melhor-ala|kaua-melhor-fixo|alvaro-ovo-de-ouro/.test(raw))return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    img.dataset.cmqImageRecovered='1';
+    img.onerror=null;
+    img.removeAttribute('onerror');
+    img.src=safeImage;
+  },true);
+  function releaseBoot(){
+    var el=document.getElementById('cmqBoot');
+    if(!el)return;
+    el.classList.add('hide');
+    setTimeout(function(){if(el&&el.parentNode)el.parentNode.removeChild(el)},700);
+  }
+  window.CMQReleaseBoot=releaseBoot;
+  setTimeout(releaseBoot,2600);
+  window.addEventListener('load',function(){setTimeout(releaseBoot,350)},{once:true});
+  window.addEventListener('error',function(){setTimeout(releaseBoot,80)});
+  window.addEventListener('unhandledrejection',function(){setTimeout(releaseBoot,80)});
+})();
+</script>
 
 <div id="cmqScrollProgress" aria-hidden="true"></div>
 
@@ -1885,9 +1920,9 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
         </div>
         <div class="final-meta">FINAL • 7º CONFRONTO OFICIAL • TEMPORADA 1 ENCERRADA</div>
         <div class="final-performers reveal">
-          <article onclick="openPlayerModal(playersData.find(p=>p.id===1))"><img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'" alt="Luqueta"><div><small>🔥 FINAL MONSTRUOSA</small><b>LUQUETA</b><span>7 gols • 3 assistências • <strong>10 G+A</strong></span></div></article>
-          <article onclick="openPlayerModal(playersData.find(p=>p.id===5))"><img src="fotos/kaua.png" onerror="this.src='fotos/default.png'" alt="Kauã"><div><small>🛡️ IMPACTO NA FINAL</small><b>KAUÃ BROXA</b><span>3 gols • 2 assistências • <strong>5 G+A</strong></span></div></article>
-          <article onclick="openPlayerModal(playersData.find(p=>p.id===22))"><img src="fotos/pedroso.png" onerror="this.src='fotos/default.png'" alt="Pedroso"><div><small>⚔️ RESPOSTA DO BACON</small><b>PEDROSO</b><span>2 gols • 3 assistências • <strong>5 G+A</strong></span></div></article>
+          <article onclick="openPlayerModal(playersData.find(p=>p.id===1))"><img src="fotos/luqueta.png" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt="Luqueta"><div><small>🔥 FINAL MONSTRUOSA</small><b>LUQUETA</b><span>7 gols • 3 assistências • <strong>10 G+A</strong></span></div></article>
+          <article onclick="openPlayerModal(playersData.find(p=>p.id===5))"><img src="fotos/kaua.png" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt="Kauã"><div><small>🛡️ IMPACTO NA FINAL</small><b>KAUÃ BROXA</b><span>3 gols • 2 assistências • <strong>5 G+A</strong></span></div></article>
+          <article onclick="openPlayerModal(playersData.find(p=>p.id===22))"><img src="fotos/pedroso.png" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt="Pedroso"><div><small>⚔️ RESPOSTA DO BACON</small><b>PEDROSO</b><span>2 gols • 3 assistências • <strong>5 G+A</strong></span></div></article>
         </div>
         <button class="final-sheet-btn" onclick="navigateTo('jogos');setTimeout(()=>document.querySelector('.match-row')?.scrollIntoView({behavior:'smooth',block:'center'}),350)"><i class="fa-solid fa-file-signature"></i> ABRIR SÚMULA COMPLETA DA FINAL</button>
       </section>
@@ -2038,7 +2073,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/luqueta.png" alt="Luqueta pepeta" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/luqueta.png" alt="Luqueta pepeta" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Luqueta pepeta</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2057,7 +2092,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/luqueta.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Luqueta pepeta</strong>
@@ -2077,7 +2112,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/edson.png" alt="Edson" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/edson.png" alt="Edson" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Edson</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2096,7 +2131,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/edson.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/edson.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Edson</strong>
@@ -2116,7 +2151,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/lucasbroxa.png" alt="Lucas broxa" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/lucasbroxa.png" alt="Lucas broxa" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Lucas broxa</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2135,7 +2170,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/lucasbroxa.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/lucasbroxa.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Lucas broxa</strong>
@@ -2155,7 +2190,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/gontijo.png" alt="Gontijo" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/gontijo.png" alt="Gontijo" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Gontijo</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2174,7 +2209,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/gontijo.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/gontijo.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Gontijo</strong>
@@ -2194,7 +2229,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/kaua.png" alt="Kauã Broxa" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/kaua.png" alt="Kauã Broxa" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Kauã Broxa</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2213,7 +2248,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/kaua.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/kaua.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Kauã Broxa</strong>
@@ -2233,7 +2268,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/ian.png" alt="Ian" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/ian.png" alt="Ian" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Ian</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2252,7 +2287,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/ian.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/ian.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Ian</strong>
@@ -2272,7 +2307,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/daniel.png" alt="Daniel" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/daniel.png" alt="Daniel" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Daniel</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2291,7 +2326,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/daniel.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/daniel.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Daniel</strong>
@@ -2311,7 +2346,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/douglas.png" alt="Douglas" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/douglas.png" alt="Douglas" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Douglas</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2330,7 +2365,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/douglas.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/douglas.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Douglas</strong>
@@ -2350,7 +2385,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/lzbranco.png" alt="lz branco" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/lzbranco.png" alt="lz branco" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">lz branco</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2369,7 +2404,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/lzbranco.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/lzbranco.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">lz branco</strong>
@@ -2389,7 +2424,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--gold);">
-                  <img src="fotos/samuel.png" alt="samuel" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/samuel.png" alt="samuel" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">samuel</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Misto United</p>
@@ -2408,7 +2443,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/samuel.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/samuel.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">samuel</strong>
@@ -2428,7 +2463,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/preto.png" alt="Preto" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/preto.png" alt="Preto" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Preto</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2447,7 +2482,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/preto.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/preto.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Preto</strong>
@@ -2467,7 +2502,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/varo.png" alt="Álvaro" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/varo.png" alt="Álvaro" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Álvaro</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2486,7 +2521,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/varo.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/varo.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Álvaro</strong>
@@ -2506,7 +2541,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/vitor.png" alt="Vitor" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/vitor.png" alt="Vitor" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Vitor</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2525,7 +2560,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/vitor.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/vitor.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Vitor</strong>
@@ -2545,7 +2580,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/vitorhugo.png" alt="Vitor Hugo" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/vitorhugo.png" alt="Vitor Hugo" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Vitor Hugo</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2564,7 +2599,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/vitorhugo.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/vitorhugo.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Vitor Hugo</strong>
@@ -2584,7 +2619,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/matheus.png" alt="Matheus" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/matheus.png" alt="Matheus" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Matheus</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2603,7 +2638,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/matheus.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/matheus.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Matheus</strong>
@@ -2623,7 +2658,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/paulao.png" alt="Paulao" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/paulao.png" alt="Paulao" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Paulao</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2642,7 +2677,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/paulao.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/paulao.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Paulao</strong>
@@ -2662,7 +2697,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/guilherme.png" alt="Guilherme" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/guilherme.png" alt="Guilherme" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Guilherme</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2681,7 +2716,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/guilherme.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/guilherme.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Guilherme</strong>
@@ -2701,7 +2736,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/alejandro.png" alt="Alejandro" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/alejandro.png" alt="Alejandro" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Alejandro</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2720,7 +2755,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/alejandro.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/alejandro.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Alejandro</strong>
@@ -2740,7 +2775,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/davi.png" alt="Davi" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/davi.png" alt="Davi" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Davi</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2759,7 +2794,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/davi.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/davi.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Davi</strong>
@@ -2779,7 +2814,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/litlepepsi.png" alt="Litle pepsi" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/litlepepsi.png" alt="Litle pepsi" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">Litle pepsi</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2798,7 +2833,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/litlepepsi.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/litlepepsi.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">Litle pepsi</strong>
@@ -2818,7 +2853,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:var(--bacon-red);">
-                  <img src="fotos/murilao.png" alt="murilao" onerror="this.src='fotos/default.png'">
+                  <img src="fotos/murilao.png" alt="murilao" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">murilao</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">Bacon City</p>
@@ -2837,7 +2872,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="fotos/murilao.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/murilao.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">murilao</strong>
@@ -2880,7 +2915,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
         </div>
         <p style="font-size:.68rem;color:var(--text-muted);margin-top:7px">Prêmios da Gala do Pão são especiais e ficam separados da patente. Conquistas comuns podem aparecer no perfil sem colocar o atleta no Hall.</p>
       </div>
-      <div class="bda-records-container" id="bdaRecordsContainer"><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/luqueta.png" alt="Luqueta pepeta" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#1 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 4 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Luqueta pepeta</div><div class="bda-records-chips"><span class="bda-chip">⚽ 27 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 41 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">🔥 Nome na História</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/edson.png" alt="Edson" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#2 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Edson</div><div class="bda-records-chips"><span class="bda-chip">⚽ 22 Gols</span><span class="bda-chip">🅰️ 7 Assists</span><span class="bda-chip">👑 29 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/lucasbroxa.png" alt="Lucas broxa" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#3 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • FIXO</span></div><div class="bda-name">Lucas broxa</div><div class="bda-records-chips"><span class="bda-chip">⚽ 19 Gols</span><span class="bda-chip">🅰️ 8 Assists</span><span class="bda-chip">👑 27 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/matheus.png" alt="Matheus" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#4 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • PIVO</span></div><div class="bda-name">Matheus</div><div class="bda-records-chips"><span class="bda-chip">⚽ 14 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 17 G+A</span><span class="bda-chip">🎮 4 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/gontijo.png" alt="Gontijo" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#5 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Gontijo</div><div class="bda-records-chips"><span class="bda-chip">⚽ 16 Gols</span><span class="bda-chip">🅰️ 10 Assists</span><span class="bda-chip">👑 26 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/preto.png" alt="Preto" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#6 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • FIXO</span></div><div class="bda-name">Preto</div><div class="bda-records-chips"><span class="bda-chip">⚽ 13 Gols</span><span class="bda-chip">🅰️ 12 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/varo.png" alt="Álvaro" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#7 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • ALA</span></div><div class="bda-name">Álvaro</div><div class="bda-records-chips"><span class="bda-chip">⚽ 11 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/ian.png" alt="Ian" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#8 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Ian</div><div class="bda-records-chips"><span class="bda-chip">⚽ 10 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 13 G+A</span><span class="bda-chip">🎮 6 Jogos</span><span class="bda-chip">🏆 1 Gala</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span></div></div></div></div>
+      <div class="bda-records-container" id="bdaRecordsContainer"><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/luqueta.png" alt="Luqueta pepeta" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#1 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 4 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Luqueta pepeta</div><div class="bda-records-chips"><span class="bda-chip">⚽ 27 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 41 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">🔥 Nome na História</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/edson.png" alt="Edson" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#2 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • PIVO</span></div><div class="bda-name">Edson</div><div class="bda-records-chips"><span class="bda-chip">⚽ 22 Gols</span><span class="bda-chip">🅰️ 7 Assists</span><span class="bda-chip">👑 29 G+A</span><span class="bda-chip">🎮 5 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">⚽ Artilheiro de Respeito</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/lucasbroxa.png" alt="Lucas broxa" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#3 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 3 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • FIXO</span></div><div class="bda-name">Lucas broxa</div><div class="bda-records-chips"><span class="bda-chip">⚽ 19 Gols</span><span class="bda-chip">🅰️ 8 Assists</span><span class="bda-chip">👑 27 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-epico"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/matheus.png" alt="Matheus" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#4 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">⭐ Épico</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • PIVO</span></div><div class="bda-name">Matheus</div><div class="bda-records-chips"><span class="bda-chip">⚽ 14 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 17 G+A</span><span class="bda-chip">🎮 4 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já deixou uma marca forte na história da Copa.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-fire" style="font-size:.62rem">💥 Colecionador de Hat-tricks</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/gontijo.png" alt="Gontijo" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#5 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Gontijo</div><div class="bda-records-chips"><span class="bda-chip">⚽ 16 Gols</span><span class="bda-chip">🅰️ 10 Assists</span><span class="bda-chip">👑 26 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/preto.png" alt="Preto" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#6 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • FIXO</span></div><div class="bda-name">Preto</div><div class="bda-records-chips"><span class="bda-chip">⚽ 13 Gols</span><span class="bda-chip">🅰️ 12 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/varo.png" alt="Álvaro" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#7 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 2 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Bacon City • ALA</span></div><div class="bda-name">Álvaro</div><div class="bda-records-chips"><span class="bda-chip">⚽ 11 Gols</span><span class="bda-chip">🅰️ 14 Assists</span><span class="bda-chip">👑 25 G+A</span><span class="bda-chip">🎮 6 Jogos</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span><span class="badge-conquista badge-emerald" style="font-size:.62rem">👑 Marca de 25</span></div></div></div><div class="bda-card tier-raro"><div class="bda-avatar-col"><div class="bda-avatar-box"><img src="fotos/ian.png" alt="Ian" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#8 HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">🔹 Raro</span><span class="bda-detentor-badge">🏅 1 Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">Misto United • ALA</span></div><div class="bda-name">Ian</div><div class="bda-records-chips"><span class="bda-chip">⚽ 10 Gols</span><span class="bda-chip">🅰️ 3 Assists</span><span class="bda-chip">👑 13 G+A</span><span class="bda-chip">🎮 6 Jogos</span><span class="bda-chip">🏆 1 Gala</span></div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Já conquistou uma marca que poucos alcançam.</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px"><span class="badge-conquista badge-emerald" style="font-size:.62rem">❤️ Fiel ao Time</span></div></div></div></div>
     <div id="seasonMuseum"><div class="season-museum"><div class="feature-kicker">🏛️ Arquivo Vivo</div><div class="feature-title">Museu da 1ª Temporada</div><div class="season-archive-banner"><div class="archive-title">TEMPORADA 1 • ENCERRADA</div><div style="font-size:.65rem;color:var(--text-muted);margin-top:4px">A primeira temporada está fechada e guardada no arquivo oficial.</div></div><div class="museum-grid"><div class="museum-card"><b>👑 Rei do G+A</b><span>Luqueta pepeta • 51 G+A</span></div><div class="museum-card"><b>⚽ Artilheiro</b><span>Luqueta pepeta • 34 gols</span></div><div class="museum-card"><b>🅰️ Garçom</b><span>Luqueta pepeta • 17 assist.</span></div><div class="museum-card"><b>💥 Maior goleada</b><span>37 × 11 • 11/07/2026</span></div><div class="museum-card"><b>🏛️ Hall</b><span>raro: 4 • epico: 4</span></div><div class="museum-card"><b>🥖 Gala do Pão</b><span>10 prêmios oficiais • campeões eternizados</span></div></div></div></div></div>
   </section>
 
@@ -3146,7 +3181,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
         <h3 style="font-family:var(--font-display);font-size:2rem;line-height:1;margin-top:4px;">⚔️ Comparador de Jogadores</h3>
         <p style="color:var(--text-muted);font-size:.75rem;margin-top:4px;">Escolha dois atletas e veja quem leva vantagem em cada número.</p>
         <div class="compare-controls"><select id="comparePlayerA" onchange="renderPlayerComparator()"><option value="1">Luqueta pepeta — Misto United</option><option value="2">Edson — Misto United</option><option value="3">Lucas broxa — Misto United</option><option value="4">Gontijo — Misto United</option><option value="5">Kauã Broxa — Misto United</option><option value="6">Ian — Misto United</option><option value="7">Daniel — Misto United</option><option value="8">Douglas — Misto United</option><option value="9">lz branco — Misto United</option><option value="10">samuel — Misto United</option><option value="11">Preto — Bacon City</option><option value="12">Álvaro — Bacon City</option><option value="13">Vitor — Bacon City</option><option value="14">Vitor Hugo — Bacon City</option><option value="15">Matheus — Bacon City</option><option value="16">Paulao — Bacon City</option><option value="17">Guilherme — Bacon City</option><option value="18">Alejandro — Bacon City</option><option value="19">Davi — Bacon City</option><option value="20">Litle pepsi — Bacon City</option><option value="21">murilao — Bacon City</option></select><div class="vs-pill">VS</div><select id="comparePlayerB" onchange="renderPlayerComparator()"><option value="1">Luqueta pepeta — Misto United</option><option value="2">Edson — Misto United</option><option value="3">Lucas broxa — Misto United</option><option value="4">Gontijo — Misto United</option><option value="5">Kauã Broxa — Misto United</option><option value="6">Ian — Misto United</option><option value="7">Daniel — Misto United</option><option value="8">Douglas — Misto United</option><option value="9">lz branco — Misto United</option><option value="10">samuel — Misto United</option><option value="11">Preto — Bacon City</option><option value="12">Álvaro — Bacon City</option><option value="13">Vitor — Bacon City</option><option value="14">Vitor Hugo — Bacon City</option><option value="15">Matheus — Bacon City</option><option value="16">Paulao — Bacon City</option><option value="17">Guilherme — Bacon City</option><option value="18">Alejandro — Bacon City</option><option value="19">Davi — Bacon City</option><option value="20">Litle pepsi — Bacon City</option><option value="21">murilao — Bacon City</option></select></div>
-        <div id="compareResult"><div class="compare-cards"><div class="compare-card"><div class="compare-avatar"><img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'"></div><div class="compare-name">Luqueta pepeta</div><div class="compare-ovr">93 OVR</div><div class="compare-side-label">Misto United</div></div><div class="compare-center"><div class="compare-stat-row"><span class="">5.00</span><span class="label">Jogos</span><span class="">5.00</span></div><div class="compare-stat-row"><span class="">27</span><span class="label">Gols</span><span class="">27</span></div><div class="compare-stat-row"><span class="">14</span><span class="label">Assistências</span><span class="">14</span></div><div class="compare-stat-row"><span class="">41</span><span class="label">G+A</span><span class="">41</span></div><div class="compare-stat-row"><span class="">8.20</span><span class="label">G+A/Jogo</span><span class="">8.20</span></div><div class="compare-stat-row"><span class="">4</span><span class="label">Conquistas</span><span class="">4</span></div></div><div class="compare-card"><div class="compare-avatar"><img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'"></div><div class="compare-name">Luqueta pepeta</div><div class="compare-ovr">93 OVR</div><div class="compare-side-label">Misto United</div></div></div></div>
+        <div id="compareResult"><div class="compare-cards"><div class="compare-card"><div class="compare-avatar"><img src="fotos/luqueta.png" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div class="compare-name">Luqueta pepeta</div><div class="compare-ovr">93 OVR</div><div class="compare-side-label">Misto United</div></div><div class="compare-center"><div class="compare-stat-row"><span class="">5.00</span><span class="label">Jogos</span><span class="">5.00</span></div><div class="compare-stat-row"><span class="">27</span><span class="label">Gols</span><span class="">27</span></div><div class="compare-stat-row"><span class="">14</span><span class="label">Assistências</span><span class="">14</span></div><div class="compare-stat-row"><span class="">41</span><span class="label">G+A</span><span class="">41</span></div><div class="compare-stat-row"><span class="">8.20</span><span class="label">G+A/Jogo</span><span class="">8.20</span></div><div class="compare-stat-row"><span class="">4</span><span class="label">Conquistas</span><span class="">4</span></div></div><div class="compare-card"><div class="compare-avatar"><img src="fotos/luqueta.png" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div class="compare-name">Luqueta pepeta</div><div class="compare-ovr">93 OVR</div><div class="compare-side-label">Misto United</div></div></div></div>
       </div>
       <div class="stats-table-wrapper">
         <table>
@@ -3169,7 +3204,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/luqueta.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Luqueta pepeta</strong>
             </div>
@@ -3187,7 +3222,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/edson.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/edson.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Edson</strong>
             </div>
@@ -3205,7 +3240,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/lucasbroxa.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/lucasbroxa.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Lucas broxa</strong>
             </div>
@@ -3223,7 +3258,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/gontijo.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/gontijo.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Gontijo</strong>
             </div>
@@ -3241,7 +3276,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/preto.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/preto.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Preto</strong>
             </div>
@@ -3259,7 +3294,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/varo.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/varo.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Álvaro</strong>
             </div>
@@ -3277,7 +3312,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/matheus.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/matheus.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Matheus</strong>
             </div>
@@ -3295,7 +3330,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/vitor.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/vitor.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Vitor</strong>
             </div>
@@ -3313,7 +3348,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/ian.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/ian.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Ian</strong>
             </div>
@@ -3331,7 +3366,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/litlepepsi.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/litlepepsi.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Litle pepsi</strong>
             </div>
@@ -3349,7 +3384,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/vitorhugo.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/vitorhugo.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Vitor Hugo</strong>
             </div>
@@ -3367,7 +3402,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/kaua.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/kaua.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Kauã Broxa</strong>
             </div>
@@ -3385,7 +3420,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/paulao.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/paulao.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Paulao</strong>
             </div>
@@ -3403,7 +3438,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/daniel.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/daniel.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Daniel</strong>
             </div>
@@ -3421,7 +3456,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/davi.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/davi.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Davi</strong>
             </div>
@@ -3439,7 +3474,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/lzbranco.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/lzbranco.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>lz branco</strong>
             </div>
@@ -3457,7 +3492,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/samuel.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/samuel.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>samuel</strong>
             </div>
@@ -3475,7 +3510,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/guilherme.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/guilherme.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Guilherme</strong>
             </div>
@@ -3493,7 +3528,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/alejandro.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/alejandro.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Alejandro</strong>
             </div>
@@ -3511,7 +3546,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/douglas.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/douglas.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>Douglas</strong>
             </div>
@@ -3529,7 +3564,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="fotos/murilao.png" onerror="this.src='fotos/default.png'">
+                <img src="fotos/murilao.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>murilao</strong>
             </div>
@@ -3560,7 +3595,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
 
       <div class="gala-archive-hero">
         <div><div class="feature-kicker">🏆 GALA ENCERRADA • TEMPORADA 1</div><h3>OS TROFÉUS JÁ TÊM DONO.</h3><p>A primeira Gala do Pão está fechada. Aqui ficam eternizados os vencedores oficiais — sem votação aberta, sem “a definir”. A Temporada 2 começa com uma nova página.</p></div>
-        <div class="gala-big-winner" onclick="openPlayerModal(playersData.find(p=>p.id===1))" style="cursor:pointer"><img src="fotos/luqueta.png" onerror="this.src='fotos/default.png'"><div><span>👑 BOLA DE OURO</span><b>LUQUETA</b><span>5 prêmios na temporada</span></div></div>
+        <div class="gala-big-winner" onclick="openPlayerModal(playersData.find(p=>p.id===1))" style="cursor:pointer"><img src="fotos/luqueta.png" onerror="this.onerror=null;this.src=window.CMQSafeImage"><div><span>👑 BOLA DE OURO</span><b>LUQUETA</b><span>5 prêmios na temporada</span></div></div>
       </div>
 
       <section class="gala-cinema reveal" aria-label="Galeria oficial da Gala do Pão">
@@ -3600,7 +3635,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Bola de Ouro</strong>
@@ -3636,7 +3671,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Pão de Ouro</strong>
@@ -3672,7 +3707,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Chuteira de Bacon</strong>
@@ -3708,7 +3743,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Chef do Molho</strong>
@@ -3744,7 +3779,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Pão Selado</strong>
@@ -3780,7 +3815,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Melhor Fixo</strong>
@@ -3816,7 +3851,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Melhor Ala</strong>
@@ -3852,7 +3887,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Melhor Pivô</strong>
@@ -3888,7 +3923,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/ian.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/ian.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Manteiga no Pé</strong>
@@ -3924,7 +3959,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <div class="avatar-wrap" style="width:40px; height:40px; border-color:var(--gold);">
-                      <img src="fotos/default.png" onerror="this.src='fotos/default.png'">
+                      <img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block; color:var(--gold);">Ovo de Ouro</strong>
@@ -3952,7 +3987,7 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
       </div>
       <h3 id="mName" style="font-family:var(--font-display); font-size:2.4rem; line-height:1;">Ian</h3>
       <p id="mTeamPos" style="font-size:0.88rem; color:var(--secondary); font-weight:700; margin-bottom:12px;">Misto United • ALA</p>
-      <div id="mPlayerCardPro"><div class="player-card-pro"><div class="pcp-top"><div class="pcp-avatar"><img src="fotos/ian.png" onerror="this.src='fotos/default.png'"></div><div><div class="pcp-position">ala</div><div class="pcp-rating">74</div><div class="pcp-name">Ian</div><div style="margin-top:3px;font-size:.62rem;color:var(--gold);font-weight:900">🔹 Raro</div><div style="color:var(--misto-gold);font-size:.66rem;font-weight:800">Misto United</div></div></div><div class="pcp-stats"><div class="pcp-stat"><b>6</b><span>Jogos</span></div><div class="pcp-stat"><b>10</b><span>Gols</span></div><div class="pcp-stat"><b>3</b><span>Assist.</span></div><div class="pcp-stat"><b>13</b><span>G+A</span></div></div></div></div>
+      <div id="mPlayerCardPro"><div class="player-card-pro"><div class="pcp-top"><div class="pcp-avatar"><img src="fotos/ian.png" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div><div class="pcp-position">ala</div><div class="pcp-rating">74</div><div class="pcp-name">Ian</div><div style="margin-top:3px;font-size:.62rem;color:var(--gold);font-weight:900">🔹 Raro</div><div style="color:var(--misto-gold);font-size:.66rem;font-weight:800">Misto United</div></div></div><div class="pcp-stats"><div class="pcp-stat"><b>6</b><span>Jogos</span></div><div class="pcp-stat"><b>10</b><span>Gols</span></div><div class="pcp-stat"><b>3</b><span>Assist.</span></div><div class="pcp-stat"><b>13</b><span>G+A</span></div></div></div></div>
       <div id="mSeasonHistory"><div class="player-history-box"><div class="trophy-hall-title"><i class="fa-solid fa-clock-rotate-left"></i> Minha Temporada • Histórico do Craque</div><p style="font-size:.64rem;color:var(--text-muted);margin:4px 0 9px">Cada partida conta a evolução do jogador, seus gols e momentos especiais.</p><div class="career-records-grid"><div class="career-record"><div style="font-size:1.05rem">🔥</div><b>Melhor atuação</b><span>4 gols no jogo 1<br>11/07/2026</span></div><div class="career-record"><div style="font-size:1.05rem">⭐</div><b>POTM</b><span>0 vezes<br>Destaques oficiais</span></div><div class="career-record"><div style="font-size:1.05rem">💥</div><b>Hat-tricks</b><span>1<br>Partidas com 3+ gols</span></div><div class="career-record"><div style="font-size:1.05rem">👑</div><b>G+A por jogo</b><span>2.17<br>Média atual</span></div><div class="career-record"><div style="font-size:1.05rem">❤️</div><b>Presença</b><span>6/6<br>Jogos disputados</span></div><div class="career-record"><div style="font-size:1.05rem">🏛️</div><b>Hall</b><span>1<br>Raro</span></div></div><div class="history-list"><div class="history-row"><div class="history-round">J1</div><div class="history-main"><b>11/07/2026 • Misto United 37 × 11 Bacon City</b><span>⚽ 4 gols</span></div><div class="history-stat">4G</div></div><div class="history-row"><div class="history-round">J2</div><div class="history-main"><b>24/07/2026 • Misto United 16 × 8 Bacon City</b><span>Sem gols registrados</span></div><div class="history-stat">0G</div></div><div class="history-row"><div class="history-round">J3</div><div class="history-main"><b>28/07/2026 • Misto United 10 × 15 Bacon City</b><span>⚽ 2 gols</span></div><div class="history-stat">2G</div></div><div class="history-row"><div class="history-round">J4</div><div class="history-main"><b>01/08/2026 • Misto United 13 × 3 Bacon City</b><span>⚽ 2 gols</span></div><div class="history-stat">2G</div></div><div class="history-row"><div class="history-round">J5</div><div class="history-main"><b>08/08/2026 • Misto United 17 × 18 Bacon City</b><span>⚽ 2 gols</span></div><div class="history-stat">2G</div></div><div class="history-row"><div class="history-round">J6</div><div class="history-main"><b>15/08/2026 • Misto United 12 × 10 Bacon City</b><span>Sem gols registrados</span></div><div class="history-stat">0G</div></div></div></div></div>
       <div id="mMilestones"><div class="profile-milestone"><div class="trophy-hall-title">🎯 Caminho do Craque</div><div class="mega-muted">Próxima grande marca: <b style="color:var(--gold)">25 G+A</b> • faltam 12</div><div class="profile-milestone-grid"><div class="profile-milestone-item"><b>13</b><span>G+A atual</span></div><div class="profile-milestone-item"><b>Raro</b><span>Patente do Hall</span></div><div class="profile-milestone-item"><b>1</b><span>Prêmios da Gala</span></div></div></div></div>
 
@@ -3982,17 +4017,17 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
         <div class="rivalry-list">
           <div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=&gt;x.id===15))">
               <div class="rivalry-rank">#1</div>
-              <div class="rivalry-avatar"><img src="fotos/matheus.png" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-avatar"><img src="fotos/matheus.png" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div>
               <div class="rivalry-player"><strong>Matheus</strong><span>Bacon City • 17 G+A</span></div>
               <div class="rivalry-gap">−4 G+A</div>
             </div><div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=&gt;x.id===13))">
               <div class="rivalry-rank">#2</div>
-              <div class="rivalry-avatar"><img src="fotos/default.png" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-avatar"><img src="fotos/default.png" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div>
               <div class="rivalry-player"><strong>Vitor</strong><span>Bacon City • 17 G+A</span></div>
               <div class="rivalry-gap">−4 G+A</div>
             </div><div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=&gt;x.id===20))">
               <div class="rivalry-rank">#3</div>
-              <div class="rivalry-avatar"><img src="fotos/litlepepsi.png" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-avatar"><img src="fotos/litlepepsi.png" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div>
               <div class="rivalry-player"><strong>Litle pepsi</strong><span>Bacon City • 9 G+A</span></div>
               <div class="rivalry-gap">−4 G+A</div>
             </div>
@@ -5760,7 +5795,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
       awardsData.filter(a=>a.winnerId).forEach(a=>{const p=playersData.find(x=>x.id===a.winnerId);if(p)events.push({icon:a.icon,title:`${p.nome} ganhou ${a.nome}`,text:`${a.nome} • 1ª Temporada • Gala do Pão`,p});});
       playersData.forEach(p=>getConquistasAutomaticas(p).forEach(c=>events.push({icon:c.icon,title:`${p.nome} desbloqueou ${c.nome}`,text:`${c.classe.toUpperCase()} • ${c.condition}`,p})));
       const unique=[]; const seen=new Set(); events.reverse().forEach(e=>{const k=e.title;if(!seen.has(k)){seen.add(k);unique.push(e)}});
-      el.innerHTML=`<div class="legend-feed"><div class="feature-kicker">⚡ Mural de Momentos</div><div class="feature-title">Quem fez história na Temporada 1?</div><div class="legend-feed-grid">${unique.slice(0,9).map(e=>`<div class="legend-item" onclick="openPlayerModal(playersData.find(p=>p.id===${e.p.id}))"><img class="legend-avatar" src="${e.p.foto}" onerror="this.src='fotos/default.png'"><b>${e.icon} ${escapeHtml(e.title)}</b><span>${escapeHtml(e.text)}</span><div style="clear:both"></div></div>`).join('')||'<div class="feature-muted">Os primeiros grandes momentos ainda estão por vir.</div>'}</div></div>`;
+      el.innerHTML=`<div class="legend-feed"><div class="feature-kicker">⚡ Mural de Momentos</div><div class="feature-title">Quem fez história na Temporada 1?</div><div class="legend-feed-grid">${unique.slice(0,9).map(e=>`<div class="legend-item" onclick="openPlayerModal(playersData.find(p=>p.id===${e.p.id}))"><img class="legend-avatar" src="${e.p.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage"><b>${e.icon} ${escapeHtml(e.title)}</b><span>${escapeHtml(e.text)}</span><div style="clear:both"></div></div>`).join('')||'<div class="feature-muted">Os primeiros grandes momentos ainda estão por vir.</div>'}</div></div>`;
     }
     function renderSeasonMuseum(){
       let el=document.getElementById('seasonMuseum'); if(!el){const hall=document.getElementById('bdaRecordsContainer')?.parentElement;if(!hall)return;el=document.createElement('div');el.id='seasonMuseum';hall.appendChild(el);}
@@ -5778,9 +5813,9 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
         if(isFinal){
           mt.innerText='🏆 Final da Temporada 1'; ms.innerText=`${latest.data} • Misto United ${sc.sMisto} × ${sc.sBacon} Bacon City`;
           const ids=[1,5,22], labels=['10 G+A na final','5 G+A na final','5 G+A na final'];
-          mc.innerHTML=`<div class="moment-final-mini">${ids.map((id,i)=>{const p=playersData.find(x=>x.id===id);return p?`<div class="moment-player" onclick="openPlayerModal(playersData.find(x=>x.id===${id}))"><div class="moment-avatar"><img src="${p.foto}" onerror="this.src='fotos/default.png'"></div><div><strong style="font-size:.78rem;display:block">${escapeHtml(p.nome)}</strong><span class="feature-muted">${labels[i]} • abrir perfil</span></div></div>`:''}).join('')}</div>`;
+          mc.innerHTML=`<div class="moment-final-mini">${ids.map((id,i)=>{const p=playersData.find(x=>x.id===id);return p?`<div class="moment-player" onclick="openPlayerModal(playersData.find(x=>x.id===${id}))"><div class="moment-avatar"><img src="${p.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div><strong style="font-size:.78rem;display:block">${escapeHtml(p.nome)}</strong><span class="feature-muted">${labels[i]} • abrir perfil</span></div></div>`:''}).join('')}</div>`;
         }else{
-          const potm=encontrarJogadorPorNomeSolto(latest.potm);mt.innerText=latest.potm&&latest.potm!=='A definir'?`⭐ ${latest.potm}`:'O jogo mais recente';ms.innerText=`${latest.data} • Misto United ${sc.sMisto} × ${sc.sBacon} Bacon City`;mc.innerHTML=potm?`<div class="moment-player" onclick="openPlayerModal(playersData.find(x=>x.id===${potm.id}))"><div class="moment-avatar"><img src="${potm.foto}" onerror="this.src='fotos/default.png'"></div><div><strong style="font-size:.82rem;display:block">${potm.nome}</strong><span class="feature-muted">${latest.potmNota||'Destaque da partida'} • abrir perfil</span></div></div>`:`<div style="margin-top:12px" class="feature-muted">${latest.potmNota||'Destaque da partida'}</div>`;
+          const potm=encontrarJogadorPorNomeSolto(latest.potm);mt.innerText=latest.potm&&latest.potm!=='A definir'?`⭐ ${latest.potm}`:'O jogo mais recente';ms.innerText=`${latest.data} • Misto United ${sc.sMisto} × ${sc.sBacon} Bacon City`;mc.innerHTML=potm?`<div class="moment-player" onclick="openPlayerModal(playersData.find(x=>x.id===${potm.id}))"><div class="moment-avatar"><img src="${potm.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div><strong style="font-size:.82rem;display:block">${potm.nome}</strong><span class="feature-muted">${latest.potmNota||'Destaque da partida'} • abrir perfil</span></div></div>`:`<div style="margin-top:12px" class="feature-muted">${latest.potmNota||'Destaque da partida'}</div>`;
         }
       }
       const ne=document.getElementById('homeNewsList');if(ne)ne.innerHTML=getNewsItems().map((n,i)=>`<div class="news-item" onclick="mostrarNoticia(${i})"><strong>${n.icon||'📰'} ${escapeHtml(n.title||'Notícia')}</strong><span>${escapeHtml(n.text||'')}</span></div>`).join('');
@@ -5790,7 +5825,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
     function renderRecordCards(){const el=document.getElementById('recordCardsContainer');if(!el)return;const rank=getRankingAtual(),tg=[...playersData].sort((a,b)=>(b.gols||0)-(a.gols||0))[0],ta=[...playersData].sort((a,b)=>(b.assists||0)-(a.assists||0))[0],tj=[...playersData].sort((a,b)=>(b.jogos||0)-(a.jogos||0))[0],tt=[...playersData].sort((a,b)=>getPlayerAllTrophies(b).length-getPlayerAllTrophies(a).length)[0];let big=null;matchesData.forEach(m=>{const sc=computeScore(m),mg=Math.abs(sc.sMisto-sc.sBacon);if(!big||mg>big.mg)big={m,sc,mg};});const c=[['⚽','Maior artilheiro',tg?tg.gols+' gols':'—',tg?.nome||'—',tg?.time||'',tg?.id],['🅰️','Rei das assistências',ta?ta.assists+' assists':'—',ta?.nome||'—',ta?.time||'',ta?.id],['👑','Maior G+A',rank[0]?((rank[0].gols||0)+(rank[0].assists||0))+' G+A':'—',rank[0]?.nome||'—','Hall BDA',rank[0]?.id],['🎮','Mais jogos',tj?tj.jogos+' jogos':'—',tj?.nome||'—',tj?.time||'',tj?.id],['💥','Maior vitória',big?big.mg+' gols de diferença':'—',big?`Misto ${big.sc.sMisto} × ${big.sc.sBacon} Bacon`:'—',big?.m.data||'',null],['🏛️','Mais conquistas do Hall',tt?getHallAchievements(tt).length+' conquistas':'—',tt?.nome||'—',tt?.time||'',tt?.id]];el.innerHTML=c.map(x=>`<div class="record-card" ${x[5]?`onclick="openPlayerModal(playersData.find(p=>p.id===${x[5]}))" style="cursor:pointer"`:''}><div class="record-icon">${x[0]}</div><div class="record-label">${x[1]}</div><div class="record-value">${x[2]}</div><div class="record-owner">${x[3]}</div><div class="record-sub">${x[4]}</div></div>`).join('');}
     function renderLeaderboardMini(){const make=(id,arr,key)=>{const el=document.getElementById(id);if(!el)return;el.innerHTML=arr.slice(0,5).map((p,i)=>{const mv=getMovimentoRanking(p.id),move=mv?(mv.delta>0?`<span class="rank-move rank-up">↑${mv.delta}</span>`:mv.delta<0?`<span class="rank-move rank-down">↓${Math.abs(mv.delta)}</span>`:'<span class="rank-move rank-same">—</span>'):'';return `<div class="leader-row" onclick="openPlayerModal(playersData.find(x=>x.id===${p.id}))"><span class="leader-rank">#${i+1}</span><span class="leader-name">${p.nome}${id==='topContribList'?move:''}</span><span class="leader-value">${key(p)}</span></div>`}).join('');};make('topScorersList',[...playersData].sort((a,b)=>(b.gols||0)-(a.gols||0)),p=>p.gols||0);make('topAssistsList',[...playersData].sort((a,b)=>(b.assists||0)-(a.assists||0)),p=>p.assists||0);make('topContribList',getRankingAtual(),p=>(p.gols||0)+(p.assists||0));}
     function preencherComparador(){const a=document.getElementById('comparePlayerA'),b=document.getElementById('comparePlayerB');if(!a||!b)return;const oa=a.value,ob=b.value,opts=playersData.map(p=>`<option value="${p.id}">${p.nome} — ${p.time}</option>`).join('');a.innerHTML=opts;b.innerHTML=opts;a.value=playersData.some(p=>String(p.id)===oa)?oa:(playersData[0]?.id||'');b.value=playersData.some(p=>String(p.id)===ob)?ob:(playersData[1]?.id||playersData[0]?.id||'');renderPlayerComparator();}
-    function renderPlayerComparator(){const a=playersData.find(p=>p.id===parseInt(document.getElementById('comparePlayerA')?.value)),b=playersData.find(p=>p.id===parseInt(document.getElementById('comparePlayerB')?.value)),el=document.getElementById('compareResult');if(!a||!b||!el)return;const stats=[['Jogos',p=>p.jogos||0],['Gols',p=>p.gols||0],['Assistências',p=>p.assists||0],['G+A',p=>(p.gols||0)+(p.assists||0)],['G+A/Jogo',p=>((p.gols||0)+(p.assists||0))/Math.max(1,p.jogos||0)],['Conquistas',p=>getPlayerAllTrophies(p).length]];const rows=stats.map(([label,fn])=>{const av=fn(a),bv=fn(b),fmt=v=>label.includes('Jogo')?v.toFixed(2):v;return `<div class="compare-stat-row"><span class="${av>bv?'better':''}">${fmt(av)}</span><span class="label">${label}</span><span class="${bv>av?'better':''}">${fmt(bv)}</span></div>`}).join('');el.innerHTML=`<div class="compare-cards"><div class="compare-card"><div class="compare-avatar"><img src="${a.foto}" onerror="this.src='fotos/default.png'"></div><div class="compare-name">${a.nome}</div><div class="compare-ovr">${calcularOVR(a)} OVR</div><div class="compare-side-label">${a.time}</div></div><div class="compare-center">${rows}</div><div class="compare-card"><div class="compare-avatar"><img src="${b.foto}" onerror="this.src='fotos/default.png'"></div><div class="compare-name">${b.nome}</div><div class="compare-ovr">${calcularOVR(b)} OVR</div><div class="compare-side-label">${b.time}</div></div></div>`;}
+    function renderPlayerComparator(){const a=playersData.find(p=>p.id===parseInt(document.getElementById('comparePlayerA')?.value)),b=playersData.find(p=>p.id===parseInt(document.getElementById('comparePlayerB')?.value)),el=document.getElementById('compareResult');if(!a||!b||!el)return;const stats=[['Jogos',p=>p.jogos||0],['Gols',p=>p.gols||0],['Assistências',p=>p.assists||0],['G+A',p=>(p.gols||0)+(p.assists||0)],['G+A/Jogo',p=>((p.gols||0)+(p.assists||0))/Math.max(1,p.jogos||0)],['Conquistas',p=>getPlayerAllTrophies(p).length]];const rows=stats.map(([label,fn])=>{const av=fn(a),bv=fn(b),fmt=v=>label.includes('Jogo')?v.toFixed(2):v;return `<div class="compare-stat-row"><span class="${av>bv?'better':''}">${fmt(av)}</span><span class="label">${label}</span><span class="${bv>av?'better':''}">${fmt(bv)}</span></div>`}).join('');el.innerHTML=`<div class="compare-cards"><div class="compare-card"><div class="compare-avatar"><img src="${a.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div class="compare-name">${a.nome}</div><div class="compare-ovr">${calcularOVR(a)} OVR</div><div class="compare-side-label">${a.time}</div></div><div class="compare-center">${rows}</div><div class="compare-card"><div class="compare-avatar"><img src="${b.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div class="compare-name">${b.nome}</div><div class="compare-ovr">${calcularOVR(b)} OVR</div><div class="compare-side-label">${b.time}</div></div></div>`;}
     function getBadgeClass(trofeuNome){const info=getConquistaInfo(trofeuNome);if(info?.origem==='Gala do Pão'||info?.classe==='supremo'||info?.classe==='imortal')return'badge-gold';if(info?.classe==='mitico')return'badge-legend';if(info?.classe==='lendario')return'badge-legend';if(info?.classe==='epico')return'badge-fire';if(info?.classe==='raro')return'badge-emerald';return'badge-cyan';}
     function verDetalheTrofeu(playerId,trofeuNome){const info=getConquistaInfo(trofeuNome);if(info){const tipo=info.origem==='Gala do Pão'?'🏆 ESPECIAL — GALA DO PÃO':`⭐ HALL DA FAMA — ${(info.classe||'').toUpperCase()}`;alert(`${info.icon} ${info.nome}\n\n${info.detail}\n\n${tipo}\n${info.condition||'Prêmio definido pela Gala do Pão.'}`);}else alert(`🏅 ${trofeuNome}\n\nConquista manual registrada pelo Admin.`);}
     function verDetalheGala(playerId,awardId){const a=awardsData.find(x=>x.id===awardId);if(!a)return;alert(`${a.icon} ${a.nome} — 1ª Temporada\n\n${a.detail}\n\n🏆 ESPECIAL — GALA DO PÃO\nPrêmio oficial escolhido pela organização.`);}
@@ -5815,7 +5850,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
             <div class="back">
               <div class="back-content">
                 <div class="avatar-wrap" style="width:68px; height:68px; border-color:${p.time === 'Misto United' ? 'var(--gold)' : 'var(--bacon-red)'};">
-                  <img src="${p.foto}" alt="${p.nome}" onerror="this.src='fotos/default.png'">
+                  <img src="${p.foto}" alt="${p.nome}" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                 </div>
                 <strong style="font-family:var(--font-display); font-size:1.6rem; line-height:1;">${p.nome}</strong>
                 <p style="font-size:0.75rem; color:var(--secondary); font-weight:700;">${p.time}</p>
@@ -5834,7 +5869,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
                 <div class="description">
                   <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                     <div class="avatar-wrap" style="width:36px; height:36px;">
-                      <img src="${p.foto}" onerror="this.src='fotos/default.png'">
+                      <img src="${p.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage">
                     </div>
                     <div>
                       <strong style="font-size:0.95rem; line-height:1; display:block;">${p.nome}</strong>
@@ -5891,7 +5926,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
       const elegiveis=playersData.map(p=>({p,ach:getHallAchievements(p),tier:getHallTier(p)})).filter(x=>x.ach.length>0).sort((a,b)=>{const o={raro:1,epico:2,lendario:3,mitico:4,supremo:5,imortal:6};return (o[b.tier.key]||0)-(o[a.tier.key]||0)||b.ach.length-a.ach.length||(((b.p.gols||0)+(b.p.assists||0))-((a.p.gols||0)+(a.p.assists||0)));});
       container.innerHTML='';
       if(!elegiveis.length){container.innerHTML='<div class="feature-card" style="text-align:center;padding:22px"><strong>🏛️ O Hall ainda está vazio</strong><p class="feature-muted" style="margin-top:5px">A primeira conquista desbloqueada coloca o atleta aqui automaticamente.</p></div>';return;}
-      elegiveis.forEach((x,idx)=>{const p=x.p,t=x.tier,pts=(+p.gols||0)+(+p.assists||0),gala=awardsData.filter(a=>a.winnerId===p.id).length;const card=document.createElement('div');card.className=`bda-card tier-${t.key}`;card.innerHTML=`<div class="bda-avatar-col"><div class="bda-avatar-box"><img src="${p.foto}" alt="${p.nome}" onerror="this.src='fotos/default.png'"></div><span class="bda-rank-pill">#${idx+1} HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">${t.icon} ${t.label}</span><span class="bda-detentor-badge">🏅 ${x.ach.length} Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">${p.time} • ${p.pos.toUpperCase()}</span></div><div class="bda-name">${p.nome}</div><div class="bda-records-chips"><span class="bda-chip">⚽ ${p.gols||0} Gols</span><span class="bda-chip">🅰️ ${p.assists||0} Assists</span><span class="bda-chip">👑 ${pts} G+A</span><span class="bda-chip">🎮 ${p.jogos||0} Jogos</span>${gala?`<span class="bda-chip">🏆 ${gala} Gala</span>`:''}</div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">${t.desc}</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">${x.ach.slice(0,6).map(a=>`<span class="badge-conquista ${getBadgeClass(a)}" style="font-size:.62rem">${a}</span>`).join('')}${x.ach.length>6?`<span class="badge-conquista badge-cyan" style="font-size:.62rem">+${x.ach.length-6}</span>`:''}</div></div>`;card.onclick=()=>openPlayerModal(p);container.appendChild(card);});
+      elegiveis.forEach((x,idx)=>{const p=x.p,t=x.tier,pts=(+p.gols||0)+(+p.assists||0),gala=awardsData.filter(a=>a.winnerId===p.id).length;const card=document.createElement('div');card.className=`bda-card tier-${t.key}`;card.innerHTML=`<div class="bda-avatar-col"><div class="bda-avatar-box"><img src="${p.foto}" alt="${p.nome}" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><span class="bda-rank-pill">#${idx+1} HALL</span></div><div style="min-width:0"><div class="bda-card-header"><span class="bda-tier-pill">${t.icon} ${t.label}</span><span class="bda-detentor-badge">🏅 ${x.ach.length} Conquistas</span><span style="font-size:.7rem;color:var(--text-muted);font-weight:700">${p.time} • ${p.pos.toUpperCase()}</span></div><div class="bda-name">${p.nome}</div><div class="bda-records-chips"><span class="bda-chip">⚽ ${p.gols||0} Gols</span><span class="bda-chip">🅰️ ${p.assists||0} Assists</span><span class="bda-chip">👑 ${pts} G+A</span><span class="bda-chip">🎮 ${p.jogos||0} Jogos</span>${gala?`<span class="bda-chip">🏆 ${gala} Gala</span>`:''}</div><div style="font-size:.68rem;color:var(--text-muted);margin-top:6px">${t.desc}</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">${x.ach.slice(0,6).map(a=>`<span class="badge-conquista ${getBadgeClass(a)}" style="font-size:.62rem">${a}</span>`).join('')}${x.ach.length>6?`<span class="badge-conquista badge-cyan" style="font-size:.62rem">+${x.ach.length-6}</span>`:''}</div></div>`;card.onclick=()=>openPlayerModal(p);container.appendChild(card);});
     }
 
     /* ============================================================
@@ -5923,7 +5958,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
           <div class="award-archive-detail">${escapeHtml(award.detail)}</div>
           ${hasArt?`<div class="award-art-hint"><i class="fa-solid fa-expand"></i> ABRIR ARTE OFICIAL</div>`:''}
           <div class="award-winner-row" ${winner?`onclick="event.stopPropagation();openPlayerModal(playersData.find(p=>p.id===${winner.id}))"`:''}>
-            <img src="${winnerPhoto}" onerror="this.src='fotos/default.png'" alt="${winner?escapeHtml(winner.nome):'Campeão'}">
+            <img src="${winnerPhoto}" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt="${winner?escapeHtml(winner.nome):'Campeão'}">
             <div><b>${winner?escapeHtml(winner.nome):'A definir'}</b><span>${winner?escapeHtml(winner.time):'Sem vencedor'}</span></div>
           </div>
         </article>`;
@@ -5988,7 +6023,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="avatar-wrap" style="width:32px; height:32px;">
-                <img src="${p.foto}" onerror="this.src='fotos/default.png'">
+                <img src="${p.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage">
               </div>
               <strong>${p.nome}</strong>
             </div>
@@ -6052,7 +6087,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
             const rga=(+r.gols||0)+(+r.assists||0), diff=Math.abs(rga-ga);
             return `<div class="rivalry-row" onclick="openPlayerModal(playersData.find(x=>x.id===${r.id}))">
               <div class="rivalry-rank">#${i+1}</div>
-              <div class="rivalry-avatar"><img src="${escapeHtml(r.foto)}" onerror="this.src='fotos/default.png'"></div>
+              <div class="rivalry-avatar"><img src="${escapeHtml(r.foto)}" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div>
               <div class="rivalry-player"><strong>${escapeHtml(r.nome)}</strong><span>${escapeHtml(r.time)} • ${rga} G+A</span></div>
               <div class="rivalry-gap">${diff===0?'EMPATE':diff===1?'−1 G+A':`−${diff} G+A`}</div>
             </div>`;
@@ -6074,7 +6109,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
       document.getElementById('mMarket').innerText = `Valor de Mercado: ${p.mercado}`;
 
       const ovr=calcularOVR(p);
-      document.getElementById('mPlayerCardPro').innerHTML=`<div class="player-card-pro"><div class="pcp-top"><div class="pcp-avatar"><img src="${p.foto}" onerror="this.src='fotos/default.png'"></div><div><div class="pcp-position">${p.pos}</div><div class="pcp-rating">${ovr}</div><div class="pcp-name">${p.nome}</div><div style="margin-top:3px;font-size:.62rem;color:var(--gold);font-weight:900">${getHallTier(p)?`${getHallTier(p).icon} ${getHallTier(p).label}`:'Sem patente no Hall'}</div><div style="color:${p.time==='Misto United'?'var(--misto-gold)':'var(--bacon-red)'};font-size:.66rem;font-weight:800">${p.time}</div></div></div><div class="pcp-stats"><div class="pcp-stat"><b>${p.jogos||0}</b><span>Jogos</span></div><div class="pcp-stat"><b>${p.gols||0}</b><span>Gols</span></div><div class="pcp-stat"><b>${p.assists||0}</b><span>Assist.</span></div><div class="pcp-stat"><b>${(p.gols||0)+(p.assists||0)}</b><span>G+A</span></div></div></div>`;
+      document.getElementById('mPlayerCardPro').innerHTML=`<div class="player-card-pro"><div class="pcp-top"><div class="pcp-avatar"><img src="${p.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage"></div><div><div class="pcp-position">${p.pos}</div><div class="pcp-rating">${ovr}</div><div class="pcp-name">${p.nome}</div><div style="margin-top:3px;font-size:.62rem;color:var(--gold);font-weight:900">${getHallTier(p)?`${getHallTier(p).icon} ${getHallTier(p).label}`:'Sem patente no Hall'}</div><div style="color:${p.time==='Misto United'?'var(--misto-gold)':'var(--bacon-red)'};font-size:.66rem;font-weight:800">${p.time}</div></div></div><div class="pcp-stats"><div class="pcp-stat"><b>${p.jogos||0}</b><span>Jogos</span></div><div class="pcp-stat"><b>${p.gols||0}</b><span>Gols</span></div><div class="pcp-stat"><b>${p.assists||0}</b><span>Assist.</span></div><div class="pcp-stat"><b>${(p.gols||0)+(p.assists||0)}</b><span>G+A</span></div></div></div>`;
       const oldFinal=document.getElementById('mFinalPerformance'); if(oldFinal)oldFinal.remove();
       const finalPerf=getFinalPerformance(p);
       if(finalPerf){const fp=document.createElement('div');fp.id='mFinalPerformance';fp.className='final-profile-card';const teamGoals=p.time==='Misto United'?14:10;const share=Math.round((finalPerf.ga/Math.max(1,teamGoals))*100);fp.innerHTML=`<div class="final-profile-head"><div><div class="super-kicker">🏆 7º JOGO • FINAL • 22/08/2026</div><b>ATUAÇÃO NA DECISÃO</b></div><span>MISTO 14 × 10 BACON</span></div><div class="final-profile-stats"><div><strong>${finalPerf.goals}</strong><small>Gols</small></div><div><strong>${finalPerf.assists}</strong><small>Assistências</small></div><div><strong>${finalPerf.ga}</strong><small>G+A na final</small></div><div class="final-share"><strong>${share}%</strong><small>dos gols do time com participação direta</small></div></div><div class="final-profile-note"><b>📜 Súmula J7:</b> esta é a partida com gols e assistências individuais completos. Os totais gerais do perfil continuam sendo o registro oficial da temporada.</div>`;document.getElementById('mPlayerCardPro').after(fp);}
@@ -6560,7 +6595,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function renderImmortalWall(){const el=document.getElementById('immortalWallGrid');if(!el)return;const arr=playersData.filter(p=>getHallTier(p)?.key==='imortal');el.innerHTML=arr.length?arr.map(p=>`<div class="immortal-card" onclick="openPlayerModal(playersData.find(x=>x.id===${p.id}))"><img class="immortal-avatar" src="${p.foto}" onerror="this.src='fotos/default.png'"><div><b>🐐 ${escapeHtml(p.nome)}</b><span class="mega-muted">${(p.gols||0)+(p.assists||0)} G+A • ${getHallAchievements(p).length} conquistas</span></div></div>`).join(''):'<div class="feature-muted" style="grid-column:1/-1;padding:10px">Ainda não existem Imortais. A primeira lenda de 103 G+A será eternizada aqui. 🐐</div>';}
+    function renderImmortalWall(){const el=document.getElementById('immortalWallGrid');if(!el)return;const arr=playersData.filter(p=>getHallTier(p)?.key==='imortal');el.innerHTML=arr.length?arr.map(p=>`<div class="immortal-card" onclick="openPlayerModal(playersData.find(x=>x.id===${p.id}))"><img class="immortal-avatar" src="${p.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage"><div><b>🐐 ${escapeHtml(p.nome)}</b><span class="mega-muted">${(p.gols||0)+(p.assists||0)} G+A • ${getHallAchievements(p).length} conquistas</span></div></div>`).join(''):'<div class="feature-muted" style="grid-column:1/-1;padding:10px">Ainda não existem Imortais. A primeira lenda de 103 G+A será eternizada aqui. 🐐</div>';}
     function renderRecordBook(){const el=document.getElementById('recordBookGrid');if(!el)return;const rank=getRankingAtual(),sc=[...playersData].sort((a,b)=>(b.gols||0)-(a.gols||0))[0],as=[...playersData].sort((a,b)=>(b.assists||0)-(a.assists||0))[0],po=playersData.map(p=>({p,n:contarPOTM(p)})).sort((a,b)=>b.n-a.n)[0],ha=playersData.map(p=>({p,n:contarHatTricks(p)})).sort((a,b)=>b.n-a.n)[0];const r=[['👑','Maior G+A',rank[0]?`${rank[0].nome} • ${(rank[0].gols||0)+(rank[0].assists||0)} G+A`:'A definir',rank[0]?.id],['⚽','Mais gols',sc?`${sc.nome} • ${sc.gols||0}`:'A definir',sc?.id],['🅰️','Mais assistências',as?`${as.nome} • ${as.assists||0}`:'A definir',as?.id],['⭐','Mais POTM',po&&po.n?`${po.p.nome} • ${po.n}`:'A definir',po?.p?.id],['💥','Mais hat-tricks',ha&&ha.n?`${ha.p.nome} • ${ha.n}`:'A definir',ha?.p?.id],['🐐','Marca máxima','103 G+A • Passou o Messi',null]];el.innerHTML=r.map(x=>`<div class="recordbook-card" ${x[3]?`onclick="openPlayerModal(playersData.find(p=>p.id===${x[3]}))" style="cursor:pointer"`:''}><b>${x[0]} ${x[1]}</b><span>${escapeHtml(x[2])}</span></div>`).join('');}
     function renderCareerArchive(){const el=document.getElementById('careerArchiveGrid');if(!el)return;const top=[...playersData].sort((a,b)=>((b.gols||0)+(b.assists||0))-((a.gols||0)+(a.assists||0))).slice(0,4);el.innerHTML=top.map(p=>{const ga=(p.gols||0)+(p.assists||0),pct=Math.min(100,ga/103*100);return `<div class="career-card" onclick="openPlayerModal(playersData.find(x=>x.id===${p.id}))" style="cursor:pointer"><b>🥖 Temporada 1 • ${escapeHtml(p.nome)}</b><span>${p.jogos||0} jogos • ${p.gols||0}G • ${p.assists||0}A • ${ga} G+A</span><div class="season-progress"><i style="width:${pct}%"></i></div><span>${ga>=103?'🐐 Imortal':'Progresso até 103 G+A: '+Math.round(pct)+'%'}</span></div>`}).join('')||'<div class="feature-muted">A carreira começa aqui.</div>';}
     function renderProfileMilestones(player){const el=document.getElementById('mMilestones');if(!el)return;const ga=(+player.gols||0)+(+player.assists||0),next=[25,40,60,75,90,103].find(n=>ga<n),tier=getHallTier(player),gala=awardsData.filter(a=>a.winnerId===player.id);el.innerHTML=`<div class="profile-milestone"><div class="trophy-hall-title">🎯 Caminho do Craque</div><div class="mega-muted">${next?`Próxima grande marca: <b style="color:var(--gold)">${next} G+A</b> • faltam ${next-ga}`:'🐐 Você alcançou a marca máxima de 103 G+A.'}</div><div class="profile-milestone-grid"><div class="profile-milestone-item"><b>${ga}</b><span>G+A atual</span></div><div class="profile-milestone-item"><b>${tier?tier.label:'Sem patente'}</b><span>Patente do Hall</span></div><div class="profile-milestone-item"><b>${gala.length}</b><span>Prêmios da Gala</span></div></div></div>`;}
@@ -6966,7 +7001,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
     const q=query.trim().toLocaleLowerCase('pt-BR');
     searchRows=data.filter(p=>!q||`${p.nome} ${p.time} ${p.pos}`.toLocaleLowerCase('pt-BR').includes(q)).sort((a,b)=>((b.gols||0)+(b.assists||0))-((a.gols||0)+(a.assists||0))).slice(0,12);
     searchActive=Math.min(searchActive,Math.max(0,searchRows.length-1));
-    box.innerHTML=searchRows.length?searchRows.map((p,i)=>`<button type="button" class="cmq-search-result ${i===searchActive?'active':''}" data-search-index="${i}" onclick="cmqSearchOpenPlayer(${p.id})"><img src="${p.foto}" onerror="this.src='fotos/default.png'" alt=""><div><b>${escText(p.nome)}</b><span>${escText(p.time)} • ${escText(String(p.pos).toUpperCase())} • ${p.jogos||0} jogos</span></div><strong>${(p.gols||0)+(p.assists||0)} G+A</strong></button>`).join(''):`<div class="cmq-search-empty"><i class="fa-solid fa-ghost"></i><br><br>Nenhum craque encontrado.</div>`;
+    box.innerHTML=searchRows.length?searchRows.map((p,i)=>`<button type="button" class="cmq-search-result ${i===searchActive?'active':''}" data-search-index="${i}" onclick="cmqSearchOpenPlayer(${p.id})"><img src="${p.foto}" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt=""><div><b>${escText(p.nome)}</b><span>${escText(p.time)} • ${escText(String(p.pos).toUpperCase())} • ${p.jogos||0} jogos</span></div><strong>${(p.gols||0)+(p.assists||0)} G+A</strong></button>`).join(''):`<div class="cmq-search-empty"><i class="fa-solid fa-ghost"></i><br><br>Nenhum craque encontrado.</div>`;
     box.querySelector('.active')?.scrollIntoView({block:'nearest'});
   }
   window.cmqOpenSearch=function(){const m=document.getElementById('cmqSearchModal'),inp=document.getElementById('cmqSearchInput');if(!m)return;searchActive=0;m.classList.add('open');searchRender(inp?.value||'');setTimeout(()=>inp?.focus(),30)};
@@ -7035,7 +7070,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
     const data=[['7','Jogos oficiais'],[goals,'Gols na T1'],[awards,'Prêmios da Gala'],[top?ga(top):0,'Maior G+A']];
     box.innerHTML=data.map(([v,l])=>`<div class="cmq-pulse-item"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join('');
   }
-  function leaderRows(data,valueFn,subFn,count=5){return [...data].sort((a,b)=>valueFn(b)-valueFn(a)).slice(0,count).map((p,i)=>`<div class="cmq-leader-row" onclick="openPlayerModal(playerById(${p.id}))"><div class="cmq-leader-rank">${String(i+1).padStart(2,'0')}</div><img src="${esc(p.foto)}" onerror="this.src='fotos/default.png'" alt=""><div><b>${esc(p.nome)}</b><span>${esc(subFn(p))}</span></div><div class="cmq-leader-val">${esc(valueFn(p))}</div></div>`).join('')}
+  function leaderRows(data,valueFn,subFn,count=5){return [...data].sort((a,b)=>valueFn(b)-valueFn(a)).slice(0,count).map((p,i)=>`<div class="cmq-leader-row" onclick="openPlayerModal(playerById(${p.id}))"><div class="cmq-leader-rank">${String(i+1).padStart(2,'0')}</div><img src="${esc(p.foto)}" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt=""><div><b>${esc(p.nome)}</b><span>${esc(subFn(p))}</span></div><div class="cmq-leader-val">${esc(valueFn(p))}</div></div>`).join('')}
   window.playerById=playerById;
   function renderHQ(){
     const ps=(window.playersData||[]).filter(p=>p&&p.nome);
@@ -7052,13 +7087,13 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
       {id:1,label:'🎯 PIVÔ',note:'Melhor Pivô'},
       {id:12,label:'🥚 JOVEM',note:'Ovo de Ouro',young:true}
     ];
-    const sb=$('#cmqSeasonSelection');if(sb)sb.innerHTML=sel.map(s=>{const p=playerById(s.id);if(!p)return'';return `<button class="cmq-select-player ${s.young?'young':''}" onclick="openPlayerModal(playerById(${p.id}))"><img src="${esc(p.foto)}" onerror="this.src='fotos/default.png'" alt="${esc(p.nome)}"><div class="cmq-select-info"><small>${s.label}</small><b>${esc(p.nome)}</b><span>${esc(s.note)} • ${ga(p)} G+A</span></div></button>`}).join('');
+    const sb=$('#cmqSeasonSelection');if(sb)sb.innerHTML=sel.map(s=>{const p=playerById(s.id);if(!p)return'';return `<button class="cmq-select-player ${s.young?'young':''}" onclick="openPlayerModal(playerById(${p.id}))"><img src="${esc(p.foto)}" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt="${esc(p.nome)}"><div class="cmq-select-info"><small>${s.label}</small><b>${esc(p.nome)}</b><span>${esc(s.note)} • ${ga(p)} G+A</span></div></button>`}).join('');
     renderMyStar();
   }
 
   // -------- favorite player --------
   const STAR_KEY='cmq_my_star_v24';
-  function renderMyStar(){const box=$('#cmqMyStar');if(!box)return;const id=Number(localStorage.getItem(STAR_KEY)||0),p=playerById(id);if(!p){box.classList.remove('show');box.innerHTML='';return}box.classList.add('show');box.innerHTML=`<img src="${esc(p.foto)}" onerror="this.src='fotos/default.png'" alt=""><div><b>⭐ Seu craque: ${esc(p.nome)}</b><span>${esc(p.time)} • ${ga(p)} G+A • ${p.jogos||0} jogos</span></div><button class="cmq-mini-action" onclick="openPlayerModal(playerById(${p.id}))">Abrir</button>`}
+  function renderMyStar(){const box=$('#cmqMyStar');if(!box)return;const id=Number(localStorage.getItem(STAR_KEY)||0),p=playerById(id);if(!p){box.classList.remove('show');box.innerHTML='';return}box.classList.add('show');box.innerHTML=`<img src="${esc(p.foto)}" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt=""><div><b>⭐ Seu craque: ${esc(p.nome)}</b><span>${esc(p.time)} • ${ga(p)} G+A • ${p.jogos||0} jogos</span></div><button class="cmq-mini-action" onclick="openPlayerModal(playerById(${p.id}))">Abrir</button>`}
   window.cmqToggleStar=function(id){const cur=Number(localStorage.getItem(STAR_KEY)||0);if(cur===Number(id))localStorage.removeItem(STAR_KEY);else localStorage.setItem(STAR_KEY,String(id));renderMyStar();renderProfileExtra(playerById(id));};
 
   // -------- final broadcast --------
@@ -7085,7 +7120,7 @@ playersData.forEach(p=>{if(p.pos==='goleiro'){delete p.defesas;delete p.cleanShe
   function renderStatLab(type='ga'){const box=$('#cmqStatBars');if(!box)return;const ps=(window.playersData||[]).filter(p=>p&&p.nome);const fn={ga:p=>ga(p),gols:p=>Number(p.gols)||0,assists:p=>Number(p.assists)||0,eff:p=>ga(p)/Math.max(1,Number(p.jogos)||1),jogos:p=>Number(p.jogos)||0}[type]|| (p=>ga(p));const data=[...ps].sort((a,b)=>fn(b)-fn(a)).slice(0,10),max=Math.max(...data.map(fn),1);box.innerHTML=data.map((p,i)=>{const v=fn(p),label=type==='eff'?v.toFixed(2):Math.round(v*100)/100;return `<div class="cmq-bar-row" onclick="openPlayerModal(playerById(${p.id}))" style="cursor:pointer"><div class="cmq-bar-rank">#${i+1}</div><div class="cmq-bar-name">${esc(p.nome)}</div><div class="cmq-bar-track"><i class="cmq-bar-fill" style="width:${Math.max(4,v/max*100)}%"></i></div><div class="cmq-bar-value">${label}</div></div>`}).join('')}
 
   // -------- gala medal table --------
-  function renderMedals(){const box=$('#cmqMedalGrid');if(!box)return;const counts={},names={};galaAwards().filter(a=>a.winnerId).forEach(a=>{counts[a.winnerId]=(counts[a.winnerId]||0)+1;(names[a.winnerId]??=[]).push(`${a.icon} ${a.nome}`)});const rows=Object.keys(counts).map(id=>playerById(id)).filter(Boolean).sort((a,b)=>counts[b.id]-counts[a.id]||ga(b)-ga(a));box.innerHTML=rows.map((p,i)=>`<div class="cmq-medal-card" onclick="openPlayerModal(playerById(${p.id}))"><img src="${esc(p.foto)}" onerror="this.src='fotos/default.png'" alt=""><div><b>${i===0?'👑 ':''}${esc(p.nome)}</b><span>${esc(names[p.id].join(' • '))}</span></div><div class="cmq-medal-count">${counts[p.id]}</div></div>`).join('')}
+  function renderMedals(){const box=$('#cmqMedalGrid');if(!box)return;const counts={},names={};galaAwards().filter(a=>a.winnerId).forEach(a=>{counts[a.winnerId]=(counts[a.winnerId]||0)+1;(names[a.winnerId]??=[]).push(`${a.icon} ${a.nome}`)});const rows=Object.keys(counts).map(id=>playerById(id)).filter(Boolean).sort((a,b)=>counts[b.id]-counts[a.id]||ga(b)-ga(a));box.innerHTML=rows.map((p,i)=>`<div class="cmq-medal-card" onclick="openPlayerModal(playerById(${p.id}))"><img src="${esc(p.foto)}" onerror="this.onerror=null;this.src=window.CMQSafeImage" alt=""><div><b>${i===0?'👑 ':''}${esc(p.nome)}</b><span>${esc(names[p.id].join(' • '))}</span></div><div class="cmq-medal-count">${counts[p.id]}</div></div>`).join('')}
 
   // -------- profile DNA + share + form --------
   function finalContribution(p,m){if(!m)return null;const norm=s=>String(s||'').toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();const nm=norm(p.nome);let g=0,a=0;[...(m.golsMisto||[]),...(m.golsBacon||[])].forEach(x=>{if(norm(x.n)===nm)g+=Number(x.g)||0});[...(m.assistsMisto||[]),...(m.assistsBacon||[])].forEach(x=>{if(norm(x.n)===nm)a+=Number(x.a)||0});return {g,a,ga:g+a}}
@@ -7286,9 +7321,40 @@ function helloIdentity(){let id=null;try{id=window.CMQIdentityAPI?.current?.()}c
 // 29) Dynamic final contribution leaders.
 function finalLeadersCard(){const m=matches().find(x=>+x.id===7),host=$('#cmqFinalMatchCenter');if(!m||!host||host.querySelector('.cmq-v25-final-leaders'))return;const all={};function add(arr,key){(arr||[]).forEach(x=>{const n=norm(x.n);all[n]??={name:x.n,g:0,a:0};all[n][key]+=+(x[key[0]])||+(x[key])||0})};[...(m.golsMisto||[]),...(m.golsBacon||[])].forEach(x=>{const n=norm(x.n);all[n]??={name:x.n,g:0,a:0};all[n].g+=+x.g||0});[...(m.assistsMisto||[]),...(m.assistsBacon||[])].forEach(x=>{const n=norm(x.n);all[n]??={name:x.n,g:0,a:0};all[n].a+=+x.a||0});const rows=Object.values(all).sort((a,b)=>(b.g+b.a)-(a.g+a.a)).slice(0,5);const d=document.createElement('div');d.className='cmq-v25-final-leaders cmq-pro-card gold';d.style.marginTop='10px';d.innerHTML=`<div class="cmq-kicker gold">🔥 TOP IMPACTO • FINAL</div><div class="cmq-card-title">QUEM MAIS PARTICIPOU DOS GOLS</div><div class="cmq-team-meter">${rows.map((x,i)=>`<div class="cmq-team-meter-row ${i===0?'gold':''}"><span>#${i+1} ${esc(x.name)}</span><i style="width:${Math.min(100,(x.g+x.a)/Math.max(1,rows[0].g+rows[0].a)*100)}%"></i><b>${x.g}G+${x.a}A</b></div>`).join('')}</div>`;host.appendChild(d)}
 
-// 30) Init everything.
+// 30) Central Pós-Jogo automática — transforma a súmula em narrativa pronta.
+function recapLeaders(m){
+ const map=new Map();
+ function add(arr,key,field){(arr||[]).forEach(x=>{const n=norm(x.n);if(!map.has(n))map.set(n,{name:x.n,g:0,a:0});map.get(n)[key]+=Number(x[field])||0})}
+ add(m.golsMisto,'g','g');add(m.golsBacon,'g','g');add(m.assistsMisto,'a','a');add(m.assistsBacon,'a','a');
+ return [...map.values()].sort((a,b)=>(b.g+b.a)-(a.g+a.a)||b.g-a.g).slice(0,4);
+}
+function recapText(m){
+ const sm=+m.scoreMisto||0,sb=+m.scoreBacon||0,winner=sm===sb?'Empate':sm>sb?'Misto United':'Bacon City';
+ const leaders=recapLeaders(m),stand=leaders.length?leaders.map(x=>`${x.name} (${x.g}G, ${x.a}A)`).join('; '):'sem estatísticas individuais registradas';
+ const played=matches(),mw=played.filter(x=>(+x.scoreMisto||0)>(+x.scoreBacon||0)).length,bw=played.filter(x=>(+x.scoreBacon||0)>(+x.scoreMisto||0)).length;
+ const race=[...players()].sort((a,b)=>ga(b)-ga(a)).slice(0,3).map((p,i)=>`${i+1}º ${p.nome} (${ga(p)} G+A)`).join(', ');
+ const discipline=(m.nota||'Nenhuma ocorrência disciplinar registrada.').replace(/\s+/g,' ').trim();
+ return `PÓS-JOGO CMQ — ${m.data||'último confronto'}\nMisto United ${sm} x ${sb} Bacon City. ${winner==='Empate'?'O duelo terminou empatado.':`${winner} venceu o confronto.`}\nDestaques: ${stand}.\nDisciplina: ${discipline}\nNarrativa da temporada: Misto ${mw} vitórias x ${bw} Bacon.\nPão Supremo: ${race||'corrida ainda sem dados suficientes'}.`;
+}
+function renderPostMatchCenter(){
+ const host=$('#jogos .container');if(!host||$('#cmqPostMatchCenter'))return;
+ const ms=matches(),m=ms.at(-1);if(!m)return;
+ const sm=+m.scoreMisto||0,sb=+m.scoreBacon||0,leaders=recapLeaders(m),mw=ms.filter(x=>(+x.scoreMisto||0)>(+x.scoreBacon||0)).length,bw=ms.filter(x=>(+x.scoreBacon||0)>(+x.scoreMisto||0)).length,totalWins=Math.max(1,mw+bw),race=[...players()].sort((a,b)=>ga(b)-ga(a)).slice(0,3);
+ const winner=sm===sb?'EMPATE':sm>sb?'MISTO UNITED':'BACON CITY';
+ const sec=document.createElement('section');sec.id='cmqPostMatchCenter';sec.className='cmq-recap reveal';
+ sec.innerHTML=`<div class="cmq-recap-head"><div><div class="cmq-recap-kicker">🎙️ CMQ NEWSROOM • GERADO PELA SÚMULA</div><h2>CENTRAL PÓS-JOGO</h2></div><span class="cmq-recap-live">ÚLTIMO CONFRONTO ANALISADO</span></div>
+ <div class="cmq-recap-grid"><div class="cmq-recap-card"><div class="cmq-recap-score"><div class="cmq-recap-team misto"><b>MISTO UNITED</b><strong>${sm}</strong></div><span class="cmq-recap-vs">×</span><div class="cmq-recap-team bacon"><b>BACON CITY</b><strong>${sb}</strong></div></div><div class="cmq-recap-copy" style="text-align:center;margin-top:8px"><b style="color:#fff">${winner}</b> • ${esc(m.data||'Último jogo')} • análise atualizada automaticamente</div><div class="cmq-momentum"><span>MISTO ${mw}</span><div class="cmq-momentum-track"><i style="width:${mw/totalWins*100}%"></i></div><span>${bw} BACON</span></div></div>
+ <div class="cmq-recap-card"><div class="cmq-recap-kicker">🔥 DESTAQUES INDIVIDUAIS</div><div class="cmq-recap-list">${leaders.length?leaders.map((x,i)=>`<div class="cmq-recap-row"><b>#${i+1} ${esc(x.name)}</b><span>${x.g}G • ${x.a}A • ${x.g+x.a} G+A</span></div>`).join(''):'<div class="cmq-recap-copy">Súmula individual ainda não preenchida.</div>'}</div></div>
+ <div class="cmq-recap-card"><div class="cmq-recap-kicker">🟨 DISCIPLINA & CONTEXTO</div><div class="cmq-recap-copy">${esc(m.nota||'Nenhuma ocorrência disciplinar registrada para este confronto.')}</div><div class="cmq-recap-kicker" style="margin-top:12px">📖 NARRATIVA DA TEMPORADA</div><div class="cmq-recap-copy">O confronto deixa o duelo em <b style="color:#fff">${mw} vitórias do Misto contra ${bw} do Bacon</b>. ${mw===bw?'A rivalidade segue totalmente equilibrada.':mw>bw?'O Misto sustenta a vantagem e aumenta a pressão sobre o Bacon.':'O Bacon mantém a dianteira e obriga o Misto a reagir.'}</div></div>
+ <div class="cmq-recap-card"><div class="cmq-recap-kicker">🥖 RADAR PÃO SUPREMO</div><div class="cmq-recap-list">${race.map((p,i)=>`<div class="cmq-recap-row"><b>${['🥇','🥈','🥉'][i]} ${esc(p.nome)}</b><span>${p.gols||0}G • ${p.assists||0}A • ${ga(p)} G+A</span></div>`).join('')}</div><div class="cmq-recap-actions"><button onclick="cmqCopyRecap()">📋 COPIAR RESUMO</button><button onclick="cmqShareRecap()">↗ COMPARTILHAR</button><button onclick="cmqOpenCommand()">⌕ ABRIR CENTRAL</button></div></div></div>`;
+ host.insertBefore(sec,host.children[1]||null);window.CMQMotion?.refresh?.();
+}
+window.cmqCopyRecap=async function(){const m=matches().at(-1);if(!m)return;const text=recapText(m);try{await navigator.clipboard.writeText(text);toast('📋 Resumo copiado','Pronto para mandar no grupo ou postar.')}catch(e){prompt('Copie o resumo:',text)}};
+window.cmqShareRecap=async function(){const m=matches().at(-1);if(!m)return;const text=recapText(m);try{if(navigator.share)await navigator.share({title:'Pós-jogo Copa Misto Quente',text,url:location.href});else await navigator.clipboard.writeText(text+'\n'+location.href);toast('↗ Pós-jogo pronto','Resumo e link preparados.')}catch(e){}};
+
+// 31) Init everything.
 function init(){
- forceEmbeddedArt();renderStudio();renderGallery('#cmqEmbeddedGallery');renderGallery('#cmqMuseumGallery');renderInsta();cmqRunHealth();renderPersonal();renderFinalGuests();finalLeadersCard();nearestRecords();uxFixes();injectStatsInsights();tooltips();artAudit();changelogBadge();helloIdentity();deepLink();syncSectionChrome();
+ forceEmbeddedArt();renderStudio();renderGallery('#cmqEmbeddedGallery');renderGallery('#cmqMuseumGallery');renderInsta();cmqRunHealth();renderPersonal();renderFinalGuests();finalLeadersCard();renderPostMatchCenter();nearestRecords();uxFixes();injectStatsInsights();tooltips();artAudit();changelogBadge();helloIdentity();deepLink();syncSectionChrome();
  const era=localStorage.getItem('cmq_v25_era')||'blue';cmqSetEra(era);if(localStorage.getItem('cmq_v25_compact')==='1')document.body.classList.add('cmq-compact');
  if(!localStorage.getItem('cmq_v25_tour'))setTimeout(()=>cmqStartTour(),1800);
  if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
