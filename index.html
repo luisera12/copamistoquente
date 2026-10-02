@@ -3,7 +3,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050506">
-  <title>COPA MISTO QUENTE | Temporada 2 • Novo Capítulo</title>
+  <title>Copa Misto Quente | Futsal em Uberlândia</title>
+  <meta name="description" content="Site oficial da Copa Misto Quente: tabela, resultados, súmulas, jogadores e estatísticas da Liga Chapa de Ouro e da Copa Chapa do Forno.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://luisera12.github.io/copamistoquente/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Copa Misto Quente | Site oficial">
+  <meta property="og:description" content="Tabela, resultados, súmulas, jogadores e estatísticas da Copa Misto Quente.">
+  <meta property="og:url" content="https://luisera12.github.io/copamistoquente/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsOrganization","name":"Copa Misto Quente","url":"https://luisera12.github.io/copamistoquente/","sport":"Futsal","sameAs":["https://www.instagram.com/copa_misto_quente/"]}</script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1818,28 +1827,28 @@ body.cmq-gold-era{--primary:#c27b24;--secondary:#e3b34b}body.cmq-gold-era .hero-
 
     <div class="container home-shell">
       <div class="era-console reveal" aria-label="Navegação por eras">
-        <button type="button" class="era-btn era-t2" onclick="document.getElementById('t2CommandCenter')?.scrollIntoView({behavior:'smooth',block:'start'})"><small>ERA ATUAL</small><b>02</b><span>Temporada 2<br><em>pré-temporada</em></span></button>
+        <button type="button" class="era-btn era-t2" onclick="navigateTo('temporada2')"><small>ERA ATUAL</small><b>02</b><span>Temporada 2<br><em>reta final</em></span></button>
         <div class="era-track"><i></i><span>A HISTÓRIA CONTINUA</span></div>
         <button type="button" class="era-btn era-t1" onclick="navigateTo('premiacoes')"><small>ARQUIVO</small><b>01</b><span>Temporada 1<br><em>encerrada</em></span></button>
       </div>
       <div class="season2-panel s2-ultra reveal">
         <div class="s2-copy-zone">
-          <div class="s2-label"><span class="live-dot"></span> TEMPORADA 2 • PRÉ-TEMPORADA</div>
-          <div class="s2-title">O AZUL<br><em>ACENDEU.</em></div>
-          <p class="s2-copy">A primeira temporada virou arquivo. A segunda chega com identidade nova: azul elétrico, novas equipes e uma Copa ainda mais séria. O site já entrou no clima antes mesmo da bola rolar.</p>
-          <div class="s2-chips"><span>⚡ NOVA ERA</span><span>🧬 NOVOS ELENCOS</span><span>🏟️ MESMA PANELA</span></div>
+          <div class="s2-label"><span class="live-dot"></span> TEMPORADA 2 • LIGA ENCERRADA</div>
+          <div class="s2-title">A LIGA TEM<br><em>DONO.</em></div>
+          <p class="s2-copy">O Misto United conquistou a Liga Chapa de Ouro com 10 pontos e campanha invicta. Agora enfrenta o Bacon City em 03/10 pela Copa Chapa do Forno.</p>
+          <div class="s2-chips"><span>🏆 MISTO CAMPEÃO</span><span>🔥 FINAL 03/10</span><span>🏟️ LA PANELA</span></div>
         </div>
-        <div class="s2-radar" aria-label="Temporada 2 em preparação">
+        <div class="s2-radar" aria-label="Temporada 2 na reta final">
           <div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div>
-          <div class="radar-core"><i class="fa-solid fa-bolt"></i><b>T2</b><small>CARREGANDO</small></div>
+          <div class="radar-core"><i class="fa-solid fa-trophy"></i><b>T2</b><small>FINAL</small></div>
           <div class="radar-sweep"></div>
         </div>
         <div class="s2-status">
           <span id="nextMatchBadge">TEMPORADA 2 • STATUS OFICIAL</span>
-          <strong id="nextMatchTeams">2 novos times chegando</strong>
-          <span id="nextMatchDate">Data, formato e elencos serão anunciados em breve.</span>
+          <strong id="nextMatchTeams">Misto United × Bacon City</strong>
+          <span id="nextMatchDate">03/10 • Final da Copa Chapa do Forno</span>
           <div class="s2-progress"><i></i></div>
-          <small>FASE 01 • PRÉ-TEMPORADA</small>
+          <small>FASE FINAL • ÚLTIMO TROFÉU</small>
         </div>
       </div>
 
@@ -7197,7 +7206,7 @@ function forceEmbeddedArt(){
 document.addEventListener('error',e=>{const img=e.target;if(!(img instanceof HTMLImageElement))return;const raw=(img.getAttribute('src')||'').split('/').pop().toLowerCase();if(ART_PATH_FALLBACKS[raw]&&img.src!==ART_PATH_FALLBACKS[raw]){e.stopImmediatePropagation();img.src=ART_PATH_FALLBACKS[raw];img.style.opacity='1';img.dataset.cmqEmbedded='1';return}if(PLAYER_FALLBACKS[raw]&&img.src!==PLAYER_FALLBACKS[raw]){e.stopImmediatePropagation();img.src=PLAYER_FALLBACKS[raw];img.style.opacity='1';return}if(!img.dataset.cmqSafeFallback){img.dataset.cmqSafeFallback='1';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500"><rect width="100%" height="100%" fill="#0b1117"/><circle cx="200" cy="180" r="70" fill="#22303b"/><rect x="90" y="270" width="220" height="160" rx="85" fill="#22303b"/><text x="200" y="465" fill="#5dd6ff" font-size="20" text-anchor="middle" font-family="Arial">COPA MISTO QUENTE</text></svg>`)}},true);
 
 // 3) Auto-load and iframe-safe SPA section chrome.
-function syncSectionChrome(){const active=$('.spa-section.active');if(!active)return;const id=active.id;if(document.body.dataset.view!==id)document.body.dataset.view=id;$('#cmqSeasonPill')?.classList.toggle('gold',['premiacoes','recordes','museu','jogos'].includes(id));const ribbon=$('#cmqLiveRibbon');if(ribbon)ribbon.classList.toggle('gold-mode',['premiacoes','recordes','jogos'].includes(id));const pill=$('#cmqSeasonPill');if(pill)pill.textContent=['premiacoes','recordes','museu','jogos'].includes(id)?'🟡 T1 • ARQUIVO':'🔵 T2 • NOVA ERA';document.title=({home:'Copa Misto Quente — T2 vem aí',temporada2:'Temporada 2 — Copa Misto Quente',museu:'Museu T1 — Copa Misto Quente',central:'CMQ+ — Central de Controle',premiacoes:'Gala do Pão — Copa Misto Quente',jogadores:'Jogadores — Copa Misto Quente',estatisticas:'Estatísticas — Copa Misto Quente',jogos:'Jogos — Copa Misto Quente',recordes:'Hall da Fama — Copa Misto Quente'}[id]||'Copa Misto Quente')}
+function syncSectionChrome(){const active=$('.spa-section.active');if(!active)return;const id=active.id;if(document.body.dataset.view!==id)document.body.dataset.view=id;$('#cmqSeasonPill')?.classList.toggle('gold',['premiacoes','recordes','museu','jogos'].includes(id));const ribbon=$('#cmqLiveRibbon');if(ribbon)ribbon.classList.toggle('gold-mode',['premiacoes','recordes','jogos'].includes(id));const pill=$('#cmqSeasonPill');if(pill)pill.textContent=['premiacoes','recordes','museu','jogos'].includes(id)?'🟡 T1 • ARQUIVO':'🔵 T2 • RETA FINAL';document.title=({home:'Copa Misto Quente — Misto campeão • Final 03/10',temporada2:'Temporada 2 — Liga e Final',museu:'Museu T1 — Copa Misto Quente',central:'CMQ+ — Central de Controle',premiacoes:'Gala do Pão — Copa Misto Quente',jogadores:'Jogadores — Copa Misto Quente',estatisticas:'Estatísticas — Copa Misto Quente',jogos:'Jogos — Copa Misto Quente',recordes:'Hall da Fama — Copa Misto Quente'}[id]||'Copa Misto Quente')}
 
 // 4) Rivalry / charts / story / record pursuit.
 function renderStudio(){
@@ -7360,4 +7369,229 @@ window.addEventListener('cmq:identity',()=>setTimeout(()=>{renderPersonal();hell
 })();
 </script>
 
+<style id="cmq-t2-live-styles">
+  #temporada2{--t2-blue:#42c7ff;--t2-gold:#f3bd35;--t2-red:#ff4655;--t2-yellow:#ffd84a}
+  .t2-live-shell{display:grid;gap:16px}
+  .t2-hero-live{position:relative;overflow:hidden;border:1px solid rgba(66,199,255,.28);border-radius:24px;padding:26px;background:
+    radial-gradient(circle at 15% 10%,rgba(66,199,255,.22),transparent 35%),
+    radial-gradient(circle at 90% 10%,rgba(243,189,53,.14),transparent 32%),
+    linear-gradient(135deg,#07131f 0%,#0a1018 48%,#171106 100%);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .t2-hero-live:after{content:"";position:absolute;inset:auto -10% -70% 25%;height:360px;background:radial-gradient(ellipse,rgba(66,199,255,.12),transparent 62%);pointer-events:none}
+  .t2-kicker{font-size:.72rem;font-weight:900;letter-spacing:.16em;color:#72d7ff;text-transform:uppercase}
+  .t2-title{font-family:var(--font-display);font-size:clamp(2.4rem,7vw,5.5rem);line-height:.86;margin:9px 0 12px;letter-spacing:.02em}
+  .t2-title em{font-style:normal;color:var(--t2-gold)}
+  .t2-hero-copy{max-width:760px;color:#aebdca;font-size:.95rem;line-height:1.65}
+  .t2-hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+  .t2-pill{padding:8px 12px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.05);font-size:.72rem;font-weight:800}
+  .t2-pill.gold{color:#ffe284;border-color:rgba(243,189,53,.35);background:rgba(243,189,53,.09)}
+  .t2-pill.red{color:#ff8f99;border-color:rgba(255,70,85,.34);background:rgba(255,70,85,.08)}
+  .t2-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+  .t2-card{grid-column:span 4;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:linear-gradient(145deg,rgba(22,31,42,.95),rgba(9,13,19,.98));padding:17px;box-shadow:0 18px 45px rgba(0,0,0,.22)}
+  .t2-card.wide{grid-column:span 8}.t2-card.full{grid-column:1/-1}
+  .t2-card h3{font-family:var(--font-display);font-size:1.65rem;letter-spacing:.03em;margin:3px 0 10px}
+  .t2-card p{color:#8fa0ae;font-size:.77rem;line-height:1.55}
+  .t2-champion{background:radial-gradient(circle at 80% 10%,rgba(243,189,53,.2),transparent 34%),linear-gradient(145deg,#18140a,#090b0e);border-color:rgba(243,189,53,.3)}
+  .t2-final{background:radial-gradient(circle at 90% 0,rgba(255,70,85,.16),transparent 35%),radial-gradient(circle at 10% 90%,rgba(66,199,255,.15),transparent 36%),#0b1017}
+  .t2-big-stat{font-family:var(--font-display);font-size:3.3rem;line-height:.9;color:#fff}
+  .t2-big-stat.gold{color:var(--t2-gold)}
+  .t2-mini{display:block;color:#7d8c99;font-size:.65rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;margin-top:7px}
+  .t2-stand-row,.t2-player-row,.t2-match-row{display:grid;align-items:center;gap:9px;border-top:1px solid rgba(255,255,255,.065);padding:10px 4px;font-size:.76rem}
+  .t2-stand-row{grid-template-columns:30px minmax(100px,1fr) repeat(7,34px)}
+  .t2-stand-row.head{color:#73808d;font-size:.61rem;font-weight:900;border-top:0;padding-top:2px}
+  .t2-stand-row.champ{background:linear-gradient(90deg,rgba(243,189,53,.12),transparent);color:#ffe18a}
+  .t2-stand-row b,.t2-player-row b{font-size:.79rem}.t2-stand-row span{text-align:center}
+  .t2-team{text-align:left!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .t2-player-row{grid-template-columns:30px minmax(120px,1fr) 52px 42px 42px 50px}
+  .t2-player-row.head{color:#73808d;font-size:.61rem;font-weight:900;border-top:0}
+  .t2-player-row.leader{background:linear-gradient(90deg,rgba(66,199,255,.12),transparent)}
+  .t2-rank{font-family:var(--font-display);font-size:1.15rem;color:#6bd7ff}
+  .t2-ga{color:#cf69ff;font-weight:900}
+  .t2-team-tag{display:block;font-size:.58rem;color:#71808d;margin-top:2px}
+  .t2-rounds{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+  .t2-round{border:1px solid rgba(255,255,255,.08);border-radius:14px;background:#0b1016;padding:12px}
+  .t2-round h4{font-family:var(--font-display);font-size:1.25rem;color:#71d7ff;letter-spacing:.04em;margin-bottom:8px}
+  .t2-match-row{grid-template-columns:1fr auto 1fr;padding:9px 0}
+  .t2-match-row .home{text-align:right}.t2-match-row .away{text-align:left}
+  .t2-score{font-family:var(--font-display);font-size:1.25rem;color:#fff;background:rgba(255,255,255,.06);padding:4px 8px;border-radius:7px;white-space:nowrap}
+  .t2-correction{border-left:3px solid var(--t2-gold);padding:9px 11px;background:rgba(243,189,53,.06);border-radius:0 10px 10px 0;margin-top:8px;color:#bfc7cf;font-size:.72rem;line-height:1.5}
+  .t2-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:4px 0 10px}
+  .t2-tab{padding:7px 11px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:#0b1118;color:#9caab6;font-size:.68rem;font-weight:800}
+  .t2-tab.active{color:#061018;background:#63d5ff;border-color:#63d5ff}
+  @media(max-width:900px){.t2-card,.t2-card.wide{grid-column:1/-1}.t2-rounds{grid-template-columns:1fr}.t2-stand-row{grid-template-columns:27px minmax(92px,1fr) repeat(7,29px);font-size:.68rem}.t2-player-row{grid-template-columns:27px minmax(100px,1fr) 38px 34px 34px 42px}.t2-hero-live{padding:20px 16px}}
+  @media(max-width:540px){.t2-stand-row{grid-template-columns:24px minmax(88px,1fr) 26px 26px 26px 30px}.t2-stand-row span:nth-child(4),.t2-stand-row span:nth-child(5),.t2-stand-row span:nth-child(6){display:none}.t2-player-row{grid-template-columns:25px minmax(95px,1fr) 32px 32px 40px}.t2-player-row span:nth-child(3){display:none}.t2-title{font-size:3rem}}
+</style>
+<script id="cmq-t2-live-script">
+(()=>{
+  const teams={
+    MU:{name:'Misto United',short:'MISTO',color:'#52c8ff'},
+    BC:{name:'Bacon City',short:'BACON',color:'#ff5260'},
+    UE:{name:'União Empadinha',short:'UNIÃO',color:'#ffd84a'}
+  };
+  const games=[
+    {id:1,round:1,date:'12/09',home:'MU',away:'BC',hs:11,as:7,stats:[
+      ['Luqueta Pepeta','MU',6,1],['Daniel Balada','MU',4,1],['Daniel','MU',1,1],['Ian','MU',0,1],
+      ['Varo','BC',3,0],['Vitor Hugo','BC',3,0],['Little Pepsi','BC',1,0],['Matheus','BC',0,1],['Vitor','MU',0,1],['Murilão','UE',0,0]
+    ]},
+    {id:2,round:1,date:'12/09',home:'MU',away:'UE',hs:8,as:8,stats:[
+      ['Luqueta Pepeta','MU',6,1],['Daniel Balada','MU',1,4],['Augusto','MU',1,0],
+      ['Kauã Broxa','UE',3,2],['Alejandro','UE',2,1],['Lucas Broxa','UE',2,0],['Gontijo','UE',1,1],['Murilão','UE',0,0]
+    ]},
+    {id:3,round:2,date:'19/09',home:'BC',away:'UE',hs:14,as:11,stats:[
+      ['Jhonatan','BC',5,0],['Varo','BC',3,0],['Little Pepsi','BC',2,0],['Bernardo','BC',1,0],['Eduardo','BC',3,0],['Davi','BC',0,1],['Guilherme','BC',0,0],
+      ['Kauã Broxa','UE',4,1],['Gontijo','UE',3,0],['Lucas Broxa','UE',2,0],['Alejandro','UE',1,2],['Samuel','UE',1,0],['Murilão','UE',0,1],['Douglas','UE',0,0],['Preto','UE',0,0]
+    ]},
+    {id:4,round:2,date:'19/09',home:'MU',away:'BC',hs:14,as:10,stats:[
+      ['Luqueta Pepeta','MU',7,1],['Daniel Balada','MU',5,4],['Vitor','MU',2,1],['Murilão','UE',0,0],['Edson','MU',0,0],['Lucas','MU',0,0],['Kosky','MU',0,0],
+      ['Jhonatan','BC',3,0],['Eduardo','BC',3,0],['Little Pepsi','BC',2,2],['Varo','BC',1,2],['Bernardo','BC',1,1],['Davi','BC',0,0],['Guilherme','BC',0,0]
+    ]},
+    {id:5,round:3,date:'26/09',home:'MU',away:'UE',hs:14,as:10,stats:[
+      ['Luqueta Pepeta','MU',5,3],['Vitor','MU',5,0],['Daniel Balada','MU',4,0],
+      ['Felipe','UE',4,0],['Alejandro','UE',2,4],['Gontijo','UE',2,1],['Samuel','UE',2,1],['Preto','UE',0,1]
+    ],note:'Balada (3G) + Daniel Balada (1G) unificados em um único jogador.'},
+    {id:6,round:3,date:'26/09',home:'BC',away:'UE',hs:17,as:16,stats:[
+      ['Jhonatan','BC',9,0],['Vitor Hugo','BC',3,0],['Matheus','BC',2,1],['Varo','BC',1,2],['Little Pepsi','BC',3,5],
+      ['Luqueta Pepeta','UE',4,0],['Gontijo','UE',4,1],['Felipe','UE',2,0],['Preto','UE',1,1],['Alejandro','UE',1,0],['Douglas','UE',1,0],['Samuel','UE',1,0],['Murilão','UE',0,0]
+    ],unassigned:2,note:'4 gols antes lançados para Murilão foram transferidos a Luqueta. Gontijo corrigido de 6G para 4G. Dois gols do placar seguem sem autoria confirmada.'}
+  ];
+  const adjustments={
+    'Luqueta Pepeta':{g:0,a:4,note:'correção anterior de assistências'},
+    'Augusto':{g:1,a:0,note:'gol confirmado fora da súmula individual'},
+    'Kosky':{g:1,a:1,note:'ajuste confirmado pelo organizador'},
+    'Preto':{g:0,a:5,note:'total oficial corrigido para 7 assistências'}
+  };
+  const currentTeam={
+    'Luqueta Pepeta':'MU','Daniel Balada':'MU','Daniel':'MU','Ian':'MU','Augusto':'MU','Vitor':'MU','Edson':'MU','Lucas':'MU','Kosky':'MU',
+    'Varo':'BC','Vitor Hugo':'BC','Little Pepsi':'BC','Matheus':'BC','Jhonatan':'BC','Eduardo':'BC','Bernardo':'BC','Davi':'BC','Guilherme':'BC',
+    'Kauã Broxa':'UE','Alejandro':'UE','Lucas Broxa':'UE','Gontijo':'UE','Murilão':'UE','Samuel':'UE','Douglas':'UE','Preto':'UE','Felipe':'UE'
+  };
+  const totals={};
+  games.forEach(m=>m.stats.forEach(([name,team,g,a])=>{
+    const p=totals[name]??={name,team:currentTeam[name]||team,j:0,g:0,a:0,games:[]};
+    p.j++;p.g+=g;p.a+=a;p.games.push({id:m.id,g,a});
+  }));
+  Object.entries(adjustments).forEach(([name,x])=>{
+    const p=totals[name]??={name,team:currentTeam[name]||'UE',j:0,g:0,a:0,games:[]};
+    p.g+=x.g||0;p.a+=x.a||0;p.adjustment=x.note;
+  });
+  const players=Object.values(totals).map(p=>({...p,ga:p.g+p.a})).sort((a,b)=>b.ga-a.ga||b.g-a.g||a.name.localeCompare(b.name,'pt-BR'));
+  const standings=Object.keys(teams).map(id=>({id,name:teams[id].name,j:0,v:0,e:0,d:0,gp:0,gc:0,sg:0,pts:0}));
+  const st=id=>standings.find(x=>x.id===id);
+  games.forEach(m=>{
+    const h=st(m.home),a=st(m.away);h.j++;a.j++;h.gp+=m.hs;h.gc+=m.as;a.gp+=m.as;a.gc+=m.hs;
+    if(m.hs>m.as){h.v++;h.pts+=3;a.d++;}else if(m.hs<m.as){a.v++;a.pts+=3;h.d++;}else{h.e++;a.e++;h.pts++;a.pts++;}
+  });
+  standings.forEach(x=>x.sg=x.gp-x.gc);standings.sort((a,b)=>b.pts-a.pts||b.sg-a.sg||b.gp-a.gp);
+  const rowStanding=(x,i)=>`<div class="t2-stand-row ${i===0?'champ':''}"><span class="t2-rank">#${i+1}</span><b class="t2-team">${x.name}${i===0?'<small class="t2-team-tag">CAMPEÃO</small>':''}</b><span>${x.j}</span><span>${x.v}</span><span>${x.e}</span><span>${x.d}</span><span>${x.gp}</span><span>${x.gc}</span><span>${x.sg>0?'+':''}${x.sg}</span><strong>${x.pts}</strong></div>`;
+  const playerRows=(list)=>`<div class="t2-player-row head"><span>#</span><span>JOGADOR</span><span>J</span><span>G</span><span>A</span><span>G+A</span></div>`+list.map((p,i)=>`<div class="t2-player-row ${i===0?'leader':''}"><span class="t2-rank">#${i+1}</span><b>${p.name}<small class="t2-team-tag">${teams[p.team]?.name||p.team}</small></b><span>${p.j}</span><span>${p.g}</span><span>${p.a}</span><span class="t2-ga">${p.ga}</span></div>`).join('');
+  const roundCards=[1,2,3].map(r=>`<article class="t2-round"><h4>${r}ª RODADA</h4>${games.filter(g=>g.round===r).map(m=>`<div class="t2-match-row"><span class="home">${teams[m.home].short}</span><b class="t2-score">${m.hs} × ${m.as}</b><span class="away">${teams[m.away].short}</span></div>${m.note?`<div class="t2-correction">${m.note}</div>`:''}`).join('')}</article>`).join('');
+  const section=document.querySelector('#temporada2 .container');
+  if(section){
+    section.innerHTML=`
+      <div class="t2-live-shell">
+        <header class="t2-hero-live">
+          <div class="t2-kicker">COPA MISTO QUENTE • TEMPORADA 2 • BASE ATUALIZADA</div>
+          <h1 class="t2-title">A LIGA TEM <em>DONO.</em><br>A COPA TERÁ FINAL.</h1>
+          <p class="t2-hero-copy">A Liga Chapa de Ouro terminou com o Misto United no topo. Bacon City garantiu a segunda vaga e encara o campeão na decisão da Copa Chapa do Forno.</p>
+          <div class="t2-hero-badges"><span class="t2-pill gold">🏆 MISTO UNITED • CAMPEÃO DA LIGA</span><span class="t2-pill red">🔥 FINAL • MISTO × BACON • 03/10</span><span class="t2-pill">📊 6 JOGOS OFICIAIS</span><span class="t2-pill">⚽ 140 GOLS</span></div>
+        </header>
+        <div class="t2-grid">
+          <article class="t2-card champion"><div class="t2-kicker">LIGA CHAPA DE OURO</div><h3>MISTO UNITED CAMPEÃO</h3><div class="t2-big-stat gold">10 PTS</div><span class="t2-mini">3 vitórias • 1 empate • invicto</span><p style="margin-top:12px">Melhor campanha dos pontos corridos e vaga garantida na grande final.</p></article>
+          <article class="t2-card final wide"><div class="t2-kicker">COPA CHAPA DO FORNO • GRANDE FINAL</div><h3>MISTO UNITED × BACON CITY</h3><div class="t2-big-stat">03/10</div><span class="t2-mini">La Panela Stadium</span><p style="margin-top:12px">A liga já tem dono. Agora resta a Copa. O campeão dos pontos enfrenta o segundo colocado pelo último troféu da temporada.</p></article>
+          <article class="t2-card full"><div class="t2-kicker">CLASSIFICAÇÃO FINAL</div><h3>LIGA CHAPA DE OURO</h3><div class="t2-stand-row head"><span>#</span><span class="t2-team">TIME</span><span>J</span><span>V</span><span>E</span><span>D</span><span>GP</span><span>GC</span><span>SG</span><strong>PTS</strong></div>${standings.map(rowStanding).join('')}</article>
+          <article class="t2-card full"><div class="t2-kicker">CAMINHO DA TEMPORADA</div><h3>OS SEIS JOGOS</h3><div class="t2-rounds">${roundCards}</div></article>
+          <article class="t2-card full"><div class="t2-kicker">RANKING OFICIAL • TEMPORADA 2</div><h3>PARTICIPAÇÕES EM GOLS</h3><p>Balada e Daniel Balada estão unificados. Correções de Luqueta, Murilão, Gontijo e Preto já aplicadas.</p><div class="t2-tabs"><button class="t2-tab active" data-t2-filter="ga">G+A</button><button class="t2-tab" data-t2-filter="g">Gols</button><button class="t2-tab" data-t2-filter="a">Assistências</button></div><div id="t2PlayerRanking">${playerRows(players)}</div></article>
+        </div>
+      </div>`;
+    section.querySelectorAll('[data-t2-filter]').forEach(btn=>btn.addEventListener('click',()=>{
+      section.querySelectorAll('[data-t2-filter]').forEach(x=>x.classList.toggle('active',x===btn));
+      const key=btn.dataset.t2Filter;
+      const sorted=[...players].sort((a,b)=>b[key]-a[key]||b.ga-a.ga||b.g-a.g);
+      section.querySelector('#t2PlayerRanking').innerHTML=playerRows(sorted);
+    }));
+  }
+  const lab=document.getElementById('cmqT2Lab');
+  if(lab)lab.innerHTML=`<div class="cmq-hq-head"><div><small>🔵 TEMPORADA 2 • FASE DE LIGA ENCERRADA</small><h2>MISTO UNITED É CAMPEÃO.</h2></div><p>Seis jogos disputados. A Liga Chapa de Ouro tem dono e a Copa Chapa do Forno será decidida entre Misto United e Bacon City.</p></div><div class="cmq-lab-grid"><div class="cmq-lab-card"><i class="fa-solid fa-trophy"></i><b>LIGA CHAPA DE OURO</b><span>Misto United campeão com 10 pontos e campanha invicta.</span><div class="cmq-lab-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div><div class="cmq-lab-card"><i class="fa-solid fa-fire"></i><b>COPA CHAPA DO FORNO</b><span>Grande final: Misto United × Bacon City • 03/10.</span><div class="cmq-lab-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div><div class="cmq-lab-card"><i class="fa-solid fa-chart-line"></i><b>ESTATÍSTICAS</b><span>Gols, assistências e G+A atualizados após a 3ª rodada.</span><div class="cmq-lab-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div><div class="cmq-lab-card"><i class="fa-solid fa-calendar-check"></i><b>PRÓXIMO CAPÍTULO</b><span>03/10 • La Panela Stadium • o último troféu da temporada.</span><div class="cmq-lab-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>`;
+  window.CMQ_T2={teams,games,players,standings,adjustments};
+})();
+</script>
+<style id="cmq-t2-v2-styles">
+  #temporada2 .t2-public-note{color:#91a2b1;font-size:.78rem;line-height:1.55;margin:4px 0 12px}
+  #temporada2 .t2-action-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  #temporada2 .t2-action{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);color:#dceaf4;border-radius:10px;padding:9px 12px;font-weight:900;font-size:.7rem;cursor:pointer;transition:.2s}
+  #temporada2 .t2-action:hover{border-color:#54cbfa;background:rgba(84,203,250,.12);transform:translateY(-1px)}
+  #temporada2 .t2-match-card{border:1px solid rgba(255,255,255,.085);background:linear-gradient(145deg,#0d151f,#080c12);border-radius:16px;padding:14px;display:grid;gap:11px}
+  #temporada2 .t2-match-top{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#718391;font-size:.64rem;font-weight:900;letter-spacing:.09em}
+  #temporada2 .t2-match-scoreline{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+  #temporada2 .t2-club{font-family:var(--font-display);font-size:1.2rem;line-height:1}.t2-club.home{text-align:right}.t2-club.away{text-align:left}
+  #temporada2 .t2-match-score{font-family:var(--font-display);font-size:2rem;line-height:1;padding:8px 12px;border-radius:10px;background:#111c27;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+  #temporada2 .t2-match-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:9px;border-top:1px solid rgba(255,255,255,.07);font-size:.67rem;color:#81909d}
+  #temporada2 .t2-match-meta b{color:#f3bd35}
+  #temporada2 .t2-games-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  #temporada2 .t2-player-row{cursor:pointer;transition:.18s}
+  #temporada2 .t2-player-row:not(.head):hover{background:linear-gradient(90deg,rgba(66,199,255,.15),rgba(66,199,255,.02));transform:translateX(2px)}
+  #temporada2 .t2-player-row.metric{grid-template-columns:34px minmax(140px,1fr) 74px}
+  #temporada2 .t2-player-row.metric .t2-metric{font-family:var(--font-display);font-size:1.28rem;text-align:right;color:#fff}
+  #temporada2 .t2-player-row.metric.leader .t2-metric{color:#69d8ff}
+  #temporada2 .t2-rosters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+  #temporada2 .t2-roster{border:1px solid rgba(255,255,255,.08);border-radius:15px;padding:13px;background:#0a1017}
+  #temporada2 .t2-roster h4{font-family:var(--font-display);font-size:1.25rem;margin:0 0 9px;padding-bottom:8px;border-bottom:2px solid var(--team-color)}
+  #temporada2 .t2-roster button{width:100%;display:flex;justify-content:space-between;gap:8px;border:0;border-top:1px solid rgba(255,255,255,.055);background:transparent;color:#cbd6df;padding:8px 2px;font:inherit;font-size:.72rem;cursor:pointer;text-align:left}
+  #temporada2 .t2-roster button:hover{color:#fff}.t2-roster button span{color:#718391;font-size:.64rem}
+  .t2-modal{position:fixed;inset:0;z-index:10050;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(1,4,8,.86);backdrop-filter:blur(10px)}
+  .t2-modal.open{display:flex}.t2-modal-panel{width:min(820px,100%);max-height:min(88vh,860px);overflow:auto;border:1px solid rgba(89,206,255,.25);border-radius:22px;background:radial-gradient(circle at 92% 0,rgba(66,199,255,.12),transparent 32%),linear-gradient(145deg,#101925,#070b10);box-shadow:0 35px 100px rgba(0,0,0,.65);padding:20px;position:relative}
+  .t2-modal-close{position:sticky;float:right;top:0;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:#101923;color:#fff;font-size:1.2rem;cursor:pointer}
+  .t2-modal-kicker{color:#62d3ff;font-size:.67rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.t2-modal h2{font-family:var(--font-display);font-size:clamp(2rem,6vw,3.6rem);line-height:.95;margin:6px 0}
+  .t2-modal-team{color:#91a1ae;font-size:.78rem}.t2-modal-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:17px 0}
+  .t2-modal-stat{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;background:rgba(255,255,255,.035);text-align:center}.t2-modal-stat b{display:block;font-family:var(--font-display);font-size:1.8rem;color:#fff}.t2-modal-stat span{font-size:.61rem;color:#7f909e;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+  .t2-sheet-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin:14px 0 18px}.t2-sheet-team{font-family:var(--font-display);font-size:clamp(1.25rem,4vw,2.2rem)}.t2-sheet-team:first-child{text-align:right}.t2-sheet-score{font-family:var(--font-display);font-size:2.5rem;color:#f3bd35;white-space:nowrap}
+  .t2-sheet-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.t2-sheet-side{border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:13px;background:#090f16}.t2-sheet-side h3{font-family:var(--font-display);font-size:1.25rem;margin-bottom:8px}.t2-sheet-line{display:grid;grid-template-columns:1fr auto auto;gap:9px;padding:8px 2px;border-top:1px solid rgba(255,255,255,.06);font-size:.73rem}.t2-sheet-line b{color:#fff}.t2-sheet-line span{color:#8d9ba7}.t2-sheet-empty{color:#667582;font-size:.7rem;padding:8px 0}.t2-sheet-mvp{margin-top:12px;padding:12px;border-left:3px solid #f3bd35;border-radius:0 10px 10px 0;background:rgba(243,189,53,.07);font-size:.75rem;color:#cbd3da}
+  .t2-history{display:grid;gap:7px}.t2-history-row{display:grid;grid-template-columns:46px 1fr auto;gap:9px;align-items:center;border-top:1px solid rgba(255,255,255,.07);padding:10px 2px}.t2-history-round{font-family:var(--font-display);color:#63d5ff;font-size:1.05rem}.t2-history-row b{display:block;font-size:.74rem}.t2-history-row small{color:#718290}.t2-history-output{font-family:var(--font-display);color:#f3bd35;font-size:1.1rem}
+  @media(max-width:760px){#temporada2 .t2-games-grid,#temporada2 .t2-rosters,.t2-sheet-grid{grid-template-columns:1fr}.t2-modal-stats{grid-template-columns:repeat(2,1fr)}#temporada2 .t2-club{font-size:1rem}#temporada2 .t2-match-score{font-size:1.55rem}.t2-modal-panel{padding:16px}.t2-sheet-head{gap:8px}.t2-sheet-score{font-size:1.8rem}}
+</style>
+<div id="t2Modal" class="t2-modal" aria-hidden="true" onclick="if(event.target===this)cmqCloseT2Modal()"><div class="t2-modal-panel" role="dialog" aria-modal="true" aria-labelledby="t2ModalTitle"><button class="t2-modal-close" type="button" aria-label="Fechar" onclick="cmqCloseT2Modal()">×</button><div id="t2ModalBody"></div></div></div>
+<script id="cmq-t2-v2-script">
+(()=>{
+  const data=window.CMQ_T2;if(!data)return;
+  const {teams,games,players,standings}=data;
+  games.forEach(g=>{if(g.round===2)g.date='19/09';if(g.round===3)g.date='26/09'});
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const teamName=id=>teams[id]?.name||id;
+  const metricLabel={ga:'G+A',g:'GOLS',a:'ASSISTÊNCIAS'};
+  const byName=name=>players.find(p=>p.name===name);
+  const gamePlayer=(g,name)=>g.stats.find(x=>x[0]===name);
+  const gameMvp=g=>[...g.stats].sort((a,b)=>(b[2]+b[3])-(a[2]+a[3])||b[2]-a[2])[0];
+  const playersForTeam=id=>players.filter(p=>p.team===id).sort((a,b)=>b.ga-a.ga||a.name.localeCompare(b.name,'pt-BR'));
+  function playerRows(list,key='ga'){
+    return `<div class="t2-player-row metric head"><span>#</span><span>JOGADOR</span><span>${metricLabel[key]}</span></div>`+list.map((p,i)=>`<div class="t2-player-row metric ${i===0?'leader':''}" role="button" tabindex="0" data-t2-player="${esc(p.name)}"><span class="t2-rank">#${i+1}</span><b>${esc(p.name)}<small class="t2-team-tag">${esc(teamName(p.team))} • ${p.j} jogo${p.j===1?'':'s'}</small></b><span class="t2-metric">${p[key]}</span></div>`).join('');
+  }
+  function standingRows(){return standings.map((x,i)=>`<div class="t2-stand-row ${i===0?'champ':''}"><span class="t2-rank">#${i+1}</span><b class="t2-team">${esc(x.name)}${i===0?'<small class="t2-team-tag">CAMPEÃO DA LIGA</small>':''}</b><span>${x.j}</span><span>${x.v}</span><span>${x.e}</span><span>${x.d}</span><span>${x.gp}</span><span>${x.gc}</span><span>${x.sg>0?'+':''}${x.sg}</span><strong>${x.pts}</strong></div>`).join('')}
+  function matchCards(){return games.map(g=>{const mvp=gameMvp(g);return `<article class="t2-match-card"><div class="t2-match-top"><span>${g.round}ª RODADA • ${g.date}</span><span>JOGO ${g.id}</span></div><div class="t2-match-scoreline"><b class="t2-club home">${esc(teams[g.home].short)}</b><strong class="t2-match-score">${g.hs} × ${g.as}</strong><b class="t2-club away">${esc(teams[g.away].short)}</b></div><div class="t2-match-meta"><span>⭐ <b>${esc(mvp?.[0]||'—')}</b></span><button class="t2-action" data-t2-match="${g.id}">ABRIR SÚMULA</button></div></article>`}).join('')}
+  function rosters(){return Object.keys(teams).map(id=>`<article class="t2-roster" style="--team-color:${teams[id].color}"><h4>${esc(teams[id].name)}</h4>${playersForTeam(id).map(p=>`<button type="button" data-t2-player="${esc(p.name)}"><b>${esc(p.name)}</b><span>${p.g}G • ${p.a}A</span></button>`).join('')}</article>`).join('')}
+  const section=document.querySelector('#temporada2 .container');if(!section)return;
+  section.innerHTML=`<div class="t2-live-shell">
+    <header class="t2-hero-live"><div class="t2-kicker">COPA MISTO QUENTE • TEMPORADA 2 • CENTRAL OFICIAL</div><h1 class="t2-title">A T2, <em>COMPLETA.</em><br>DO PRIMEIRO GOL À FINAL.</h1><p class="t2-hero-copy">Resultados, classificação, súmulas e perfis individuais da temporada atual. A Liga Chapa de Ouro já tem campeão; a Copa Chapa do Forno será decidida em 03/10.</p><div class="t2-hero-badges"><span class="t2-pill gold">🏆 MISTO UNITED • CAMPEÃO DA LIGA</span><span class="t2-pill red">🔥 FINAL • MISTO × BACON • 03/10</span><span class="t2-pill">📋 6 SÚMULAS</span><span class="t2-pill">⚽ 140 GOLS</span></div><div class="t2-action-row"><button class="t2-action" data-t2-jump="t2Games">VER JOGOS E SÚMULAS</button><button class="t2-action" data-t2-jump="t2RankingCard">ABRIR RANKINGS</button><button class="t2-action" onclick="navigateTo('museu')">VISITAR ARQUIVO DA T1</button></div></header>
+    <div class="t2-grid">
+      <article class="t2-card champion"><div class="t2-kicker">LIGA CHAPA DE OURO</div><h3>MISTO UNITED CAMPEÃO</h3><div class="t2-big-stat gold">10 PTS</div><span class="t2-mini">3 vitórias • 1 empate • invicto</span><p style="margin-top:12px">Melhor ataque, melhor campanha e vaga na decisão.</p></article>
+      <article class="t2-card final wide"><div class="t2-kicker">COPA CHAPA DO FORNO • GRANDE FINAL</div><h3>MISTO UNITED × BACON CITY</h3><div class="t2-big-stat">03/10</div><span class="t2-mini">La Panela Stadium</span><p style="margin-top:12px">O campeão dos pontos corridos contra o segundo colocado. Um jogo pelo último troféu da T2.</p></article>
+      <article class="t2-card full"><div class="t2-kicker">CLASSIFICAÇÃO FINAL</div><h3>LIGA CHAPA DE OURO</h3><div class="t2-stand-row head"><span>#</span><span class="t2-team">TIME</span><span>J</span><span>V</span><span>E</span><span>D</span><span>GP</span><span>GC</span><span>SG</span><strong>PTS</strong></div>${standingRows()}</article>
+      <article class="t2-card full" id="t2Games"><div class="t2-kicker">JOGOS OFICIAIS</div><h3>RESULTADOS E SÚMULAS</h3><p class="t2-public-note">Toque em “Abrir súmula” para ver quem marcou, quem deu assistência e o destaque de cada confronto.</p><div class="t2-games-grid">${matchCards()}</div></article>
+      <article class="t2-card full" id="t2RankingCard"><div class="t2-kicker">RANKINGS • TEMPORADA 2</div><h3>DESTAQUES INDIVIDUAIS</h3><p class="t2-public-note">Cada categoria mostra somente o número correspondente. Toque no jogador para abrir o perfil completo da T2.</p><div class="t2-tabs"><button class="t2-tab active" data-t2-filter="ga">G+A</button><button class="t2-tab" data-t2-filter="g">Gols</button><button class="t2-tab" data-t2-filter="a">Assistências</button></div><div id="t2PlayerRanking">${playerRows(players,'ga')}</div></article>
+      <article class="t2-card full"><div class="t2-kicker">ELENCOS E PERFIS</div><h3>JOGADORES DA T2</h3><p class="t2-public-note">Os nomes da temporada estão unificados. Abra qualquer atleta para ver números, média, posição no ranking e desempenho jogo a jogo.</p><div class="t2-rosters">${rosters()}</div></article>
+      <article class="t2-card full"><div class="t2-kicker">ARQUIVO HISTÓRICO</div><h3>A T1 CONTINUA INTACTA</h3><p class="t2-public-note">A primeira temporada, seus perfis, prêmios, recordes e súmulas seguem guardados no Museu. A navegação principal agora destaca a temporada atual.</p><button class="t2-action" onclick="navigateTo('museu')">ENTRAR NO MUSEU DA T1</button></article>
+    </div></div>`;
+  function bind(){
+    section.querySelectorAll('[data-t2-filter]').forEach(btn=>btn.addEventListener('click',()=>{section.querySelectorAll('[data-t2-filter]').forEach(x=>x.classList.toggle('active',x===btn));const key=btn.dataset.t2Filter;const sorted=[...players].sort((a,b)=>b[key]-a[key]||b.ga-a.ga||b.g-a.g||a.name.localeCompare(b.name,'pt-BR'));section.querySelector('#t2PlayerRanking').innerHTML=playerRows(sorted,key)}));
+    section.addEventListener('click',e=>{const p=e.target.closest('[data-t2-player]');if(p)return window.cmqOpenT2Player(p.dataset.t2Player);const m=e.target.closest('[data-t2-match]');if(m)return window.cmqOpenT2Match(+m.dataset.t2Match);const j=e.target.closest('[data-t2-jump]');if(j)document.getElementById(j.dataset.t2Jump)?.scrollIntoView({behavior:'smooth',block:'start'})});
+    section.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-t2-player]')){e.preventDefault();window.cmqOpenT2Player(e.target.dataset.t2Player)}})
+  }
+  window.cmqOpenT2Player=name=>{const p=byName(name);if(!p)return;const rank=[...players].sort((a,b)=>b.ga-a.ga).findIndex(x=>x.name===name)+1;const history=games.map(g=>{const s=gamePlayer(g,name);if(!s)return null;const mine=s[1]===g.home,own=mine?g.hs:g.as,opp=mine?g.as:g.hs,opponent=mine?g.away:g.home;return {a:s[3],goals:s[2],game:g,own,opp,opponent}}).filter(Boolean);const avg=p.j?(p.ga/p.j).toFixed(1):'0.0';document.getElementById('t2ModalBody').innerHTML=`<div class="t2-modal-kicker">PERFIL OFICIAL • TEMPORADA 2</div><h2 id="t2ModalTitle">${esc(p.name)}</h2><div class="t2-modal-team">${esc(teamName(p.team))} • #${rank} no ranking geral de participações</div><div class="t2-modal-stats"><div class="t2-modal-stat"><b>${p.j}</b><span>jogos</span></div><div class="t2-modal-stat"><b>${p.g}</b><span>gols</span></div><div class="t2-modal-stat"><b>${p.a}</b><span>assistências</span></div><div class="t2-modal-stat"><b>${p.ga}</b><span>G+A</span></div></div><div class="t2-kicker">LINHA DA TEMPORADA • ${avg} G+A POR JOGO</div><div class="t2-history">${history.map(h=>`<div class="t2-history-row"><span class="t2-history-round">J${h.game.id}</span><div><b>${esc(teamName(h.game.home))} ${h.game.hs} × ${h.game.as} ${esc(teamName(h.game.away))}</b><small>${h.game.date} • ${esc(teamName(h.opponent))}</small></div><span class="t2-history-output">${h.goals}G${h.a?` + ${h.a}A`:''}</span></div>`).join('')||'<div class="t2-sheet-empty">Sem participação individual registrada.</div>'}</div>`;openModal()};
+  window.cmqOpenT2Match=id=>{const g=games.find(x=>x.id===id);if(!g)return;const mvp=gameMvp(g);const side=id=>g.stats.filter(x=>x[1]===id);const sideHtml=id=>{const list=side(id);return `<div class="t2-sheet-side"><h3 style="color:${teams[id].color}">${esc(teamName(id))}</h3>${list.length?list.sort((a,b)=>(b[2]+b[3])-(a[2]+a[3])).map(x=>`<button class="t2-sheet-line" style="width:100%;border-left:0;border-right:0;border-bottom:0;background:transparent;color:inherit;text-align:left;cursor:pointer" data-modal-player="${esc(x[0])}"><b>${esc(x[0])}</b><span>${x[2]}G</span><span>${x[3]}A</span></button>`).join(''):'<div class="t2-sheet-empty">Sem dados individuais.</div>'}</div>`};document.getElementById('t2ModalBody').innerHTML=`<div class="t2-modal-kicker">SÚMULA OFICIAL • ${g.round}ª RODADA • ${g.date}</div><h2 id="t2ModalTitle">JOGO ${g.id}</h2><div class="t2-sheet-head"><b class="t2-sheet-team">${esc(teamName(g.home))}</b><strong class="t2-sheet-score">${g.hs} × ${g.as}</strong><b class="t2-sheet-team">${esc(teamName(g.away))}</b></div><div class="t2-sheet-grid">${sideHtml(g.home)}${sideHtml(g.away)}</div><div class="t2-sheet-mvp">⭐ <b>Destaque da partida: ${esc(mvp?.[0]||'—')}</b> • ${mvp?.[2]||0} gol${mvp?.[2]===1?'':'s'} e ${mvp?.[3]||0} assistência${mvp?.[3]===1?'':'s'}.${g.unassigned?` O placar oficial inclui ${g.unassigned} gol${g.unassigned===1?'':'s'} sem autoria individual registrada.`:''}</div>`;document.getElementById('t2ModalBody').querySelectorAll('[data-modal-player]').forEach(b=>b.addEventListener('click',()=>window.cmqOpenT2Player(b.dataset.modalPlayer)));openModal()};
+  function openModal(){const m=document.getElementById('t2Modal');m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';m.querySelector('.t2-modal-close').focus()}
+  window.cmqCloseT2Modal=()=>{const m=document.getElementById('t2Modal');m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('t2Modal')?.classList.contains('open'))window.cmqCloseT2Modal()});
+  bind();
+  const navT2=[...document.querySelectorAll('.nav-link,.m-nav-item')].find(x=>x.textContent.includes('T2'));if(navT2)navT2.innerHTML=navT2.classList.contains('nav-link')?'🔵 TEMPORADA 2':'<i class="fa-solid fa-bolt"></i> TEMPORADA 2';
+  setTimeout(()=>{if(!location.hash)navigateTo('temporada2')},60);
+})();
+</script>
 </body></html>

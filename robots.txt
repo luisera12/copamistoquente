@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luisera12.github.io/copamistoquente/sitemap.xml
